@@ -28,8 +28,7 @@
       "description": "Practical perspectives on hotel performance, OTA dependence, and owner reporting for independent hotel owners in India.",
       "author": {"@id": "https://veritashospitalityadvisors.com/#vaishakh"},
       "publisher": {"@id": "https://veritashospitalityadvisors.com/#organization"},
-      "inLanguage": "en",
-      "isPartOf": {"@id": "https://veritashospitalityadvisors.com/#organization"}
+      "inLanguage": "en"
     },
     {
       "@type": "BreadcrumbList",
@@ -39,28 +38,61 @@
       ]
     },
     {
-      "@type": "ItemList",
-      "name": "Hotel Owner Insights",
-      "description": "Articles for independent hotel owners on OTA strategy, owner reporting, and revenue management",
+      "@type": "Article",
+      "@id": "https://veritashospitalityadvisors.com/insights.html#ota-cost",
+      "url": "https://veritashospitalityadvisors.com/insights.html#ota-cost",
+      "headline": "What your OTA contract is actually costing you — and why your P&L doesn't show it",
       "author": {"@id": "https://veritashospitalityadvisors.com/#vaishakh"},
-      "itemListElement": [
+      "publisher": {"@id": "https://veritashospitalityadvisors.com/#organization"},
+      "datePublished": "2026-10-01",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://veritashospitalityadvisors.com/insights.html#owner-report",
+      "url": "https://veritashospitalityadvisors.com/insights.html#owner-report",
+      "headline": "The seven numbers every hotel owner should demand from their management",
+      "author": {"@id": "https://veritashospitalityadvisors.com/#vaishakh"},
+      "publisher": {"@id": "https://veritashospitalityadvisors.com/#organization"},
+      "datePublished": "2026-10-01",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://veritashospitalityadvisors.com/insights.html#revpar",
+      "url": "https://veritashospitalityadvisors.com/insights.html#revpar",
+      "headline": "RevPAR is not the metric your hotel needs. Here is what to track instead.",
+      "author": {"@id": "https://veritashospitalityadvisors.com/#vaishakh"},
+      "publisher": {"@id": "https://veritashospitalityadvisors.com/#organization"},
+      "datePublished": "2026-10-01",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
         {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "What your OTA contract is actually costing you — and why your P&L doesn't show it",
-          "description": "Most hotel owners see the commission line. Few see the full blended cost after GST on commissions, rate parity clauses, and the long-term brand equity transferred to the platform."
+          "@type": "Question",
+          "name": "How much am I actually paying OTAs for each booking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The P&L commission line is not the full cost. Add GST on commissions, rate parity constraints, and OTA-funded discounts. For many independent Indian hotels, the blended cost of an OTA booking is 20–30% of room revenue, not the headline 12–15% commission rate."
+          }
         },
         {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "The seven numbers every hotel owner should demand from their management — and when to be worried if they don't get them",
-          "description": "Management reports what they choose to report. This is the shortlist of metrics that give the owner an independent view of commercial health."
+          "@type": "Question",
+          "name": "What should a hotel owner see in a monthly performance report?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The seven metrics every owner should demand: actual cost of OTA acquisition, direct booking ratio, GOP before management fees, food and beverage margin by outlet, payroll as a percentage of total revenue, maintenance CAPEX versus maintenance expensed, and RevPAR versus competitive set."
+          }
         },
         {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "RevPAR is not the metric your hotel needs. Here is what to track instead.",
-          "description": "RevPAR tells you how rooms performed. It says nothing about cost of acquisition, OTA dependency, or whether the revenue generated was actually profitable."
+          "@type": "Question",
+          "name": "What is NRevPAR and why is it better than RevPAR for hotel owners?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NRevPAR (Net Revenue Per Available Room) is RevPAR after deducting the cost of distribution. RevPAR tells you how rooms performed against capacity. NRevPAR tells you how much of that revenue actually reached the hotel after paying for the channels used to acquire it. For owners, NRevPAR is the more useful metric."
+          }
         }
       ]
     },
@@ -83,7 +115,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--ink:#1A3028;--cream:#F5F4EF;--slate:#3D6B56;--gold:#A57426}
@@ -99,6 +131,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,48,40,.94
 .nav-cta{font-size:.75rem;font-weight:500;color:var(--cream);text-decoration:none;border:1px solid rgba(165,116,38,.55);padding:9px 22px;letter-spacing:.05em;transition:all .2s}
 .nav-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
 
+/* PAGE HEADER */
 .page-header{background:var(--ink);padding:130px 40px 80px}
 .page-header .inner{max-width:1120px;margin:0 auto}
 .breadcrumb{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,244,239,.35);margin-bottom:20px}
@@ -108,9 +141,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,48,40,.94
 .page-header h1{font-family:"Source Serif 4",serif;font-weight:300;font-size:clamp(2rem,4vw,3.2rem);color:var(--cream);line-height:1.1;margin-bottom:10px}
 .page-header .sub{font-size:.92rem;color:rgba(245,244,239,.45);font-weight:300;margin-top:12px;max-width:540px;line-height:1.65}
 
+/* TOC */
+.toc-section{background:rgba(26,48,40,.04);border-bottom:1px solid rgba(26,48,40,.08);padding:32px 40px}
+.toc-inner{max-width:860px;margin:0 auto}
+.toc-label{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:16px;display:block}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.toc-list li{display:flex;gap:12px;align-items:baseline}
+.toc-num{font-size:.7rem;color:var(--gold);font-variant-numeric:tabular-nums;min-width:16px}
+.toc-list a{font-family:"Source Serif 4",serif;font-weight:300;font-size:.95rem;color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(26,48,40,.15);line-height:1.3}
+.toc-list a:hover{border-color:var(--slate);color:var(--slate)}
+
 .section-label{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:16px;display:block}
 
-/* REEL SECTION */
+/* REEL */
 .reel-section{background:var(--ink);padding:72px 40px}
 .reel-inner{max-width:680px;margin:0 auto;text-align:center}
 .reel-inner .section-label{color:rgba(245,244,239,.35);text-align:center}
@@ -118,18 +161,50 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,48,40,.94
 .reel-inner .reel-intro{font-size:.86rem;color:rgba(245,244,239,.45);margin-bottom:36px;line-height:1.65}
 .reel-embed{background:rgba(245,244,239,.04);border:1px solid rgba(245,244,239,.08);padding:24px;display:flex;justify-content:center}
 
-/* ARTICLES */
-.articles-section{background:var(--cream);padding:88px 40px}
-.articles-inner{max-width:1120px;margin:0 auto}
-.articles-inner h2{font-family:"Source Serif 4",serif;font-weight:300;font-size:clamp(1.5rem,2.2vw,1.9rem);color:var(--ink);margin-bottom:48px;line-height:1.2}
-.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
-.article-card{background:var(--ink);padding:40px 36px;display:flex;flex-direction:column;min-height:300px}
-.article-tag{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:18px}
-.article-card h3{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.1rem;color:var(--cream);line-height:1.3;margin-bottom:14px;flex-grow:1}
-.article-card p{font-size:.8rem;line-height:1.7;color:rgba(245,244,239,.45);margin-bottom:28px}
-.article-status{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(165,116,38,.55);padding:6px 12px;border:1px solid rgba(165,116,38,.2);display:inline-block;align-self:flex-start}
+/* ARTICLE SHARED */
+.article-section{padding:88px 40px;border-bottom:2px solid rgba(26,48,40,.06)}
+.article-section:nth-child(even){background:rgba(26,48,40,.025)}
+.article-inner{max-width:760px;margin:0 auto}
 
-/* EMAIL GATE */
+.article-anchor-label{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.art-tag{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.art-num{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,48,40,.3);font-variant-numeric:tabular-nums}
+
+.article-inner h2{font-family:"Source Serif 4",serif;font-weight:300;font-size:clamp(1.5rem,2.8vw,2.1rem);color:var(--ink);line-height:1.15;margin-bottom:20px}
+.article-meta{font-size:.75rem;color:rgba(26,48,40,.4);margin-bottom:40px;padding-bottom:28px;border-bottom:1px solid rgba(26,48,40,.1)}
+.article-meta strong{color:rgba(26,48,40,.6);font-weight:500}
+
+.article-inner p{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.02rem;line-height:1.85;color:var(--ink);margin-bottom:1.5rem}
+.article-inner h3{font-family:"Source Serif 4",serif;font-weight:400;font-size:1.15rem;color:var(--ink);margin:2.4rem 0 .9rem;line-height:1.25}
+.article-inner h4{font-family:"Public Sans",sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin:1.8rem 0 .65rem}
+.article-inner ul,.article-inner ol{padding-left:1.4rem;margin-bottom:1.5rem}
+.article-inner li{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.02rem;line-height:1.75;color:var(--ink);margin-bottom:.5rem}
+.article-inner strong{font-weight:600}
+
+.callout{background:var(--ink);color:var(--cream);padding:32px 36px;margin:2rem 0;border-left:3px solid var(--gold)}
+.callout p{font-family:"Source Serif 4",serif;font-style:italic;font-weight:300;font-size:1rem;line-height:1.8;color:rgba(245,244,239,.82);margin-bottom:0}
+.callout cite{display:block;font-family:"Public Sans",sans-serif;font-style:normal;font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);margin-top:12px}
+
+.cost-table{width:100%;border-collapse:collapse;margin:1.4rem 0 1.8rem;font-size:.88rem;overflow-x:auto;display:block}
+.cost-table th{font-family:"Public Sans",sans-serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);font-weight:500;padding:10px 14px;border-bottom:2px solid rgba(26,48,40,.15);text-align:left;white-space:nowrap}
+.cost-table td{padding:11px 14px;border-bottom:1px solid rgba(26,48,40,.07);font-family:"Source Serif 4",serif;font-weight:300;color:var(--ink);white-space:nowrap}
+.cost-table tr:last-child td{border-bottom:none;font-weight:600;background:rgba(165,116,38,.06)}
+.cost-table .num{text-align:right;font-variant-numeric:tabular-nums}
+
+.metric-card{background:var(--ink);margin:1.8rem 0}
+.metric-card-header{display:flex;align-items:center;gap:16px;padding:22px 28px;border-bottom:1px solid rgba(245,244,239,.08)}
+.metric-num{font-family:"Source Serif 4",serif;font-size:1.8rem;font-weight:300;color:var(--gold);line-height:1;min-width:36px}
+.metric-card-header h4{font-family:"Source Serif 4",serif;font-weight:300;font-size:.98rem;color:var(--cream);line-height:1.3;margin:0;text-transform:none;letter-spacing:0;color:var(--cream)}
+.metric-body{padding:18px 28px 22px}
+.metric-body p{font-family:"Source Serif 4",serif;font-weight:300;font-size:.92rem;line-height:1.75;color:rgba(245,244,239,.68);margin-bottom:.75rem}
+.metric-body p:last-child{margin-bottom:0}
+.metric-warning{font-size:.78rem;font-family:"Public Sans",sans-serif;color:rgba(165,116,38,.85);padding-top:11px;border-top:1px solid rgba(245,244,239,.07);margin-top:11px}
+.metric-warning strong{color:var(--gold)}
+
+.back-to-top{display:inline-block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);text-decoration:none;border-bottom:1px solid rgba(61,107,86,.25);margin-top:40px}
+.back-to-top:hover{border-color:var(--slate)}
+
+/* SUBSCRIBE */
 .subscribe-section{background:rgba(26,48,40,.05);border-top:1px solid rgba(26,48,40,.08);padding:72px 40px}
 .subscribe-inner{max-width:560px;margin:0 auto;text-align:center}
 .subscribe-inner h2{font-family:"Source Serif 4",serif;font-weight:300;font-size:clamp(1.4rem,2vw,1.75rem);color:var(--ink);margin-bottom:12px;line-height:1.2}
@@ -154,8 +229,13 @@ footer{background:var(--ink);padding:40px;display:flex;justify-content:space-bet
   nav{padding:0 20px}
   .nav-links{display:none}
   .page-header{padding:110px 20px 60px}
-  .articles-grid{grid-template-columns:1fr}
-  .reel-section,.articles-section,.subscribe-section{padding:60px 20px}
+  .toc-section{padding:28px 20px}
+  .reel-section{padding:60px 20px}
+  .article-section{padding:64px 20px}
+  .callout{padding:24px 20px}
+  .metric-card-header{padding:18px 20px}
+  .metric-body{padding:14px 20px 18px}
+  .subscribe-section{padding:60px 20px}
   .subscribe-form{flex-direction:column}
   .subscribe-form input{border-right:1px solid rgba(26,48,40,.2);border-bottom:none}
   footer{padding:30px 20px}
@@ -175,11 +255,22 @@ footer{background:var(--ink);padding:40px;display:flex;justify-content:space-bet
   <a href="mailto:vaishakh@veritashospitalityadvisors.com" class="nav-cta">Discuss confidentially</a>
 </nav>
 
-<div class="page-header">
+<div class="page-header" id="top">
   <div class="inner">
     <div class="breadcrumb"><a href="/">Veritas</a><span>/</span>Insights</div>
     <h1>Owner intelligence.<br>No fluff.</h1>
     <p class="sub">Practical perspectives on hotel performance, OTA dependence, and the commercial decisions that determine whether your asset works for you — or against you.</p>
+  </div>
+</div>
+
+<div class="toc-section">
+  <div class="toc-inner">
+    <span class="toc-label">Articles on this page</span>
+    <ol class="toc-list">
+      <li><span class="toc-num">01</span><a href="#ota-cost">What your OTA contract is actually costing you — and why your P&amp;L doesn't show it</a></li>
+      <li><span class="toc-num">02</span><a href="#owner-report">The seven numbers every hotel owner should demand from their management</a></li>
+      <li><span class="toc-num">03</span><a href="#revpar">RevPAR is not the metric your hotel needs. Here is what to track instead.</a></li>
+    </ol>
   </div>
 </div>
 
@@ -199,30 +290,241 @@ footer{background:var(--ink);padding:40px;display:flex;justify-content:space-bet
   <script async src="//www.instagram.com/embed.js"></script>
 </section>
 
-<section class="articles-section">
-  <div class="articles-inner">
-    <span class="section-label">Perspectives</span>
-    <h2>Articles for independent hotel owners.</h2>
-    <div class="articles-grid">
-      <div class="article-card">
-        <span class="article-tag">OTA &amp; Distribution</span>
-        <h3>What your OTA contract is actually costing you — and why your P&amp;L doesn't show it</h3>
-        <p>Most hotel owners see the commission line. Few see the full blended cost after GST on commissions, rate parity clauses, and the long-term brand equity you're transferring to the platform.</p>
-        <span class="article-status">Coming soon</span>
-      </div>
-      <div class="article-card">
-        <span class="article-tag">Owner Reporting</span>
-        <h3>The seven numbers every hotel owner should demand from their management — and when to be worried if they don't get them</h3>
-        <p>Management reports what they choose to report. This is the shortlist of metrics that give the owner an independent view of commercial health.</p>
-        <span class="article-status">Coming soon</span>
-      </div>
-      <div class="article-card">
-        <span class="article-tag">Revenue Management</span>
-        <h3>RevPAR is not the metric your hotel needs. Here is what to track instead.</h3>
-        <p>RevPAR tells you how rooms performed. It says nothing about cost of acquisition, OTA dependency, or whether the revenue you generated was actually profitable. There is a better measure.</p>
-        <span class="article-status">Coming soon</span>
+<!-- ARTICLE 1 -->
+<section class="article-section" id="ota-cost">
+  <div class="article-inner">
+    <div class="article-anchor-label">
+      <span class="art-num">Article 01</span>
+      <span class="art-tag">OTA &amp; Distribution</span>
+    </div>
+    <h2>What your OTA contract is actually costing you — and why your P&amp;L doesn't show it</h2>
+    <div class="article-meta">By <strong>Vaishakh Surendran MIH</strong> &nbsp;·&nbsp; Founder, Veritas Hospitality Advisors &nbsp;·&nbsp; October 2026</div>
+
+    <p>Ask most independent hotel owners what they pay OTAs and they will tell you the commission rate in their contract. Fifteen percent, perhaps twelve. Some know it is closer to eighteen on certain platforms. Very few can tell you the full blended cost of an OTA booking — because their P&amp;L is not built to show it.</p>
+
+    <p>That gap is not an accident. It is the natural result of how OTA contracts are structured, how management accounts are typically presented to owners, and what questions most owners have not yet learned to ask.</p>
+
+    <h3>What the commission line actually captures</h3>
+
+    <p>The commission line on a hotel P&amp;L captures the commission paid to the OTA on gross room revenue. That is the starting point, not the finish line.</p>
+
+    <p>Here is what it typically does not capture:</p>
+
+    <ul>
+      <li><strong>GST on OTA commissions.</strong> OTA commissions are subject to GST in India. If you are paying 15% commission, you are effectively paying more once GST is applied. The tax treatment varies by structure, but the owner bears the cost either directly or through reduced recoverable tax credits.</li>
+      <li><strong>Rate parity costs.</strong> Most OTA contracts include rate parity clauses requiring you to offer the OTA the same room rate as any other channel, including your own website. This prevents you from pricing direct bookings more attractively. The effect: guests who might have booked direct continue to book through the OTA, incurring commission on revenue that could have been acquired for nothing.</li>
+      <li><strong>Implicit rate discounting.</strong> Many OTAs offer member-price schemes or promotional discounts to their loyalty members, funding those discounts partly or fully from the hotel's rate. A room that appears at ₹6,000 on the OTA may be netting you ₹4,800 or less before commission.</li>
+      <li><strong>Lost direct channel investment.</strong> When rate parity prevents your direct channel from competing on price, that investment in booking engines and direct campaigns yields diminishing returns. The cost of a constrained direct channel is real, even if it never appears in a P&amp;L line.</li>
+    </ul>
+
+    <h3>A worked example</h3>
+
+    <p>Consider a room sold at a rack rate of ₹6,000 through a major OTA with a published commission rate of 15%.</p>
+
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th class="num">Amount (₹)</th>
+          <th class="num">% of gross rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Gross room rate</td><td class="num">6,000</td><td class="num">100%</td></tr>
+        <tr><td>OTA commission (15%)</td><td class="num">−900</td><td class="num">15%</td></tr>
+        <tr><td>GST on commission (18%)</td><td class="num">−162</td><td class="num">2.7%</td></tr>
+        <tr><td>OTA member discount (8%, funded by hotel)</td><td class="num">−480</td><td class="num">8%</td></tr>
+        <tr><td>Net revenue to hotel</td><td class="num">4,458</td><td class="num">74.3%</td></tr>
+      </tbody>
+    </table>
+
+    <p>In this scenario the effective cost of the OTA booking is 25.7% of gross room revenue — not 15%. The figure your P&amp;L shows is 15%. The difference is real money the owner does not receive, but it is not visible in standard management reporting.</p>
+
+    <div class="callout">
+      <p>"OTA commissions typically represent 15–25% of room revenue for Indian independent hotels. The full blended cost, including GST on commissions and rate parity constraints, is often significantly higher than the P&amp;L commission line suggests."</p>
+      <cite>Vaishakh Surendran MIH — Founder, Veritas Hospitality Advisors</cite>
+    </div>
+
+    <h3>What the owner should demand to see</h3>
+
+    <p>If you want to understand what your OTA relationships are actually costing you, you need three numbers that most management reports do not provide:</p>
+
+    <ul>
+      <li><strong>Blended cost of acquisition by channel.</strong> Not the headline commission rate. The actual net revenue received per booking, after all OTA-related deductions, expressed as a percentage of gross room revenue — calculated for each OTA separately.</li>
+      <li><strong>Direct booking ratio.</strong> The percentage of bookings taken directly — through your own website, by phone, by walk-in — compared to OTA bookings. This tells you how dependent your revenue is on channels you do not control.</li>
+      <li><strong>NRevPAR versus RevPAR.</strong> RevPAR is the metric most management reports lead with. NRevPAR — Net Revenue Per Available Room, after deducting the cost of distribution — is more useful to the owner. If your RevPAR is healthy but your NRevPAR is under pressure, your revenue performance is being consumed by distribution costs.</li>
+    </ul>
+
+    <p>The OTA relationship is not inherently the problem. The problem is accepting that relationship without understanding what it costs, and without actively managing it. The owners who manage it well audit their OTA contracts annually, track blended acquisition cost by channel rather than headline commission, and set clear targets for direct booking ratio that their management is held accountable to.</p>
+
+    <a href="#top" class="back-to-top">Back to top</a>
+  </div>
+</section>
+
+<!-- ARTICLE 2 -->
+<section class="article-section" id="owner-report">
+  <div class="article-inner">
+    <div class="article-anchor-label">
+      <span class="art-num">Article 02</span>
+      <span class="art-tag">Owner Reporting</span>
+    </div>
+    <h2>The seven numbers every hotel owner should demand from their management — and when to be worried if they don't get them</h2>
+    <div class="article-meta">By <strong>Vaishakh Surendran MIH</strong> &nbsp;·&nbsp; Founder, Veritas Hospitality Advisors &nbsp;·&nbsp; October 2026</div>
+
+    <p>Management reports what it chooses to report. In most cases, that means the numbers that reflect well on operations, presented in a format that requires the owner to trust rather than verify. The result is that most independent hotel owners receive a monthly report that tells them a story, rather than giving them a picture.</p>
+
+    <p>There is a shortlist of metrics that changes that. Seven numbers that give the owner an independent view of commercial health — not because management has chosen to present them, but because the owner has learned to ask for them explicitly.</p>
+
+    <div class="callout">
+      <p>"Independent hotel owners often receive reports that tell them what management wants them to know, not what they need to know. The seven metrics every owner should demand include: actual cost of OTA acquisition, direct booking ratio, GOP before management fees, food and beverage margin by outlet, payroll as a percentage of total revenue, maintenance CAPEX versus maintenance expensed, and RevPAR versus competitive set."</p>
+      <cite>Vaishakh Surendran MIH — Founder, Veritas Hospitality Advisors</cite>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-card-header"><div class="metric-num">1</div><h4>Actual cost of OTA acquisition</h4></div>
+      <div class="metric-body">
+        <p>Not the headline commission rate. The blended cost of an OTA booking expressed as a percentage of gross room revenue — after GST on commissions, after rate parity costs, after any promotional discounts funded by the hotel. Calculated per OTA, not averaged across the mix.</p>
+        <p>Without it, you have no basis for evaluating whether your distribution strategy is working in your favour or the OTA's.</p>
+        <div class="metric-warning"><strong>Watch for:</strong> A report that shows commission as a single percentage without breaking out GST, channel mix, or the cost of OTA-funded discounts.</div>
       </div>
     </div>
+
+    <div class="metric-card">
+      <div class="metric-card-header"><div class="metric-num">2</div><h4>Direct booking ratio</h4></div>
+      <div class="metric-body">
+        <p>The percentage of bookings taken through channels you control — your own website, direct phone, walk-in — compared to OTA bookings. Tracked month on month, not as a one-off figure.</p>
+        <p>A declining ratio, even in a period of strong occupancy, means you are becoming more dependent on channels that extract cost from every transaction.</p>
+        <div class="metric-warning"><strong>Watch for:</strong> Reports that emphasise total occupancy or total revenue without disclosing channel mix. Strong occupancy can mask accelerating OTA dependency.</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-card-header"><div class="metric-num">3</div><h4>GOP before management fees</h4></div>
+      <div class="metric-body">
+        <p>Gross Operating Profit before owner costs such as property taxes, insurance, and management fees. Seeing it before management fees gives you a view of the property's underlying commercial performance that is independent of the contract structure.</p>
+        <p>If you only see GOP after management fees, a high-fee arrangement can make a well-performing hotel look like a poor one, and vice versa.</p>
+        <div class="metric-warning"><strong>Watch for:</strong> GOP presented only as a single post-fee figure. If the fee structure has recently changed, a pre-fee comparison makes the real trend visible.</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-card-header"><div class="metric-num">4</div><h4>Food and beverage margin by outlet</h4></div>
+      <div class="metric-body">
+        <p>A report that shows total F&amp;B revenue and a blended margin obscures which outlets are profitable and which are subsidised by room revenue. Margin by outlet — all-day dining, bar, banqueting, room service shown separately — gives you the ability to make informed decisions about what to operate, what to outsource, and what to close.</p>
+        <div class="metric-warning"><strong>Watch for:</strong> A single F&amp;B margin line, or strong banqueting revenue without the associated margin. Banqueting can consume significant resource while contributing less profit than the revenue figure suggests.</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-card-header"><div class="metric-num">5</div><h4>Payroll as a percentage of total revenue</h4></div>
+      <div class="metric-body">
+        <p>Labour is typically the largest controllable cost in a hotel operation. Tracking it as a percentage of total revenue — not as an absolute figure — adjusts for seasonal fluctuations and allows comparison across periods and against industry benchmarks.</p>
+        <p>A rising payroll-to-revenue ratio is one of the earliest signals of operational inefficiency, and it often appears before its consequences show up in GOP.</p>
+        <div class="metric-warning"><strong>Watch for:</strong> Payroll shown as an absolute number with no revenue context, or payroll reported separately for rooms, F&amp;B, and administration without a total.</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-card-header"><div class="metric-num">6</div><h4>Maintenance CAPEX versus maintenance expensed</h4></div>
+      <div class="metric-body">
+        <p>Maintenance expensed flows through the P&amp;L and reduces profit in the period it is incurred. Maintenance CAPEX is capitalised and depreciated over time, which means it does not reduce current-period profit in the same way. This gives management latitude over how repairs are classified — and the classification can significantly affect the profit figure you see.</p>
+        <div class="metric-warning"><strong>Watch for:</strong> Reports that show only total maintenance expenditure without splitting the two categories, or properties where the expensed maintenance line is consistently lower than expected given the age and condition of the asset.</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-card-header"><div class="metric-num">7</div><h4>RevPAR versus competitive set</h4></div>
+      <div class="metric-body">
+        <p>RevPAR in isolation tells you how rooms performed against your own capacity. RevPAR indexed against your competitive set tells you whether you are gaining or losing market share. A hotel that achieves strong RevPAR growth while losing share is often benefiting from market tailwinds rather than management skill.</p>
+        <div class="metric-warning"><strong>Watch for:</strong> RevPAR reported only in absolute terms, with no competitive context. In a period of strong market growth, absolute RevPAR can look excellent while your relative position is declining.</div>
+      </div>
+    </div>
+
+    <h3>What to do if you are not getting these numbers</h3>
+
+    <p>The first step is to ask for them in writing, by name. If your management team is capable and well-organised, they can produce this data — it exists in their systems. If they cannot, or if they are resistant to providing it, that resistance is itself useful information.</p>
+
+    <p>The second step is to establish a baseline and look for trends across twelve months or more. The third step is to verify: management-produced reports are compiled by the same team whose performance they describe. An independent review of the underlying data gives you a second read that management cannot influence.</p>
+
+    <a href="#top" class="back-to-top">Back to top</a>
+  </div>
+</section>
+
+<!-- ARTICLE 3 -->
+<section class="article-section" id="revpar">
+  <div class="article-inner">
+    <div class="article-anchor-label">
+      <span class="art-num">Article 03</span>
+      <span class="art-tag">Revenue Management</span>
+    </div>
+    <h2>RevPAR is not the metric your hotel needs. Here is what to track instead.</h2>
+    <div class="article-meta">By <strong>Vaishakh Surendran MIH</strong> &nbsp;·&nbsp; Founder, Veritas Hospitality Advisors &nbsp;·&nbsp; October 2026</div>
+
+    <p>RevPAR — Revenue Per Available Room — is the metric that appears at the top of almost every hotel management report. It is the number general managers lead with in owner meetings, the figure benchmarked against competitive sets, and the KPI that drives most incentive schemes in Indian hotel management contracts.</p>
+
+    <p>It is also, for the owner's purposes, an incomplete measure. And in some scenarios, a misleading one.</p>
+
+    <h3>What RevPAR actually measures</h3>
+
+    <p>RevPAR is calculated by multiplying your average daily rate (ADR) by your occupancy percentage, or equivalently by dividing total room revenue by the number of available rooms. It tells you how efficiently you converted your room inventory into revenue.</p>
+
+    <p>What it does not tell you: how that revenue was acquired, what it cost to acquire it, or whether the revenue generated was actually profitable after distribution costs.</p>
+
+    <p>Consider two hotels with identical RevPAR of ₹3,500. Hotel A achieves this with 60% occupancy at ₹5,833 ADR, with 40% of bookings coming direct and an OTA blended acquisition cost of 12%. Hotel B achieves the same RevPAR with 75% occupancy at ₹4,667 ADR, with 85% of bookings through OTAs at a blended acquisition cost of 24%.</p>
+
+    <p>Their RevPAR is identical. Their profitability is not.</p>
+
+    <div class="callout">
+      <p>"RevPAR tells you how rooms performed against capacity. It says nothing about cost of acquisition, OTA dependency, or whether the revenue generated was actually profitable. NRevPAR (Net Revenue Per Available Room) — RevPAR after deducting the cost of distribution — is the more useful owner metric."</p>
+      <cite>Vaishakh Surendran MIH — Founder, Veritas Hospitality Advisors</cite>
+    </div>
+
+    <h3>NRevPAR: the metric RevPAR ignores</h3>
+
+    <p>NRevPAR — Net Revenue Per Available Room — is calculated by deducting distribution costs from room revenue before dividing by available rooms. Where RevPAR measures revenue performance, NRevPAR measures revenue performance net of the cost of acquiring that revenue.</p>
+
+    <p>For the same two hotels above:</p>
+
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th class="num">Hotel A</th>
+          <th class="num">Hotel B</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>RevPAR</td><td class="num">₹3,500</td><td class="num">₹3,500</td></tr>
+        <tr><td>OTA mix</td><td class="num">40%</td><td class="num">85%</td></tr>
+        <tr><td>Blended acquisition cost</td><td class="num">12%</td><td class="num">24%</td></tr>
+        <tr><td>Distribution cost per available room</td><td class="num">~₹168</td><td class="num">~₹714</td></tr>
+        <tr><td>NRevPAR</td><td class="num">~₹3,332</td><td class="num">~₹2,786</td></tr>
+      </tbody>
+    </table>
+
+    <p>Hotel B's RevPAR is identical to Hotel A's. Its NRevPAR is 16% lower. That difference flows through to the owner's bottom line — and it is invisible if the owner only looks at RevPAR.</p>
+
+    <h3>Why management reports lead with RevPAR anyway</h3>
+
+    <p>RevPAR is a useful operational metric. It reflects the combined performance of pricing and occupancy in a single number, which makes it easy to track and compare. For a management team responsible for filling rooms, it is a natural lead measure.</p>
+
+    <p>For an owner whose interest is in what those rooms actually contribute to profit after costs, it is a partial picture. Management teams are typically incentivised on RevPAR and occupancy, not on distribution cost or NRevPAR. This creates an alignment gap: a management team can hit its RevPAR targets by driving OTA volume at high acquisition cost, while the owner's net position deteriorates.</p>
+
+    <h3>What to track alongside RevPAR</h3>
+
+    <p>The owner's view of revenue performance benefits from tracking three things together:</p>
+
+    <ul>
+      <li><strong>RevPAR versus competitive set index.</strong> To distinguish market conditions from management contribution. If RevPAR rises because the market rose, management's role was limited. If RevPAR index rises — your RevPAR growing faster than the competitive set — that is evidence of active outperformance.</li>
+      <li><strong>NRevPAR trend.</strong> To see whether revenue growth is surviving the distribution journey. A rising RevPAR alongside a flat or falling NRevPAR is a signal worth investigating.</li>
+      <li><strong>Direct booking ratio trend.</strong> As the leading indicator. Before NRevPAR deteriorates, the direct booking ratio usually tells you which direction it is heading.</li>
+    </ul>
+
+    <p>None of this requires sophisticated systems. It requires a management team willing to report it and an owner willing to ask. The question most owners have not yet asked their management is a simple one: of the revenue this property generated last month, how much reached the hotel after paying for the channels used to acquire it?</p>
+
+    <p>The answer to that question tells you more about the commercial health of your hotel than RevPAR alone ever will.</p>
+
+    <a href="#top" class="back-to-top">Back to top</a>
   </div>
 </section>
 

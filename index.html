@@ -525,6 +525,14 @@ footer{background:var(--ink);padding:60px 40px 40px}
 .gate-download:hover{background:#8a5f1e}
 .gate-download::before{content:"↓";font-size:1.1rem}
 @media(max-width:900px){.playbook .section-inner{grid-template-columns:1fr;gap:48px}.playbook{padding-left:20px;padding-right:20px}}
+.contact-form{display:flex;flex-direction:column;gap:16px}
+.cf-field{display:flex;flex-direction:column;gap:6px}
+.cf-field label{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate)}
+.cf-field input,.cf-field textarea{font-family:"Public Sans",sans-serif;font-size:.88rem;padding:12px 14px;border:1px solid rgba(26,48,40,.18);background:#fff;color:var(--ink);outline:none;transition:border-color .15s;border-radius:0}
+.cf-field input:focus,.cf-field textarea:focus{border-color:var(--gold)}
+.cf-submit{background:var(--ink);color:var(--cream);font-family:"Public Sans",sans-serif;font-size:.85rem;font-weight:600;padding:14px 32px;border:none;cursor:pointer;letter-spacing:.03em;transition:background .2s;text-align:left;align-self:flex-start}
+.cf-submit:hover{background:var(--slate)}
+.cf-note{font-size:.7rem;color:var(--slate);margin-top:4px}
 </style>
 </head>
 <body>
@@ -915,6 +923,24 @@ footer{background:var(--ink);padding:60px 40px 40px}
   </div>
 </div>
 
+<section id="tool" style="background:var(--cream);padding:100px 40px;border-top:1px solid rgba(26,48,40,.1)">
+  <div class="section-inner" style="max-width:1120px;margin:0 auto">
+    <div style="max-width:600px;margin:0 auto 48px">
+      <p class="section-label" style="color:rgba(165,116,38,.9);margin-bottom:12px">Free Calculator</p>
+      <h2 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:clamp(1.7rem,2.5vw,2.4rem);color:var(--ink);line-height:1.15;margin-bottom:16px">Hotel Profit Health Check</h2>
+      <p style="font-size:.88rem;line-height:1.8;color:rgba(26,48,40,.65)">Enter your hotel's basics. Get an instant estimate of your true revenue yield, OTA cost drag, and three specific gaps worth investigating. No sign-up. No data stored.</p>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,48,40,.12);border-radius:6px;overflow:hidden;box-shadow:0 2px 16px rgba(26,48,40,.06)">
+      <iframe 
+        src="/health-check.html" 
+        style="width:100%;border:none;min-height:800px;display:block"
+        title="Hotel Profit Health Check — Veritas Hospitality Advisors"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
 <!-- FOUNDER TEASER -->
 <section class="founder" id="founder" style="background:var(--ink);padding:72px 40px">
   <div class="section-inner" style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center">
@@ -1194,23 +1220,6 @@ footer{background:var(--ink);padding:60px 40px 40px}
 <!-- PLAYBOOK GATE -->
 
 <!-- HOTEL PROFIT HEALTH CHECK TOOL -->
-<section id="tool" style="background:var(--cream);padding:100px 40px;border-top:1px solid rgba(26,48,40,.1)">
-  <div class="section-inner" style="max-width:1120px;margin:0 auto">
-    <div style="max-width:600px;margin:0 auto 48px">
-      <p class="section-label" style="color:rgba(165,116,38,.9);margin-bottom:12px">Free Calculator</p>
-      <h2 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:clamp(1.7rem,2.5vw,2.4rem);color:var(--ink);line-height:1.15;margin-bottom:16px">Hotel Profit Health Check</h2>
-      <p style="font-size:.88rem;line-height:1.8;color:rgba(26,48,40,.65)">Enter your hotel's basics. Get an instant estimate of your true revenue yield, OTA cost drag, and three specific gaps worth investigating. No sign-up. No data stored.</p>
-    </div>
-    <div style="background:#fff;border:1px solid rgba(26,48,40,.12);border-radius:6px;overflow:hidden;box-shadow:0 2px 16px rgba(26,48,40,.06)">
-      <iframe 
-        src="/health-check.html" 
-        style="width:100%;border:none;min-height:800px;display:block"
-        title="Hotel Profit Health Check — Veritas Hospitality Advisors"
-        loading="lazy">
-      </iframe>
-    </div>
-  </div>
-</section>
 
 <section class="playbook" id="playbook">
   <div class="section-inner">
@@ -1274,13 +1283,34 @@ footer{background:var(--ink);padding:60px 40px 40px}
       </div>
     </div>
     <div class="contact-details">
-      <div class="cd-item"><span class="cd-label">Phone</span><span class="cd-val"><a href="tel:+919072233008">+91 90722 33008</a></span></div>
-      <div class="cd-item"><span class="cd-label">Email</span><span class="cd-val"><a href="mailto:vaishakh@veritashospitalityadvisors.com">vaishakh@veritashospitalityadvisors.com</a></span></div>
-      <div class="cd-item"><span class="cd-label">Operates</span><span class="cd-val">Pan-India</span></div>
-      <div class="cd-item"><span class="cd-label">First step</span><span class="cd-val">Confidential conversation, no obligation</span></div>
-      <div class="hours-badge">
-        <span class="hours-dot"></span>
-        Available 09:00 – 20:00
+      <div id="contactFormWrap">
+        <form class="contact-form" id="contactForm" onsubmit="submitContact(event)">
+          <div class="cf-field">
+            <label for="cf-name">Your name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Ravi Sharma" required autocomplete="name">
+          </div>
+          <div class="cf-field">
+            <label for="cf-email">Email address</label>
+            <input type="email" id="cf-email" name="email" placeholder="ravi@yourhotel.in" required autocomplete="email">
+          </div>
+          <div class="cf-field">
+            <label for="cf-hotel">Hotel name</label>
+            <input type="text" id="cf-hotel" name="hotel" placeholder="The Grand Residency, Coimbatore">
+          </div>
+          <div class="cf-field">
+            <label for="cf-message">What would you like to discuss?</label>
+            <textarea id="cf-message" name="message" rows="4" placeholder="Briefly describe your situation or the question you would like to explore." style="resize:vertical"></textarea>
+          </div>
+          <button type="submit" class="cf-submit">Send message</button>
+          <p class="cf-note">Vaishakh responds personally, typically within one business day.</p>
+        </form>
+      </div>
+      <div id="contactSuccess" style="display:none">
+        <div style="width:36px;height:36px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M1 7l5 5L17 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.4rem;color:var(--ink);margin-bottom:12px">Message sent.</h3>
+        <p style="font-size:.88rem;line-height:1.8;color:var(--slate)">Vaishakh will be in touch within one business day. If your situation is urgent, call directly on <a href="tel:+919072233008" style="color:var(--ink)">+91 90722 33008</a>.</p>
       </div>
     </div>
   </div>
@@ -1521,6 +1551,28 @@ function submitGate(e){
     headers:{'Content-Type':'application/json','Accept':'application/json'},
     body:JSON.stringify({name,email,hotel:hotel||'',_subject:'Playbook download — '+name,_captcha:'false'})
   }).catch(()=>{}); // silent — success shown regardless
+}
+function submitContact(e){
+  e.preventDefault();
+  var name=document.getElementById('cf-name').value.trim();
+  var email=document.getElementById('cf-email').value.trim();
+  var hotel=document.getElementById('cf-hotel').value.trim();
+  var message=document.getElementById('cf-message').value.trim();
+  if(!name||!email)return;
+  var btn=e.target.querySelector('.cf-submit');
+  btn.textContent='Sending...';
+  btn.disabled=true;
+  fetch('https://formsubmit.co/ajax/vaishakh@veritashospitalityadvisors.com',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({name:name,email:email,hotel:hotel||'',message:message||'',_subject:'Website enquiry — '+name,_captcha:'false'})
+  }).then(function(){
+    document.getElementById('contactFormWrap').style.display='none';
+    document.getElementById('contactSuccess').style.display='block';
+  }).catch(function(){
+    document.getElementById('contactFormWrap').style.display='none';
+    document.getElementById('contactSuccess').style.display='block';
+  });
 }
 </script>
 </body>

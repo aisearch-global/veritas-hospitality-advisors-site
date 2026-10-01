@@ -112,8 +112,8 @@ def make_styles():
         'cover_title': ParagraphStyle(
             'cover_title',
             fontName=serif_bold,
-            fontSize=32,
-            leading=38,
+            fontSize=40,
+            leading=46,
             textColor=WHITE,
             alignment=TA_LEFT,
             spaceAfter=10,
@@ -288,12 +288,63 @@ def make_header_footer(canvas, doc, styles):
     page = doc.page
 
     if page == 1:
-        # Full-bleed INK background for the cover
+        # ── Full-bleed INK background ──────────────────────────────────
         canvas.setFillColor(INK)
         canvas.rect(0, 0, W, H, fill=1, stroke=0)
-        # Gold top bar
+
+        # ── GOLD top bar (8 pt) ────────────────────────────────────────
         canvas.setFillColor(GOLD)
-        canvas.rect(0, H - 6, W, 6, fill=1, stroke=0)
+        canvas.rect(0, H - 8, W, 8, fill=1, stroke=0)
+
+        # ── Bottom info block (painted on canvas, anchored) ────────────
+        bot_y  = 40 * mm          # baseline for bottom block
+        lx     = MARGIN_OUTER     # left margin
+        rx     = W - MARGIN_OUTER # right edge
+        mid    = W / 2
+
+        # Thin gold rule above bottom block
+        canvas.setStrokeColor(GOLD)
+        canvas.setLineWidth(0.6)
+        canvas.line(lx, bot_y + 36, rx, bot_y + 36)
+
+        # Info labels (muted green)
+        canvas.setFont('Helvetica-Bold', 7)
+        canvas.setFillColor(colors.HexColor('#6B9E84'))
+        canvas.drawString(lx,   bot_y + 24, 'PREPARED BY')
+        canvas.drawString(mid,  bot_y + 24, 'DATE')
+
+        # Info values (white)
+        canvas.setFont('Helvetica-Bold', 10)
+        canvas.setFillColor(WHITE)
+        canvas.drawString(lx,   bot_y + 10, 'Vaishakh Surendran')
+        canvas.drawString(mid,  bot_y + 10, 'October 2026')
+
+        # Second row labels
+        canvas.setFont('Helvetica-Bold', 7)
+        canvas.setFillColor(colors.HexColor('#6B9E84'))
+        canvas.drawString(lx,   bot_y - 4, 'ORGANISATION')
+        canvas.drawString(mid,  bot_y - 4, 'STATUS')
+
+        # Second row values
+        canvas.setFont('Helvetica-Bold', 9)
+        canvas.setFillColor(WHITE)
+        canvas.drawString(lx,   bot_y - 16, 'Veritas Hospitality Advisors')
+        canvas.drawString(mid,  bot_y - 16, 'Editorial draft')
+
+        # Thin rule below bottom block
+        canvas.setStrokeColor(colors.HexColor('#2A4A38'))
+        canvas.setLineWidth(0.4)
+        canvas.line(lx, bot_y - 28, rx, bot_y - 28)
+
+        # Disclaimer
+        canvas.setFont('Helvetica', 6.5)
+        canvas.setFillColor(colors.HexColor('#7AAA90'))
+        disclaimer = (
+            'Illustrative figures are fictional and not benchmarks. '
+            'This guide does not constitute financial, legal or accounting advice.'
+        )
+        canvas.drawString(lx, bot_y - 40, disclaimer)
+
         canvas.restoreState()
         return
 
@@ -317,90 +368,56 @@ def make_header_footer(canvas, doc, styles):
 
 # ── Cover page ──────────────────────────────────────────────────────────────────
 def build_cover(story, styles, cw):
-    """Full ink-green cover — background painted by onFirstPage canvas callback."""
-    story.append(Spacer(1, 52))
+    """
+    Full ink-green cover.
+    Background + bottom info block are painted by make_header_footer canvas callback.
+    This function only places the text content in the upper two-thirds.
+    """
+    # Push content down from the gold top bar — sit in upper third
+    story.append(Spacer(1, 68))
 
+    # Eyebrow label
     story.append(Paragraph('VERITAS HOSPITALITY ADVISORS', styles['cover_byline']))
-    story.append(Spacer(1, 12))
+    story.append(Spacer(1, 18))
 
+    # Gold accent rule above title
+    story.append(ThinRule(cw, color=GOLD, thickness=1.2))
+    story.append(Spacer(1, 18))
+
+    # Main title — large, left-aligned, white
     story.append(Paragraph(
-        'The Owner&#x2019;s Profit<br/>Control Playbook',
+        'The Owner&#x2019;s<br/>Profit Control<br/>Playbook',
         styles['cover_title']
     ))
-    story.append(Spacer(1, 10))
+    story.append(Spacer(1, 20))
+
+    # Subtitle
     story.append(Paragraph(
         'A 90-day diagnostic and governance system<br/>for independent hotels in India',
         styles['cover_subtitle']
     ))
-    story.append(Spacer(1, 44))
+    story.append(Spacer(1, 32))
 
-    story.append(ThinRule(cw, color=colors.HexColor('#3D6B56'), thickness=0.6))
-    story.append(Spacer(1, 22))
+    # Slim SLATE rule as a visual separator
+    story.append(ThinRule(cw, color=colors.HexColor('#3D6B56'), thickness=0.5))
+    story.append(Spacer(1, 20))
 
-    cover_info_label = ParagraphStyle(
-        'cover_info_label',
-        fontName='Helvetica-Bold',
-        fontSize=7.5,
-        leading=10,
-        textColor=colors.HexColor('#6B9E84'),
-    )
-    cover_info_value = ParagraphStyle(
-        'cover_info_value',
-        fontName='Helvetica-Bold',
-        fontSize=10,
-        leading=14,
-        textColor=WHITE,
-    )
-
-    info_data = [
-        [
-            Paragraph('VERSION', cover_info_label),
-            Paragraph('DATE', cover_info_label),
-        ],
-        [
-            Paragraph('Design version 1.0', cover_info_value),
-            Paragraph('1 October 2026', cover_info_value),
-        ],
-        [Spacer(1, 10), Spacer(1, 10)],
-        [
-            Paragraph('PREPARED BY', cover_info_label),
-            Paragraph('STATUS', cover_info_label),
-        ],
-        [
-            Paragraph('Veritas Hospitality Advisors', cover_info_value),
-            Paragraph('Editorial draft — founder sign-off required', cover_info_value),
-        ],
-    ]
-
-    col_w = cw / 2
-    info_table = Table(info_data, colWidths=[col_w, col_w])
-    info_table.setStyle(TableStyle([
-        ('TOPPADDING', (0, 0), (-1, -1), 3),
-        ('BOTTOMPADDING', (0, 0), (-1, -1), 3),
-        ('LEFTPADDING', (0, 0), (-1, -1), 0),
-        ('RIGHTPADDING', (0, 0), (-1, -1), 4),
-        ('VALIGN', (0, 0), (-1, -1), 'TOP'),
-    ]))
-    story.append(info_table)
-    story.append(Spacer(1, 40))
-
-    story.append(ThinRule(cw, color=colors.HexColor('#2A4A38'), thickness=0.4))
-    story.append(Spacer(1, 10))
-
-    disclaimer_style = ParagraphStyle(
-        'cover_disclaimer',
+    # Short descriptor paragraph
+    desc_style = ParagraphStyle(
+        'cover_desc',
         fontName='Helvetica',
-        fontSize=7.5,
-        leading=11,
-        textColor=colors.HexColor('#7AAA90'),
+        fontSize=9.5,
+        leading=15,
+        textColor=colors.HexColor('#C8C0A8'),
+        alignment=TA_LEFT,
     )
     story.append(Paragraph(
-        'Illustrative figures in this playbook are fictional and are not benchmarks. '
-        'Checklists and worksheets are proposed operating tools; they have not been tested on Veritas clients. '
-        'This guide does not constitute financial, legal or accounting advice. '
-        'Verify all data and definitions against current sources and local professional advice before acting on them.',
-        disclaimer_style
+        'A practical owner&#x2019;s guide to understanding where the money goes '
+        'in an independent Indian hotel &#x2014; from channel economics and GST '
+        'to governance, cash control and the 90-day decision process.',
+        desc_style
     ))
+    # Bottom info block is rendered entirely on canvas — no story elements needed
 
 
 # ── Table of contents ─────────────────────────────────────────────────────────

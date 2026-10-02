@@ -173,7 +173,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,48,40,.94
 
 /* ── HERO ── */
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:blur(3px) brightness(.55);transform:scale(1.06)}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 65%;filter:blur(3px) brightness(.55);transform:scale(1.06)}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(26,48,40,.22) 0%,rgba(26,48,40,.52) 50%,rgba(26,48,40,.9) 100%)}
 .hero-content{position:relative;z-index:2;max-width:1120px;margin:0 auto;padding:140px 40px 0;width:100%}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
@@ -382,7 +382,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,48,40,.94
 
 /* ── ADVISORY IMAGE ── */
 .advisory-img-section{position:relative;height:360px;overflow:hidden}
-.advisory-img-section img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.advisory-img-section img{width:100%;height:100%;object-fit:cover;object-position:center 55%}
 .advisory-img-overlay{position:absolute;inset:0;background:rgba(26,48,40,.45)}
 
 /* ── CONTACT / CTA ── */
@@ -557,7 +557,7 @@ footer{background:var(--ink);padding:60px 40px 40px}
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="mailto:viveka@aisearch.global" class="nav-cta">Discuss confidentially</a>
+  <a href="mailto:vaishakh@veritashospitalityadvisors.com" class="nav-cta">Discuss confidentially</a>
 </nav>
 
 <!-- HERO -->
@@ -864,7 +864,7 @@ footer{background:var(--ink);padding:60px 40px 40px}
         <h3>Your copy is ready.</h3>
         <p>The Playbook opens below. If Vaishakh thinks there is something specific worth discussing about your hotel, he will reach out within a few days.</p>
         <a class="gate-download" href="https://veritashospitalityadvisors.com/owner-playbook.pdf" target="_blank" rel="noopener">Download the Owner's Playbook (PDF)</a>
-        <p style="font-size:.7rem;color:rgba(245,244,239,.3);margin-top:16px">Or reach Vaishakh directly: viveka@aisearch.global</p>
+        <p style="font-size:.7rem;color:rgba(245,244,239,.3);margin-top:16px">Or reach Vaishakh directly: vaishakh@veritashospitalityadvisors.com</p>
       </div>
     </div>
   </div>
@@ -881,7 +881,7 @@ footer{background:var(--ink);padding:60px 40px 40px}
     </div>
     <div class="contact-details">
       <div id="contactFormWrap">
-        <form class="contact-form" id="contactForm" action="https://formsubmit.co/viveka@aisearch.global" method="POST">
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/vaishakh@veritashospitalityadvisors.com" method="POST">
           <input type="hidden" name="_subject" value="New enquiry — Veritas website">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
@@ -1044,8 +1044,8 @@ function showResults(score){
     <div class="res-cta">
       <h3>Discuss your results confidentially</h3>
       <p>Vaishakh Surendran will review your situation and tell you honestly whether Veritas can help — and if so, what that looks like. There is no obligation and no pitch.</p>
-      <a href="mailto:viveka@aisearch.global?subject=Owner%20Diagnostic%20Results%20%E2%80%94%20${pct}%25%20score" class="btn-cta">Request a confidential discussion</a>
-      <span class="res-contact">viveka@aisearch.global · +91 90722 33008</span>
+      <a href="mailto:vaishakh@veritashospitalityadvisors.com?subject=Owner%20Diagnostic%20Results%20%E2%80%94%20${pct}%25%20score" class="btn-cta">Request a confidential discussion</a>
+      <span class="res-contact">vaishakh@veritashospitalityadvisors.com · +91 90722 33008</span>
     </div>
     <button class="restart-link" onclick="restartDiag()">Restart diagnostic</button>
   `;
@@ -1094,7 +1094,7 @@ window.addEventListener('scroll',()=>{
       <div class="drawer-sources" id="drawerSources" style="display:none"></div>
       <div class="drawer-cta">
         <p>Veritas works exclusively for independent hotel owners — reviewing commercial performance, operational governance, and owner reporting.</p>
-        <a href="mailto:viveka@aisearch.global?subject=Insight%20enquiry">Discuss confidentially with Vaishakh →</a>
+        <a href="mailto:vaishakh@veritashospitalityadvisors.com?subject=Insight%20enquiry">Discuss confidentially with Vaishakh →</a>
       </div>
     </div>`;
   document.body.appendChild(drawer);
@@ -1158,7 +1158,7 @@ function submitGate(e){
   // Optional: send to a mailto as fallback notification
   const hotel=document.getElementById('gate-hotel').value.trim();
   const body=encodeURIComponent(`Playbook download request\nName: ${name}\nEmail: ${email}\nHotel: ${hotel||'(not provided)'}`);
-  fetch(`https://formsubmit.co/ajax/viveka@aisearch.global`,{
+  fetch(`https://formsubmit.co/ajax/vaishakh@veritashospitalityadvisors.com`,{
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
     body:JSON.stringify({name,email,hotel:hotel||'',_subject:'Playbook download — '+name,_captcha:'false'})
@@ -1174,7 +1174,7 @@ function submitContact(e){
   var btn=e.target.querySelector('.cf-submit');
   btn.textContent='Sending...';
   btn.disabled=true;
-  fetch('https://formsubmit.co/ajax/viveka@aisearch.global',{
+  fetch('https://formsubmit.co/ajax/vaishakh@veritashospitalityadvisors.com',{
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
     body:JSON.stringify({name:name,email:email,hotel:hotel||'',message:message||'',_subject:'Website enquiry — '+name,_captcha:'false'})

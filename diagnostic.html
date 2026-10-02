@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Owner Diagnostic — Veritas Hospitality Advisors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<style>
+body{margin:0;background:var(--cream)}
+.diag-standalone-header{background:var(--ink);padding:20px 40px;display:flex;align-items:center;justify-content:space-between}
+.diag-standalone-header a{color:rgba(245,244,239,.5);font-size:.78rem;text-decoration:none;letter-spacing:.04em}
+.diag-standalone-header a:hover{color:var(--cream)}
+.diag-standalone-title{color:var(--cream);font-family:"Source Serif 4",serif;font-weight:300;font-size:1.1rem}
+.diag-standalone-intro{max-width:800px;margin:60px auto 0;padding:0 40px}
+.diag-standalone-intro h1{font-family:"Source Serif 4",serif;font-weight:300;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--ink);line-height:1.15;margin-bottom:16px}
+.diag-standalone-intro p{font-size:.9rem;line-height:1.8;color:rgba(26,48,40,.6);margin-bottom:0}
+#owner-diagnostic{display:block;background:var(--cream);padding:0 40px 80px}
+@media(max-width:640px){.diag-standalone-header{padding:16px 20px}.diag-standalone-intro{padding:0 20px;margin-top:40px}#owner-diagnostic{padding-left:20px;padding-right:20px}}
+</style>
+</head>
+<body>
+
+<header class="diag-standalone-header">
+  <a href="index.html">&larr; Back to Veritas</a>
+  <span class="diag-standalone-title">Owner Diagnostic</span>
+</header>
+
+<div class="diag-standalone-intro">
+  <h1>Is your hotel's reporting working for you?</h1>
+  <p>15 questions. 5 minutes. No signup required -- results are calculated in your browser and not stored anywhere. Covers owner reporting, commercial performance, operational governance, and your position as an owner.</p>
+</div>
+
+<!-- DIAGNOSTIC TOOL -->
+<div id="owner-diagnostic">
+  <div class="diag-inner">
+    <div class="diag-disclaimer">
+      <p><strong>What this is:</strong> A structured self-assessment to help you identify where your hotel's financial reporting, commercial performance, or operational oversight may have gaps. Results are indicative only — not a financial audit or legal opinion. <strong>What this is not:</strong> A technology audit, a hotel operations tool, or a guest-experience assessment.</p>
+    </div>
+
+    <form id="diagForm">
+
+      <div class="diag-section-hd">
+        <div class="ds-tag">Section 01</div>
+        <h3>Owner Reporting</h3>
+        <p>What your monthly reporting covers — and whether it gives you the full picture.</p>
+      </div>
+
+      <div class="q-block">
+        <span class="q-label">How often do you receive a formal written report from your hotel management team?</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q1" value="0"><span class="opt-text">Monthly — with full P&amp;L, RevPAR, and operational summary</span></label>
+          <label class="opt"><input type="radio" name="q1" value="1"><span class="opt-text">Monthly — but mainly occupancy and revenue figures<small>Profit and cost detail is limited or absent</small></span></label>
+          <label class="opt"><input type="radio" name="q1" value="2"><span class="opt-text">Quarterly or when I ask<small>No regular reporting cadence</small></span></label>
+          <label class="opt"><input type="radio" name="q1" value="2"><span class="opt-text">I rely on what my GM tells me verbally</span></label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <span class="q-label">Does your monthly report show Gross Operating Profit (GOP) — not just revenue?</span>
+        <span class="q-hint">GOP = Revenue minus departmental expenses. It's what the hotel actually earns before fixed costs.</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q2" value="0"><span class="opt-text">Yes — I see GOP every month with a breakdown by department</span></label>
+          <label class="opt"><input type="radio" name="q2" value="1"><span class="opt-text">I see total revenue and a bottom-line figure, but not GOP specifically</span></label>
+          <label class="opt"><input type="radio" name="q2" value="2"><span class="opt-text">No — I mainly see occupancy percentage and total revenue</span></label>
+          <label class="opt"><input type="radio" name="q2" value="2"><span class="opt-text">I don't know what my GOP is</span></label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <span class="q-label">When you receive financial reports, can you trace a revenue figure back to its source?</span>
+        <span class="q-hint">If your report says "Room Revenue: ₹18 lakhs," can you see which bookings, channels, and dates make up that number?</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q3" value="0"><span class="opt-text">Yes — I can request source-level data and it's provided</span></label>
+          <label class="opt"><input type="radio" name="q3" value="1"><span class="opt-text">Partially — some figures can be traced but not all</span></label>
+          <label class="opt"><input type="radio" name="q3" value="2"><span class="opt-text">No — I receive summary totals only and can't easily see the detail behind them</span></label>
+          <label class="opt"><input type="radio" name="q3" value="2"><span class="opt-text">I've never thought to check</span></label>
+        </div>
+      </div>
+
+      <div class="diag-section-hd">
+        <div class="ds-tag">Section 02</div>
+        <h3>Commercial Performance</h3>
+        <p>How your hotel generates revenue — and whether you're seeing all of it.</p>
+      </div>
+
+      <div class="q-block">
+        <span class="q-label">Do you know what percentage of your room revenue comes from OTAs versus direct bookings?</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q4" value="0"><span class="opt-text">Yes — I see a channel-by-channel revenue breakdown monthly</span></label>
+          <label class="opt"><input type="radio" name="q4" value="1"><span class="opt-text">Approximately — I have a rough sense but not precise data</span></label>
+          <label class="opt"><input type="radio" name="q4" value="2"><span class="opt-text">No — I see total revenue but not broken down by channel</span></label>
+          <label class="opt"><input type="radio" name="q4" value="2"><span class="opt-text">I know OTAs are significant but I've never seen the actual split</span></label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <span class="q-label">Do you know what your hotel paid in OTA commissions last financial year?</span>
+        <span class="q-hint">OTA commissions are typically 15–25% of room revenue. On ₹1 crore in OTA revenue, that's ₹15–25 lakhs leaving your hotel annually.</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q5" value="0"><span class="opt-text">Yes — I see commission costs as a line item in my P&amp;L</span></label>
+          <label class="opt"><input type="radio" name="q5" value="1"><span class="opt-text">I know the rate (e.g. 18%) but I've never calculated the rupee value</span></label>
+          <label class="opt"><input type="radio" name="q5" value="2"><span class="opt-text">I've been told it's "in the rates" but I've never seen it as a separate figure</span></label>
+          <label class="opt"><input type="radio" name="q5" value="2"><span class="opt-text">I don't know what my hotel paid in OTA commissions</span></label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <span class="q-label">Has your hotel's Average Daily Rate (ADR) increased in line with your costs over the past two years?</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q6" value="0"><span class="opt-text">Yes — rates have grown and I've seen the comparison data</span></label>
+          <label class="opt"><input type="radio" name="q6" value="1"><span class="opt-text">I believe rates have increased but haven't seen it tracked against costs</span></label>
+          <label class="opt"><input type="radio" name="q6" value="2"><span class="opt-text">Rates have been flat — we've focused on maintaining occupancy</span></label>
+          <label class="opt"><input type="radio" name="q6" value="2"><span class="opt-text">I'm not sure — I don't receive trend data across years</span></label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <span class="q-label">When your hotel offers a discounted rate, do you approve it — or does management decide independently?</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q7" value="0"><span class="opt-text">There's a written rate authority matrix — discounts above a threshold need my approval</span></label>
+          <label class="opt"><input type="radio" name="q7" value="1"><span class="opt-text">I'm usually informed, but management makes the call</span></label>
+          <label class="opt"><input type="radio" name="q7" value="2"><span class="opt-text">Management sets rates independently — I find out afterwards or not at all</span></label>
+          <label class="opt"><input type="radio" name="q7" value="2"><span class="opt-text">I'm not sure what the process is</span></label>
+        </div>
+      </div>
+
+      <div class="diag-section-hd">
+        <div class="ds-tag">Section 03</div>
+        <h3>Operational Governance</h3>
+        <p>How decisions are made in your hotel — and whether you have oversight of them.</p>
+      </div>
+
+      <div class="q-block">
+        <span class="q-label">Is there a written operating plan or annual budget that your management team works against?</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q8" value="0"><span class="opt-text">Yes — there's a Board-approved operating plan with monthly targets and variance reporting</span></label>
+          <label class="opt"><input type="radio" name="q8" value="1"><span class="opt-text">There's a budget, but actual-vs-budget comparison isn't regularly shared</span></label>
+          <label class="opt"><input type="radio" name="q8" value="2"><span class="opt-text">Operating decisions are made without a formal plan</span></label>
+          <label class="opt"><input type="radio" name="q8" value="2"><span class="opt-text">I'm not sure what plan, if any, management follows</span></label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <span class="q-label">If your General Manager resigned tomorrow, how confident are you in the continuity of your hotel's operations?</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q9" value="0"><span class="opt-text">Very confident — standard operating procedures are documented and the team can run independently</span></label>
+          <label class="opt"><input type="radio" name="q9" value="1"><span class="opt-text">Somewhat confident — there would be disruption but not collapse</span></label>
+          <label class="opt"><input type="radio" name="q9" value="2"><span class="opt-text">Not confident — too much relies on one person or informal knowledge</span></label>
+          <label class="opt"><input type="radio" name="q9" value="2"><span class="opt-text">I haven't thought about this</span></label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <span class="q-label">Are capital expenditure decisions (above a set threshold) formally approved by you before they're committed?</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q10" value="0"><span class="opt-text">Yes — there's a written approval process with defined thresholds</span></label>
+          <label class="opt"><input type="radio" name="q10" value="1"><span class="opt-text">I'm usually consulted, but the process is informal</span></label>
+          <label class="opt"><input type="radio" name="q10" value="2"><span class="opt-text">Management handles capital spending and informs me afterwards</span></label>
+          <label class="opt"><input type="radio" name="q10" value="2"><span class="opt-text">I'm not sure how capital decisions are made</span></label>
+        </div>
+      </div>
+
+      <div class="diag-section-hd">
+        <div class="ds-tag">Section 04</div>
+        <h3>Owner Position</h3>
+        <p>Whether you have the information and oversight to protect your ownership position.</p>
+      </div>
+
+      <div class="q-block">
+        <span class="q-label">Do you know your hotel's current RevPAR — and how it compares to your competitive set?</span>
+        <span class="q-hint">RevPAR (Revenue Per Available Room) is the standard measure of room revenue performance. It equals Average Daily Rate × Occupancy.</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q11" value="0"><span class="opt-text">Yes — I see RevPAR monthly and it's benchmarked against comparable hotels</span></label>
+          <label class="opt"><input type="radio" name="q11" value="1"><span class="opt-text">I know our occupancy and rate, but not RevPAR specifically</span></label>
+          <label class="opt"><input type="radio" name="q11" value="2"><span class="opt-text">I see occupancy figures but no competitive benchmarking</span></label>
+          <label class="opt"><input type="radio" name="q11" value="2"><span class="opt-text">I don't have regular access to RevPAR data</span></label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <span class="q-label">Have you ever commissioned an independent review of your hotel's financial performance — alongside your team's own reporting?</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q12" value="0"><span class="opt-text">Yes — within the last two years</span></label>
+          <label class="opt"><input type="radio" name="q12" value="1"><span class="opt-text">Yes — but not recently (more than two years ago)</span></label>
+          <label class="opt"><input type="radio" name="q12" value="2"><span class="opt-text">No — I rely on management's own reporting</span></label>
+          <label class="opt"><input type="radio" name="q12" value="2"><span class="opt-text">I didn't know this was something owners typically did</span></label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <span class="q-label">How would you describe the depth and consistency of your hotel's financial reporting?</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q13" value="0"><span class="opt-text">High — the reporting is detailed and consistent, and I can see the detail behind the figures</span></label>
+          <label class="opt"><input type="radio" name="q13" value="1"><span class="opt-text">Moderate — the reporting looks reasonable but I haven't independently verified it</span></label>
+          <label class="opt"><input type="radio" name="q13" value="2"><span class="opt-text">Low — I have questions about the accuracy of what I receive</span></label>
+          <label class="opt"><input type="radio" name="q13" value="2"><span class="opt-text">I accept the reports I receive without questioning them</span></label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <span class="q-label">In the last 12 months, have you received a report that raised a concern you couldn't follow up on because the underlying data wasn't available?</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q14" value="0"><span class="opt-text">No — underlying data is always available on request</span></label>
+          <label class="opt"><input type="radio" name="q14" value="1"><span class="opt-text">Once or twice — I've had to follow up to get clarity</span></label>
+          <label class="opt"><input type="radio" name="q14" value="2"><span class="opt-text">Yes — there are figures I'd like more detail on</span></label>
+          <label class="opt"><input type="radio" name="q14" value="2"><span class="opt-text">Often — the detail I need isn't part of the standard report</span></label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <span class="q-label">Overall — how well does your current oversight of your hotel match the level of oversight you'd expect for an asset of this value?</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q15" value="0"><span class="opt-text">Very well — I have the information, structure, and access I need</span></label>
+          <label class="opt"><input type="radio" name="q15" value="1"><span class="opt-text">Reasonably well — there are gaps but nothing that concerns me significantly</span></label>
+          <label class="opt"><input type="radio" name="q15" value="2"><span class="opt-text">Poorly — the oversight I have isn't commensurate with the value at stake</span></label>
+          <label class="opt"><input type="radio" name="q15" value="2"><span class="opt-text">I haven't considered my hotel in terms of asset oversight before</span></label>
+        </div>
+      </div>
+
+      <div class="submit-row">
+        <button type="button" class="btn-run" onclick="runDiagnostic()">See my results</button>
+        <p class="submit-small">Results are calculated locally. No data is sent anywhere.</p>
+      </div>
+
+    </form>
+
+    <div id="diag-results"></div>
+
+  </div>
+</div>
+
+<section id="tool" style="background:var(--cream);padding:100px 40px;border-top:1px solid rgba(26,48,40,.1)">
+  <div class="section-inner" style="max-width:1120px;margin:0 auto">
+    <div style="max-width:600px;margin:0 auto 48px">
+      <p class="section-label" style="color:rgba(165,116,38,.9);margin-bottom:12px">Free Calculator</p>
+      <h2 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:clamp(1.7rem,2.5vw,2.4rem);color:var(--ink);line-height:1.15;margin-bottom:16px">Hotel Profit Health Check</h2>
+      <p style="font-size:.88rem;line-height:1.8;color:rgba(26,48,40,.65)">Enter your hotel's basics. Get an instant estimate of your true revenue yield, OTA cost drag, and three specific gaps worth investigating. No sign-up. No data stored.</p>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,48,40,.12);border-radius:6px;overflow:hidden;box-shadow:0 2px 16px rgba(26,48,40,.06)">
+      <iframe 
+        src="/health-check.html" 
+        style="width:100%;border:none;min-height:800px;display:block"
+        title="Hotel Profit Health Check — Veritas Hospitality Advisors"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+<script>
+function openDiagnostic(e){
+  if(e)e.preventDefault();
+  const d=document.getElementById('owner-diagnostic');
+  d.style.display='block';
+  setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'start'}),60);
+}
+
+function runDiagnostic(){
+  const form=document.getElementById('diagForm');
+  const questions=['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','q11','q12','q13','q14','q15'];
+  let score=0,answered=0,missing=[];
+  questions.forEach((q,i)=>{
+    const v=form.querySelector(`input[name="${q}"]:checked`);
+    if(v){answered++;score+=parseInt(v.value);}
+    else missing.push(i+1);
+  });
+  if(answered<questions.length){
+    alert(`Please answer all 15 questions before seeing your results. Missing: Q${missing.join(', Q')}.`);
+    return;
+  }
+  showResults(score);
+}
+
+function showResults(score){
+  document.getElementById('diagForm').style.display='none';
+  const pct=Math.round((1-(score/30))*100);
+  let verdict,tier,findings=[];
+
+  if(score<=6){
+    verdict='Strong owner oversight';tier='low';
+    findings=[
+      {sev:'',title:'Reporting structure is working',body:'Your hotel reporting gives you the visibility needed to make ownership decisions. Continue to review independently at least annually.'},
+      {sev:'',title:'Consider independent benchmarking',body:'Even strong reporting benefits from an external perspective. A periodic independent review can confirm what\'s working and surface what isn\'t visible from inside.'}
+    ];
+  } else if(score<=14){
+    verdict='Moderate gaps — worth addressing';tier='medium';
+    findings=[
+      {sev:'medium',title:'Reporting depth is limited',body:'You\'re receiving performance data, but it may not give you the full picture needed for ownership decisions. Key metrics — GOP, channel contribution, cost-per-booking — may not yet be part of the standard report.'},
+      {sev:'medium',title:'Commercial performance visibility is partial',body:'You have a general sense of how your hotel is performing commercially, but may lack the data to act decisively on pricing, distribution, or channel strategy.'},
+      {sev:'',title:'Governance structure could be formalised',body:'Operating decisions appear to be made without a written authority framework. This creates risk if key personnel change.'}
+    ];
+  } else {
+    verdict='Significant gaps — owner position at risk';tier='high';
+    findings=[
+      {sev:'high',title:'Owner reporting is insufficient for asset oversight',body:'The level of reporting you receive does not give you the visibility expected for an asset of this value. Key performance metrics, cost detail and channel data are not yet part of your regular reporting.'},
+      {sev:'high',title:'Commercial performance is largely unmonitored',body:'OTA dependence, commission costs, rate strategy, and channel contribution appear to be handled day to day without a structured owner-level review. This is where margin leakage most commonly occurs.'},
+      {sev:'medium',title:'Operational governance is informal or absent',body:'Operating decisions, capital expenditure, and staff authority appear to be managed without a formal framework approved by ownership. This creates significant continuity and accountability risk.'},
+      {sev:'medium',title:'No external benchmark yet',body:'Your results have not yet been benchmarked against the market by an outside reviewer. A shared, independent read helps owner and team plan from the same numbers.'}
+    ];
+  }
+
+  const findingHtml=findings.map(f=>`
+    <div class="finding ${f.sev}">
+      ${f.sev?`<div class="f-flag">${f.sev==='high'?'High priority':'Worth addressing'}</div>`:''}
+      <h4>${f.title}</h4>
+      <p>${f.body}</p>
+    </div>
+  `).join('');
+
+  document.getElementById('diag-results').innerHTML=`
+    <div class="res-score-box">
+      <div class="res-score-num">${pct}<span style="font-size:1.5rem">%</span></div>
+      <div class="res-score-meta">
+        <div class="rs-label">Owner oversight score</div>
+        <div class="rs-verdict">${verdict}</div>
+      </div>
+    </div>
+    <p class="res-intro">Based on your answers, here are the areas that most need attention. These findings are indicative — a conversation with Vaishakh will give you a more precise picture of where your hotel stands.</p>
+    <div class="finding-list">${findingHtml}</div>
+    <div class="res-cta">
+      <h3>Discuss your results confidentially</h3>
+      <p>Vaishakh Surendran will review your situation and tell you honestly whether Veritas can help — and if so, what that looks like. There is no obligation and no pitch.</p>
+      <a href="mailto:viveka@aisearch.global?subject=Owner%20Diagnostic%20Results%20%E2%80%94%20${pct}%25%20score" class="btn-cta">Request a confidential discussion</a>
+      <span class="res-contact">viveka@aisearch.global · +91 90722 33008</span>
+    </div>
+    <button class="restart-link" onclick="restartDiag()">Restart diagnostic</button>
+  `;
+
+  document.getElementById('diag-results').style.display='block';
+  setTimeout(()=>document.getElementById('diag-results').scrollIntoView({behavior:'smooth',block:'start'}),60);
+}
+
+function restartDiag(){
+  document.getElementById('diagForm').reset();
+  document.getElementById('diagForm').style.display='block';
+  document.getElementById('diag-results').style.display='none';
+  document.getElementById('diag-results').innerHTML='';
+  document.getElementById('owner-diagnostic').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.addEventListener('click',()=>{
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
+    if(!isOpen)item.classList.add('open');
+  });
+});
+
+// Subtle hero parallax
+window.addEventListener('scroll',()=>{
+  const bg=document.getElementById('heroBg');
+  if(bg)bg.style.transform=`scale(1.06) translateY(${window.scrollY*0.18}px)`;
+},{passive:true});
+
+// ── BLOG DRAWER DOM (appended dynamically) ──
+(function(){
+  const drawer=document.createElement('div');
+  drawer.id='blogDrawer';
+  drawer.className='blog-drawer';
+  drawer.setAttribute('role','dialog');
+  drawer.setAttribute('aria-modal','true');
+  drawer.innerHTML=`
+    <div class="blog-drawer-overlay" onclick="closePost()"></div>
+    <div class="blog-drawer-panel">
+      <button class="drawer-close" onclick="closePost()" aria-label="Close">✕</button>
+      <p class="drawer-tag" id="drawerTag"></p>
+      <h2 class="drawer-title" id="drawerTitle"></h2>
+      <div class="drawer-body" id="drawerBody"></div>
+      <div class="drawer-sources" id="drawerSources" style="display:none"></div>
+      <div class="drawer-cta">
+        <p>Veritas works exclusively for independent hotel owners — reviewing commercial performance, operational governance, and owner reporting.</p>
+        <a href="mailto:viveka@aisearch.global?subject=Insight%20enquiry">Discuss confidentially with Vaishakh →</a>
+      </div>
+    </div>`;
+  document.body.appendChild(drawer);
+})();
+
+// ── BLOG DATA ──
+const POSTS={
+  i1:{tag:'Market Reality',title:"India's hotel market is strong. That is not the same as your hotel being profitable.",body:`<p>India's 2025 hotel figures make for cheerful reading: Horwath HTL recorded 64% occupancy, an average daily rate of ₹8,624 and RevPAR of ₹5,522 in its tracked market. HVS ANAROCK puts nationwide occupancy in the 63–65% range. Neither report tells an individual owner what was left after commissions, payroll, utilities, debt service and necessary repairs.</p><p>That distinction matters most when a hotel is busy. Full rooms can delay a difficult conversation about rate discipline or operating costs; the team is occupied, revenue is moving, and the month feels successful. Then the owner's bank account tells a less satisfying story.</p><p>Begin with three reconciliations: rooms sold to net room revenue after distribution costs; department revenue to contribution after direct costs; and reported operating profit to actual cash available after agreed obligations. Compare the same periods and explain unusual events. Do not use the national RevPAR as a target for a small independent property: location, segment, accounting and sample coverage differ.</p><p>The useful question is not whether India had a good year. It is which part of that good year reached your property's bottom line.</p>`,sources:'Sources: Horwath HTL, India Hotel Market Review 2025 · HVS ANAROCK, India Hospitality Industry Overview 2025'},
+  i2:{tag:'Competition',title:"The 64,118-key question for independent hotels",body:`<p>HVS ANAROCK reports approximately 64,118 keys signed across 586 branded properties during 2025. These are signings, not 64,118 rooms already available to book: openings numbered roughly 14,199 rooms across 176 properties. An owner who treats pipeline as immediate competition risks reacting too early; an owner who ignores it entirely may react too late.</p><p>Build a competitor map with three dates: announcement, expected opening and actual opening. Add segment, likely guest, location, event capacity and visible price position. A new branded business hotel near an airport could matter more to your corporate accounts than a luxury resort in the same district.</p><p>Then identify what a chain cannot easily reproduce. It might be a local relationship, a quicker decision about group needs or genuinely consistent service. 'We are independent' is not an advantage by itself. Independence has commercial value only when guests or buyers notice it.</p><p>Before spending on a renovation in response to a brand announcement, ask which customers are truly at risk and which investments would protect a reason to book.</p>`,sources:'Source: HVS ANAROCK, India Hospitality Industry Overview 2025'},
+  i3:{tag:'Demand',title:"India's domestic travel boom is not a room-night forecast",body:`<p>The Ministry of Tourism's beta dashboard lists approximately 4,287 million domestic tourist visits in 2025, up 45.55% on 2024. A tourist visit is not a unique traveller, a hotel booking or a night in your district. A property budget built by applying that national growth rate to its own room nights would confuse three different measures.</p><p>HVS ANAROCK's May 2026 report estimated roughly 4,548 million visits for 2025, a different figure from the ministry dashboard. Different vintages or definitions may explain the gap; until reconciled, use the official dashboard with its beta caveat for a dated national reference, and do not quietly combine the two.</p><p>For a useful local forecast, start with actual demand: occupied room nights by day of week and source market; booking lead time; major dates; and how much new supply is coming online. Ask local organisers and corporate buyers what is changing.</p><p>National tourism growth tells you where to investigate. Your own booking book tells you what to staff and price for.</p>`,sources:'Sources: Ministry of Tourism beta dashboard (2025 data) · HVS ANAROCK, India Hospitality Industry Overview 2025'},
+  i4:{tag:'Pilgrimage Travel',title:"Pilgrimage demand calls for an operating plan, not only a higher tariff",body:`<p>Pilgrimage-led travel is a serious hotel-market theme. Horwath HTL names religious destinations among its 2025–26 opportunities; a February 2025 Ministry of Tourism answer lists Gaya, Nalanda, Dwarka and Prayagraj among destinations identified under Swadesh Darshan 2.0. Being on a development list is not a guarantee of completed infrastructure or room demand.</p><p>For an owner near a pilgrimage circuit, the questions are practical. Which arrival times are common? Do families need early check-in or secure luggage storage? Can the kitchen reliably serve the food guests expect? How will housekeeping handle compressed departures? These answers may matter more than a new campaign promising 'spiritual experiences'.</p><p>Separate ordinary weeks from festival peaks when setting rates and staffing. Record cancellations, group terms and the costs of temporary labour. Resist investing around a single extraordinary event without testing the baseline demand that remains afterwards.</p><p>The opportunity is not simply to charge more when a destination becomes busy. It is to be the property that works properly when every arrival happens at once.</p>`,sources:'Sources: Horwath HTL, India Hotel Market Review 2025 · Ministry of Tourism parliamentary answer on Swadesh Darshan 2.0, February 2025'},
+  i5:{tag:'Pricing',title:"Five-star rates in the headlines, a different decision at your desk",body:`<p>Horwath HTL reports ₹8,624 average daily rate across its covered Indian hotel market in 2025, up 8.6% year on year. It also reports Mumbai occupancy of 77.1% among major markets, with Udaipur leading reported ADR at around ₹15,900. Those figures show how differently local markets behave. They are context, not a price list for an owner-operated hotel.</p><p>A useful rate decision starts with your own comparable dates. Look at booking pace, local events, segment and channel mix, cancellation exposure and the minimum contribution you need from a room. Review where you lost business at a high rate and where you sold out too early at a low one.</p><p>Do not raise every tariff by the national ADR growth rate. Nor should a weaker day automatically trigger a discount. If the guest mix changes, so can service costs and the value of keeping inventory available for a later booking.</p><p>Price is a decision about the next available room, not an annual headline pasted into a rate card.</p>`,sources:'Source: Horwath HTL, India Hotel Market Review 2025'},
+  i6:{tag:'Distribution',title:"A booking channel can bring revenue and still disappoint the owner",body:`<p>An online travel agency can fill a room you might otherwise leave empty. It can also take a commission, encourage a discount or generate bookings with different cancellation behaviour. Neither 'leave the OTAs' nor 'fill every room' is a complete commercial strategy.</p><p>Take a representative period and compare channels on the same basis: realised room revenue after taxes treated consistently, discounts, commissions, payment costs, marketing spend attributable to direct bookings and cancellations. Then consider the incremental cost of serving each occupied room. Do not count an OTA booking as lost direct business unless there is evidence you could have captured that guest yourself.</p><p>Ask the reservations team where direct enquiries fail: no answer, confusing rates, difficult payment or weak follow-up. Sometimes the cheap improvement is a clearer booking process, not a costly campaign.</p><p>India's tracked hotel RevPAR increased in 2025. A rising market makes this channel calculation more — not less — important: higher headline revenue can conceal an expensive acquisition mix.</p>`,sources:'Source: Horwath HTL, India Hotel Market Review 2025'},
+  i7:{tag:'Pipeline',title:"What a 144,000-room pipeline actually tells a hotel owner",body:`<p>Horwath HTL estimates India's branded hotel pipeline at roughly 144,000 rooms. Its report warns against assuming every planned room opens on schedule: although that pipeline could imply around 360,000 rooms of inventory by 2030 if delivered, it regards around 300,000 as more likely given delays.</p><p>That difference should change how an owner reads industry announcements. A signing may affect lender sentiment or recruitment long before it affects occupancy. A finished property on your road is a different matter. Track the probability and timing of each local project, not just the press-release count.</p><p>Make one page per credible competitor: proposed opening quarter, guest segments, meeting space, rate positioning and evidence that construction is progressing. Revisit quarterly. The point is not to obsess over every development. It is to give your sales and capital decisions a realistic clock.</p><p>Pipeline is a warning to investigate. It is not a reason to cut tonight's rate.</p>`,sources:'Source: Horwath HTL, India Hotel Market Review 2025'},
+  i8:{tag:'Events',title:"The Indian wedding boom should be judged by contribution",body:`<p>HVS ANAROCK identifies weddings as a significant driver of seasonal demand in Indian hospitality. That matters to a hotel with banquet space, but a large event invoice can make a poor business decision look attractive.</p><p>Consider the complete event: venue rental, catering and room revenue, then food cost, temporary labour, utilities, commissions, decoration obligations, credit terms and any regular rooms displaced by the block. A Saturday wedding could be profitable and still be less profitable than the business it replaces. Conversely, a weekday event might support rooms that would otherwise sit empty.</p><p>Have sales and finance agree on an event contribution sheet before quoting. Record minimum guest counts, release dates for blocked rooms and deposit rules. After the event, compare actual consumption with the quotation; use the differences to improve the next proposal.</p><p>The question is not 'How many weddings did we host?' It is 'Which weddings earned enough for the space, rooms and attention they consumed?'</p>`,sources:'Source: HVS ANAROCK, India Hospitality Industry Overview 2025'},
+  i9:{tag:'Infrastructure',title:"New tourism infrastructure does not arrive on your opening date",body:`<p>India's Swadesh Darshan 2.0 programme is designed to develop sustainable destinations. A February 2025 parliamentary reply said 58 destinations had been identified and 34 projects sanctioned at that point; identification, sanction and completion are different milestones. Those figures are a dated snapshot, not a live count for 2026.</p><p>If your property sits near a proposed attraction, map the actual guest journey. Is the road open? Is the attraction operating? Can visitors stay overnight or is it a day trip? Which months are suitable, and what nearby accommodation is opening?</p><p>A small test beats a large speculative commitment: partner with a local guide, build one itinerary, measure enquiries and the actual conversion to room nights. Only then consider rooms, vehicles or event space tailored to a forecast that has not yet arrived.</p><p>An announced destination is a reason to conduct fieldwork, not an occupancy guarantee.</p>`,sources:'Source: Ministry of Tourism parliamentary answer on Swadesh Darshan 2.0, February 2025'},
+  i10:{tag:'Source Markets',title:"When inbound travel softens, know which guests you actually rely on",body:`<p>The Ministry of Tourism's beta dashboard reports 9.15 million foreign tourist arrivals for 2025, down 8.07% from 2024, while domestic tourist visits rose. HVS ANAROCK uses an estimated 9.02 million foreign arrivals in its May 2026 report. They are not interchangeable figures: source dates and estimation methods differ.</p><p>For an independent hotel, the operational question is whether inbound guests represent 2% or 60% of room nights — and in which months. Split your bookings into domestic leisure, business, groups and relevant inbound markets; note length of stay, lead time, cancellations and spend outside rooms.</p><p>If a source market weakens, do not automatically replace it with a broad domestic discount. The alternative guest may have a different booking window, room preference and service need. Test a specific replacement segment and monitor contribution.</p><p>National headlines are useful signals. Your own source-market ledger should drive the response.</p>`,sources:'Sources: Ministry of Tourism beta dashboard (2025 data) · HVS ANAROCK, India Hospitality Industry Overview 2025'},
+  e1:{tag:'Reporting',title:"The owner should never have to ask what happened to the cash",body:`<p>A hotel can send an owner three reports and answer none of the questions that matter. Occupancy is up; wages are up; the bank balance is down. Each number might be correct. Together they still require an explanation.</p><p>Start the monthly review with last month's owner-approved plan. What changed in rooms sold, average rate and net channel revenue? Which costs moved because volume changed, and which moved for another reason? What payments are due soon? Identify the person responsible for each corrective action and the date the owner will hear back.</p><p>A dashboard does not replace a conversation. If the GM and accountant use different revenue definitions, settle that first. If a capex bill is affecting cash but not the operating result, say so rather than blaming the team for 'weak profit'.</p><p>The best owner report is short enough to be read and precise enough to be challenged. Its purpose is to make a decision possible, not to make the month look tidy.</p>`,sources:''},
+  e2:{tag:'Governance',title:"The family hotel has two org charts",body:`<p>Every family hotel has a formal organisation chart. Many also have an informal one: who can promise a discount, who can approve a supplier, whose call overrides the GM's. The second chart is where apparently sensible plans can stop moving.</p><p>An outside adviser will not solve this by arriving with a dashboard. First ask the family which decisions belong to ownership, which the GM can make, and which require more than one family member. Put those answers into a short decision-rights sheet. Then tell the operating team the same thing.</p><p>This is not a case for stripping the family out of its business. Indian family-business research describes the tension around professionalisation and governance; it does not imply every family hotel has the same conflict. The practical aim is fewer surprises and less rework.</p><p>If a proposed change fails three times, ask whether the numbers were wrong — or whether the approval route was never agreed.</p>`,sources:'Reference: Professionalising Indian Family Firms, SAGE, February 2020'},
+  e3:{tag:'Remote Ownership',title:"An absentee owner needs exceptions, not another daily spreadsheet",body:`<p>Owners who are not on the property every morning face a peculiar problem: they can be copied on every operational message and still miss the one decision that matters. Information is plentiful; interpretation is scarce.</p><p>Set a regular review of a small number of agreed exceptions: unusual rate drops, unresolved guest-service incidents, large unbudgeted spending, late receivables and repeated variance against an agreed target. Each exception should have a responsible person, a proposed response and an escalation deadline. The owner should also know what is routine and does not require approval.</p><p>Ask the GM to challenge the exception list. If every issue goes to the owner, accountability has not improved; it has merely moved upstairs. If nothing does, the system may be hiding uncomfortable news.</p><p>Good oversight lets a remote owner step back without becoming the last person to find out.</p>`,sources:''},
+  e4:{tag:'Brand Decisions',title:"Should an independent hotel take a brand? Start with the contract, not the flag",body:`<p>A brand can offer reach, systems and recognition. It also comes with fees, standards and obligations that change the owner's freedom to spend and decide. Neither remaining independent nor signing a flag is automatically the brave choice.</p><p>Build two comparable cases: independent and affiliated. Include one-time conversion costs, recurring fees, reservation costs, capex required to meet standards, any realistic revenue uplift, and the timing of cash flows. Stress-test the brand's forecast against slower growth, delayed renovations and the actual guests your property serves. Have qualified legal and financial advisers review the contract and tax implications.</p><p>This decision is becoming more salient as brands sign deeper into India's non-metro markets: HVS ANAROCK reports 64,118 branded keys signed during 2025, across 586 properties. Signings do not prove every independent should join them.</p><p>The useful question is not 'Will the flag raise ADR?' It is 'What return remains for this owner, under this agreement, after all commitments?'</p>`,sources:'Source: HVS ANAROCK, India Hospitality Industry Overview 2025'},
+  e5:{tag:'Performance',title:"Stop calling a full hotel a successful hotel",body:`<p>A sold-out night can be satisfying. It can also be a clue that you sold too cheaply, accepted an expensive channel mix or filled the property with guests who generate costs the rate does not cover. You need the context before declaring victory.</p><p>Look at three dates: a night that sold out early, one that filled late and one that stayed quiet. Compare realised rate, channel costs, cancellations, add-on spend and the operational burden. What did you know when rates were set? What would you do differently next time?</p><p>Horwath HTL reports 64% occupancy and ₹5,522 RevPAR across its tracked market for 2025. Those benchmarks are useful background, not proof a particular owner's 80% occupancy was good or bad; market mix and accounting differ.</p><p>A useful owner question follows each busy period: 'What did this demand earn us — and what did we give up to capture it?'</p>`,sources:'Source: Horwath HTL, India Hotel Market Review 2025'}
+};
+
+function switchTab(name,btn){
+  document.querySelectorAll('.btab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.blog-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+function openPost(id){
+  const p=POSTS[id]; if(!p)return;
+  const d=document.getElementById('blogDrawer');
+  document.getElementById('drawerTag').textContent=p.tag;
+  document.getElementById('drawerTitle').textContent=p.title;
+  document.getElementById('drawerBody').innerHTML=p.body;
+  const src=document.getElementById('drawerSources');
+  if(p.sources){src.innerHTML='<p>'+p.sources+'</p>';src.style.display='block';}
+  else{src.style.display='none';}
+  d.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closePost(){
+  document.getElementById('blogDrawer').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closePost();});
+
+function submitGate(e){
+  e.preventDefault();
+  const name=document.getElementById('gate-name').value.trim();
+  const email=document.getElementById('gate-email').value.trim();
+  if(!name||!email)return;
+  // In production: POST to your endpoint / Mailchimp / etc.
+  // For now: show the success state immediately
+  document.getElementById('gateFormWrap').style.display='none';
+  document.getElementById('gateSuccess').style.display='block';
+  // Optional: send to a mailto as fallback notification
+  const hotel=document.getElementById('gate-hotel').value.trim();
+  const body=encodeURIComponent(`Playbook download request\nName: ${name}\nEmail: ${email}\nHotel: ${hotel||'(not provided)'}`);
+  fetch(`https://formsubmit.co/ajax/viveka@aisearch.global`,{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({name,email,hotel:hotel||'',_subject:'Playbook download — '+name,_captcha:'false'})
+  }).catch(()=>{}); // silent — success shown regardless
+}
+function submitContact(e){
+  e.preventDefault();
+  var name=document.getElementById('cf-name').value.trim();
+  var email=document.getElementById('cf-email').value.trim();
+  var hotel=document.getElementById('cf-hotel').value.trim();
+  var message=document.getElementById('cf-message').value.trim();
+  if(!name||!email)return;
+  var btn=e.target.querySelector('.cf-submit');
+  btn.textContent='Sending...';
+  btn.disabled=true;
+  fetch('https://formsubmit.co/ajax/viveka@aisearch.global',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({name:name,email:email,hotel:hotel||'',message:message||'',_subject:'Website enquiry — '+name,_captcha:'false'})
+  }).then(function(){
+    document.getElementById('contactFormWrap').style.display='none';
+    document.getElementById('contactSuccess').style.display='block';
+  }).catch(function(){
+    document.getElementById('contactFormWrap').style.display='none';
+    document.getElementById('contactSuccess').style.display='block';
+  });
+}
+</script>
+
+</body>
+</html>

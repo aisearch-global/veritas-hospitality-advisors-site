@@ -1,5 +1,44 @@
-<title>Hotel Profit Health Check</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&display=swap">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hotel Profit Health Check — Veritas Hospitality Advisors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Public+Sans:wght@300;400;500;600&display=swap">
+
+<style>
+/* ── Nav ── */
+nav{position:fixed;top:0;left:0;right:0;height:64px;background:#1a3028;display:flex;align-items:center;padding:0 32px;gap:24px;z-index:100;box-shadow:0 1px 0 rgba(245,244,239,.08)}
+nav .logo{font-family:'Source Serif 4',Georgia,serif;font-size:1.35rem;font-style:italic;font-weight:600;color:#f5f4ef;text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
+nav .logo span{color:#a57426}
+nav .nav-links{display:flex;gap:24px;list-style:none;margin:0;padding:0;flex:1}
+nav .nav-links a{font-family:'Public Sans',system-ui,sans-serif;font-size:.78rem;font-weight:400;color:rgba(245,244,239,.55);text-decoration:none;letter-spacing:.02em;text-transform:uppercase;transition:color .15s}
+nav .nav-links a:hover{color:#f5f4ef}
+nav .nav-cta{font-family:'Public Sans',system-ui,sans-serif;font-size:.72rem;font-weight:600;color:#a57426;border:1px solid rgba(165,116,38,.35);padding:8px 18px;border-radius:2px;text-decoration:none;white-space:nowrap;transition:border-color .2s,color .2s}
+nav .nav-cta:hover{border-color:#a57426;color:#c49040}
+@media(max-width:700px){nav .nav-links{display:none}nav{padding:0 20px}}
+/* ── Footer ── */
+footer.site-footer{background:#1a3028;padding:32px;text-align:center;margin-top:64px;border-top:1px solid rgba(245,244,239,.06)}
+footer.site-footer p{font-family:'Public Sans',system-ui,sans-serif;font-size:.68rem;color:rgba(245,244,239,.2);margin:4px 0}
+footer.site-footer a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+/* ── push content below fixed nav ── */
+.page{padding-top:80px}
+</style>
+
+<nav>
+  <a href="/" class="logo">Veritas<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="founder.html">Founder</a></li>
+    <li><a href="clients.html">Clients</a></li>
+    <li><a href="diagnostic.html" class="active">Diagnostic</a></li>
+    <li><a href="insights.html">Perspectives</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:vaishakh@veritashospitalityadvisors.com" class="nav-cta">Discuss confidentially</a>
+</nav>
+
 
 <style>
 /* ── Token system ─────────────────────────────────────────────────────────
@@ -1043,3 +1082,10 @@ function resetForm() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Veritas Hospitality Advisors. All rights reserved. Registered in India.</p>
+  <p>Built by <a href="https://aisearch.global" target="_blank" rel="noopener">AISearch Global</a> &nbsp;|&nbsp; Sydney &nbsp;|&nbsp; Australia</p>
+</footer>
+</body>
+</html>

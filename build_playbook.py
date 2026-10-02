@@ -59,7 +59,7 @@ MARGIN_INNER = 22 * mm
 MARGIN_TOP   = 22 * mm
 MARGIN_BOT   = 22 * mm
 
-OUTPUT = '/home/claude/veritas-hospitality-advisors-site/owner-playbook.pdf'
+OUTPUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'owner-playbook.pdf')
 
 # ── Custom rule flowable ────────────────────────────────────────────────────────
 class ThinRule(Flowable):
@@ -1113,8 +1113,8 @@ SECTIONS = [
             'a performance presentation by the GM rather than a decision meeting; exceptions '
             'are explained away rather than investigated; a family member outside the formal '
             'governance structure reverses a decision made at the meeting; the owner pack '
-            'is produced by the same team whose performance it measures, without independent '
-            'data verification. Each of these can be addressed structurally — but only if '
+            'is built for operations rather than ownership, with no shared external benchmark. '
+            'Each of these can be addressed structurally — but only if '
             'it is first named explicitly.',
             'A good meeting can end with "we do not know yet." Record the missing information, '
             'the person responsible for obtaining it and the deadline. Verify at the next '

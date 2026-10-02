@@ -267,8 +267,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,48,40,.94
 .diag-step{display:flex;gap:16px;align-items:flex-start}
 .ds-num{font-size:.65rem;letter-spacing:.1em;color:var(--gold);font-weight:500;width:28px;flex-shrink:0;padding-top:2px}
 .ds-text{font-size:.83rem;color:rgba(245,244,239,.7);line-height:1.5}
-.btn-diag{display:inline-block;background:var(--cream);color:var(--ink);font-size:.85rem;font-weight:600;padding:15px 36px;text-decoration:none;margin-top:32px;letter-spacing:.02em;transition:background .2s}
-.btn-diag:hover{background:#e5e4e0}
+.btn-diag{display:inline-block;background:var(--ink);color:var(--cream);font-size:.85rem;font-weight:600;padding:15px 36px;text-decoration:none;letter-spacing:.02em;transition:background .2s,opacity .2s;border:none}
+.btn-diag:hover{opacity:.85}
 .diag-note{font-size:.7rem;color:rgba(245,244,239,.35);margin-top:12px;display:block}
 
 /* ── DIAGNOSTIC TOOL ── */
@@ -649,7 +649,7 @@ footer{background:var(--ink);padding:60px 40px 40px}
         <h3 class="stage-title">Advisory &amp; Diagnostic</h3>
         <p class="stage-desc">Performance baseline, commercial and operational review, and an improvement roadmap. Identify gaps. Establish priorities. Deliver a clear picture you can act on.</p>
       </div>
-      <div class="engage-stage" style="background:rgba(26,48,40,.85)">
+      <div class="engage-stage">
         <div class="stage-num">Stage 02 &middot; 30 days &amp; beyond</div>
         <h3 class="stage-title">Active Asset Management</h3>
         <p class="stage-desc">Execution oversight, monthly governance, and continuous optimisation -- reviewing performance, strengthening reporting, and helping owner and management team work to one owner-approved plan. An owner-side view of the asset.</p>
@@ -687,18 +687,26 @@ footer{background:var(--ink);padding:60px 40px 40px}
   <div class="section-inner" style="max-width:1120px;margin:0 auto">
     <p class="section-label" style="margin-bottom:12px">Free Owner Tools</p>
     <h2 class="section-h2" style="margin-bottom:48px">Run the numbers yourself -- no sign-up required</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
-      <div style="background:#fff;border:1px solid rgba(26,48,40,.12);border-radius:6px;padding:40px;box-shadow:0 2px 12px rgba(26,48,40,.06)">
-        <p style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px">Owner Diagnostic</p>
-        <h3 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.45rem;color:var(--ink);line-height:1.2;margin-bottom:14px">Is your hotel's reporting working for you?</h3>
-        <p style="font-size:.85rem;line-height:1.7;color:rgba(26,48,40,.6);margin-bottom:28px">15 questions. 5 minutes. Covers owner reporting, commercial performance, operational governance, and your position as an owner. Results stay on your device.</p>
-        <a href="diagnostic.html" class="btn-diag" style="display:inline-block">Start the diagnostic &rarr;</a>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch">
+      <div style="background:#fff;border:1px solid rgba(26,48,40,.12);border-radius:6px;padding:40px;box-shadow:0 2px 12px rgba(26,48,40,.06);display:flex;flex-direction:column">
+        <div style="flex:1">
+          <p style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px">Owner Diagnostic</p>
+          <h3 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.45rem;color:var(--ink);line-height:1.2;margin-bottom:14px">Is your hotel's reporting working for you?</h3>
+          <p style="font-size:.85rem;line-height:1.7;color:rgba(26,48,40,.6)">15 questions. 5 minutes. Covers owner reporting, commercial performance, operational governance, and your position as an owner. Results stay on your device.</p>
+        </div>
+        <div style="border-top:1px solid rgba(26,48,40,.12);margin-top:32px;padding-top:28px">
+          <a href="diagnostic.html" class="btn-diag">Start the diagnostic &rarr;</a>
+        </div>
       </div>
-      <div style="background:#fff;border:1px solid rgba(26,48,40,.12);border-radius:6px;padding:40px;box-shadow:0 2px 12px rgba(26,48,40,.06)">
-        <p style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px">Hotel Profit Health Check</p>
-        <h3 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.45rem;color:var(--ink);line-height:1.2;margin-bottom:14px">What is your hotel actually earning?</h3>
-        <p style="font-size:.85rem;line-height:1.7;color:rgba(26,48,40,.6);margin-bottom:28px">Enter your hotel basics. Get an instant estimate of true revenue yield, OTA cost drag, and three specific gaps worth investigating. No data stored.</p>
-        <a href="health-check.html" class="btn-diag" style="display:inline-block">Run the health check &rarr;</a>
+      <div style="background:#fff;border:1px solid rgba(26,48,40,.12);border-radius:6px;padding:40px;box-shadow:0 2px 12px rgba(26,48,40,.06);display:flex;flex-direction:column">
+        <div style="flex:1">
+          <p style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px">Hotel Profit Health Check</p>
+          <h3 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.45rem;color:var(--ink);line-height:1.2;margin-bottom:14px">What is your hotel actually earning?</h3>
+          <p style="font-size:.85rem;line-height:1.7;color:rgba(26,48,40,.6)">Enter your hotel basics. Get an instant estimate of true revenue yield, OTA cost drag, and three specific gaps worth investigating. No data stored.</p>
+        </div>
+        <div style="border-top:1px solid rgba(26,48,40,.12);margin-top:32px;padding-top:28px">
+          <a href="diagnostic.html#health-check" class="btn-diag">Run the health check &rarr;</a>
+        </div>
       </div>
     </div>
   </div>

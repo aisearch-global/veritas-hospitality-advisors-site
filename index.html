@@ -1,7 +1,9 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
 /* consent checkboxes */
 .consent-block{margin-top:4px;margin-bottom:4px}
-.consent-check{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:.76rem;line-height:1.5;color:rgba(26,48,40,.6)}
+.consent-check{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:.76rem;line-height:1.5;color:rgba(26,48,40,.7)}
+.playbook .consent-check{color:rgba(245,244,239,.72)}
+.playbook .consent-check a{color:rgba(165,116,38,.85)}
 .consent-check input[type=checkbox]{margin-top:2px;flex-shrink:0;accent-color:var(--gold);width:15px;height:15px;cursor:pointer}
 .consent-check a{color:var(--gold);text-decoration:none}
 .consent-check a:hover{text-decoration:underline}
@@ -872,17 +874,17 @@ footer{background:var(--ink);padding:60px 40px 40px}
 <section class="contact-cta" id="contact">
   <div class="section-inner">
     <div class="contact-text">
-      <p class="section-label">Let's discuss your hotel</p>
+      <p class="section-label">Let&#39;s discuss your hotel</p>
       <h2>Founder led,<br>owner aligned.</h2>
-      <p>Led personally by Vaishakh Surendran — 25+ years across major hotel groups in India, the Maldives, Kuwait, and the USA. Every conversation is confidential. No obligation to engage. Just a direct discussion with the person who will actually do the work.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
-        <a href="https://calendly.com/vaishakhsurendran" target="_blank" rel="noopener" class="btn-ink">Book a 30-minute call</a>
-        <a href="mailto:viveka@aisearch.global" class="btn-ink" style="background:transparent;border:1px solid rgba(26,48,40,.3);color:var(--ink)">Email Vaishakh</a>
-      </div>
+      <p>Led personally by Vaishakh Surendran — 25+ years across major hotel groups in India, the Maldives, Kuwait, and the USA. Every conversation is confidential. No obligation to engage.</p>
+      <p style="font-size:.8rem;color:var(--slate);margin-top:16px;line-height:1.7">Send a message below. Vaishakh responds personally, typically within one business day. For an urgent matter, call <a href="tel:+919072233008" style="color:var(--ink)">+91 90722 33008</a>.</p>
     </div>
     <div class="contact-details">
       <div id="contactFormWrap">
-        <form class="contact-form" id="contactForm" onsubmit="submitContact(event)">
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/viveka@aisearch.global" method="POST">
+          <input type="hidden" name="_subject" value="New enquiry — Veritas website">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
           <div class="cf-field">
             <label for="cf-name">Your name</label>
             <input type="text" id="cf-name" name="name" placeholder="Ravi Sharma" required autocomplete="name">
@@ -901,8 +903,14 @@ footer{background:var(--ink);padding:60px 40px 40px}
           </div>
           <div class="consent-block">
             <label class="consent-check">
+              <input type="checkbox" name="vaishakh_contact" value="yes">
+              <span>I&#39;d like Vaishakh to contact me to discuss my hotel (optional)</span>
+            </label>
+          </div>
+          <div class="consent-block">
+            <label class="consent-check">
               <input type="checkbox" name="marketing_consent" value="yes">
-              <span>I'm happy to receive occasional updates and perspectives from Veritas (optional)</span>
+              <span>I&#39;m happy to receive occasional perspectives from Veritas (optional)</span>
             </label>
           </div>
           <div class="consent-block" style="margin-bottom:16px">
@@ -914,13 +922,6 @@ footer{background:var(--ink);padding:60px 40px 40px}
           <button type="submit" class="cf-submit">Send message</button>
           <p class="cf-note">Vaishakh responds personally, typically within one business day.</p>
         </form>
-      </div>
-      <div id="contactSuccess" style="display:none">
-        <div style="width:36px;height:36px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
-          <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M1 7l5 5L17 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.4rem;color:var(--ink);margin-bottom:12px">Message sent.</h3>
-        <p style="font-size:.88rem;line-height:1.8;color:var(--slate)">Vaishakh will be in touch within one business day. If your situation is urgent, call directly on <a href="tel:+919072233008" style="color:var(--ink)">+91 90722 33008</a>.</p>
       </div>
     </div>
   </div>
@@ -957,7 +958,7 @@ footer{background:var(--ink);padding:60px 40px 40px}
         <div class="fl-col">
           <h4>Contact</h4>
           <a href="tel:+919072233008">+91 90722 33008</a>
-          <a href="mailto:viveka@aisearch.global">Email Vaishakh</a>
+          <a href="mailto:vaishakh@veritashospitalityadvisors.com">Email Vaishakh</a>
           <a href="diagnostic.html">Run the diagnostic</a>
         </div>
       </div>

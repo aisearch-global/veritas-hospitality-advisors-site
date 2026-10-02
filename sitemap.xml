@@ -39,6 +39,33 @@
     <priority>0.3</priority>
   </url>
 
+  <!-- Service pages -->
+  <url>
+    <loc>https://veritashospitalityadvisors.com/commercial-performance.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://veritashospitalityadvisors.com/operational-governance.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://veritashospitalityadvisors.com/owner-reporting.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <!-- Tools -->
+  <url>
+    <loc>https://veritashospitalityadvisors.com/health-check.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Perspectives articles -->
   <url>
     <loc>https://veritashospitalityadvisors.com/perspectives/vaishakh-interview.html</loc>

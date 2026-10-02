@@ -102,6 +102,39 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
   <p>Written for hotel owners who want to understand their asset, not just manage it. No marketing. No jargon. Structured thinking you can act on.</p>
 </div>
 
+<!-- Quick-navigation dropdown -->
+<div style="margin-bottom:28px">
+  <label for="article-jump" style="display:block;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);font-weight:500;margin-bottom:8px">Jump to an article</label>
+  <div style="position:relative;max-width:520px">
+    <select id="article-jump" onchange="if(this.value)window.location.href=this.value;this.value=''"
+      style="width:100%;appearance:none;-webkit-appearance:none;padding:10px 36px 10px 14px;border:1px solid rgba(26,48,40,.18);border-radius:2px;background:var(--cream);color:var(--ink);font-family:'Public Sans',system-ui,sans-serif;font-size:.82rem;cursor:pointer;outline:none">
+      <option value="">— Select article —</option>
+      <optgroup label="Industry Analysis">
+        <option value="perspectives/market-reality.html">India's hotel market is strong. That is not the same as your hotel being profitable.</option>
+        <option value="perspectives/competition.html">The 64,118-key question for independent hotels</option>
+        <option value="perspectives/demand.html">India's domestic travel boom is not a room-night forecast</option>
+        <option value="perspectives/pilgrimage.html">Pilgrimage demand calls for an operating plan, not only a higher tariff</option>
+        <option value="perspectives/pricing.html">Five-star rates in the headlines, a different decision at your desk</option>
+        <option value="perspectives/distribution.html">A booking channel can bring revenue and still disappoint the owner</option>
+        <option value="perspectives/pipeline.html">What a 144,000-room pipeline actually tells a hotel owner</option>
+        <option value="perspectives/events.html">The Indian wedding boom should be judged by contribution</option>
+        <option value="perspectives/infrastructure.html">New tourism infrastructure does not arrive on your opening date</option>
+        <option value="perspectives/source-markets.html">When inbound travel softens, know which guests you actually rely on</option>
+      </optgroup>
+      <optgroup label="Owner Essays">
+        <option value="perspectives/ota-cost.html">What your OTA contract is actually costing you</option>
+        <option value="perspectives/owner-report.html">The seven numbers every hotel owner should review each month</option>
+        <option value="perspectives/revpar.html">RevPAR is not the metric your hotel needs</option>
+      </optgroup>
+      <optgroup label="Earlier Insights">
+        <option value="perspectives/vaishakh-interview.html">What owner alignment actually looks like in practice (interview)</option>
+        <option value="perspectives/sustainability-hotel-india.html">Sustainability in Indian Hotels: From Obligation to Competitive Edge</option>
+      </optgroup>
+    </select>
+    <span style="pointer-events:none;position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:.8rem">▾</span>
+  </div>
+</div>
+
 <div class="tab-bar" id="tabBar">
   <button class="tab-btn active" onclick="switchTab('industry')" id="tab-industry">Industry Analysis</button>
   <button class="tab-btn" onclick="switchTab('essays')" id="tab-essays">Owner Essays</button>
@@ -206,20 +239,43 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
 
 <div class="tab-panel" id="panel-archive">
   <div style="max-width:720px;margin:0 auto;padding:40px 0 64px">
-    <span style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500">Video Interview</span>
-    <h2 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.5rem;color:var(--ink);margin:12px 0 8px;line-height:1.3">Vaishakh Surendran in conversation with Hospitality News India</h2>
-    <p style="font-size:.82rem;color:var(--slate);margin-bottom:28px;line-height:1.6">Discussing people-first leadership, operational philosophy, and the sustainable practices behind Lyfe Hotels Bhubaneswar. Published by <em>India Hospitality News</em> (@indiahospitalitynews).</p>
-    <div style="display:flex;justify-content:center;margin-bottom:24px">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C2yjbjJryxM/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,.5),0 1px 10px 0 rgba(0,0,0,.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:calc(100% - 2px)"></blockquote>
-      <script async src="//www.instagram.com/embed.js"></script>
+
+    <!-- Earlier Insights article cards -->
+    <div style="margin-bottom:48px">
+      <p style="font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px">Earlier Insights</p>
+      <div class="art-grid">
+        <a href="perspectives/vaishakh-interview.html" class="art-card">
+          <span class="art-card-cat">Leadership &amp; Alignment</span>
+          <h3 class="art-card-title">What owner alignment actually looks like in practice</h3>
+          <p class="art-card-desc">Vaishakh Surendran in conversation with Hospitality News India — people-first leadership, operational philosophy, and sustainable practices at Lyfe Hotels.</p>
+          <span class="art-card-link">Read &rarr;</span>
+        </a>
+        <a href="perspectives/sustainability-hotel-india.html" class="art-card">
+          <span class="art-card-cat">Sustainability</span>
+          <h3 class="art-card-title">Sustainability in Indian Hotels: From Obligation to Competitive Edge</h3>
+          <p class="art-card-desc">Why sustainability is no longer a cost centre for independent hotels in India — and what the IGBC Green Hospitality rating actually requires from an operator.</p>
+          <span class="art-card-link">Read &rarr;</span>
+        </a>
+      </div>
     </div>
-    <div style="text-align:center;margin-top:20px">
-      <a href="https://www.youtube.com/watch?v=0ZlNMd4L0vk" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:1px solid rgba(26,48,40,.25);padding:10px 20px;transition:all .2s;border-radius:1px">
-        <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M17.6 2.18A2.25 2.25 0 0015.99.56C14.6.18 9 .18 9 .18S3.4.18 2.01.56A2.25 2.25 0 00.4 2.18 23.6 23.6 0 000 7a23.6 23.6 0 00.4 4.82A2.25 2.25 0 002.01 13.4C3.4 13.8 9 13.8 9 13.8s5.6 0 6.99-.4a2.25 2.25 0 001.61-1.58A23.6 23.6 0 0018 7a23.6 23.6 0 00-.4-4.82zM7.2 9.98V4.02L11.88 7 7.2 9.98z" fill="#1a3028"/></svg>
-        Watch full interview on YouTube (24 min)
-      </a>
+
+    <!-- Video interview -->
+    <div style="border-top:1px solid rgba(26,48,40,.1);padding-top:40px">
+      <span style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500">Video Interview</span>
+      <h2 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.5rem;color:var(--ink);margin:12px 0 8px;line-height:1.3">Vaishakh Surendran in conversation with Hospitality News India</h2>
+      <p style="font-size:.82rem;color:var(--slate);margin-bottom:28px;line-height:1.6">Discussing people-first leadership, operational philosophy, and the sustainable practices behind Lyfe Hotels Bhubaneswar. Published by <em>India Hospitality News</em> (@indiahospitalitynews).</p>
+      <div style="display:flex;justify-content:center;margin-bottom:24px">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C2yjbjJryxM/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,.5),0 1px 10px 0 rgba(0,0,0,.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:calc(100% - 2px)"></blockquote>
+        <script async src="//www.instagram.com/embed.js"></script>
+      </div>
+      <div style="text-align:center;margin-top:20px">
+        <a href="https://www.youtube.com/watch?v=0ZlNMd4L0vk" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:1px solid rgba(26,48,40,.25);padding:10px 20px;transition:all .2s;border-radius:1px">
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M17.6 2.18A2.25 2.25 0 0015.99.56C14.6.18 9 .18 9 .18S3.4.18 2.01.56A2.25 2.25 0 00.4 2.18 23.6 23.6 0 000 7a23.6 23.6 0 00.4 4.82A2.25 2.25 0 002.01 13.4C3.4 13.8 9 13.8 9 13.8s5.6 0 6.99-.4a2.25 2.25 0 001.61-1.58A23.6 23.6 0 0018 7a23.6 23.6 0 00-.4-4.82zM7.2 9.98V4.02L11.88 7 7.2 9.98z" fill="#1a3028"/></svg>
+          Watch full interview on YouTube (24 min)
+        </a>
+      </div>
     </div>
-    <p style="font-size:.72rem;color:rgba(26,48,40,.4);text-align:center;margin-top:28px">Read the full written version: <a href="perspectives/vaishakh-interview.html" style="color:var(--gold);text-decoration:none">What owner alignment actually looks like in practice &rarr;</a></p>
+
   </div>
 </div>
 

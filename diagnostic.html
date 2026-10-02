@@ -1,1838 +1,502 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Owner Diagnostic — Veritas Hospitality Advisors</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hotel Performance Diagnostic — Veritas Hospitality Advisors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:var(--cream)}
-.diag-standalone-header{background:var(--ink);padding:20px 40px;display:flex;align-items:center;justify-content:space-between}
-.diag-standalone-header a{color:rgba(245,244,239,.5);font-size:.78rem;text-decoration:none;letter-spacing:.04em}
-.diag-standalone-header a:hover{color:var(--cream)}
-.diag-standalone-title{color:var(--cream);font-family:"Source Serif 4",serif;font-weight:300;font-size:1.1rem}
-.diag-standalone-intro{max-width:800px;margin:60px auto 0;padding:0 40px}
-.diag-standalone-intro h1{font-family:"Source Serif 4",serif;font-weight:300;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--ink);line-height:1.15;margin-bottom:16px}
-.diag-standalone-intro p{font-size:.9rem;line-height:1.8;color:rgba(26,48,40,.6);margin-bottom:0}
-#owner-diagnostic{display:block;background:var(--cream);padding:0 40px 80px}
-@media(max-width:640px){.diag-standalone-header{padding:16px 20px}.diag-standalone-intro{padding:0 20px;margin-top:40px}#owner-diagnostic{padding-left:20px;padding-right:20px}}
+:root{--ink:#1a3028;--cream:#f5f4ef;--gold:#a57426;--slate:rgba(26,48,40,.55)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Public Sans",sans-serif;background:var(--cream);color:var(--ink)}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,48,40,.96);backdrop-filter:blur(10px);height:64px;display:flex;align-items:center;padding:0 40px;gap:40px}
+.logo{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.1rem;color:var(--cream) !important;letter-spacing:.04em;text-decoration:none;margin-right:auto}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,244,239,.58);text-decoration:none;transition:color .15s}
+.nav-links a:hover,.nav-links a.active{color:var(--cream)}
+.nav-cta{font-size:.7rem;font-weight:500;color:var(--cream);text-decoration:none;border:1px solid rgba(165,116,38,.55);padding:8px 16px;letter-spacing:.05em;white-space:nowrap;transition:all .2s}
+.nav-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:column;gap:14px}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-logo{font-family:"Source Serif 4",serif;font-weight:300;font-size:.9rem;color:rgba(245,244,239,.45);text-decoration:none;letter-spacing:.04em}
+.footer-logo span{color:var(--gold)}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.footer-links a{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,244,239,.28);text-decoration:none;transition:color .15s}
+.footer-links a:hover{color:rgba(245,244,239,.6)}
+.footer-copy{font-size:.66rem;color:rgba(245,244,239,.2)}
+.footer-built{font-size:.66rem;color:rgba(165,116,38,.48)}
+.footer-built a{color:rgba(165,116,38,.6);text-decoration:none}
+.footer-built a:hover{color:var(--gold)}
+@media(max-width:740px){nav{padding:0 16px;gap:20px}.nav-links{display:none}footer{padding:24px 16px}}
+/* page */
+.diag-hero{background:var(--ink);padding:120px 40px 64px;text-align:center}
+.diag-hero .section-label{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px}
+.diag-hero h1{font-family:"Source Serif 4",serif;font-weight:300;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--cream);margin-bottom:16px;line-height:1.2}
+.diag-hero p{font-size:.88rem;color:rgba(245,244,239,.5);max-width:520px;margin:0 auto;line-height:1.8}
+/* cards grid */
+.diag-cards{max-width:900px;margin:0 auto;padding:64px 40px 0}
+.diag-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:8px}
+.diag-card{background:#fff;border:1px solid rgba(26,48,40,.1);padding:28px 28px 24px;cursor:pointer;transition:all .2s;position:relative}
+.diag-card:hover{border-color:rgba(165,116,38,.4);box-shadow:0 4px 20px rgba(26,48,40,.08)}
+.diag-card.active{border-color:var(--gold);background:rgba(165,116,38,.04)}
+.card-num{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px;display:block}
+.card-title{font-family:"Source Serif 4",serif;font-weight:400;font-size:1.05rem;color:var(--ink);margin-bottom:6px}
+.card-desc{font-size:.78rem;color:var(--slate);line-height:1.6}
+.card-arrow{position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:.9rem;color:rgba(165,116,38,.4);transition:all .2s}
+.diag-card.active .card-arrow{color:var(--gold);transform:translateY(-50%) rotate(90deg)}
+/* sections */
+.diag-section-wrap{max-width:900px;margin:0 auto;padding:0 40px}
+.diag-section{display:none;background:#fff;border:1px solid rgba(26,48,40,.1);border-top:3px solid var(--gold);padding:40px;margin-top:4px;margin-bottom:8px}
+.diag-section.visible{display:block}
+.section-head{margin-bottom:32px}
+.section-head h2{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.4rem;color:var(--ink);margin-bottom:6px}
+.section-head p{font-size:.82rem;color:var(--slate);line-height:1.6}
+/* questions */
+.q-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid rgba(26,48,40,.07)}
+.q-block:last-of-type{border-bottom:none;padding-bottom:0}
+.q-label{display:block;font-size:.88rem;font-weight:500;color:var(--ink);margin-bottom:6px;line-height:1.5}
+.q-hint{display:block;font-size:.76rem;color:var(--slate);margin-bottom:10px;line-height:1.55;font-style:italic}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:flex-start;gap:10px;cursor:pointer;padding:8px 12px;border-radius:2px;transition:background .15s}
+.opt:hover{background:rgba(26,48,40,.04)}
+.opt input[type=radio]{margin-top:3px;flex-shrink:0;accent-color:var(--gold);width:15px;height:15px;cursor:pointer}
+.opt-text{font-size:.82rem;color:rgba(26,48,40,.72);line-height:1.55}
+.opt-text small{display:block;font-size:.72rem;color:var(--slate);margin-top:2px}
+/* progress bar */
+.progress-row{display:flex;align-items:center;gap:12px;margin-bottom:36px}
+.progress-bar{flex:1;height:3px;background:rgba(26,48,40,.08);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;background:var(--gold);transition:width .3s;width:0}
+.progress-label{font-size:.7rem;color:var(--slate);white-space:nowrap}
+/* next / section nav */
+.section-footer{display:flex;justify-content:space-between;align-items:center;margin-top:32px;padding-top:20px;border-top:1px solid rgba(26,48,40,.08)}
+.btn-next{background:var(--gold);color:#fff;border:none;font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:12px 28px;cursor:pointer;transition:all .2s}
+.btn-next:hover{background:#8a5f1e}
+.btn-skip{font-size:.72rem;color:var(--slate);background:none;border:none;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+/* results */
+.results-wrap{max-width:900px;margin:0 auto;padding:0 40px 80px}
+#results{display:none;background:#fff;border:1px solid rgba(26,48,40,.1);border-top:3px solid var(--gold);padding:48px;margin-top:20px}
+#results.visible{display:block}
+.res-heading{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.6rem;color:var(--ink);margin-bottom:8px}
+.res-subhead{font-size:.82rem;color:var(--slate);margin-bottom:36px;line-height:1.6}
+.score-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:36px}
+.score-card{padding:20px 20px 16px;border:1px solid rgba(26,48,40,.09);background:var(--cream)}
+.score-card .score-label{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:6px;display:block}
+.score-card .score-val{font-family:"Source Serif 4",serif;font-size:2rem;font-weight:300;color:var(--ink)}
+.score-card .score-desc{font-size:.74rem;color:var(--slate);margin-top:4px}
+.res-interpretation{margin-bottom:32px}
+.res-interpretation h3{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.res-interpretation p{font-size:.85rem;color:rgba(26,48,40,.75);line-height:1.75}
+/* email results */
+.email-results-form{margin-top:32px;padding:28px;background:var(--cream);border:1px solid rgba(26,48,40,.1)}
+.email-results-form h3{font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:6px}
+.email-results-form p{font-size:.78rem;color:var(--slate);margin-bottom:16px;line-height:1.6}
+.email-row{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
+.email-row input[type=email]{flex:1;min-width:200px;padding:11px 14px;border:1px solid rgba(26,48,40,.18);background:#fff;font-family:"Public Sans",sans-serif;font-size:.84rem;color:var(--ink)}
+.email-row input[type=email]::placeholder{color:rgba(26,48,40,.3)}
+.btn-email{background:var(--ink);color:var(--cream);border:none;font-size:.76rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:12px 24px;cursor:pointer;white-space:nowrap;transition:all .2s}
+.btn-email:hover{background:var(--gold)}
+.email-sent{font-size:.78rem;color:var(--gold);display:none;margin-top:8px}
+/* CTA */
+.diag-cta-section{max-width:900px;margin:0 auto;padding:0 40px 80px}
+.diag-cta-box{background:var(--ink);padding:48px;margin-top:20px;text-align:center}
+.diag-cta-box h3{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.4rem;color:var(--cream);margin-bottom:12px}
+.diag-cta-box p{font-size:.85rem;color:rgba(245,244,239,.55);margin-bottom:24px;line-height:1.7}
+.btn-discuss{display:inline-block;background:var(--gold);color:#fff;text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:14px 32px;transition:all .2s}
+.btn-discuss:hover{background:#8a5f1e}
+@media(max-width:640px){.diag-grid{grid-template-columns:1fr}.score-grid{grid-template-columns:1fr}.diag-hero,.diag-cards,.diag-section-wrap,.results-wrap,.diag-cta-section{padding-left:20px;padding-right:20px}.diag-section{padding:24px}.email-row{flex-direction:column}}
 </style>
 </head>
 <body>
+<nav><a href="/" class="logo">Veritas<span>.</span></a><ul class="nav-links"><li><a href="/">Home</a></li><li><a href="founder.html">Founder</a></li><li><a href="diagnostic.html" class="active">Diagnostic</a></li><li><a href="insights.html">Perspectives</a></li><li><a href="/#contact">Contact</a></li></ul><a href="mailto:vaishakh@veritashospitalityadvisors.com" class="nav-cta">Discuss confidentially</a></nav>
 
-<header class="diag-standalone-header">
-  <a href="index.html">&larr; Back to Veritas</a>
-  <span class="diag-standalone-title">Owner Diagnostic</span>
-</header>
-
-<div class="diag-standalone-intro">
-  <h1>Is your hotel's reporting working for you?</h1>
-  <p>15 questions. 5 minutes. No signup required -- results are calculated in your browser and not stored anywhere. Covers owner reporting, commercial performance, operational governance, and your position as an owner.</p>
+<div class="diag-hero">
+  <p class="section-label">Hotel Health Check</p>
+  <h1>Is your hotel performing for you?</h1>
+  <p>15 questions across four dimensions. Results calculated immediately in your browser — nothing is stored or sent anywhere until you choose.</p>
 </div>
 
-<!-- DIAGNOSTIC TOOL -->
-<div id="owner-diagnostic">
-  <div class="diag-inner">
-    <div class="diag-disclaimer">
-      <p><strong>What this is:</strong> A structured self-assessment to help you identify where your hotel's financial reporting, commercial performance, or operational oversight may have gaps. Results are indicative only — not a financial audit or legal opinion. <strong>What this is not:</strong> A technology audit, a hotel operations tool, or a guest-experience assessment.</p>
+<div class="diag-cards">
+  <div class="diag-grid" id="cardGrid">
+    <div class="diag-card" id="card-s1" onclick="showSection('s1')">
+      <span class="card-num">01</span>
+      <div class="card-title">Owner Reporting</div>
+      <p class="card-desc">What your monthly reporting covers — and whether it gives you the full picture.</p>
+      <span class="card-arrow">&#8250;</span>
     </div>
-
-    <form id="diagForm">
-
-      <div class="diag-section-hd">
-        <div class="ds-tag">Section 01</div>
-        <h3>Owner Reporting</h3>
-        <p>What your monthly reporting covers — and whether it gives you the full picture.</p>
-      </div>
-
-      <div class="q-block">
-        <span class="q-label">How often do you receive a formal written report from your hotel management team?</span>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q1" value="0"><span class="opt-text">Monthly — with full P&amp;L, RevPAR, and operational summary</span></label>
-          <label class="opt"><input type="radio" name="q1" value="1"><span class="opt-text">Monthly — but mainly occupancy and revenue figures<small>Profit and cost detail is limited or absent</small></span></label>
-          <label class="opt"><input type="radio" name="q1" value="2"><span class="opt-text">Quarterly or when I ask<small>No regular reporting cadence</small></span></label>
-          <label class="opt"><input type="radio" name="q1" value="2"><span class="opt-text">I rely on what my GM tells me verbally</span></label>
-        </div>
-      </div>
-
-      <div class="q-block">
-        <span class="q-label">Does your monthly report show Gross Operating Profit (GOP) — not just revenue?</span>
-        <span class="q-hint">GOP = Revenue minus departmental expenses. It's what the hotel actually earns before fixed costs.</span>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q2" value="0"><span class="opt-text">Yes — I see GOP every month with a breakdown by department</span></label>
-          <label class="opt"><input type="radio" name="q2" value="1"><span class="opt-text">I see total revenue and a bottom-line figure, but not GOP specifically</span></label>
-          <label class="opt"><input type="radio" name="q2" value="2"><span class="opt-text">No — I mainly see occupancy percentage and total revenue</span></label>
-          <label class="opt"><input type="radio" name="q2" value="2"><span class="opt-text">I don't know what my GOP is</span></label>
-        </div>
-      </div>
-
-      <div class="q-block">
-        <span class="q-label">When you receive financial reports, can you trace a revenue figure back to its source?</span>
-        <span class="q-hint">If your report says "Room Revenue: ₹18 lakhs," can you see which bookings, channels, and dates make up that number?</span>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q3" value="0"><span class="opt-text">Yes — I can request source-level data and it's provided</span></label>
-          <label class="opt"><input type="radio" name="q3" value="1"><span class="opt-text">Partially — some figures can be traced but not all</span></label>
-          <label class="opt"><input type="radio" name="q3" value="2"><span class="opt-text">No — I receive summary totals only and can't easily see the detail behind them</span></label>
-          <label class="opt"><input type="radio" name="q3" value="2"><span class="opt-text">I've never thought to check</span></label>
-        </div>
-      </div>
-
-      <div class="diag-section-hd">
-        <div class="ds-tag">Section 02</div>
-        <h3>Commercial Performance</h3>
-        <p>How your hotel generates revenue — and whether you're seeing all of it.</p>
-      </div>
-
-      <div class="q-block">
-        <span class="q-label">Do you know what percentage of your room revenue comes from OTAs versus direct bookings?</span>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q4" value="0"><span class="opt-text">Yes — I see a channel-by-channel revenue breakdown monthly</span></label>
-          <label class="opt"><input type="radio" name="q4" value="1"><span class="opt-text">Approximately — I have a rough sense but not precise data</span></label>
-          <label class="opt"><input type="radio" name="q4" value="2"><span class="opt-text">No — I see total revenue but not broken down by channel</span></label>
-          <label class="opt"><input type="radio" name="q4" value="2"><span class="opt-text">I know OTAs are significant but I've never seen the actual split</span></label>
-        </div>
-      </div>
-
-      <div class="q-block">
-        <span class="q-label">Do you know what your hotel paid in OTA commissions last financial year?</span>
-        <span class="q-hint">OTA commissions are typically 15–25% of room revenue. On ₹1 crore in OTA revenue, that's ₹15–25 lakhs leaving your hotel annually.</span>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q5" value="0"><span class="opt-text">Yes — I see commission costs as a line item in my P&amp;L</span></label>
-          <label class="opt"><input type="radio" name="q5" value="1"><span class="opt-text">I know the rate (e.g. 18%) but I've never calculated the rupee value</span></label>
-          <label class="opt"><input type="radio" name="q5" value="2"><span class="opt-text">I've been told it's "in the rates" but I've never seen it as a separate figure</span></label>
-          <label class="opt"><input type="radio" name="q5" value="2"><span class="opt-text">I don't know what my hotel paid in OTA commissions</span></label>
-        </div>
-      </div>
-
-      <div class="q-block">
-        <span class="q-label">Has your hotel's Average Daily Rate (ADR) increased in line with your costs over the past two years?</span>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q6" value="0"><span class="opt-text">Yes — rates have grown and I've seen the comparison data</span></label>
-          <label class="opt"><input type="radio" name="q6" value="1"><span class="opt-text">I believe rates have increased but haven't seen it tracked against costs</span></label>
-          <label class="opt"><input type="radio" name="q6" value="2"><span class="opt-text">Rates have been flat — we've focused on maintaining occupancy</span></label>
-          <label class="opt"><input type="radio" name="q6" value="2"><span class="opt-text">I'm not sure — I don't receive trend data across years</span></label>
-        </div>
-      </div>
-
-      <div class="q-block">
-        <span class="q-label">When your hotel offers a discounted rate, do you approve it — or does management decide independently?</span>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q7" value="0"><span class="opt-text">There's a written rate authority matrix — discounts above a threshold need my approval</span></label>
-          <label class="opt"><input type="radio" name="q7" value="1"><span class="opt-text">I'm usually informed, but management makes the call</span></label>
-          <label class="opt"><input type="radio" name="q7" value="2"><span class="opt-text">Management sets rates independently — I find out afterwards or not at all</span></label>
-          <label class="opt"><input type="radio" name="q7" value="2"><span class="opt-text">I'm not sure what the process is</span></label>
-        </div>
-      </div>
-
-      <div class="diag-section-hd">
-        <div class="ds-tag">Section 03</div>
-        <h3>Operational Governance</h3>
-        <p>How decisions are made in your hotel — and whether you have oversight of them.</p>
-      </div>
-
-      <div class="q-block">
-        <span class="q-label">Is there a written operating plan or annual budget that your management team works against?</span>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q8" value="0"><span class="opt-text">Yes — there's a Board-approved operating plan with monthly targets and variance reporting</span></label>
-          <label class="opt"><input type="radio" name="q8" value="1"><span class="opt-text">There's a budget, but actual-vs-budget comparison isn't regularly shared</span></label>
-          <label class="opt"><input type="radio" name="q8" value="2"><span class="opt-text">Operating decisions are made without a formal plan</span></label>
-          <label class="opt"><input type="radio" name="q8" value="2"><span class="opt-text">I'm not sure what plan, if any, management follows</span></label>
-        </div>
-      </div>
-
-      <div class="q-block">
-        <span class="q-label">If your General Manager resigned tomorrow, how confident are you in the continuity of your hotel's operations?</span>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q9" value="0"><span class="opt-text">Very confident — standard operating procedures are documented and the team can run independently</span></label>
-          <label class="opt"><input type="radio" name="q9" value="1"><span class="opt-text">Somewhat confident — there would be disruption but not collapse</span></label>
-          <label class="opt"><input type="radio" name="q9" value="2"><span class="opt-text">Not confident — too much relies on one person or informal knowledge</span></label>
-          <label class="opt"><input type="radio" name="q9" value="2"><span class="opt-text">I haven't thought about this</span></label>
-        </div>
-      </div>
-
-      <div class="q-block">
-        <span class="q-label">Are capital expenditure decisions (above a set threshold) formally approved by you before they're committed?</span>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q10" value="0"><span class="opt-text">Yes — there's a written approval process with defined thresholds</span></label>
-          <label class="opt"><input type="radio" name="q10" value="1"><span class="opt-text">I'm usually consulted, but the process is informal</span></label>
-          <label class="opt"><input type="radio" name="q10" value="2"><span class="opt-text">Management handles capital spending and informs me afterwards</span></label>
-          <label class="opt"><input type="radio" name="q10" value="2"><span class="opt-text">I'm not sure how capital decisions are made</span></label>
-        </div>
-      </div>
-
-      <div class="diag-section-hd">
-        <div class="ds-tag">Section 04</div>
-        <h3>Owner Position</h3>
-        <p>Whether you have the information and oversight to protect your ownership position.</p>
-      </div>
-
-      <div class="q-block">
-        <span class="q-label">Do you know your hotel's current RevPAR — and how it compares to your competitive set?</span>
-        <span class="q-hint">RevPAR (Revenue Per Available Room) is the standard measure of room revenue performance. It equals Average Daily Rate × Occupancy.</span>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q11" value="0"><span class="opt-text">Yes — I see RevPAR monthly and it's benchmarked against comparable hotels</span></label>
-          <label class="opt"><input type="radio" name="q11" value="1"><span class="opt-text">I know our occupancy and rate, but not RevPAR specifically</span></label>
-          <label class="opt"><input type="radio" name="q11" value="2"><span class="opt-text">I see occupancy figures but no competitive benchmarking</span></label>
-          <label class="opt"><input type="radio" name="q11" value="2"><span class="opt-text">I don't have regular access to RevPAR data</span></label>
-        </div>
-      </div>
-
-      <div class="q-block">
-        <span class="q-label">Have you ever commissioned an independent review of your hotel's financial performance — alongside your team's own reporting?</span>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q12" value="0"><span class="opt-text">Yes — within the last two years</span></label>
-          <label class="opt"><input type="radio" name="q12" value="1"><span class="opt-text">Yes — but not recently (more than two years ago)</span></label>
-          <label class="opt"><input type="radio" name="q12" value="2"><span class="opt-text">No — I rely on management's own reporting</span></label>
-          <label class="opt"><input type="radio" name="q12" value="2"><span class="opt-text">I didn't know this was something owners typically did</span></label>
-        </div>
-      </div>
-
-      <div class="q-block">
-        <span class="q-label">How would you describe the depth and consistency of your hotel's financial reporting?</span>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q13" value="0"><span class="opt-text">High — the reporting is detailed and consistent, and I can see the detail behind the figures</span></label>
-          <label class="opt"><input type="radio" name="q13" value="1"><span class="opt-text">Moderate — the reporting looks reasonable but I haven't independently verified it</span></label>
-          <label class="opt"><input type="radio" name="q13" value="2"><span class="opt-text">Low — I have questions about the accuracy of what I receive</span></label>
-          <label class="opt"><input type="radio" name="q13" value="2"><span class="opt-text">I accept the reports I receive without questioning them</span></label>
-        </div>
-      </div>
-
-      <div class="q-block">
-        <span class="q-label">In the last 12 months, have you received a report that raised a concern you couldn't follow up on because the underlying data wasn't available?</span>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q14" value="0"><span class="opt-text">No — underlying data is always available on request</span></label>
-          <label class="opt"><input type="radio" name="q14" value="1"><span class="opt-text">Once or twice — I've had to follow up to get clarity</span></label>
-          <label class="opt"><input type="radio" name="q14" value="2"><span class="opt-text">Yes — there are figures I'd like more detail on</span></label>
-          <label class="opt"><input type="radio" name="q14" value="2"><span class="opt-text">Often — the detail I need isn't part of the standard report</span></label>
-        </div>
-      </div>
-
-      <div class="q-block">
-        <span class="q-label">Overall — how well does your current oversight of your hotel match the level of oversight you'd expect for an asset of this value?</span>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q15" value="0"><span class="opt-text">Very well — I have the information, structure, and access I need</span></label>
-          <label class="opt"><input type="radio" name="q15" value="1"><span class="opt-text">Reasonably well — there are gaps but nothing that concerns me significantly</span></label>
-          <label class="opt"><input type="radio" name="q15" value="2"><span class="opt-text">Poorly — the oversight I have isn't commensurate with the value at stake</span></label>
-          <label class="opt"><input type="radio" name="q15" value="2"><span class="opt-text">I haven't considered my hotel in terms of asset oversight before</span></label>
-        </div>
-      </div>
-
-      <div class="submit-row">
-        <button type="button" class="btn-run" onclick="runDiagnostic()">See my results</button>
-        <p class="submit-small">Results are calculated locally. No data is sent anywhere.</p>
-      </div>
-
-    </form>
-
-    <div id="diag-results"></div>
-
+    <div class="diag-card" id="card-s2" onclick="showSection('s2')">
+      <span class="card-num">02</span>
+      <div class="card-title">Commercial Performance</div>
+      <p class="card-desc">How your hotel generates revenue — and whether you're seeing all of it.</p>
+      <span class="card-arrow">&#8250;</span>
+    </div>
+    <div class="diag-card" id="card-s3" onclick="showSection('s3')">
+      <span class="card-num">03</span>
+      <div class="card-title">Operational Governance</div>
+      <p class="card-desc">How decisions are made in your hotel — and whether you have oversight of them.</p>
+      <span class="card-arrow">&#8250;</span>
+    </div>
+    <div class="diag-card" id="card-s4" onclick="showSection('s4')">
+      <span class="card-num">04</span>
+      <div class="card-title">Owner Position</div>
+      <p class="card-desc">Whether you have the information and oversight to protect your ownership position.</p>
+      <span class="card-arrow">&#8250;</span>
+    </div>
   </div>
 </div>
 
-<section id="tool" style="background:var(--cream);padding:100px 40px;border-top:1px solid rgba(26,48,40,.1)">
-  <div class="section-inner" style="max-width:1120px;margin:0 auto">
-    <div style="max-width:600px;margin:0 auto 48px">
-      <p class="section-label" style="color:rgba(165,116,38,.9);margin-bottom:12px">Free Calculator</p>
-      <h2 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:clamp(1.7rem,2.5vw,2.4rem);color:var(--ink);line-height:1.15;margin-bottom:16px">Hotel Profit Health Check</h2>
-      <p style="font-size:.88rem;line-height:1.8;color:rgba(26,48,40,.65)">Enter your hotel's basics. Get an instant estimate of your true revenue yield, OTA cost drag, and three specific gaps worth investigating. No sign-up. No data stored.</p>
-    </div>
-    <div style="background:#fff;border:1px solid rgba(26,48,40,.12);border-radius:6px;overflow:hidden;box-shadow:0 2px 16px rgba(26,48,40,.06)">
-      <iframe 
-        src="/health-check.html" 
-        style="width:100%;border:none;min-height:800px;display:block"
-        title="Hotel Profit Health Check — Veritas Hospitality Advisors"
-        loading="lazy">
-      </iframe>
+<div class="diag-section-wrap">
+<!-- SECTION 1 -->
+<div class="diag-section" id="s1">
+  <div class="section-head">
+    <h2>Owner Reporting</h2>
+    <p>What your monthly reporting covers — and whether it gives you the full picture.</p>
+  </div>
+  <div class="progress-row"><div class="progress-bar"><div class="progress-fill" id="prog-s1"></div></div><span class="progress-label" id="progtxt-s1">0 of 3 answered</span></div>
+  <form id="form-s1">
+  <div class="q-block">
+    <span class="q-label">How often do you receive a formal written report from your hotel management team?</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="q1" value="0"><span class="opt-text">Monthly — with full P&amp;L, RevPAR, and operational summary</span></label>
+      <label class="opt"><input type="radio" name="q1" value="1"><span class="opt-text">Monthly — but mainly occupancy and revenue figures<small>Profit and cost detail is limited or absent</small></span></label>
+      <label class="opt"><input type="radio" name="q1" value="2"><span class="opt-text">Quarterly or when I ask<small>No regular reporting cadence</small></span></label>
+      <label class="opt"><input type="radio" name="q1" value="2"><span class="opt-text">I rely on what my GM tells me verbally</span></label>
     </div>
   </div>
-</section>
+  <div class="q-block">
+    <span class="q-label">Does your monthly report show Gross Operating Profit (GOP) — not just revenue?</span>
+    <span class="q-hint">GOP = Revenue minus departmental expenses. It's what the hotel actually earns before fixed costs.</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="q2" value="0"><span class="opt-text">Yes — I see GOP every month with a breakdown by department</span></label>
+      <label class="opt"><input type="radio" name="q2" value="1"><span class="opt-text">I see total revenue and a bottom-line figure, but not GOP specifically</span></label>
+      <label class="opt"><input type="radio" name="q2" value="2"><span class="opt-text">No — I mainly see occupancy percentage and total revenue</span></label>
+      <label class="opt"><input type="radio" name="q2" value="2"><span class="opt-text">I don't know what my GOP is</span></label>
+    </div>
+  </div>
+  <div class="q-block">
+    <span class="q-label">When you receive financial reports, can you trace a revenue figure back to its source?</span>
+    <span class="q-hint">If your report says "Room Revenue: ₹18 lakhs," can you see which bookings, channels, and dates make up that number?</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="q3" value="0"><span class="opt-text">Yes — I can request source-level data and it's provided</span></label>
+      <label class="opt"><input type="radio" name="q3" value="1"><span class="opt-text">Partially — some figures can be traced but not all</span></label>
+      <label class="opt"><input type="radio" name="q3" value="2"><span class="opt-text">No — I receive summary totals only and can't easily see the detail behind them</span></label>
+      <label class="opt"><input type="radio" name="q3" value="2"><span class="opt-text">I've never thought to check</span></label>
+    </div>
+  </div>
+  </form>
+  <div class="section-footer">
+    <button class="btn-skip" onclick="showSection('s2')">Skip to Commercial Performance</button>
+    <button class="btn-next" onclick="showSection('s2')">Next: Commercial Performance &rarr;</button>
+  </div>
+</div>
 
+<!-- SECTION 2 -->
+<div class="diag-section" id="s2">
+  <div class="section-head">
+    <h2>Commercial Performance</h2>
+    <p>How your hotel generates revenue — and whether you're seeing all of it.</p>
+  </div>
+  <div class="progress-row"><div class="progress-bar"><div class="progress-fill" id="prog-s2"></div></div><span class="progress-label" id="progtxt-s2">0 of 4 answered</span></div>
+  <form id="form-s2">
+  <div class="q-block">
+    <span class="q-label">Do you know what percentage of your room revenue comes from OTAs versus direct bookings?</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="q4" value="0"><span class="opt-text">Yes — I see a channel-by-channel revenue breakdown monthly</span></label>
+      <label class="opt"><input type="radio" name="q4" value="1"><span class="opt-text">Approximately — I have a rough sense but not precise data</span></label>
+      <label class="opt"><input type="radio" name="q4" value="2"><span class="opt-text">No — I see total revenue but not broken down by channel</span></label>
+      <label class="opt"><input type="radio" name="q4" value="2"><span class="opt-text">I know OTAs are significant but I've never seen the actual split</span></label>
+    </div>
+  </div>
+  <div class="q-block">
+    <span class="q-label">Do you know what your hotel paid in OTA commissions last financial year?</span>
+    <span class="q-hint">OTA commissions are typically 15–25% of room revenue. On ₹1 crore in OTA revenue, that's ₹15–25 lakhs leaving your hotel annually.</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="q5" value="0"><span class="opt-text">Yes — I see commission costs as a line item in my P&amp;L</span></label>
+      <label class="opt"><input type="radio" name="q5" value="1"><span class="opt-text">I know the rate (e.g. 18%) but I've never calculated the rupee value</span></label>
+      <label class="opt"><input type="radio" name="q5" value="2"><span class="opt-text">I've been told it's "in the rates" but I've never seen it as a separate figure</span></label>
+      <label class="opt"><input type="radio" name="q5" value="2"><span class="opt-text">I don't know what my hotel paid in OTA commissions</span></label>
+    </div>
+  </div>
+  <div class="q-block">
+    <span class="q-label">Has your hotel's Average Daily Rate (ADR) increased in line with your costs over the past two years?</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="q6" value="0"><span class="opt-text">Yes — rates have grown and I've seen the comparison data</span></label>
+      <label class="opt"><input type="radio" name="q6" value="1"><span class="opt-text">I believe rates have increased but haven't seen it tracked against costs</span></label>
+      <label class="opt"><input type="radio" name="q6" value="2"><span class="opt-text">Rates have been flat — we've focused on maintaining occupancy</span></label>
+      <label class="opt"><input type="radio" name="q6" value="2"><span class="opt-text">I'm not sure — I don't receive trend data across years</span></label>
+    </div>
+  </div>
+  <div class="q-block">
+    <span class="q-label">When your hotel offers a discounted rate, do you approve it — or does management decide independently?</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="q7" value="0"><span class="opt-text">There's a written rate authority matrix — discounts above a threshold need my approval</span></label>
+      <label class="opt"><input type="radio" name="q7" value="1"><span class="opt-text">I'm usually informed, but management makes the call</span></label>
+      <label class="opt"><input type="radio" name="q7" value="2"><span class="opt-text">Management sets rates independently — I find out afterwards or not at all</span></label>
+      <label class="opt"><input type="radio" name="q7" value="2"><span class="opt-text">I'm not sure what the process is</span></label>
+    </div>
+  </div>
+  </form>
+  <div class="section-footer">
+    <button class="btn-skip" onclick="showSection('s3')">Skip to Operational Governance</button>
+    <button class="btn-next" onclick="showSection('s3')">Next: Operational Governance &rarr;</button>
+  </div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="diag-section" id="s3">
+  <div class="section-head">
+    <h2>Operational Governance</h2>
+    <p>How decisions are made in your hotel — and whether you have oversight of them.</p>
+  </div>
+  <div class="progress-row"><div class="progress-bar"><div class="progress-fill" id="prog-s3"></div></div><span class="progress-label" id="progtxt-s3">0 of 3 answered</span></div>
+  <form id="form-s3">
+  <div class="q-block">
+    <span class="q-label">Is there a written operating plan or annual budget that your management team works against?</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="q8" value="0"><span class="opt-text">Yes — there's a Board-approved operating plan with monthly targets and variance reporting</span></label>
+      <label class="opt"><input type="radio" name="q8" value="1"><span class="opt-text">There's a budget, but actual-vs-budget comparison isn't regularly shared</span></label>
+      <label class="opt"><input type="radio" name="q8" value="2"><span class="opt-text">Operating decisions are made without a formal plan</span></label>
+      <label class="opt"><input type="radio" name="q8" value="2"><span class="opt-text">I'm not sure what plan, if any, management follows</span></label>
+    </div>
+  </div>
+  <div class="q-block">
+    <span class="q-label">If your General Manager resigned tomorrow, how confident are you in the continuity of your hotel's operations?</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="q9" value="0"><span class="opt-text">Very confident — standard operating procedures are documented and the team can run independently</span></label>
+      <label class="opt"><input type="radio" name="q9" value="1"><span class="opt-text">Somewhat confident — there would be disruption but not collapse</span></label>
+      <label class="opt"><input type="radio" name="q9" value="2"><span class="opt-text">Not confident — too much relies on one person or informal knowledge</span></label>
+      <label class="opt"><input type="radio" name="q9" value="2"><span class="opt-text">I haven't thought about this</span></label>
+    </div>
+  </div>
+  <div class="q-block">
+    <span class="q-label">Are capital expenditure decisions (above a set threshold) formally approved by you before they're committed?</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="q10" value="0"><span class="opt-text">Yes — there's a written approval process with defined thresholds</span></label>
+      <label class="opt"><input type="radio" name="q10" value="1"><span class="opt-text">I'm usually consulted, but the process is informal</span></label>
+      <label class="opt"><input type="radio" name="q10" value="2"><span class="opt-text">Management handles capital spending and informs me afterwards</span></label>
+      <label class="opt"><input type="radio" name="q10" value="2"><span class="opt-text">I'm not sure how capital decisions are made</span></label>
+    </div>
+  </div>
+  </form>
+  <div class="section-footer">
+    <button class="btn-skip" onclick="showSection('s4')">Skip to Owner Position</button>
+    <button class="btn-next" onclick="showSection('s4')">Next: Owner Position &rarr;</button>
+  </div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="diag-section" id="s4">
+  <div class="section-head">
+    <h2>Owner Position</h2>
+    <p>Whether you have the information and oversight to protect your ownership position.</p>
+  </div>
+  <div class="progress-row"><div class="progress-bar"><div class="progress-fill" id="prog-s4"></div></div><span class="progress-label" id="progtxt-s4">0 of 5 answered</span></div>
+  <form id="form-s4">
+  <div class="q-block">
+    <span class="q-label">Do you know your hotel's current RevPAR — and how it compares to your competitive set?</span>
+    <span class="q-hint">RevPAR (Revenue Per Available Room) is the standard measure of room revenue performance. It equals Average Daily Rate × Occupancy.</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="q11" value="0"><span class="opt-text">Yes — I see RevPAR monthly and it's benchmarked against comparable hotels</span></label>
+      <label class="opt"><input type="radio" name="q11" value="1"><span class="opt-text">I know our occupancy and rate, but not RevPAR specifically</span></label>
+      <label class="opt"><input type="radio" name="q11" value="2"><span class="opt-text">I see occupancy figures but no competitive benchmarking</span></label>
+      <label class="opt"><input type="radio" name="q11" value="2"><span class="opt-text">I don't have regular access to RevPAR data</span></label>
+    </div>
+  </div>
+  <div class="q-block">
+    <span class="q-label">Have you ever commissioned an independent review of your hotel's financial performance?</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="q12" value="0"><span class="opt-text">Yes — within the last two years</span></label>
+      <label class="opt"><input type="radio" name="q12" value="1"><span class="opt-text">Yes — but not recently (more than two years ago)</span></label>
+      <label class="opt"><input type="radio" name="q12" value="2"><span class="opt-text">No — I rely on management's own reporting</span></label>
+      <label class="opt"><input type="radio" name="q12" value="2"><span class="opt-text">I didn't know this was something owners typically commission</span></label>
+    </div>
+  </div>
+  <div class="q-block">
+    <span class="q-label">How would you describe the depth and consistency of your hotel's financial reporting?</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="q13" value="0"><span class="opt-text">High — the reporting is detailed and consistent, and I can see the detail behind the figures</span></label>
+      <label class="opt"><input type="radio" name="q13" value="1"><span class="opt-text">Moderate — the reporting looks reasonable but I haven't independently verified it</span></label>
+      <label class="opt"><input type="radio" name="q13" value="2"><span class="opt-text">Low — I have questions about the accuracy of what I receive</span></label>
+      <label class="opt"><input type="radio" name="q13" value="2"><span class="opt-text">I'm not sure how to judge the quality of what I receive</span></label>
+    </div>
+  </div>
+  <div class="q-block">
+    <span class="q-label">In the last 12 months, have you received a report that raised a concern you couldn't follow up on because the underlying data wasn't available?</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="q14" value="0"><span class="opt-text">No — underlying data is always available on request</span></label>
+      <label class="opt"><input type="radio" name="q14" value="1"><span class="opt-text">Once or twice — I've had to follow up to get clarity</span></label>
+      <label class="opt"><input type="radio" name="q14" value="2"><span class="opt-text">Yes — there are figures I'd like more detail on</span></label>
+      <label class="opt"><input type="radio" name="q14" value="2"><span class="opt-text">Often — the detail I need isn't part of the standard report</span></label>
+    </div>
+  </div>
+  <div class="q-block">
+    <span class="q-label">Overall — how well does your current oversight of your hotel match the level of oversight you'd expect for an asset of this value?</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="q15" value="0"><span class="opt-text">Very well — I have the information, structure, and access I need</span></label>
+      <label class="opt"><input type="radio" name="q15" value="1"><span class="opt-text">Reasonably well — there are gaps but nothing that concerns me significantly</span></label>
+      <label class="opt"><input type="radio" name="q15" value="2"><span class="opt-text">Poorly — the oversight I have isn't commensurate with the value at stake</span></label>
+      <label class="opt"><input type="radio" name="q15" value="2"><span class="opt-text">I haven't considered whether my oversight is adequate</span></label>
+    </div>
+  </div>
+  </form>
+  <div class="section-footer">
+    <button class="btn-skip" onclick="calcResults()">Skip to results</button>
+    <button class="btn-next" onclick="calcResults()">See my results &rarr;</button>
+  </div>
+</div>
+</div><!-- /diag-section-wrap -->
+
+<div class="results-wrap">
+<div id="results">
+  <p class="res-heading">Your diagnostic results</p>
+  <p class="res-subhead">Based on your answers across the four dimensions below. Results are indicative only — not a financial audit or legal opinion.</p>
+  <div class="score-grid" id="scoreGrid"></div>
+  <div class="res-interpretation" id="resInterpretation"></div>
+  <div class="email-results-form">
+    <h3>Email me my results</h3>
+    <p>We'll send a copy to your inbox and Vaishakh will receive a copy to follow up personally if you'd like.</p>
+    <div class="email-row">
+      <input type="email" id="emailInput" placeholder="your@email.com">
+      <button class="btn-email" onclick="emailResults()">Send results &rarr;</button>
+    </div>
+    <p class="email-sent" id="emailSent">&#10003; Sent. Vaishakh will be in touch if you'd like to discuss.</p>
+  </div>
+</div>
+</div>
+
+<div class="diag-cta-section">
+<div class="diag-cta-box" id="diagCTA" style="display:none">
+  <h3>Ready to discuss what this means for your hotel?</h3>
+  <p>Vaishakh reviews each response personally. No obligation — just a focused conversation about what the numbers are actually telling you.</p>
+  <a href="mailto:vaishakh@veritashospitalityadvisors.com?subject=Hotel%20Diagnostic%20Discussion" class="btn-discuss">Discuss with Vaishakh &rarr;</a>
+</div>
+</div>
+
+<footer>
+  <div class="footer-row">
+    <a href="/" class="footer-logo">Veritas<span>.</span></a>
+    <nav class="footer-links">
+      <a href="/">Home</a><a href="founder.html">Founder</a><a href="diagnostic.html">Diagnostic</a>
+      <a href="insights.html">Perspectives</a><a href="legal.html">Privacy &amp; Terms</a>
+    </nav>
+  </div>
+  <div class="footer-row">
+    <p class="footer-copy">&copy; 2026 Veritas Hospitality Advisors. All rights reserved.</p>
+    <p class="footer-built">Built by <a href="https://aisearch.global" target="_blank">AISearch Global</a> &nbsp;|&nbsp; Sydney &nbsp;|&nbsp; Australia</p>
+  </div>
+</footer>
 
 <script>
-function openDiagnostic(e){
-  if(e)e.preventDefault();
-  const d=document.getElementById('owner-diagnostic');
-  d.style.display='block';
-  setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'start'}),60);
-}
+const SECTIONS = ['s1','s2','s3','s4'];
+const SECTION_QS = {s1:['q1','q2','q3'], s2:['q4','q5','q6','q7'], s3:['q8','q9','q10'], s4:['q11','q12','q13','q14','q15']};
+const SECTION_NAMES = {s1:'Owner Reporting', s2:'Commercial Performance', s3:'Operational Governance', s4:'Owner Position'};
+const SECTION_MAX = {s1:6, s2:8, s3:6, s4:10};
 
-function runDiagnostic(){
-  const form=document.getElementById('diagForm');
-  const questions=['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','q11','q12','q13','q14','q15'];
-  let score=0,answered=0,missing=[];
-  questions.forEach((q,i)=>{
-    const v=form.querySelector(`input[name="${q}"]:checked`);
-    if(v){answered++;score+=parseInt(v.value);}
-    else missing.push(i+1);
+function showSection(id) {
+  // hide all sections
+  SECTIONS.forEach(s => {
+    document.getElementById(s).classList.remove('visible');
+    document.getElementById('card-'+s).classList.remove('active');
   });
-  if(answered<questions.length){
-    alert(`Please answer all 15 questions before seeing your results. Missing: Q${missing.join(', Q')}.`);
-    return;
-  }
-  showResults(score);
+  // show target
+  document.getElementById(id).classList.add('visible');
+  document.getElementById('card-'+id).classList.add('active');
+  // scroll to section
+  document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
+  updateProgress(id);
 }
 
-function showResults(score){
-  document.getElementById('diagForm').style.display='none';
-  const pct=Math.round((1-(score/30))*100);
-  let verdict,tier,findings=[];
-
-  if(score<=6){
-    verdict='Strong owner oversight';tier='low';
-    findings=[
-      {sev:'',title:'Reporting structure is working',body:'Your hotel reporting gives you the visibility needed to make ownership decisions. Continue to review independently at least annually.'},
-      {sev:'',title:'Consider independent benchmarking',body:'Even strong reporting benefits from an external perspective. A periodic independent review can confirm what\'s working and surface what isn\'t visible from inside.'}
-    ];
-  } else if(score<=14){
-    verdict='Moderate gaps — worth addressing';tier='medium';
-    findings=[
-      {sev:'medium',title:'Reporting depth is limited',body:'You\'re receiving performance data, but it may not give you the full picture needed for ownership decisions. Key metrics — GOP, channel contribution, cost-per-booking — may not yet be part of the standard report.'},
-      {sev:'medium',title:'Commercial performance visibility is partial',body:'You have a general sense of how your hotel is performing commercially, but may lack the data to act decisively on pricing, distribution, or channel strategy.'},
-      {sev:'',title:'Governance structure could be formalised',body:'Operating decisions appear to be made without a written authority framework. This creates risk if key personnel change.'}
-    ];
-  } else {
-    verdict='Significant gaps — owner position at risk';tier='high';
-    findings=[
-      {sev:'high',title:'Owner reporting is insufficient for asset oversight',body:'The level of reporting you receive does not give you the visibility expected for an asset of this value. Key performance metrics, cost detail and channel data are not yet part of your regular reporting.'},
-      {sev:'high',title:'Commercial performance is largely unmonitored',body:'OTA dependence, commission costs, rate strategy, and channel contribution appear to be handled day to day without a structured owner-level review. This is where margin leakage most commonly occurs.'},
-      {sev:'medium',title:'Operational governance is informal or absent',body:'Operating decisions, capital expenditure, and staff authority appear to be managed without a formal framework approved by ownership. This creates significant continuity and accountability risk.'},
-      {sev:'medium',title:'No external benchmark yet',body:'Your results have not yet been benchmarked against the market by an outside reviewer. A shared, independent read helps owner and team plan from the same numbers.'}
-    ];
-  }
-
-  const findingHtml=findings.map(f=>`
-    <div class="finding ${f.sev}">
-      ${f.sev?`<div class="f-flag">${f.sev==='high'?'High priority':'Worth addressing'}</div>`:''}
-      <h4>${f.title}</h4>
-      <p>${f.body}</p>
-    </div>
-  `).join('');
-
-  document.getElementById('diag-results').innerHTML=`
-    <div class="res-score-box">
-      <div class="res-score-num">${pct}<span style="font-size:1.5rem">%</span></div>
-      <div class="res-score-meta">
-        <div class="rs-label">Owner oversight score</div>
-        <div class="rs-verdict">${verdict}</div>
-      </div>
-    </div>
-    <p class="res-intro">Based on your answers, here are the areas that most need attention. These findings are indicative — a conversation with Vaishakh will give you a more precise picture of where your hotel stands.</p>
-    <div class="finding-list">${findingHtml}</div>
-    <div class="res-cta">
-      <h3>Discuss your results confidentially</h3>
-      <p>Vaishakh Surendran will review your situation and tell you honestly whether Veritas can help — and if so, what that looks like. There is no obligation and no pitch.</p>
-      <a href="mailto:viveka@aisearch.global?subject=Owner%20Diagnostic%20Results%20%E2%80%94%20${pct}%25%20score" class="btn-cta">Request a confidential discussion</a>
-      <span class="res-contact">viveka@aisearch.global · +91 90722 33008</span>
-    </div>
-    <button class="restart-link" onclick="restartDiag()">Restart diagnostic</button>
-  `;
-
-  document.getElementById('diag-results').style.display='block';
-  setTimeout(()=>document.getElementById('diag-results').scrollIntoView({behavior:'smooth',block:'start'}),60);
+function updateProgress(sid) {
+  const qs = SECTION_QS[sid];
+  const answered = qs.filter(q => document.querySelector('input[name="'+q+'"]:checked')).length;
+  const pct = Math.round(answered/qs.length*100);
+  document.getElementById('prog-'+sid).style.width = pct+'%';
+  document.getElementById('progtxt-'+sid).textContent = answered+' of '+qs.length+' answered';
 }
 
-function restartDiag(){
-  document.getElementById('diagForm').reset();
-  document.getElementById('diagForm').style.display='block';
-  document.getElementById('diag-results').style.display='none';
-  document.getElementById('diag-results').innerHTML='';
-  document.getElementById('owner-diagnostic').scrollIntoView({behavior:'smooth',block:'start'});
-}
-
-// FAQ accordion
-document.querySelectorAll('.faq-item').forEach(item=>{
-  item.addEventListener('click',()=>{
-    const isOpen=item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
-    if(!isOpen)item.classList.add('open');
+// live progress update
+document.querySelectorAll('.opts input[type=radio]').forEach(r => {
+  r.addEventListener('change', () => {
+    SECTIONS.forEach(s => updateProgress(s));
   });
 });
 
-// Subtle hero parallax
-window.addEventListener('scroll',()=>{
-  const bg=document.getElementById('heroBg');
-  if(bg)bg.style.transform=`scale(1.06) translateY(${window.scrollY*0.18}px)`;
-},{passive:true});
+function calcResults() {
+  const allQs = ['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','q11','q12','q13','q14','q15'];
+  const sectionScores = {};
+  Object.entries(SECTION_QS).forEach(([sid, qs]) => {
+    let total=0, answered=0;
+    qs.forEach(q => {
+      const el = document.querySelector('input[name="'+q+'"]:checked');
+      if(el) { total += parseInt(el.value); answered++; }
+    });
+    sectionScores[sid] = {score: total, max: SECTION_MAX[sid], answered, total: qs.length};
+  });
 
-// ── BLOG DRAWER DOM (appended dynamically) ──
-(function(){
-  const drawer=document.createElement('div');
-  drawer.id='blogDrawer';
-  drawer.className='blog-drawer';
-  drawer.setAttribute('role','dialog');
-  drawer.setAttribute('aria-modal','true');
-  drawer.innerHTML=`
-    <div class="blog-drawer-overlay" onclick="closePost()"></div>
-    <div class="blog-drawer-panel">
-      <button class="drawer-close" onclick="closePost()" aria-label="Close">✕</button>
-      <p class="drawer-tag" id="drawerTag"></p>
-      <h2 class="drawer-title" id="drawerTitle"></h2>
-      <div class="drawer-body" id="drawerBody"></div>
-      <div class="drawer-sources" id="drawerSources" style="display:none"></div>
-      <div class="drawer-cta">
-        <p>Veritas works exclusively for independent hotel owners — reviewing commercial performance, operational governance, and owner reporting.</p>
-        <a href="mailto:viveka@aisearch.global?subject=Insight%20enquiry">Discuss confidentially with Vaishakh →</a>
-      </div>
+  // Build score cards
+  const grid = document.getElementById('scoreGrid');
+  grid.innerHTML = '';
+  let overallScore=0, overallMax=0;
+  Object.entries(sectionScores).forEach(([sid, data]) => {
+    const pct = data.max>0 ? Math.round((1 - data.score/data.max)*100) : 0;
+    overallScore += data.score; overallMax += data.max;
+    const rating = pct>=75?'Strong':pct>=50?'Moderate':'Needs attention';
+    const col = pct>=75?'#2d7a4f':pct>=50?'#a57426':'#c0392b';
+    grid.innerHTML += `<div class="score-card">
+      <span class="score-label">${SECTION_NAMES[sid]}</span>
+      <span class="score-val" style="color:${col}">${pct}%</span>
+      <div class="score-desc">${rating} &mdash; ${data.answered} of ${data.total} answered</div>
     </div>`;
-  document.body.appendChild(drawer);
-})();
-
-// ── BLOG DATA ──
-const POSTS={
-  i1:{tag:'Market Reality',title:"India's hotel market is strong. That is not the same as your hotel being profitable.",body:`<p>India's 2025 hotel figures make for cheerful reading: Horwath HTL recorded 64% occupancy, an average daily rate of ₹8,624 and RevPAR of ₹5,522 in its tracked market. HVS ANAROCK puts nationwide occupancy in the 63–65% range. Neither report tells an individual owner what was left after commissions, payroll, utilities, debt service and necessary repairs.</p><p>That distinction matters most when a hotel is busy. Full rooms can delay a difficult conversation about rate discipline or operating costs; the team is occupied, revenue is moving, and the month feels successful. Then the owner's bank account tells a less satisfying story.</p><p>Begin with three reconciliations: rooms sold to net room revenue after distribution costs; department revenue to contribution after direct costs; and reported operating profit to actual cash available after agreed obligations. Compare the same periods and explain unusual events. Do not use the national RevPAR as a target for a small independent property: location, segment, accounting and sample coverage differ.</p><p>The useful question is not whether India had a good year. It is which part of that good year reached your property's bottom line.</p>`,sources:'Sources: Horwath HTL, India Hotel Market Review 2025 · HVS ANAROCK, India Hospitality Industry Overview 2025'},
-  i2:{tag:'Competition',title:"The 64,118-key question for independent hotels",body:`<p>HVS ANAROCK reports approximately 64,118 keys signed across 586 branded properties during 2025. These are signings, not 64,118 rooms already available to book: openings numbered roughly 14,199 rooms across 176 properties. An owner who treats pipeline as immediate competition risks reacting too early; an owner who ignores it entirely may react too late.</p><p>Build a competitor map with three dates: announcement, expected opening and actual opening. Add segment, likely guest, location, event capacity and visible price position. A new branded business hotel near an airport could matter more to your corporate accounts than a luxury resort in the same district.</p><p>Then identify what a chain cannot easily reproduce. It might be a local relationship, a quicker decision about group needs or genuinely consistent service. 'We are independent' is not an advantage by itself. Independence has commercial value only when guests or buyers notice it.</p><p>Before spending on a renovation in response to a brand announcement, ask which customers are truly at risk and which investments would protect a reason to book.</p>`,sources:'Source: HVS ANAROCK, India Hospitality Industry Overview 2025'},
-  i3:{tag:'Demand',title:"India's domestic travel boom is not a room-night forecast",body:`<p>The Ministry of Tourism's beta dashboard lists approximately 4,287 million domestic tourist visits in 2025, up 45.55% on 2024. A tourist visit is not a unique traveller, a hotel booking or a night in your district. A property budget built by applying that national growth rate to its own room nights would confuse three different measures.</p><p>HVS ANAROCK's May 2026 report estimated roughly 4,548 million visits for 2025, a different figure from the ministry dashboard. Different vintages or definitions may explain the gap; until reconciled, use the official dashboard with its beta caveat for a dated national reference, and do not quietly combine the two.</p><p>For a useful local forecast, start with actual demand: occupied room nights by day of week and source market; booking lead time; major dates; and how much new supply is coming online. Ask local organisers and corporate buyers what is changing.</p><p>National tourism growth tells you where to investigate. Your own booking book tells you what to staff and price for.</p>`,sources:'Sources: Ministry of Tourism beta dashboard (2025 data) · HVS ANAROCK, India Hospitality Industry Overview 2025'},
-  i4:{tag:'Pilgrimage Travel',title:"Pilgrimage demand calls for an operating plan, not only a higher tariff",body:`<p>Pilgrimage-led travel is a serious hotel-market theme. Horwath HTL names religious destinations among its 2025–26 opportunities; a February 2025 Ministry of Tourism answer lists Gaya, Nalanda, Dwarka and Prayagraj among destinations identified under Swadesh Darshan 2.0. Being on a development list is not a guarantee of completed infrastructure or room demand.</p><p>For an owner near a pilgrimage circuit, the questions are practical. Which arrival times are common? Do families need early check-in or secure luggage storage? Can the kitchen reliably serve the food guests expect? How will housekeeping handle compressed departures? These answers may matter more than a new campaign promising 'spiritual experiences'.</p><p>Separate ordinary weeks from festival peaks when setting rates and staffing. Record cancellations, group terms and the costs of temporary labour. Resist investing around a single extraordinary event without testing the baseline demand that remains afterwards.</p><p>The opportunity is not simply to charge more when a destination becomes busy. It is to be the property that works properly when every arrival happens at once.</p>`,sources:'Sources: Horwath HTL, India Hotel Market Review 2025 · Ministry of Tourism parliamentary answer on Swadesh Darshan 2.0, February 2025'},
-  i5:{tag:'Pricing',title:"Five-star rates in the headlines, a different decision at your desk",body:`<p>Horwath HTL reports ₹8,624 average daily rate across its covered Indian hotel market in 2025, up 8.6% year on year. It also reports Mumbai occupancy of 77.1% among major markets, with Udaipur leading reported ADR at around ₹15,900. Those figures show how differently local markets behave. They are context, not a price list for an owner-operated hotel.</p><p>A useful rate decision starts with your own comparable dates. Look at booking pace, local events, segment and channel mix, cancellation exposure and the minimum contribution you need from a room. Review where you lost business at a high rate and where you sold out too early at a low one.</p><p>Do not raise every tariff by the national ADR growth rate. Nor should a weaker day automatically trigger a discount. If the guest mix changes, so can service costs and the value of keeping inventory available for a later booking.</p><p>Price is a decision about the next available room, not an annual headline pasted into a rate card.</p>`,sources:'Source: Horwath HTL, India Hotel Market Review 2025'},
-  i6:{tag:'Distribution',title:"A booking channel can bring revenue and still disappoint the owner",body:`<p>An online travel agency can fill a room you might otherwise leave empty. It can also take a commission, encourage a discount or generate bookings with different cancellation behaviour. Neither 'leave the OTAs' nor 'fill every room' is a complete commercial strategy.</p><p>Take a representative period and compare channels on the same basis: realised room revenue after taxes treated consistently, discounts, commissions, payment costs, marketing spend attributable to direct bookings and cancellations. Then consider the incremental cost of serving each occupied room. Do not count an OTA booking as lost direct business unless there is evidence you could have captured that guest yourself.</p><p>Ask the reservations team where direct enquiries fail: no answer, confusing rates, difficult payment or weak follow-up. Sometimes the cheap improvement is a clearer booking process, not a costly campaign.</p><p>India's tracked hotel RevPAR increased in 2025. A rising market makes this channel calculation more — not less — important: higher headline revenue can conceal an expensive acquisition mix.</p>`,sources:'Source: Horwath HTL, India Hotel Market Review 2025'},
-  i7:{tag:'Pipeline',title:"What a 144,000-room pipeline actually tells a hotel owner",body:`<p>Horwath HTL estimates India's branded hotel pipeline at roughly 144,000 rooms. Its report warns against assuming every planned room opens on schedule: although that pipeline could imply around 360,000 rooms of inventory by 2030 if delivered, it regards around 300,000 as more likely given delays.</p><p>That difference should change how an owner reads industry announcements. A signing may affect lender sentiment or recruitment long before it affects occupancy. A finished property on your road is a different matter. Track the probability and timing of each local project, not just the press-release count.</p><p>Make one page per credible competitor: proposed opening quarter, guest segments, meeting space, rate positioning and evidence that construction is progressing. Revisit quarterly. The point is not to obsess over every development. It is to give your sales and capital decisions a realistic clock.</p><p>Pipeline is a warning to investigate. It is not a reason to cut tonight's rate.</p>`,sources:'Source: Horwath HTL, India Hotel Market Review 2025'},
-  i8:{tag:'Events',title:"The Indian wedding boom should be judged by contribution",body:`<p>HVS ANAROCK identifies weddings as a significant driver of seasonal demand in Indian hospitality. That matters to a hotel with banquet space, but a large event invoice can make a poor business decision look attractive.</p><p>Consider the complete event: venue rental, catering and room revenue, then food cost, temporary labour, utilities, commissions, decoration obligations, credit terms and any regular rooms displaced by the block. A Saturday wedding could be profitable and still be less profitable than the business it replaces. Conversely, a weekday event might support rooms that would otherwise sit empty.</p><p>Have sales and finance agree on an event contribution sheet before quoting. Record minimum guest counts, release dates for blocked rooms and deposit rules. After the event, compare actual consumption with the quotation; use the differences to improve the next proposal.</p><p>The question is not 'How many weddings did we host?' It is 'Which weddings earned enough for the space, rooms and attention they consumed?'</p>`,sources:'Source: HVS ANAROCK, India Hospitality Industry Overview 2025'},
-  i9:{tag:'Infrastructure',title:"New tourism infrastructure does not arrive on your opening date",body:`<p>India's Swadesh Darshan 2.0 programme is designed to develop sustainable destinations. A February 2025 parliamentary reply said 58 destinations had been identified and 34 projects sanctioned at that point; identification, sanction and completion are different milestones. Those figures are a dated snapshot, not a live count for 2026.</p><p>If your property sits near a proposed attraction, map the actual guest journey. Is the road open? Is the attraction operating? Can visitors stay overnight or is it a day trip? Which months are suitable, and what nearby accommodation is opening?</p><p>A small test beats a large speculative commitment: partner with a local guide, build one itinerary, measure enquiries and the actual conversion to room nights. Only then consider rooms, vehicles or event space tailored to a forecast that has not yet arrived.</p><p>An announced destination is a reason to conduct fieldwork, not an occupancy guarantee.</p>`,sources:'Source: Ministry of Tourism parliamentary answer on Swadesh Darshan 2.0, February 2025'},
-  i10:{tag:'Source Markets',title:"When inbound travel softens, know which guests you actually rely on",body:`<p>The Ministry of Tourism's beta dashboard reports 9.15 million foreign tourist arrivals for 2025, down 8.07% from 2024, while domestic tourist visits rose. HVS ANAROCK uses an estimated 9.02 million foreign arrivals in its May 2026 report. They are not interchangeable figures: source dates and estimation methods differ.</p><p>For an independent hotel, the operational question is whether inbound guests represent 2% or 60% of room nights — and in which months. Split your bookings into domestic leisure, business, groups and relevant inbound markets; note length of stay, lead time, cancellations and spend outside rooms.</p><p>If a source market weakens, do not automatically replace it with a broad domestic discount. The alternative guest may have a different booking window, room preference and service need. Test a specific replacement segment and monitor contribution.</p><p>National headlines are useful signals. Your own source-market ledger should drive the response.</p>`,sources:'Sources: Ministry of Tourism beta dashboard (2025 data) · HVS ANAROCK, India Hospitality Industry Overview 2025'},
-  e1:{tag:'Reporting',title:"The owner should never have to ask what happened to the cash",body:`<p>A hotel can send an owner three reports and answer none of the questions that matter. Occupancy is up; wages are up; the bank balance is down. Each number might be correct. Together they still require an explanation.</p><p>Start the monthly review with last month's owner-approved plan. What changed in rooms sold, average rate and net channel revenue? Which costs moved because volume changed, and which moved for another reason? What payments are due soon? Identify the person responsible for each corrective action and the date the owner will hear back.</p><p>A dashboard does not replace a conversation. If the GM and accountant use different revenue definitions, settle that first. If a capex bill is affecting cash but not the operating result, say so rather than blaming the team for 'weak profit'.</p><p>The best owner report is short enough to be read and precise enough to be challenged. Its purpose is to make a decision possible, not to make the month look tidy.</p>`,sources:''},
-  e2:{tag:'Governance',title:"The family hotel has two org charts",body:`<p>Every family hotel has a formal organisation chart. Many also have an informal one: who can promise a discount, who can approve a supplier, whose call overrides the GM's. The second chart is where apparently sensible plans can stop moving.</p><p>An outside adviser will not solve this by arriving with a dashboard. First ask the family which decisions belong to ownership, which the GM can make, and which require more than one family member. Put those answers into a short decision-rights sheet. Then tell the operating team the same thing.</p><p>This is not a case for stripping the family out of its business. Indian family-business research describes the tension around professionalisation and governance; it does not imply every family hotel has the same conflict. The practical aim is fewer surprises and less rework.</p><p>If a proposed change fails three times, ask whether the numbers were wrong — or whether the approval route was never agreed.</p>`,sources:'Reference: Professionalising Indian Family Firms, SAGE, February 2020'},
-  e3:{tag:'Remote Ownership',title:"An absentee owner needs exceptions, not another daily spreadsheet",body:`<p>Owners who are not on the property every morning face a peculiar problem: they can be copied on every operational message and still miss the one decision that matters. Information is plentiful; interpretation is scarce.</p><p>Set a regular review of a small number of agreed exceptions: unusual rate drops, unresolved guest-service incidents, large unbudgeted spending, late receivables and repeated variance against an agreed target. Each exception should have a responsible person, a proposed response and an escalation deadline. The owner should also know what is routine and does not require approval.</p><p>Ask the GM to challenge the exception list. If every issue goes to the owner, accountability has not improved; it has merely moved upstairs. If nothing does, the system may be hiding uncomfortable news.</p><p>Good oversight lets a remote owner step back without becoming the last person to find out.</p>`,sources:''},
-  e4:{tag:'Brand Decisions',title:"Should an independent hotel take a brand? Start with the contract, not the flag",body:`<p>A brand can offer reach, systems and recognition. It also comes with fees, standards and obligations that change the owner's freedom to spend and decide. Neither remaining independent nor signing a flag is automatically the brave choice.</p><p>Build two comparable cases: independent and affiliated. Include one-time conversion costs, recurring fees, reservation costs, capex required to meet standards, any realistic revenue uplift, and the timing of cash flows. Stress-test the brand's forecast against slower growth, delayed renovations and the actual guests your property serves. Have qualified legal and financial advisers review the contract and tax implications.</p><p>This decision is becoming more salient as brands sign deeper into India's non-metro markets: HVS ANAROCK reports 64,118 branded keys signed during 2025, across 586 properties. Signings do not prove every independent should join them.</p><p>The useful question is not 'Will the flag raise ADR?' It is 'What return remains for this owner, under this agreement, after all commitments?'</p>`,sources:'Source: HVS ANAROCK, India Hospitality Industry Overview 2025'},
-  e5:{tag:'Performance',title:"Stop calling a full hotel a successful hotel",body:`<p>A sold-out night can be satisfying. It can also be a clue that you sold too cheaply, accepted an expensive channel mix or filled the property with guests who generate costs the rate does not cover. You need the context before declaring victory.</p><p>Look at three dates: a night that sold out early, one that filled late and one that stayed quiet. Compare realised rate, channel costs, cancellations, add-on spend and the operational burden. What did you know when rates were set? What would you do differently next time?</p><p>Horwath HTL reports 64% occupancy and ₹5,522 RevPAR across its tracked market for 2025. Those benchmarks are useful background, not proof a particular owner's 80% occupancy was good or bad; market mix and accounting differ.</p><p>A useful owner question follows each busy period: 'What did this demand earn us — and what did we give up to capture it?'</p>`,sources:'Source: Horwath HTL, India Hotel Market Review 2025'}
-};
-
-function switchTab(name,btn){
-  document.querySelectorAll('.btab').forEach(b=>b.classList.remove('active'));
-  document.querySelectorAll('.blog-panel').forEach(p=>p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('tab-'+name).classList.add('active');
-}
-
-function openPost(id){
-  const p=POSTS[id]; if(!p)return;
-  const d=document.getElementById('blogDrawer');
-  document.getElementById('drawerTag').textContent=p.tag;
-  document.getElementById('drawerTitle').textContent=p.title;
-  document.getElementById('drawerBody').innerHTML=p.body;
-  const src=document.getElementById('drawerSources');
-  if(p.sources){src.innerHTML='<p>'+p.sources+'</p>';src.style.display='block';}
-  else{src.style.display='none';}
-  d.classList.add('open');
-  document.body.style.overflow='hidden';
-}
-
-function closePost(){
-  document.getElementById('blogDrawer').classList.remove('open');
-  document.body.style.overflow='';
-}
-
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closePost();});
-
-function submitGate(e){
-  e.preventDefault();
-  const name=document.getElementById('gate-name').value.trim();
-  const email=document.getElementById('gate-email').value.trim();
-  if(!name||!email)return;
-  // In production: POST to your endpoint / Mailchimp / etc.
-  // For now: show the success state immediately
-  document.getElementById('gateFormWrap').style.display='none';
-  document.getElementById('gateSuccess').style.display='block';
-  // Optional: send to a mailto as fallback notification
-  const hotel=document.getElementById('gate-hotel').value.trim();
-  const body=encodeURIComponent(`Playbook download request\nName: ${name}\nEmail: ${email}\nHotel: ${hotel||'(not provided)'}`);
-  fetch(`https://formsubmit.co/ajax/viveka@aisearch.global`,{
-    method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify({name,email,hotel:hotel||'',_subject:'Playbook download — '+name,_captcha:'false'})
-  }).catch(()=>{}); // silent — success shown regardless
-}
-function submitContact(e){
-  e.preventDefault();
-  var name=document.getElementById('cf-name').value.trim();
-  var email=document.getElementById('cf-email').value.trim();
-  var hotel=document.getElementById('cf-hotel').value.trim();
-  var message=document.getElementById('cf-message').value.trim();
-  if(!name||!email)return;
-  var btn=e.target.querySelector('.cf-submit');
-  btn.textContent='Sending...';
-  btn.disabled=true;
-  fetch('https://formsubmit.co/ajax/viveka@aisearch.global',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify({name:name,email:email,hotel:hotel||'',message:message||'',_subject:'Website enquiry — '+name,_captcha:'false'})
-  }).then(function(){
-    document.getElementById('contactFormWrap').style.display='none';
-    document.getElementById('contactSuccess').style.display='block';
-  }).catch(function(){
-    document.getElementById('contactFormWrap').style.display='none';
-    document.getElementById('contactSuccess').style.display='block';
-  });
-}
-</script>
-
-
-
-<!-- HEALTH CHECK SECTION -->
-<section id="health-check" style="background:#f8f7f3;border-top:2px solid rgba(26,48,40,.12);padding:64px 40px 80px">
-  <div style="max-width:760px;margin:0 auto">
-    <p style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:#a57426;font-weight:500;margin-bottom:12px">Hotel Profit Health Check</p>
-    <h2 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.85rem;color:#1a3028;margin-bottom:8px">What is your hotel actually earning?</h2>
-    <p style="font-size:.95rem;color:rgba(26,48,40,.65);margin-bottom:40px;line-height:1.7">Enter your hotel's basics. Get an instant estimate of true revenue yield, OTA cost drag, and three specific gaps worth investigating. No data stored.</p>
-
-    <!-- Health Check Calculator -->
-    <style>
-
-/* ── Token system ─────────────────────────────────────────────────────────
-   Layout: two-phase — input panel collapses, results panel slides in
-   Brand palette: Veritas Hospitality Advisors
-   ──────────────────────────────────────────────────────────────────────── */
-:root {
-  --ink:    #1A3028;
-  --slate:  #3D6B56;
-  --gold:   #A57426;
-  --gold-lt:#C49040;
-  --cream:  #F5F4EF;
-  --parchment: #EAE8E1;
-  --muted:  #8FA898;
-  --danger: #C0392B;
-  --warn:   #D4891A;
-  --ok:     #2E7D52;
-
-  --bg:     var(--cream);
-  --surface:#FFFFFF;
-  --border: #D8D5CC;
-  --fg:     var(--ink);
-  --fg-2:   #4A6358;
-  --fg-3:   var(--muted);
-
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-ui:      'Inter', system-ui, sans-serif;
-
-  --radius: 6px;
-  --shadow: 0 1px 4px rgba(26,48,40,.08), 0 4px 16px rgba(26,48,40,.06);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg:      #111C17;
-    --surface: #1A2A23;
-    --border:  #2D4438;
-    --fg:      #E8E4D8;
-    --fg-2:    #9DB8A8;
-    --fg-3:    #5A7868;
-    --parchment:#162018;
-    --muted:   #5A7868;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg:      #111C17;
-  --surface: #1A2A23;
-  --border:  #2D4438;
-  --fg:      #E8E4D8;
-  --fg-2:    #9DB8A8;
-  --fg-3:    #5A7868;
-  --parchment:#162018;
-  --muted:   #5A7868;
-  color-scheme: dark;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  background: var(--bg);
-  color: var(--fg);
-  font-family: var(--font-ui);
-  font-size: 15px;
-  line-height: 1.6;
-  padding-inline: 16px;
-  padding-block: 0;
-  min-height: 100%;
-}
-
-/* ── Page shell ──────────────────────────────────────────────────────── */
-.page {
-  max-width: 640px;
-  margin-inline: auto;
-  padding-block: 40px 80px;
-}
-
-/* ── Header ──────────────────────────────────────────────────────────── */
-.site-label {
-  font-family: var(--font-ui);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 28px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.site-label::before {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--gold);
-  flex-shrink: 0;
-}
-
-.hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 6vw, 40px);
-  font-weight: 700;
-  line-height: 1.15;
-  color: var(--fg);
-  text-wrap: balance;
-  margin-bottom: 12px;
-}
-.hero-title em {
-  font-style: italic;
-  color: var(--gold);
-}
-
-.hero-sub {
-  color: var(--fg-2);
-  font-size: 15px;
-  line-height: 1.6;
-  max-width: 52ch;
-  margin-bottom: 36px;
-}
-
-/* ── Form card ───────────────────────────────────────────────────────── */
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 28px 28px 24px;
-  margin-bottom: 20px;
-}
-
-.field-group {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.field label {
-  display: block;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--fg-3);
-  margin-bottom: 6px;
-}
-.field label span {
-  font-weight: 400;
-  text-transform: none;
-  letter-spacing: 0;
-  color: var(--fg-2);
-  font-size: 12px;
-}
-
-.field input[type="number"],
-.field input[type="text"],
-.field select {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--bg);
-  color: var(--fg);
-  font-family: var(--font-ui);
-  font-size: 15px;
-  font-variant-numeric: tabular-nums;
-  transition: border-color .15s;
-  -webkit-appearance: none;
-  appearance: none;
-}
-.field input:focus,
-.field select:focus {
-  outline: none;
-  border-color: var(--slate);
-  box-shadow: 0 0 0 3px rgba(61,107,86,.15);
-}
-
-/* Prefix/suffix wrapper */
-.input-wrap {
-  position: relative;
-}
-.input-wrap .prefix,
-.input-wrap .suffix {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 14px;
-  color: var(--fg-3);
-  pointer-events: none;
-  font-family: var(--font-ui);
-}
-.input-wrap .prefix { left: 12px; }
-.input-wrap .suffix { right: 12px; }
-.input-wrap.has-prefix input { padding-left: 30px; }
-.input-wrap.has-suffix input { padding-right: 42px; }
-
-/* Channel checkboxes */
-.channel-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 8px;
-  margin-top: 4px;
-}
-.channel-chip {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 12px;
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  cursor: pointer;
-  font-size: 13px;
-  color: var(--fg-2);
-  transition: border-color .15s, background .15s, color .15s;
-  user-select: none;
-}
-.channel-chip input[type="checkbox"] {
-  width: 14px;
-  height: 14px;
-  accent-color: var(--slate);
-  flex-shrink: 0;
-}
-.channel-chip:has(input:checked) {
-  border-color: var(--slate);
-  background: var(--parchment);
-  color: var(--fg);
-}
-
-.section-divider {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 4px 0 8px;
-}
-
-.field-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-@media (max-width: 420px) {
-  .field-row { grid-template-columns: 1fr; }
-}
-
-/* ── CTA button ──────────────────────────────────────────────────────── */
-.btn-run {
-  display: block;
-  width: 100%;
-  padding: 14px 24px;
-  background: var(--ink);
-  color: var(--cream);
-  border: none;
-  border-radius: var(--radius);
-  font-family: var(--font-ui);
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: .02em;
-  cursor: pointer;
-  transition: background .15s, transform .1s;
-  margin-top: 8px;
-}
-.btn-run:hover { background: var(--slate); }
-.btn-run:active { transform: scale(.98); }
-
-/* ── Results panel ───────────────────────────────────────────────────── */
-#results { display: none; }
-#results.visible { display: block; }
-
-.results-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-.results-header h2 {
-  font-family: var(--font-display);
-  font-size: clamp(20px, 4vw, 28px);
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--fg);
-}
-
-/* Score badge */
-.score-badge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 72px;
-  padding: 10px 16px;
-  border-radius: var(--radius);
-  text-align: center;
-  flex-shrink: 0;
-}
-.score-badge .score-num {
-  font-family: var(--font-display);
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1;
-  font-variant-numeric: tabular-nums;
-}
-.score-badge .score-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  margin-top: 2px;
-  opacity: .8;
-}
-.score-badge.good    { background: rgba(46,125,82,.15);  color: var(--ok); }
-.score-badge.warn    { background: rgba(212,137,26,.15); color: var(--warn); }
-.score-badge.danger  { background: rgba(192,57,43,.15);  color: var(--danger); }
-
-/* Metric tiles */
-.metric-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 12px;
-  margin-bottom: 20px;
-}
-.metric-tile {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 14px 16px;
-}
-.metric-tile .m-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--fg-3);
-  margin-bottom: 4px;
-}
-.metric-tile .m-value {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--fg);
-  font-variant-numeric: tabular-nums;
-  line-height: 1.2;
-}
-.metric-tile .m-sub {
-  font-size: 11px;
-  color: var(--fg-2);
-  margin-top: 2px;
-}
-.metric-tile.highlight {
-  border-color: var(--gold);
-  background: var(--parchment);
-}
-.metric-tile.highlight .m-value { color: var(--gold); }
-
-/* Benchmark bar */
-.bench-section {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 18px 20px;
-  margin-bottom: 16px;
-}
-.bench-section h3 {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--fg-3);
-  margin-bottom: 14px;
-}
-.bench-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-.bench-row:last-child { margin-bottom: 0; }
-.bench-label {
-  font-size: 12px;
-  color: var(--fg-2);
-  width: 110px;
-  flex-shrink: 0;
-}
-.bench-bar-track {
-  flex: 1;
-  height: 8px;
-  background: var(--parchment);
-  border-radius: 4px;
-  overflow: hidden;
-  min-width: 0;
-}
-.bench-bar-fill {
-  height: 100%;
-  border-radius: 4px;
-  transition: width .6s cubic-bezier(.4,0,.2,1);
-}
-.bench-bar-fill.yours { background: var(--slate); }
-.bench-bar-fill.market { background: var(--gold); opacity: .5; }
-.bench-value {
-  font-size: 12px;
-  font-variant-numeric: tabular-nums;
-  font-weight: 600;
-  color: var(--fg);
-  width: 52px;
-  text-align: right;
-  flex-shrink: 0;
-}
-
-/* OTA breakdown */
-.ota-breakdown {
-  background: var(--parchment);
-  border-radius: var(--radius);
-  padding: 16px 18px;
-  margin-bottom: 16px;
-  border-left: 3px solid var(--gold);
-}
-.ota-breakdown h3 {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 12px;
-}
-.ota-line {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  font-size: 13px;
-  padding: 4px 0;
-  border-bottom: 1px solid var(--border);
-  gap: 8px;
-}
-.ota-line:last-child { border-bottom: none; }
-.ota-line .ol-label { color: var(--fg-2); }
-.ota-line .ol-val {
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  color: var(--fg);
-  white-space: nowrap;
-}
-.ota-line.total .ol-label { font-weight: 600; color: var(--fg); }
-.ota-line.total .ol-val { color: var(--gold); font-size: 17px; }
-
-/* Gap cards */
-.gaps-title {
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--fg);
-  margin: 20px 0 12px;
-}
-
-.gap-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 16px 18px;
-  margin-bottom: 10px;
-  display: grid;
-  grid-template-columns: 36px 1fr;
-  gap: 12px;
-  align-items: start;
-}
-.gap-num {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--parchment);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--gold);
-  flex-shrink: 0;
-}
-.gap-body .gap-heading {
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--fg);
-  margin-bottom: 4px;
-}
-.gap-body .gap-text {
-  font-size: 13px;
-  color: var(--fg-2);
-  line-height: 1.5;
-}
-.gap-body .gap-action {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--slate);
-  margin-top: 6px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.gap-body .gap-action::before {
-  content: '→';
-  font-style: normal;
-}
-
-/* Footer note */
-.results-footer {
-  margin-top: 28px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-  font-size: 12px;
-  color: var(--fg-3);
-  line-height: 1.6;
-}
-.results-footer strong { color: var(--fg-2); }
-
-/* Recalculate link */
-.recalc-btn {
-  background: none;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 8px 16px;
-  font-family: var(--font-ui);
-  font-size: 13px;
-  color: var(--fg-2);
-  cursor: pointer;
-  margin-top: 20px;
-  transition: border-color .15s, color .15s;
-}
-.recalc-btn:hover { border-color: var(--slate); color: var(--slate); }
-
-/* Veritas CTA */
-.veritas-cta {
-  background: var(--ink);
-  border-radius: var(--radius);
-  padding: 22px 24px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.veritas-cta p {
-  color: rgba(245,244,239,.75);
-  font-size: 13px;
-  line-height: 1.5;
-}
-.veritas-cta .cta-head {
-  font-family: var(--font-display);
-  font-size: 17px;
-  color: var(--cream);
-  font-weight: 600;
-  margin-bottom: 0;
-}
-.veritas-cta .cta-link {
-  color: var(--gold);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: .02em;
-  text-decoration: none;
-}
-.veritas-cta .cta-link:hover { color: var(--gold-lt); }
-
-    </style>
-    <div class="page">
-
-  <!-- Header -->
-  <div class="site-label">Veritas Hospitality Advisors</div>
-  <h1 class="hero-title">Hotel Profit<br><em>Health Check</em></h1>
-  <p class="hero-sub">Enter your hotel's basics. Get an instant estimate of your true revenue yield, OTA cost drag, and three specific gaps worth investigating. Takes 90 seconds.</p>
-
-  <!-- Input form -->
-  <div id="form-panel">
-    <div class="card">
-      <div class="field-group">
-
-        <div class="field-row">
-          <div class="field">
-            <label>Rooms in property</label>
-            <input type="number" id="rooms" min="1" max="500" placeholder="e.g. 32" value="32">
-          </div>
-          <div class="field">
-            <label>Typical occupancy <span>(% of nights)</span></label>
-            <div class="input-wrap has-suffix">
-              <input type="number" id="occ" min="1" max="100" placeholder="65" value="65">
-              <span class="suffix">%</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="field">
-          <label>Average room rate <span>(what you charge — rack or typical rate)</span></label>
-          <div class="input-wrap has-prefix">
-            <span class="prefix">₹</span>
-            <input type="number" id="adr" min="500" max="100000" placeholder="4500" value="4500">
-          </div>
-        </div>
-
-        <hr class="section-divider">
-
-        <div class="field">
-          <label>Main booking channels <span>(tick all that apply)</span></label>
-          <div class="channel-grid">
-            <label class="channel-chip">
-              <input type="checkbox" name="channel" value="mmt" checked> MakeMyTrip / Goibibo
-            </label>
-            <label class="channel-chip">
-              <input type="checkbox" name="channel" value="booking"> Booking.com
-            </label>
-            <label class="channel-chip">
-              <input type="checkbox" name="channel" value="agoda"> Agoda
-            </label>
-            <label class="channel-chip">
-              <input type="checkbox" name="channel" value="oyo"> OYO
-            </label>
-            <label class="channel-chip">
-              <input type="checkbox" name="channel" value="direct" checked> Direct / Walk-in
-            </label>
-            <label class="channel-chip">
-              <input type="checkbox" name="channel" value="corporate"> Corporate accounts
-            </label>
-            <label class="channel-chip">
-              <input type="checkbox" name="channel" value="ta"> Travel agent / GDS
-            </label>
-            <label class="channel-chip">
-              <input type="checkbox" name="channel" value="airbnb"> Airbnb
-            </label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label>Estimated OTA share <span>(roughly what % of bookings come through OTAs)</span></label>
-          <div class="input-wrap has-suffix">
-            <input type="number" id="ota-share" min="0" max="100" placeholder="50" value="50">
-            <span class="suffix">%</span>
-          </div>
-        </div>
-
-        <div class="field">
-          <label>Hotel category</label>
-          <select id="category">
-            <option value="budget">Budget / Economy (below ₹2,500/night)</option>
-            <option value="midscale" selected>Midscale (₹2,500–₹7,500/night)</option>
-            <option value="upscale">Upscale (₹7,500–₹15,000/night)</option>
-            <option value="luxury">Luxury (above ₹15,000/night)</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label>Location type</label>
-          <select id="location">
-            <option value="metro">Metro city (Mumbai, Delhi, Bengaluru, etc.)</option>
-            <option value="tier2" selected>Tier 2 city / regional hub</option>
-            <option value="leisure">Leisure / tourism destination</option>
-            <option value="pilgrimage">Pilgrimage / religious destination</option>
-          </select>
-        </div>
-
-      </div>
-
-      <button class="btn-run" onclick="runCheck()">Run profit health check →</button>
-    </div>
-  </div><!-- /form-panel -->
-
-  <!-- Results panel -->
-  <div id="results">
-
-    <div class="results-header">
-      <h2 id="r-headline">Your profit health check</h2>
-      <div class="score-badge" id="score-badge">
-        <span class="score-num" id="score-num">—</span>
-        <span class="score-label">Health score</span>
-      </div>
-    </div>
-
-    <!-- Key metric tiles -->
-    <div class="metric-grid">
-      <div class="metric-tile">
-        <div class="m-label">Monthly rooms revenue</div>
-        <div class="m-value" id="r-gross-rev">—</div>
-        <div class="m-sub">Before any deductions</div>
-      </div>
-      <div class="metric-tile highlight">
-        <div class="m-label">Estimated yield after OTA</div>
-        <div class="m-value" id="r-net-rev">—</div>
-        <div class="m-sub">Net room contribution</div>
-      </div>
-      <div class="metric-tile">
-        <div class="m-label">Effective RevPAR</div>
-        <div class="m-value" id="r-revpar">—</div>
-        <div class="m-sub">Per available room per night</div>
-      </div>
-      <div class="metric-tile">
-        <div class="m-label">OTA cost drag / month</div>
-        <div class="m-value" id="r-ota-drag">—</div>
-        <div class="m-sub">Estimated commissions + GST</div>
-      </div>
-    </div>
-
-    <!-- OTA breakdown -->
-    <div class="ota-breakdown" id="ota-section">
-      <h3>OTA cost breakdown — monthly estimate</h3>
-      <div id="ota-lines"></div>
-    </div>
-
-    <!-- Benchmark comparison -->
-    <div class="bench-section">
-      <h3>Benchmark comparison — your market</h3>
-      <div id="bench-rows"></div>
-      <p style="font-size:11px;color:var(--fg-3);margin-top:12px">
-        Market benchmarks: Horwath HTL India Hotel Market Review 2025, Hotelivate FY2024–25.
-        Estimates for your category and location — individual properties vary materially.
-      </p>
-    </div>
-
-    <!-- 3 actionable gaps -->
-    <p class="gaps-title">Three gaps worth investigating</p>
-    <div id="gap-cards"></div>
-
-    <!-- Footer note -->
-    <div class="results-footer">
-      <strong>This is an estimate, not an audit.</strong> All figures use typical industry ranges for your selections. Your actual OTA contract terms, GST treatment, payroll and energy costs will differ. Realised ADR after discounts is usually lower than the rate you entered. Use these figures as a starting point for conversation — not a financial statement.
-    </div>
-
-    <!-- Veritas CTA -->
-    <div class="veritas-cta">
-      <p class="cta-head">Want to know what's actually happening in your hotel?</p>
-      <p>Vaishakh Surendran and the Veritas team work exclusively with independent hotel owners in India on owner-side financial oversight. A confidential scoping call takes 30 minutes.</p>
-      <a class="cta-link" href="https://veritashospitalityadvisors.com" target="_blank" rel="noopener">veritashospitalityadvisors.com →</a>
-    </div>
-
-    <button class="recalc-btn" onclick="resetForm()">← Run again with different inputs</button>
-
-  </div><!-- /results -->
-
-</div><!-- /page -->
-
-<script>
-// ── OTA commission rates (base + GST on commission, blended estimate) ──────
-const OTA_RATES = {
-  mmt:       { name: 'MakeMyTrip / Goibibo', base: 0.23, gstOnComm: 0.18, label: '23% base + 18% GST on comm' },
-  booking:   { name: 'Booking.com',          base: 0.18, gstOnComm: 0.18, label: '18% base + 18% GST on comm' },
-  agoda:     { name: 'Agoda',                base: 0.18, gstOnComm: 0.18, label: '18% base + 18% GST on comm' },
-  oyo:       { name: 'OYO',                  base: 0.28, gstOnComm: 0.18, label: '28% base + 18% GST on comm' },
-  airbnb:    { name: 'Airbnb',               base: 0.15, gstOnComm: 0.18, label: '15% base + 18% GST on comm' },
-  ta:        { name: 'Travel agent / GDS',   base: 0.12, gstOnComm: 0.00, label: '10–15% commission (typical)' },
-  direct:    { name: 'Direct / Walk-in',     base: 0.00, gstOnComm: 0.00, label: 'No OTA commission' },
-  corporate: { name: 'Corporate accounts',   base: 0.00, gstOnComm: 0.00, label: 'Direct — small processing cost' },
-};
-
-// ── Market benchmarks by category + location ──────────────────────────────
-const BENCHMARKS = {
-  budget:   { occ: 62, adr: 1800,  revpar: 1116 },
-  midscale: { occ: 64, adr: 4800,  revpar: 3072 },
-  upscale:  { occ: 66, adr: 9200,  revpar: 6072 },
-  luxury:   { occ: 60, adr: 18500, revpar: 11100 },
-};
-const LOC_MULTIPLIER = { metro: 1.25, tier2: 1.0, leisure: 1.1, pilgrimage: 0.85 };
-
-// Benchmark source labels
-const LOC_LABELS = {
-  metro: 'Metro average (Mumbai / Delhi / Bengaluru)',
-  tier2: 'Tier 2 city average',
-  leisure: 'Leisure destination average',
-  pilgrimage: 'Pilgrimage destination average',
-};
-
-// ── Gaps library — pick 3 based on user's situation ───────────────────────
-function buildGaps(inputs, metrics) {
-  const allGaps = [];
-
-  // OTA share gap
-  if (inputs.otaShare > 55) {
-    allGaps.push({
-      heading: 'OTA dependency is high',
-      text: `An estimated ${inputs.otaShare}% of bookings through OTAs means a large share of gross revenue is absorbed before it reaches you. Each percentage point shift to direct costs nothing in commission.`,
-      action: 'Map your direct enquiry channels (WhatsApp, phone, walk-in) and find out where those leads are being lost before booking.',
-      priority: 3,
-    });
-  }
-
-  // Rate below benchmark
-  const benchADR = metrics.benchADR;
-  if (inputs.adr < benchADR * 0.85) {
-    allGaps.push({
-      heading: 'Rate is below category benchmark',
-      text: `Your entered rate of ₹${fmt(inputs.adr)} sits below the estimated market average of ₹${fmt(Math.round(benchADR))} for your category and location. This may be deliberate, or it may reflect rate floors set before recent demand recovery.`,
-      action: 'Review your rate floor and last rate increase date. Compare your realised rate on OTA dashboards against what you entered here.',
-      priority: 2,
-    });
-  }
-
-  // OTA cost is large absolute number
-  if (metrics.monthlyOTACost > 150000) {
-    allGaps.push({
-      heading: 'OTA commissions are a material cost line',
-      text: `An estimated ₹${fmt(Math.round(metrics.monthlyOTACost))} per month in OTA costs is large enough to be treated as a named line in your owner review — not absorbed into a general distribution cost.`,
-      action: 'Produce a channel ledger for the last 3 months: channel, room nights, gross rate, effective net rate after all deductions.',
-      priority: 3,
-    });
-  }
-
-  // Low occupancy
-  if (inputs.occ < 55) {
-    allGaps.push({
-      heading: 'Occupancy is below market average',
-      text: `${inputs.occ}% occupancy has two possible causes: demand that hasn't been captured, or inventory management that releases rooms at the wrong rate or time.`,
-      action: 'Separate the last 60 days into: (a) rooms sold early at a discount, (b) rooms sold at rate, (c) rooms that went unsold. The pattern tells you whether the issue is demand, rate, or timing.',
-      priority: 2,
-    });
-  }
-
-  // OYO or high-cost channel active
-  const channels = inputs.channels;
-  if (channels.includes('oyo')) {
-    allGaps.push({
-      heading: 'OYO contract terms deserve a line-by-line review',
-      text: 'OYO white-label contracts have varied substantially. Base commission, revenue-share structure, pricing control, and guest relationship ownership differ across contract vintage and negotiated terms.',
-      action: 'Pull your last OYO settlement statement. Calculate net receipts as a percentage of gross room revenue for that period.',
-      priority: 2,
-    });
-  }
-
-  // GST threshold
-  if (inputs.adr > 7000 && inputs.adr < 8500 && inputs.category === 'midscale') {
-    allGaps.push({
-      heading: 'Your rate sits near the GST threshold',
-      text: 'Room tariffs above ₹7,500 attract 18% GST with ITC available; at or below ₹7,500 attract 5–12% with no ITC. Rates near this boundary can affect your net pricing strategy depending on your guest mix (business vs leisure).',
-      action: 'Ask your accountant whether your tariff structure and ITC position have been reviewed since the current GST slab structure came into effect.',
-      priority: 1,
-    });
-  }
-
-  // No direct / corporate channel
-  if (!channels.includes('direct') && !channels.includes('corporate')) {
-    allGaps.push({
-      heading: 'No direct or corporate channel selected',
-      text: 'Bookings that bypass OTAs have zero commission cost. Even a 10% shift in mix from OTA to direct can meaningfully improve net contribution without changing occupancy or rate.',
-      action: 'Identify the last 30 walk-in or phone enquiries. What percentage converted to a booking? What was lost and where?',
-      priority: 3,
-    });
-  }
-
-  // Always include a governance gap if not enough others
-  allGaps.push({
-    heading: 'Monthly owner review meeting',
-    text: 'The metric tile above shows gross revenue. The gap between that figure and what actually reaches your bank account every month — after OTA commissions, GST remittances, receivables timing and payroll — is rarely visible without a documented monthly bridge.',
-    action: 'Build a one-page revenue-to-cash bridge for last month: gross revenue, OTA deductions, GST collected vs remitted, receivables movement, cash in bank. The gap it reveals is your starting point.',
-    priority: 1,
   });
 
-  // Sort by priority desc, take top 3
-  allGaps.sort((a, b) => b.priority - a.priority);
-  return allGaps.slice(0, 3);
-}
-
-// ── Score calculation ─────────────────────────────────────────────────────
-function calcScore(inputs, metrics) {
-  let score = 100;
-
-  // OTA share penalty
-  if (inputs.otaShare > 70) score -= 25;
-  else if (inputs.otaShare > 50) score -= 15;
-  else if (inputs.otaShare > 30) score -= 5;
-
-  // Occupancy vs benchmark
-  const benchOcc = metrics.benchOcc;
-  const occDiff = inputs.occ - benchOcc;
-  if (occDiff < -15) score -= 20;
-  else if (occDiff < -8) score -= 10;
-  else if (occDiff > 8) score += 8;
-
-  // Rate vs benchmark
-  const rateDiff = (inputs.adr - metrics.benchADR) / metrics.benchADR;
-  if (rateDiff < -0.2) score -= 15;
-  else if (rateDiff < -0.1) score -= 8;
-  else if (rateDiff > 0.15) score += 8;
-
-  // OYO penalty
-  if (inputs.channels.includes('oyo')) score -= 10;
-
-  // Direct channel bonus
-  if (inputs.channels.includes('direct') || inputs.channels.includes('corporate')) score += 5;
-
-  return Math.min(100, Math.max(10, Math.round(score)));
-}
-
-// ── Formatting helpers ────────────────────────────────────────────────────
-function fmt(n) {
-  if (n >= 10000000) return (n / 10000000).toFixed(1).replace(/\.0$/, '') + ' Cr';
-  if (n >= 100000)   return (n / 100000).toFixed(1).replace(/\.0$/, '') + ' L';
-  return n.toLocaleString('en-IN');
-}
-function fmtINR(n) { return '₹' + fmt(Math.round(n)); }
-function fmtPct(n) { return n.toFixed(1) + '%'; }
-
-// ── Main calculation ──────────────────────────────────────────────────────
-function runCheck() {
-  const rooms    = parseInt(document.getElementById('rooms').value) || 32;
-  const occ      = parseFloat(document.getElementById('occ').value) || 65;
-  const adr      = parseFloat(document.getElementById('adr').value) || 4500;
-  const otaShare = parseFloat(document.getElementById('ota-share').value) || 50;
-  const category = document.getElementById('category').value;
-  const location = document.getElementById('location').value;
-  const channels = [...document.querySelectorAll('input[name="channel"]:checked')].map(el => el.value);
-
-  const DAYS = 30.4;
-  const availableRoomNights = rooms * DAYS;
-  const paidRoomNights      = availableRoomNights * (occ / 100);
-  const grossRev            = paidRoomNights * adr;
-
-  // OTA cost calculation
-  // Weighted commission across selected OTA channels
-  const otaChannels = channels.filter(c => !['direct','corporate'].includes(c));
-  let blendedOTARate = 0;
-  if (otaChannels.length > 0) {
-    const rates = otaChannels.map(c => OTA_RATES[c] || { base: 0.18, gstOnComm: 0.18 });
-    const avgBase = rates.reduce((s, r) => s + r.base, 0) / rates.length;
-    const avgGSTFactor = rates.reduce((s, r) => s + r.base * r.gstOnComm, 0) / rates.length;
-    blendedOTARate = avgBase + avgGSTFactor; // effective total rate incl. GST on comm
-  }
-
-  const otaNights         = paidRoomNights * (otaShare / 100);
-  const otaGrossRev       = otaNights * adr;
-  const monthlyOTACost    = otaGrossRev * blendedOTARate;
-  const netRev            = grossRev - monthlyOTACost;
-  const revpar            = (grossRev / availableRoomNights);
-  const netRevpar         = (netRev / availableRoomNights);
-
-  // Benchmarks
-  const benchBase = BENCHMARKS[category];
-  const locMult   = LOC_MULTIPLIER[location];
-  const benchADR    = benchBase.adr    * locMult;
-  const benchRevPAR = benchBase.revpar * locMult;
-  const benchOcc    = benchBase.occ;
-
-  const metrics = { grossRev, netRev, revpar, netRevpar, monthlyOTACost, benchADR, benchRevPAR, benchOcc, otaGrossRev, blendedOTARate };
-  const inputs  = { rooms, occ, adr, otaShare, category, location, channels };
-
-  // Score
-  const score = calcScore(inputs, metrics);
-
-  // Render results
-  document.getElementById('form-panel').style.display = 'none';
-  const rPanel = document.getElementById('results');
-  rPanel.classList.add('visible');
-
-  // Headline
-  document.getElementById('r-headline').textContent =
-    rooms + '-room hotel, ' + occ + '% occupancy at ₹' + fmt(adr) + '/night';
-
-  // Score badge
-  const badge = document.getElementById('score-badge');
-  document.getElementById('score-num').textContent = score;
-  badge.classList.remove('good', 'warn', 'danger');
-  badge.classList.add(score >= 70 ? 'good' : score >= 45 ? 'warn' : 'danger');
-
-  // Metric tiles
-  document.getElementById('r-gross-rev').textContent = fmtINR(grossRev);
-  document.getElementById('r-net-rev').textContent   = fmtINR(netRev);
-  document.getElementById('r-revpar').textContent    = fmtINR(revpar);
-  document.getElementById('r-ota-drag').textContent  = fmtINR(monthlyOTACost);
-
-  // OTA breakdown
-  const otaEl = document.getElementById('ota-lines');
-  const otaChannelsList = channels.filter(c => !['direct','corporate'].includes(c));
-  if (otaChannelsList.length === 0 || otaShare === 0) {
-    document.getElementById('ota-section').style.display = 'none';
+  const overallPct = overallMax>0 ? Math.round((1 - overallScore/overallMax)*100) : 0;
+  let interpretation = '';
+  if(overallPct >= 75) {
+    interpretation = '<p>Your hotel has strong oversight fundamentals in place. The areas marked moderate are worth reviewing — even a 10% improvement in one dimension can materially affect your bottom line.</p>';
+  } else if(overallPct >= 50) {
+    interpretation = '<p>Your oversight has a workable foundation but has identifiable gaps. The areas flagged for attention are where margin leakage is most likely occurring — and where a structured review is likely to surface the clearest opportunities.</p>';
   } else {
-    let html = '';
-    otaChannelsList.forEach(ch => {
-      const r = OTA_RATES[ch];
-      if (!r) return;
-      const nights = otaNights / otaChannelsList.length;
-      const rev    = nights * adr;
-      const cost   = rev * (r.base + r.base * r.gstOnComm);
-      html += `<div class="ota-line">
-        <span class="ol-label">${r.name} <span style="font-size:11px;opacity:.7">(${r.label})</span></span>
-        <span class="ol-val">${fmtINR(cost)}</span>
-      </div>`;
-    });
-    html += `<div class="ota-line total">
-      <span class="ol-label">Total estimated OTA cost / month</span>
-      <span class="ol-val">${fmtINR(monthlyOTACost)}</span>
-    </div>`;
-    html += `<div style="font-size:11px;color:var(--fg-3);margin-top:8px">
-      Includes GST charged by the OTA on its commission. Does not include TDS deducted at source (which is recoverable on filing) or promotional discount obligations.
-    </div>`;
-    otaEl.innerHTML = html;
+    interpretation = '<p>The diagnostic points to meaningful gaps in your current oversight. This does not mean the hotel is failing — it means the information and governance structures that protect your ownership position are under-developed. That is the problem Veritas exists to address.</p>';
   }
 
-  // Benchmark bars
-  const benchEl = document.getElementById('bench-rows');
-  const maxVal = Math.max(adr, benchADR, revpar, benchRevPAR) * 1.1;
-  function barRow(label, yourVal, mktVal, isINR) {
-    const f = isINR ? fmtINR : (n => n.toFixed(0) + '%');
-    return `<div class="bench-row">
-      <span class="bench-label">${label}</span>
-      <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px">
-        <div style="display:flex;align-items:center;gap:6px">
-          <div class="bench-bar-track"><div class="bench-bar-fill yours" style="width:${Math.min(100, yourVal/maxVal*100)}%"></div></div>
-          <span class="bench-value" style="color:var(--slate)">${isINR ? fmtINR(yourVal) : yourVal.toFixed(0)+'%'}</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:6px">
-          <div class="bench-bar-track"><div class="bench-bar-fill market" style="width:${Math.min(100, mktVal/maxVal*100)}%"></div></div>
-          <span class="bench-value" style="color:var(--muted)">${isINR ? fmtINR(mktVal) : mktVal.toFixed(0)+'%'}</span>
-        </div>
-      </div>
-    </div>`;
-  }
-
-  const legendHTML = `<div style="display:flex;gap:16px;margin-bottom:14px;font-size:11px;color:var(--fg-3)">
-    <span style="display:flex;align-items:center;gap:5px"><span style="width:16px;height:6px;border-radius:3px;background:var(--slate);display:inline-block"></span>Your hotel</span>
-    <span style="display:flex;align-items:center;gap:5px"><span style="width:16px;height:6px;border-radius:3px;background:var(--gold);opacity:.5;display:inline-block"></span>${LOC_LABELS[location]}</span>
-  </div>`;
-
-  benchEl.innerHTML = legendHTML
-    + barRow('Occupancy', occ, benchOcc, false)
-    + barRow('ADR (entered)', adr, benchADR, true)
-    + barRow('RevPAR (gross)', revpar, benchRevPAR, true);
-
-  // Gap cards
-  const gaps = buildGaps(inputs, metrics);
-  const gapsEl = document.getElementById('gap-cards');
-  gapsEl.innerHTML = gaps.map((g, i) => `
-    <div class="gap-card">
-      <div class="gap-num">${i + 1}</div>
-      <div class="gap-body">
-        <div class="gap-heading">${g.heading}</div>
-        <div class="gap-text">${g.text}</div>
-        <div class="gap-action">${g.action}</div>
-      </div>
-    </div>
-  `).join('');
-
-  // Scroll to top of results
-  rPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.getElementById('resInterpretation').innerHTML = '<h3>What this means</h3>' + interpretation;
+  document.getElementById('results').classList.add('visible');
+  document.getElementById('diagCTA').style.display='block';
+  document.getElementById('results').scrollIntoView({behavior:'smooth'});
+  
+  // store for email
+  window._diagResults = sectionScores;
+  window._diagPct = overallPct;
 }
 
-function resetForm() {
-  document.getElementById('form-panel').style.display = '';
-  document.getElementById('results').classList.remove('visible');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-</script>
-  </div>
-</section>
-
-<script>
-
-// ── OTA commission rates (base + GST on commission, blended estimate) ──────
-const OTA_RATES = {
-  mmt:       { name: 'MakeMyTrip / Goibibo', base: 0.23, gstOnComm: 0.18, label: '23% base + 18% GST on comm' },
-  booking:   { name: 'Booking.com',          base: 0.18, gstOnComm: 0.18, label: '18% base + 18% GST on comm' },
-  agoda:     { name: 'Agoda',                base: 0.18, gstOnComm: 0.18, label: '18% base + 18% GST on comm' },
-  oyo:       { name: 'OYO',                  base: 0.28, gstOnComm: 0.18, label: '28% base + 18% GST on comm' },
-  airbnb:    { name: 'Airbnb',               base: 0.15, gstOnComm: 0.18, label: '15% base + 18% GST on comm' },
-  ta:        { name: 'Travel agent / GDS',   base: 0.12, gstOnComm: 0.00, label: '10–15% commission (typical)' },
-  direct:    { name: 'Direct / Walk-in',     base: 0.00, gstOnComm: 0.00, label: 'No OTA commission' },
-  corporate: { name: 'Corporate accounts',   base: 0.00, gstOnComm: 0.00, label: 'Direct — small processing cost' },
-};
-
-// ── Market benchmarks by category + location ──────────────────────────────
-const BENCHMARKS = {
-  budget:   { occ: 62, adr: 1800,  revpar: 1116 },
-  midscale: { occ: 64, adr: 4800,  revpar: 3072 },
-  upscale:  { occ: 66, adr: 9200,  revpar: 6072 },
-  luxury:   { occ: 60, adr: 18500, revpar: 11100 },
-};
-const LOC_MULTIPLIER = { metro: 1.25, tier2: 1.0, leisure: 1.1, pilgrimage: 0.85 };
-
-// Benchmark source labels
-const LOC_LABELS = {
-  metro: 'Metro average (Mumbai / Delhi / Bengaluru)',
-  tier2: 'Tier 2 city average',
-  leisure: 'Leisure destination average',
-  pilgrimage: 'Pilgrimage destination average',
-};
-
-// ── Gaps library — pick 3 based on user's situation ───────────────────────
-function buildGaps(inputs, metrics) {
-  const allGaps = [];
-
-  // OTA share gap
-  if (inputs.otaShare > 55) {
-    allGaps.push({
-      heading: 'OTA dependency is high',
-      text: `An estimated ${inputs.otaShare}% of bookings through OTAs means a large share of gross revenue is absorbed before it reaches you. Each percentage point shift to direct costs nothing in commission.`,
-      action: 'Map your direct enquiry channels (WhatsApp, phone, walk-in) and find out where those leads are being lost before booking.',
-      priority: 3,
-    });
-  }
-
-  // Rate below benchmark
-  const benchADR = metrics.benchADR;
-  if (inputs.adr < benchADR * 0.85) {
-    allGaps.push({
-      heading: 'Rate is below category benchmark',
-      text: `Your entered rate of ₹${fmt(inputs.adr)} sits below the estimated market average of ₹${fmt(Math.round(benchADR))} for your category and location. This may be deliberate, or it may reflect rate floors set before recent demand recovery.`,
-      action: 'Review your rate floor and last rate increase date. Compare your realised rate on OTA dashboards against what you entered here.',
-      priority: 2,
-    });
-  }
-
-  // OTA cost is large absolute number
-  if (metrics.monthlyOTACost > 150000) {
-    allGaps.push({
-      heading: 'OTA commissions are a material cost line',
-      text: `An estimated ₹${fmt(Math.round(metrics.monthlyOTACost))} per month in OTA costs is large enough to be treated as a named line in your owner review — not absorbed into a general distribution cost.`,
-      action: 'Produce a channel ledger for the last 3 months: channel, room nights, gross rate, effective net rate after all deductions.',
-      priority: 3,
-    });
-  }
-
-  // Low occupancy
-  if (inputs.occ < 55) {
-    allGaps.push({
-      heading: 'Occupancy is below market average',
-      text: `${inputs.occ}% occupancy has two possible causes: demand that hasn't been captured, or inventory management that releases rooms at the wrong rate or time.`,
-      action: 'Separate the last 60 days into: (a) rooms sold early at a discount, (b) rooms sold at rate, (c) rooms that went unsold. The pattern tells you whether the issue is demand, rate, or timing.',
-      priority: 2,
-    });
-  }
-
-  // OYO or high-cost channel active
-  const channels = inputs.channels;
-  if (channels.includes('oyo')) {
-    allGaps.push({
-      heading: 'OYO contract terms deserve a line-by-line review',
-      text: 'OYO white-label contracts have varied substantially. Base commission, revenue-share structure, pricing control, and guest relationship ownership differ across contract vintage and negotiated terms.',
-      action: 'Pull your last OYO settlement statement. Calculate net receipts as a percentage of gross room revenue for that period.',
-      priority: 2,
-    });
-  }
-
-  // GST threshold
-  if (inputs.adr > 7000 && inputs.adr < 8500 && inputs.category === 'midscale') {
-    allGaps.push({
-      heading: 'Your rate sits near the GST threshold',
-      text: 'Room tariffs above ₹7,500 attract 18% GST with ITC available; at or below ₹7,500 attract 5–12% with no ITC. Rates near this boundary can affect your net pricing strategy depending on your guest mix (business vs leisure).',
-      action: 'Ask your accountant whether your tariff structure and ITC position have been reviewed since the current GST slab structure came into effect.',
-      priority: 1,
-    });
-  }
-
-  // No direct / corporate channel
-  if (!channels.includes('direct') && !channels.includes('corporate')) {
-    allGaps.push({
-      heading: 'No direct or corporate channel selected',
-      text: 'Bookings that bypass OTAs have zero commission cost. Even a 10% shift in mix from OTA to direct can meaningfully improve net contribution without changing occupancy or rate.',
-      action: 'Identify the last 30 walk-in or phone enquiries. What percentage converted to a booking? What was lost and where?',
-      priority: 3,
-    });
-  }
-
-  // Always include a governance gap if not enough others
-  allGaps.push({
-    heading: 'Monthly owner review meeting',
-    text: 'The metric tile above shows gross revenue. The gap between that figure and what actually reaches your bank account every month — after OTA commissions, GST remittances, receivables timing and payroll — is rarely visible without a documented monthly bridge.',
-    action: 'Build a one-page revenue-to-cash bridge for last month: gross revenue, OTA deductions, GST collected vs remitted, receivables movement, cash in bank. The gap it reveals is your starting point.',
-    priority: 1,
+function emailResults() {
+  const email = document.getElementById('emailInput').value.trim();
+  if(!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+  
+  const sectionScores = window._diagResults || {};
+  let summary = 'Hotel Diagnostic Results\n\n';
+  Object.entries(sectionScores).forEach(([sid, data]) => {
+    const pct = data.max>0 ? Math.round((1-data.score/data.max)*100) : 0;
+    summary += SECTION_NAMES[sid] + ': ' + pct + '%\n';
   });
-
-  // Sort by priority desc, take top 3
-  allGaps.sort((a, b) => b.priority - a.priority);
-  return allGaps.slice(0, 3);
+  summary += '\nOverall: ' + (window._diagPct||0) + '%\n';
+  
+  const subject = encodeURIComponent('Hotel Diagnostic Results');
+  const body = encodeURIComponent(summary + '\nDiagnostic completed at veritashospitalityadvisors.in/diagnostic.html');
+  
+  // Send to user via mailto
+  window.location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
+  
+  // Also open Vaishakh copy
+  setTimeout(() => {
+    const body2 = encodeURIComponent('New diagnostic submission from: ' + email + '\n\n' + summary);
+    const link = document.createElement('a');
+    link.href = 'mailto:viveka@aisearch.global?subject=New%20Hotel%20Diagnostic%20Submission&body=' + body2;
+    link.click();
+  }, 500);
+  
+  document.getElementById('emailSent').style.display='block';
 }
-
-// ── Score calculation ─────────────────────────────────────────────────────
-function calcScore(inputs, metrics) {
-  let score = 100;
-
-  // OTA share penalty
-  if (inputs.otaShare > 70) score -= 25;
-  else if (inputs.otaShare > 50) score -= 15;
-  else if (inputs.otaShare > 30) score -= 5;
-
-  // Occupancy vs benchmark
-  const benchOcc = metrics.benchOcc;
-  const occDiff = inputs.occ - benchOcc;
-  if (occDiff < -15) score -= 20;
-  else if (occDiff < -8) score -= 10;
-  else if (occDiff > 8) score += 8;
-
-  // Rate vs benchmark
-  const rateDiff = (inputs.adr - metrics.benchADR) / metrics.benchADR;
-  if (rateDiff < -0.2) score -= 15;
-  else if (rateDiff < -0.1) score -= 8;
-  else if (rateDiff > 0.15) score += 8;
-
-  // OYO penalty
-  if (inputs.channels.includes('oyo')) score -= 10;
-
-  // Direct channel bonus
-  if (inputs.channels.includes('direct') || inputs.channels.includes('corporate')) score += 5;
-
-  return Math.min(100, Math.max(10, Math.round(score)));
-}
-
-// ── Formatting helpers ────────────────────────────────────────────────────
-function fmt(n) {
-  if (n >= 10000000) return (n / 10000000).toFixed(1).replace(/\.0$/, '') + ' Cr';
-  if (n >= 100000)   return (n / 100000).toFixed(1).replace(/\.0$/, '') + ' L';
-  return n.toLocaleString('en-IN');
-}
-function fmtINR(n) { return '₹' + fmt(Math.round(n)); }
-function fmtPct(n) { return n.toFixed(1) + '%'; }
-
-// ── Main calculation ──────────────────────────────────────────────────────
-function runCheck() {
-  const rooms    = parseInt(document.getElementById('rooms').value) || 32;
-  const occ      = parseFloat(document.getElementById('occ').value) || 65;
-  const adr      = parseFloat(document.getElementById('adr').value) || 4500;
-  const otaShare = parseFloat(document.getElementById('ota-share').value) || 50;
-  const category = document.getElementById('category').value;
-  const location = document.getElementById('location').value;
-  const channels = [...document.querySelectorAll('input[name="channel"]:checked')].map(el => el.value);
-
-  const DAYS = 30.4;
-  const availableRoomNights = rooms * DAYS;
-  const paidRoomNights      = availableRoomNights * (occ / 100);
-  const grossRev            = paidRoomNights * adr;
-
-  // OTA cost calculation
-  // Weighted commission across selected OTA channels
-  const otaChannels = channels.filter(c => !['direct','corporate'].includes(c));
-  let blendedOTARate = 0;
-  if (otaChannels.length > 0) {
-    const rates = otaChannels.map(c => OTA_RATES[c] || { base: 0.18, gstOnComm: 0.18 });
-    const avgBase = rates.reduce((s, r) => s + r.base, 0) / rates.length;
-    const avgGSTFactor = rates.reduce((s, r) => s + r.base * r.gstOnComm, 0) / rates.length;
-    blendedOTARate = avgBase + avgGSTFactor; // effective total rate incl. GST on comm
-  }
-
-  const otaNights         = paidRoomNights * (otaShare / 100);
-  const otaGrossRev       = otaNights * adr;
-  const monthlyOTACost    = otaGrossRev * blendedOTARate;
-  const netRev            = grossRev - monthlyOTACost;
-  const revpar            = (grossRev / availableRoomNights);
-  const netRevpar         = (netRev / availableRoomNights);
-
-  // Benchmarks
-  const benchBase = BENCHMARKS[category];
-  const locMult   = LOC_MULTIPLIER[location];
-  const benchADR    = benchBase.adr    * locMult;
-  const benchRevPAR = benchBase.revpar * locMult;
-  const benchOcc    = benchBase.occ;
-
-  const metrics = { grossRev, netRev, revpar, netRevpar, monthlyOTACost, benchADR, benchRevPAR, benchOcc, otaGrossRev, blendedOTARate };
-  const inputs  = { rooms, occ, adr, otaShare, category, location, channels };
-
-  // Score
-  const score = calcScore(inputs, metrics);
-
-  // Render results
-  document.getElementById('form-panel').style.display = 'none';
-  const rPanel = document.getElementById('results');
-  rPanel.classList.add('visible');
-
-  // Headline
-  document.getElementById('r-headline').textContent =
-    rooms + '-room hotel, ' + occ + '% occupancy at ₹' + fmt(adr) + '/night';
-
-  // Score badge
-  const badge = document.getElementById('score-badge');
-  document.getElementById('score-num').textContent = score;
-  badge.classList.remove('good', 'warn', 'danger');
-  badge.classList.add(score >= 70 ? 'good' : score >= 45 ? 'warn' : 'danger');
-
-  // Metric tiles
-  document.getElementById('r-gross-rev').textContent = fmtINR(grossRev);
-  document.getElementById('r-net-rev').textContent   = fmtINR(netRev);
-  document.getElementById('r-revpar').textContent    = fmtINR(revpar);
-  document.getElementById('r-ota-drag').textContent  = fmtINR(monthlyOTACost);
-
-  // OTA breakdown
-  const otaEl = document.getElementById('ota-lines');
-  const otaChannelsList = channels.filter(c => !['direct','corporate'].includes(c));
-  if (otaChannelsList.length === 0 || otaShare === 0) {
-    document.getElementById('ota-section').style.display = 'none';
-  } else {
-    let html = '';
-    otaChannelsList.forEach(ch => {
-      const r = OTA_RATES[ch];
-      if (!r) return;
-      const nights = otaNights / otaChannelsList.length;
-      const rev    = nights * adr;
-      const cost   = rev * (r.base + r.base * r.gstOnComm);
-      html += `<div class="ota-line">
-        <span class="ol-label">${r.name} <span style="font-size:11px;opacity:.7">(${r.label})</span></span>
-        <span class="ol-val">${fmtINR(cost)}</span>
-      </div>`;
-    });
-    html += `<div class="ota-line total">
-      <span class="ol-label">Total estimated OTA cost / month</span>
-      <span class="ol-val">${fmtINR(monthlyOTACost)}</span>
-    </div>`;
-    html += `<div style="font-size:11px;color:var(--fg-3);margin-top:8px">
-      Includes GST charged by the OTA on its commission. Does not include TDS deducted at source (which is recoverable on filing) or promotional discount obligations.
-    </div>`;
-    otaEl.innerHTML = html;
-  }
-
-  // Benchmark bars
-  const benchEl = document.getElementById('bench-rows');
-  const maxVal = Math.max(adr, benchADR, revpar, benchRevPAR) * 1.1;
-  function barRow(label, yourVal, mktVal, isINR) {
-    const f = isINR ? fmtINR : (n => n.toFixed(0) + '%');
-    return `<div class="bench-row">
-      <span class="bench-label">${label}</span>
-      <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px">
-        <div style="display:flex;align-items:center;gap:6px">
-          <div class="bench-bar-track"><div class="bench-bar-fill yours" style="width:${Math.min(100, yourVal/maxVal*100)}%"></div></div>
-          <span class="bench-value" style="color:var(--slate)">${isINR ? fmtINR(yourVal) : yourVal.toFixed(0)+'%'}</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:6px">
-          <div class="bench-bar-track"><div class="bench-bar-fill market" style="width:${Math.min(100, mktVal/maxVal*100)}%"></div></div>
-          <span class="bench-value" style="color:var(--muted)">${isINR ? fmtINR(mktVal) : mktVal.toFixed(0)+'%'}</span>
-        </div>
-      </div>
-    </div>`;
-  }
-
-  const legendHTML = `<div style="display:flex;gap:16px;margin-bottom:14px;font-size:11px;color:var(--fg-3)">
-    <span style="display:flex;align-items:center;gap:5px"><span style="width:16px;height:6px;border-radius:3px;background:var(--slate);display:inline-block"></span>Your hotel</span>
-    <span style="display:flex;align-items:center;gap:5px"><span style="width:16px;height:6px;border-radius:3px;background:var(--gold);opacity:.5;display:inline-block"></span>${LOC_LABELS[location]}</span>
-  </div>`;
-
-  benchEl.innerHTML = legendHTML
-    + barRow('Occupancy', occ, benchOcc, false)
-    + barRow('ADR (entered)', adr, benchADR, true)
-    + barRow('RevPAR (gross)', revpar, benchRevPAR, true);
-
-  // Gap cards
-  const gaps = buildGaps(inputs, metrics);
-  const gapsEl = document.getElementById('gap-cards');
-  gapsEl.innerHTML = gaps.map((g, i) => `
-    <div class="gap-card">
-      <div class="gap-num">${i + 1}</div>
-      <div class="gap-body">
-        <div class="gap-heading">${g.heading}</div>
-        <div class="gap-text">${g.text}</div>
-        <div class="gap-action">${g.action}</div>
-      </div>
-    </div>
-  `).join('');
-
-  // Scroll to top of results
-  rPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-function resetForm() {
-  document.getElementById('form-panel').style.display = '';
-  document.getElementById('results').classList.remove('visible');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
 </script>
 </body>
 </html>

@@ -1,4 +1,12 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+/* consent checkboxes */
+.consent-block{margin-top:4px;margin-bottom:4px}
+.consent-check{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:.76rem;line-height:1.5;color:rgba(26,48,40,.6)}
+.consent-check input[type=checkbox]{margin-top:2px;flex-shrink:0;accent-color:var(--gold);width:15px;height:15px;cursor:pointer}
+.consent-check a{color:var(--gold);text-decoration:none}
+.consent-check a:hover{text-decoration:underline}
+
+</style></head><body>
 <!doctype html>
 <html lang="en">
 <head>
@@ -543,9 +551,7 @@ footer{background:var(--ink);padding:60px 40px 40px}
     <li><a href="diagnostic.html">Diagnostic</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="founder.html">Founder</a></li>
-    <li><a href="#who">Clients</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="insights.html">Insights</a></li>
+    <li><a href="insights.html">Perspectives</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -729,34 +735,6 @@ footer{background:var(--ink);padding:60px 40px 40px}
   <div class="advisory-img-overlay"></div>
 </div>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials" id="testimonials">
-  <div class="section-inner">
-    <p class="section-label">What colleagues say</p>
-    <h2 class="section-h2">From GMs, authors, and senior hospitality leaders.</h2>
-    <div class="testi-grid" style="grid-template-columns:1fr 1fr">
-      <div class="testi-card">
-        <p class="testi-quote">Sharp, well read and very tech-savvy, Vaishakh was instrumental in helping us break all Conference &amp; Banquets Revenue records together at Taj Fort Aguada. I am confident that his best is yet to come.</p>
-        <div class="testi-attr">
-          <p class="testi-name">Dhiren Johar</p>
-          <p class="testi-role">Hotel &amp; Hospitality Development Advisor</p>
-          <p class="testi-context">Managed Vaishakh · Taj Fort Aguada, Goa</p>
-        </div>
-      </div>
-      <div class="testi-card">
-        <p class="testi-quote">Vaishakh always had an open mind to new ideas. He had the ability to lead from the front, which enabled him to get results from his team. A naturally hospitable person and a true hotelier.</p>
-        <div class="testi-attr">
-          <p class="testi-name">Raghubalan Ganapathy</p>
-          <p class="testi-role">Author &amp; Hospitality Advisor</p>
-          <p class="testi-context">Senior colleague · 2010</p>
-        </div>
-      </div>
-    </div>
-    <p style="font-size:.8rem;color:rgba(245,244,239,.4);margin-top:32px">Read all 18 recommendations on <a href="https://www.linkedin.com/in/vaishakhsurendran/" target="_blank" rel="noopener" style="color:rgba(165,116,38,.8);text-decoration:none">Vaishakh's LinkedIn profile →</a></p>
-  </div>
-</section>
-
-
 
 <!-- FAQ -->
 <section class="faq" id="faq">
@@ -806,116 +784,28 @@ footer{background:var(--ink);padding:60px 40px 40px}
   </div>
 </div>
 
-<!-- BLOGS -->
-<section class="blogs" id="blogs">
-  <div class="section-inner">
-    <p class="section-label">Insights</p>
-    <h2 class="section-h2" style="max-width:560px;margin-bottom:32px">Owner-focused thinking on the Indian hotel market.</h2>
-    <div class="blogs-tabs">
-      <button class="btab active" onclick="switchTab('industry',this)">Industry Analysis</button>
-      <button class="btab" onclick="switchTab('essays',this)">Owner Essays</button>
+<!-- PERSPECTIVES CALLOUT -->
+<section style="background:var(--cream);padding:80px 40px;border-top:1px solid rgba(26,48,40,.1)">
+  <div class="section-inner" style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+    <div>
+      <p class="section-label" style="margin-bottom:12px">Perspectives</p>
+      <h2 class="section-h2" style="margin-bottom:20px">Owner-focused thinking on the Indian hotel market</h2>
+      <p style="font-size:.88rem;line-height:1.8;color:rgba(26,48,40,.6);margin-bottom:32px">Industry analysis and owner essays -- practical perspectives on revenue, distribution, governance, and what the market data actually means for an independent hotel owner.</p>
+      <a href="insights.html" class="btn-diag" style="display:inline-block">Read all perspectives &rarr;</a>
     </div>
-
-    <!-- INDUSTRY TAB -->
-    <div class="blog-panel active" id="tab-industry">
-      <div class="blog-grid">
-        <div class="blog-card" onclick="openPost('i1')">
-          <span class="blog-tag">Market Reality</span>
-          <h3 class="blog-title">India's hotel market is strong. That is not the same as your hotel being profitable.</h3>
-          <p class="blog-excerpt">India's 2025 hotel figures make for cheerful reading. Neither report tells an owner what was left after commissions, payroll, utilities, debt service and necessary repairs.</p>
-          <span class="blog-read">Read insight</span>
-        </div>
-        <div class="blog-card" onclick="openPost('i2')">
-          <span class="blog-tag">Competition</span>
-          <h3 class="blog-title">The 64,118-key question for independent hotels</h3>
-          <p class="blog-excerpt">HVS ANAROCK reports approximately 64,118 keys signed across 586 branded properties during 2025. These are signings, not 64,118 rooms already available to book.</p>
-          <span class="blog-read">Read insight</span>
-        </div>
-        <div class="blog-card" onclick="openPost('i3')">
-          <span class="blog-tag">Demand</span>
-          <h3 class="blog-title">India's domestic travel boom is not a room-night forecast</h3>
-          <p class="blog-excerpt">A tourist visit is not a unique traveller, a hotel booking or a night in your district. A property budget built on national growth rates would confuse three different measures.</p>
-          <span class="blog-read">Read insight</span>
-        </div>
-        <div class="blog-card" onclick="openPost('i4')">
-          <span class="blog-tag">Pilgrimage Travel</span>
-          <h3 class="blog-title">Pilgrimage demand calls for an operating plan, not only a higher tariff</h3>
-          <p class="blog-excerpt">Being on a development list is not a guarantee of completed infrastructure or room demand. The opportunity is to be the property that works properly when every arrival happens at once.</p>
-          <span class="blog-read">Read insight</span>
-        </div>
-        <div class="blog-card" onclick="openPost('i5')">
-          <span class="blog-tag">Pricing</span>
-          <h3 class="blog-title">Five-star rates in the headlines, a different decision at your desk</h3>
-          <p class="blog-excerpt">Horwath HTL reports ₹8,624 average daily rate across its covered Indian hotel market in 2025. Those figures are context, not a price list for an owner-operated hotel.</p>
-          <span class="blog-read">Read insight</span>
-        </div>
-        <div class="blog-card" onclick="openPost('i6')">
-          <span class="blog-tag">Distribution</span>
-          <h3 class="blog-title">A booking channel can bring revenue and still disappoint the owner</h3>
-          <p class="blog-excerpt">An OTA can fill a room you might otherwise leave empty. It can also take a commission, encourage a discount, or generate bookings with different cancellation behaviour.</p>
-          <span class="blog-read">Read insight</span>
-        </div>
-        <div class="blog-card" onclick="openPost('i7')">
-          <span class="blog-tag">Pipeline</span>
-          <h3 class="blog-title">What a 144,000-room pipeline actually tells a hotel owner</h3>
-          <p class="blog-excerpt">Horwath HTL estimates India's branded hotel pipeline at roughly 144,000 rooms — and warns against assuming every planned room opens on schedule.</p>
-          <span class="blog-read">Read insight</span>
-        </div>
-        <div class="blog-card" onclick="openPost('i8')">
-          <span class="blog-tag">Events</span>
-          <h3 class="blog-title">The Indian wedding boom should be judged by contribution</h3>
-          <p class="blog-excerpt">A large event invoice can make a poor business decision look attractive. A Saturday wedding could be profitable and still be less profitable than the business it replaces.</p>
-          <span class="blog-read">Read insight</span>
-        </div>
-        <div class="blog-card" onclick="openPost('i9')">
-          <span class="blog-tag">Infrastructure</span>
-          <h3 class="blog-title">New tourism infrastructure does not arrive on your opening date</h3>
-          <p class="blog-excerpt">India's Swadesh Darshan 2.0 identifies destinations — not room demand. Identification, sanction, and completion are different milestones.</p>
-          <span class="blog-read">Read insight</span>
-        </div>
-        <div class="blog-card" onclick="openPost('i10')">
-          <span class="blog-tag">Source Markets</span>
-          <h3 class="blog-title">When inbound travel softens, know which guests you actually rely on</h3>
-          <p class="blog-excerpt">For an independent hotel, the operational question is whether inbound guests represent 2% or 60% of room nights — and in which months.</p>
-          <span class="blog-read">Read insight</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ESSAYS TAB -->
-    <div class="blog-panel" id="tab-essays">
-      <div class="blog-grid">
-        <div class="blog-card" onclick="openPost('e1')">
-          <span class="blog-tag">Reporting</span>
-          <h3 class="blog-title">The owner should never have to ask what happened to the cash</h3>
-          <p class="blog-excerpt">A hotel can send an owner three reports and answer none of the questions that matter. Occupancy is up; wages are up; the bank balance is down.</p>
-          <span class="blog-read">Read essay</span>
-        </div>
-        <div class="blog-card" onclick="openPost('e2')">
-          <span class="blog-tag">Governance</span>
-          <h3 class="blog-title">The family hotel has two org charts</h3>
-          <p class="blog-excerpt">Every family hotel has a formal chart. Many also have an informal one: who can promise a discount, who can approve a supplier, whose call overrides the GM's.</p>
-          <span class="blog-read">Read essay</span>
-        </div>
-        <div class="blog-card" onclick="openPost('e3')">
-          <span class="blog-tag">Remote Ownership</span>
-          <h3 class="blog-title">An absentee owner needs exceptions, not another daily spreadsheet</h3>
-          <p class="blog-excerpt">Owners who are not on the property every morning face a peculiar problem: they can be copied on every message and still miss the one decision that matters.</p>
-          <span class="blog-read">Read essay</span>
-        </div>
-        <div class="blog-card" onclick="openPost('e4')">
-          <span class="blog-tag">Brand Decisions</span>
-          <h3 class="blog-title">Should an independent hotel take a brand? Start with the contract, not the flag</h3>
-          <p class="blog-excerpt">A brand can offer reach, systems and recognition. It also comes with fees, standards and obligations that change the owner's freedom to spend and decide.</p>
-          <span class="blog-read">Read essay</span>
-        </div>
-        <div class="blog-card" onclick="openPost('e5')">
-          <span class="blog-tag">Performance</span>
-          <h3 class="blog-title">Stop calling a full hotel a successful hotel</h3>
-          <p class="blog-excerpt">A sold-out night can be satisfying. It can also be a clue that you sold too cheaply, accepted an expensive channel mix, or filled with guests who generate costs the rate doesn't cover.</p>
-          <span class="blog-read">Read essay</span>
-        </div>
-      </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <a href="insights.html" style="text-decoration:none;padding:20px 24px;background:#fff;border:1px solid rgba(26,48,40,.1);border-radius:4px;display:block">
+        <span style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500">Market Reality</span>
+        <p style="font-size:.88rem;color:var(--ink);line-height:1.4;margin:8px 0 0;font-family:'Source Serif 4',serif;font-weight:300">India's hotel market is strong. That is not the same as your hotel being profitable.</p>
+      </a>
+      <a href="insights.html" style="text-decoration:none;padding:20px 24px;background:#fff;border:1px solid rgba(26,48,40,.1);border-radius:4px;display:block">
+        <span style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500">Reporting</span>
+        <p style="font-size:.88rem;color:var(--ink);line-height:1.4;margin:8px 0 0;font-family:'Source Serif 4',serif;font-weight:300">The owner should never have to ask what happened to the cash.</p>
+      </a>
+      <a href="insights.html" style="text-decoration:none;padding:20px 24px;background:#fff;border:1px solid rgba(26,48,40,.1);border-radius:4px;display:block">
+        <span style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500">Governance</span>
+        <p style="font-size:.88rem;color:var(--ink);line-height:1.4;margin:8px 0 0;font-family:'Source Serif 4',serif;font-weight:300">The family hotel has two org charts.</p>
+      </a>
     </div>
   </div>
 </section>
@@ -958,8 +848,20 @@ footer{background:var(--ink);padding:60px 40px 40px}
             <label for="gate-hotel">Hotel name (optional)</label>
             <input type="text" id="gate-hotel" name="hotel" placeholder="The Grand Residency, Coimbatore">
           </div>
-          <button type="submit" class="gate-submit">Get the Playbook →</button>
-          <p class="gate-note">Vaishakh reviews each download personally. If your situation looks like one Veritas can help with, he may reach out — but only once, and only if there is something genuinely useful to say.</p>
+          <div class="consent-block">
+            <label class="consent-check">
+              <input type="checkbox" name="marketing_consent" value="yes">
+              <span>Vaishakh may reach out if there is something genuinely useful to discuss about my hotel (optional)</span>
+            </label>
+          </div>
+          <div class="consent-block" style="margin-bottom:16px">
+            <label class="consent-check">
+              <input type="checkbox" name="privacy_agreed" required>
+              <span>I have read and agree to the <a href="legal.html" target="_blank">Privacy &amp; Terms</a> <span style="color:#c0392b">*</span></span>
+            </label>
+          </div>
+          <button type="submit" class="gate-submit">Get the Playbook &rarr;</button>
+          <p class="gate-note">No marketing emails. No follow-up unless you opt in above.</p>
         </form>
       </div>
       <div class="gate-success" id="gateSuccess">
@@ -1003,6 +905,18 @@ footer{background:var(--ink);padding:60px 40px 40px}
           <div class="cf-field">
             <label for="cf-message">What would you like to discuss?</label>
             <textarea id="cf-message" name="message" rows="4" placeholder="Briefly describe your situation or the question you would like to explore." style="resize:vertical"></textarea>
+          </div>
+          <div class="consent-block">
+            <label class="consent-check">
+              <input type="checkbox" name="marketing_consent" value="yes">
+              <span>I'm happy to receive occasional updates and perspectives from Veritas (optional)</span>
+            </label>
+          </div>
+          <div class="consent-block" style="margin-bottom:16px">
+            <label class="consent-check">
+              <input type="checkbox" name="privacy_agreed" required>
+              <span>I have read and agree to the <a href="legal.html" target="_blank">Privacy &amp; Terms</a> <span style="color:#c0392b">*</span></span>
+            </label>
           </div>
           <button type="submit" class="cf-submit">Send message</button>
           <p class="cf-note">Vaishakh responds personally, typically within one business day.</p>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clients — Veritas Hospitality Advisors</title>
+<meta name="description" content="Current and past advisory engagements of Veritas Hospitality Advisors. Independent hotel owner advisory across India.">
+<link rel="canonical" href="https://veritashospitalityadvisors.com/clients.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a3028;--cream:#f5f4ef;--gold:#a57426;--slate:rgba(26,48,40,.55)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Public Sans",sans-serif;background:var(--cream);color:var(--ink)}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,48,40,.96);backdrop-filter:blur(10px);height:64px;display:flex;align-items:center;padding:0 40px;gap:40px}
+.logo{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.1rem;color:var(--cream)!important;letter-spacing:.04em;text-decoration:none;margin-right:auto}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,244,239,.58);text-decoration:none;transition:color .15s}
+.nav-links a:hover,.nav-links a.active{color:var(--cream)}
+.nav-cta{font-size:.7rem;font-weight:500;color:var(--cream);text-decoration:none;border:1px solid rgba(165,116,38,.55);padding:8px 16px;letter-spacing:.05em;white-space:nowrap;transition:all .2s}
+.nav-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:column;gap:14px}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-logo{font-family:"Source Serif 4",serif;font-weight:300;font-size:.9rem;color:rgba(245,244,239,.45);text-decoration:none;letter-spacing:.04em}
+.footer-logo span{color:var(--gold)}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.footer-links a{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,244,239,.28);text-decoration:none;transition:color .15s}
+.footer-links a:hover{color:rgba(245,244,239,.6)}
+.footer-copy{font-size:.66rem;color:rgba(245,244,239,.2)}
+.footer-built a{color:rgba(165,116,38,.6);text-decoration:none}
+.footer-built{font-size:.66rem;color:rgba(165,116,38,.48)}
+@media(max-width:740px){nav{padding:0 16px;gap:20px}.nav-links{display:none}footer{padding:24px 16px}}
+
+.page-hero{background:var(--ink);padding:120px 40px 64px}
+.page-hero-inner{max-width:1120px;margin:0 auto}
+.page-hero .label{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px;display:block}
+.page-hero h1{font-family:"Source Serif 4",serif;font-weight:300;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--cream);line-height:1.2;margin-bottom:16px;max-width:620px}
+.page-hero p{font-size:.88rem;color:rgba(245,244,239,.5);max-width:520px;line-height:1.8}
+
+.clients-section{padding:80px 40px 100px}
+.clients-inner{max-width:1120px;margin:0 auto}
+
+.client-card{background:#fff;border:1px solid rgba(26,48,40,.1);border-radius:4px;overflow:hidden;display:grid;grid-template-columns:380px 1fr;gap:0;margin-bottom:64px}
+.client-img{background:var(--ink);min-height:340px;overflow:hidden}
+.client-img img{width:100%;height:100%;object-fit:cover;display:block;opacity:.9}
+.client-img-placeholder{width:100%;height:100%;min-height:340px;display:flex;align-items:center;justify-content:center;background:var(--ink)}
+.client-body{padding:48px 48px 40px}
+.client-status{display:inline-block;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--gold);padding:4px 10px;border-radius:2px;margin-bottom:20px}
+.client-body h2{font-family:"Source Serif 4",serif;font-weight:300;font-size:clamp(1.3rem,2vw,1.8rem);color:var(--ink);line-height:1.2;margin-bottom:6px}
+.client-location{font-size:.74rem;color:var(--gold);letter-spacing:.06em;margin-bottom:22px;font-weight:500}
+.client-body p{font-size:.88rem;line-height:1.85;color:rgba(26,48,40,.72);margin-bottom:16px}
+.client-features{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
+.client-feature{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(26,48,40,.55);border:1px solid rgba(26,48,40,.15);padding:5px 10px}
+.client-link{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(165,116,38,.3);padding-bottom:2px;margin-top:8px;transition:border-color .2s}
+.client-link:hover{border-color:var(--gold)}
+
+.disclaimer{font-size:.78rem;color:rgba(26,48,40,.4);border-top:1px solid rgba(26,48,40,.1);padding-top:24px;line-height:1.7;max-width:760px}
+
+@media(max-width:860px){.client-card{grid-template-columns:1fr}.client-img{min-height:240px}.client-body{padding:32px 28px}}
+@media(max-width:740px){.clients-section{padding:48px 20px 64px}.page-hero{padding:100px 20px 48px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">Veritas<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="founder.html">Founder</a></li>
+    <li><a href="clients.html" class="active">Clients</a></li>
+    <li><a href="diagnostic.html">Diagnostic</a></li>
+    <li><a href="insights.html">Perspectives</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:vaishakh@veritashospitalityadvisors.com" class="nav-cta">Discuss confidentially</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="label">Advisory engagements</span>
+    <h1>Properties Veritas is working with</h1>
+    <p>Veritas takes on one engagement per destination and works exclusively on the owner's side. Every engagement is confidential unless the client has agreed to be named.</p>
+  </div>
+</div>
+
+<div class="clients-section">
+  <div class="clients-inner">
+
+    <!-- Sanskreti The Heritage -->
+    <div class="client-card">
+      <div class="client-img">
+        <div class="client-img-placeholder">
+          <!-- Photo to be added with client consent -->
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="4" fill="rgba(245,244,239,.06)"/><path d="M32 18C25.4 18 20 23.4 20 30s5.4 12 12 12 12-5.4 12-12S38.6 18 32 18zm0 22c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10z" fill="rgba(165,116,38,.3)"/></svg>
+        </div>
+      </div>
+      <div class="client-body">
+        <span class="client-status">Active engagement</span>
+        <h2>Sanskreti The Heritage</h2>
+        <p class="client-location">Kallanchery Island, North Kumbalanghi, Kochi, Kerala</p>
+        <p>Sanskreti is an eco-friendly island heritage resort on the Vembanad backwaters, grown over 25 years from a family home on Kallanchery Island. The property is accessed by boat and shaped around the land, water, and village life of Kumbalanghi -- not built from scratch but carved from it.</p>
+        <p>The resort's restaurant, The Lilly's, takes its name from the family matriarch Lillykutty, whose fresh-caught local seafood became the property's original reputation. A dedicated Ayurvedic spa (Parampara) is opening under the guidance of co-founder Dr. Dhanya Mathew.</p>
+        <p>Veritas is engaged as the property's advisory partner, working directly with the ownership to review commercial performance, operational governance, and revenue positioning.</p>
+        <div class="client-features">
+          <span class="client-feature">Heritage resort</span>
+          <span class="client-feature">Backwater island</span>
+          <span class="client-feature">Eco-certified</span>
+          <span class="client-feature">Ayurvedic spa</span>
+          <span class="client-feature">Event spaces</span>
+          <span class="client-feature">Kerala</span>
+        </div>
+        <a href="https://www.sanskretitheheritage.com/" target="_blank" rel="noopener" class="client-link">Visit property website &rarr;</a>
+      </div>
+    </div>
+
+    <p class="disclaimer">Veritas operates on a strict one-client-per-destination model and does not disclose the existence of engagements without client consent. Sanskreti The Heritage is named here with the explicit agreement of the ownership.</p>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-row">
+    <a href="/" class="footer-logo">Veritas<span>.</span></a>
+    <nav class="footer-links">
+      <a href="/">Home</a><a href="founder.html">Founder</a><a href="clients.html">Clients</a>
+      <a href="diagnostic.html">Diagnostic</a><a href="insights.html">Perspectives</a><a href="legal.html">Privacy &amp; Terms</a>
+    </nav>
+  </div>
+  <div class="footer-row">
+    <p class="footer-copy">&copy; 2026 Veritas Hospitality Advisors. All rights reserved. Registered in India.</p>
+    <p class="footer-built">Site built by <a href="https://aisearch.global" target="_blank" rel="noopener">AISearch Global</a> | Sydney | Australia</p>
+  </div>
+</footer>
+</body>
+</html>

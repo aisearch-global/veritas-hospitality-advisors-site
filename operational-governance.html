@@ -55,7 +55,7 @@ body{font-family:"Public Sans",sans-serif;background:var(--cream);color:var(--in
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,48,40,.94);backdrop-filter:blur(10px);height:64px;display:flex;align-items:center;padding:0 40px;justify-content:space-between}
 .logo{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.35rem;color:var(--cream);letter-spacing:.04em;text-decoration:none}
 .logo span{color:var(--gold)}
-.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links{display:flex;gap:32px;list-style:none}
 .nav-links a{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,244,239,.58);text-decoration:none;transition:color .15s}
 .nav-links a:hover,.nav-links a.active{color:var(--cream)}
 .nav-cta{font-size:.75rem;font-weight:500;color:var(--cream);text-decoration:none;border:1px solid rgba(165,116,38,.55);padding:9px 22px;letter-spacing:.05em;transition:all .2s}
@@ -126,15 +126,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,48,40,.94
 .service-link-item:hover .sli-text{color:var(--cream)}
 .service-link-item:hover .sli-arrow{color:var(--gold)}
 
-footer{background:var(--ink);border-top:1px solid rgba(245,244,239,.06);padding:48px 40px 36px}
-.footer-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:40px}
-.footer-brand .logo{display:block;margin-bottom:10px}
-.footer-brand p{font-size:.75rem;color:rgba(245,244,239,.3);line-height:1.6;max-width:260px}
-.footer-links{display:flex;gap:60px}
-.fl-col h4{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,244,239,.28);margin-bottom:14px}
-.fl-col a{display:block;font-size:.78rem;color:rgba(245,244,239,.42);text-decoration:none;margin-bottom:8px;transition:color .15s}
-.fl-col a:hover{color:var(--gold)}
-.footer-bottom{max-width:1120px;margin:36px auto 0;padding-top:24px;border-top:1px solid rgba(245,244,239,.06);display:flex;justify-content:space-between;font-size:.7rem;color:rgba(245,244,239,.22);flex-wrap:wrap;gap:12px}
+footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:column;gap:14px}
+.footer-logo{font-family:"Source Serif 4",serif;font-weight:300;font-size:.9rem;color:rgba(245,244,239,.45);text-decoration:none;letter-spacing:.04em}
+.footer-logo span{color:var(--gold)}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.footer-links a{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,244,239,.28);text-decoration:none;transition:color .15s}
+.footer-links a:hover{color:rgba(245,244,239,.6)}
+.footer-copy{font-size:.66rem;color:rgba(245,244,239,.2)}
 
 @media(max-width:740px){
   .nav-links{display:none}
@@ -143,28 +141,27 @@ footer{background:var(--ink);border-top:1px solid rgba(245,244,239,.06);padding:
   .cta-band .section-inner{grid-template-columns:1fr;gap:48px}
   .page-hero{padding:120px 24px 64px}
   .section{padding:64px 24px}
-  .footer-links{gap:32px}
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="/" class="logo">Veritas<span>.</span></a>
+  <a href="index.html" class="logo">Veritas<span>.</span></a>
   <ul class="nav-links">
-    <li><a href="/">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="founder.html">Founder</a></li>
     <li><a href="clients.html">Clients</a></li>
     <li><a href="diagnostic.html">Diagnostic</a></li>
     <li><a href="insights.html">Perspectives</a></li>
-    <li><a href="/#contact">Contact</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
   </ul>
   <a href="mailto:vaishakh@veritashospitalityadvisors.com" class="nav-cta">Discuss confidentially</a>
 </nav>
 
 <section class="page-hero">
   <div class="inner">
-    <p class="breadcrumb"><a href="/">Home</a><span>/</span>Operational Governance</p>
+    <p class="breadcrumb"><a href="index.html">Home</a><span>/</span>Operational Governance</p>
     <p class="service-num">02 — Service</p>
     <h1>Operational Governance<br><em>reducing leakage, lifting GOP</em></h1>
     <p class="lead">Standards deployment, cost discipline, manpower analysis, procurement review, and service quality governance — conducted on the owner's behalf, independent of the management team's reporting interests.</p>
@@ -302,40 +299,17 @@ footer{background:var(--ink);border-top:1px solid rgba(245,244,239,.06);padding:
 </section>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="/" class="logo">Veritas<span style="color:var(--gold)">.</span></a>
-      <p>Independent hotel owner advisory for India. Founded by Vaishakh Surendran.</p>
-    </div>
-    <div class="footer-links">
-      <div class="fl-col">
-        <h4>Services</h4>
-        <a href="commercial-performance.html">Commercial Performance</a>
-        <a href="operational-governance.html">Operational Governance</a>
-        <a href="owner-reporting.html">Owner Reporting</a>
-      </div>
-      <div class="fl-col">
-        <h4>Advisory</h4>
-        <a href="founder.html">Founder</a>
-        <a href="clients.html">Clients</a>
-        <a href="diagnostic.html">Diagnostic</a>
-        <a href="insights.html">Perspectives</a>
-      </div>
-      <div class="fl-col">
-        <h4>Contact</h4>
-        <a href="mailto:vaishakh@veritashospitalityadvisors.com">vaishakh@veritashospitalityadvisors.com</a>
-        <a href="legal.html">Privacy &amp; Terms</a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Veritas Hospitality Advisors &nbsp;|&nbsp; GSTIN: 32BLFPS3361D1ZD &nbsp;|&nbsp; MSME: UDYAM-KL-07-0058097</span>
-    <span><a href="tel:+919072233008" style="color:inherit">+91 90722 33008</a> &nbsp;|&nbsp; <a href="mailto:vaishakh@veritashospitalityadvisors.com" style="color:inherit">vaishakh@veritashospitalityadvisors.com</a> &nbsp;|&nbsp; <a href="https://veritashospitalityadvisors.in" style="color:inherit">veritashospitalityadvisors.in</a></span>
-  </div>
-  <div class="footer-bottom" style="margin-top:12px;border-top:none;padding-top:0">
-    <span>Owner-aligned. Independent.</span>
-    <span>Site built by <a href="https://aisearch.global" target="_blank" rel="noopener" style="color:rgba(165,116,38,.6)">AISearch Global</a> &nbsp;|&nbsp; Sydney &nbsp;|&nbsp; Australia &nbsp;|&nbsp; <a href="mailto:hello@aisearch.global" style="color:rgba(165,116,38,.6)">hello@aisearch.global</a></span>
-  </div>
+  <a href="index.html" class="footer-logo">Veritas<span>.</span></a>
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="founder.html">Founder</a>
+    <a href="clients.html">Clients</a>
+    <a href="insights.html">Perspectives</a>
+    <a href="legal.html">Privacy &amp; Terms</a>
+  </nav>
+  <p class="footer-copy">&copy; 2026 Veritas Hospitality Advisors. All rights reserved. Registered in India. &nbsp;|&nbsp; GSTIN: 32BLFPS3361D1ZD &nbsp;|&nbsp; MSME: UDYAM-KL-07-0058097</p>
+  <p class="footer-copy" style="margin-top:4px;opacity:.6"><a href="tel:+919072233008" style="color:inherit">+91 90722 33008</a> &nbsp;|&nbsp; <a href="mailto:vaishakh@veritashospitalityadvisors.com" style="color:inherit">vaishakh@veritashospitalityadvisors.com</a> &nbsp;|&nbsp; <a href="https://veritashospitalityadvisors.in" style="color:inherit">veritashospitalityadvisors.in</a></p>
+  <p class="footer-copy" style="margin-top:4px;opacity:.5">Site built by <a href="https://aisearch.global" target="_blank" rel="noopener" style="color:rgba(165,116,38,.7);text-decoration:underline;text-underline-offset:2px">AISearch Global</a> &nbsp;|&nbsp; Sydney &nbsp;|&nbsp; Australia &nbsp;|&nbsp; <a href="mailto:hello@aisearch.global" style="color:rgba(165,116,38,.7);text-decoration:none">hello@aisearch.global</a></p>
 </footer>
 
 </body>

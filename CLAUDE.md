@@ -34,14 +34,14 @@ If a page uses `--font-display` or `--font-ui` variables, they MUST point to Sou
 ### Nav — MUST be identical on ALL inner pages
 ```html
 <nav>
-  <a href="/" class="logo">Veritas<span>.</span></a>
+  <a href="index.html" class="logo">Veritas<span>.</span></a>
   <ul class="nav-links">
-    <li><a href="/">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="founder.html">Founder</a></li>
     <li><a href="clients.html">Clients</a></li>
     <li><a href="diagnostic.html">Diagnostic</a></li>
     <li><a href="insights.html">Perspectives</a></li>
-    <li><a href="/#contact">Contact</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
   </ul>
   <a href="mailto:vaishakh@veritashospitalityadvisors.com" class="nav-cta">Discuss confidentially</a>
 </nav>
@@ -53,9 +53,9 @@ If a page uses `--font-display` or `--font-ui` variables, they MUST point to Sou
 ### Footer — MUST be identical on ALL root pages
 ```html
 <footer>
-  <a href="/" class="footer-logo">Veritas<span>.</span></a>
+  <a href="index.html" class="footer-logo">Veritas<span>.</span></a>
   <nav class="footer-links">
-    <a href="/">Home</a>
+    <a href="index.html">Home</a>
     <a href="founder.html">Founder</a>
     <a href="clients.html">Clients</a>
     <a href="insights.html">Perspectives</a>

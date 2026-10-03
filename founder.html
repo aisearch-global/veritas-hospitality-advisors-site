@@ -304,132 +304,71 @@ footer{background:var(--ink);padding:40px;display:flex;justify-content:space-bet
     <p style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,48,40,.4);margin-bottom:12px">In the field</p>
     <h2 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:clamp(1.4rem,2.2vw,1.9rem);color:#1a3028;line-height:1.15;margin-bottom:44px;max-width:540px">25 years in hospitality &mdash; some of the moments that shaped the practice.</h2>
 
+    <style>
+    @media(max-width:640px){
+      .gallery-slide{grid-template-columns:1fr!important}
+      .gallery-img{height:260px!important}
+      .gallery-cap{min-height:auto!important;padding:28px 24px!important}
+    }
+    </style>
+
     <div id="gallery" style="position:relative;overflow:hidden">
       <div id="gallery-track" style="display:flex;transition:transform .4s ease">
 
-        <!-- Slide 1: Suman Tarafdar -->
-        <div class="gallery-slide" style="min-width:100%;display:grid;grid-template-columns:1fr 1fr;gap:3px;align-items:end">
-          <div style="overflow:hidden;max-height:520px">
-            <img src="img/vaishakh-suman-tarafdar.jpg" alt="Vaishakh Surendran with Suman Tarafdar at Lyfe Hotels Bhubaneswar" style="width:100%;height:520px;object-fit:cover;display:block">
+        <!-- Slide 1: Portrait — Founder intro -->
+        <div class="gallery-slide" style="min-width:100%;display:grid;grid-template-columns:3fr 2fr;gap:3px;align-items:stretch">
+          <div class="gallery-img" style="overflow:hidden;height:520px">
+            <img src="img/vaishakh-portrait.jpg" alt="Vaishakh Surendran, Founder, Veritas Hospitality Advisors" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block">
           </div>
-          <div style="background:#1a3028;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
+          <div class="gallery-cap" style="background:#1a3028;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
+            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin-bottom:14px">Veritas Hospitality Advisors</p>
+            <p style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.1rem;color:#f5f4ef;line-height:1.5;margin-bottom:0">25 years of hospitality operations &mdash; now applied exclusively to the owner&rsquo;s side of the table.</p>
+          </div>
+        </div>
+
+        <!-- Slide 2: Suman Tarafdar -->
+        <div class="gallery-slide" style="min-width:100%;display:grid;grid-template-columns:3fr 2fr;gap:3px;align-items:stretch">
+          <div class="gallery-img" style="overflow:hidden;height:520px">
+            <img src="img/vaishakh-suman-tarafdar.jpg" alt="Vaishakh Surendran with Suman Tarafdar at Lyfe Hotels Bhubaneswar" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block">
+          </div>
+          <div class="gallery-cap" style="background:#1a3028;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
             <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin-bottom:14px">November 2024 &middot; Lyfe Hotels &amp; Resorts, Bhubaneswar</p>
             <p style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.1rem;color:#f5f4ef;line-height:1.5;margin-bottom:0">With hospitality legend Suman Tarafdar &mdash; one of India&rsquo;s most respected names in the industry.</p>
           </div>
         </div>
 
-        <!-- Slide 2: Naval officers group -->
-        <div class="gallery-slide" style="min-width:100%;display:grid;grid-template-columns:1fr 1fr;gap:3px;align-items:end">
-          <div style="overflow:hidden;max-height:520px">
-            <img src="img/vaishakh-naval-officers.jpg" alt="Vaishakh Surendran with Vice Admiral Sameer Saxena and Rear Admiral Shantanu Jha" style="width:100%;height:520px;object-fit:cover;display:block">
+        <!-- Slide 3: Naval officers group (VAdm Saxena + RAdm Jha) -->
+        <div class="gallery-slide" style="min-width:100%;display:grid;grid-template-columns:3fr 2fr;gap:3px;align-items:stretch">
+          <div class="gallery-img" style="overflow:hidden;height:520px">
+            <img src="img/vaishakh-naval-officers.jpg" alt="Vaishakh Surendran with Vice Admiral Sameer Saxena AVSM NM and Rear Admiral Shantanu Jha at Lyfe Hotels" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block">
           </div>
-          <div style="background:#1a3028;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
+          <div class="gallery-cap" style="background:#1a3028;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
             <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin-bottom:14px">2024 &middot; Lyfe Hotels &amp; Resorts, Bhubaneswar</p>
             <p style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.1rem;color:#f5f4ef;line-height:1.5;margin-bottom:12px">Hosting Vice Admiral Sameer Saxena AVSM NM and Rear Admiral Shantanu Jha at Lyfe Hotels &amp; Resorts.</p>
             <p style="font-size:.8rem;color:rgba(245,244,239,.45);line-height:1.6">VAdm Saxena presented a Naval insignia-embossed wallet at departure &mdash; a rare mark of appreciation from senior Indian Navy leadership.</p>
           </div>
         </div>
 
-        <!-- Slide 3: Naval officer solo -->
-        <div class="gallery-slide" style="min-width:100%;display:grid;grid-template-columns:1fr 1fr;gap:3px;align-items:end">
-          <div style="overflow:hidden;max-height:520px">
-            <img src="img/vaishakh-naval-officer-2.jpg" alt="Vaishakh Surendran with senior Indian Naval officer at Lyfe Hotels" style="width:100%;height:520px;object-fit:cover;display:block">
+        <!-- Slide 4: Kuwait — US government delegations -->
+        <div class="gallery-slide" style="min-width:100%;display:grid;grid-template-columns:3fr 2fr;gap:3px;align-items:stretch">
+          <div class="gallery-img" style="overflow:hidden;height:520px">
+            <img src="img/obama-radisson-kuwait-team.jpg" alt="Radisson Blu Kuwait team during distinguished US government delegation visit, 2008" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block">
           </div>
-          <div style="background:#1a3028;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
-            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin-bottom:14px">2024 &middot; Lyfe Hotels &amp; Resorts, Bhubaneswar</p>
-            <p style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.1rem;color:#f5f4ef;line-height:1.5;margin-bottom:0">With senior Indian Navy leadership during an official engagement at the property.</p>
-          </div>
-        </div>
-
-        <!-- Slide 4: Kuwait / diplomatic triptych -->
-        <div class="gallery-slide" style="min-width:100%">
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px">
-            <div style="overflow:hidden;max-height:440px">
-              <img src="img/obama-radisson-kuwait-team.jpg" alt="Radisson Blu Kuwait team during distinguished diplomatic visit, 2008" style="width:100%;height:440px;object-fit:cover;display:block">
-            </div>
-            <div style="background:#f0ede4;display:flex;align-items:center;justify-content:center;max-height:440px">
-              <img src="img/obama-radisson-signature.jpg" alt="Autograph on Radisson SAS Hotel Kuwait letterhead" style="width:100%;max-height:440px;object-fit:contain;padding:24px">
-            </div>
-            <div style="background:#eeecea;display:flex;align-items:center;justify-content:center;max-height:440px">
-              <img src="img/dhs-homeland-security-letter.jpg" alt="US Department of Homeland Security letter of appreciation" style="width:100%;max-height:440px;object-fit:contain;padding:20px">
-            </div>
-          </div>
-          <div style="background:#1a3028;padding:32px 44px">
-            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin-bottom:10px">2007&ndash;2010 &middot; Radisson Blu Hotel, Kuwait</p>
-            <p style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1rem;color:#f5f4ef;line-height:1.5">Managing US government delegations and diplomatic visits at Radisson Blu Hotel Kuwait &mdash; work that earned written commendations from the US Secret Service and the US Department of Homeland Security.</p>
+          <div class="gallery-cap" style="background:#1a3028;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
+            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin-bottom:14px">2007&ndash;2010 &middot; Radisson Blu Hotel, Kuwait</p>
+            <p style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.1rem;color:#f5f4ef;line-height:1.5;margin-bottom:12px">Managing US government delegations and diplomatic visits at Radisson Blu Hotel Kuwait.</p>
+            <p style="font-size:.8rem;color:rgba(245,244,239,.45);line-height:1.6">Work that earned written commendations from the US Secret Service and the US Department of Homeland Security.</p>
           </div>
         </div>
 
-
-        <!-- Slide 5: TripAdvisor Certificate of Excellence 2015 -->
-        <div class="gallery-slide" style="min-width:100%;display:grid;grid-template-columns:1fr 1fr;gap:3px;align-items:end">
-          <div style="background:#f0ede4;display:flex;align-items:center;justify-content:center;min-height:520px;padding:32px">
-            <img src="img/tripadvisor-cert-keys-chennai-2015.jpg" alt="TripAdvisor Certificate of Excellence 2015 — Keys Katti-Ma Hotel Chennai" style="width:100%;max-height:480px;object-fit:contain;display:block">
+        <!-- Slide 5: Odisha Leadership Awards 2025 -->
+        <div class="gallery-slide" style="min-width:100%;display:grid;grid-template-columns:3fr 2fr;gap:3px;align-items:stretch">
+          <div class="gallery-img" style="overflow:hidden;height:520px">
+            <img src="img/vaishakh-odisha-award-stage-2025.jpg" alt="Vaishakh Surendran receiving award at Odisha Leadership Awards 2025" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block">
           </div>
-          <div style="background:#1a3028;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
-            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin-bottom:14px">2015 &middot; Keys Katti-Ma Hotel, Chennai</p>
-            <p style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.1rem;color:#f5f4ef;line-height:1.5;margin-bottom:0">TripAdvisor Certificate of Excellence &mdash; guest experience recognised at one of Chennai&rsquo;s competitive midscale properties.</p>
-          </div>
-        </div>
-
-        <!-- Slide 6: Portrait -->
-        <div class="gallery-slide" style="min-width:100%;display:grid;grid-template-columns:1fr 1fr;gap:3px;align-items:end">
-          <div style="overflow:hidden;max-height:520px">
-            <img src="img/vaishakh-portrait.jpg" alt="Vaishakh Surendran, Founder, Veritas Hospitality Advisors" style="width:100%;height:520px;object-fit:cover;object-position:top;display:block">
-          </div>
-          <div style="background:#1a3028;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
-            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin-bottom:14px">Veritas Hospitality Advisors</p>
-            <p style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.1rem;color:#f5f4ef;line-height:1.5;margin-bottom:0">25 years of hospitality operations &mdash; now applied exclusively to the owner&rsquo;s side of the table.</p>
-          </div>
-        </div>
-
-        <!-- Slide 7: IGBC Green Crusader Certificate 2025 -->
-        <div class="gallery-slide" style="min-width:100%;display:grid;grid-template-columns:1fr 1fr;gap:3px;align-items:end">
-          <div style="background:#f0ede4;display:flex;align-items:center;justify-content:center;min-height:520px;padding:32px">
-            <img src="img/igbc-green-crusader-cert-2025.jpg" alt="IGBC Green Crusader Certificate 2025 — Crackers India Infrastructure / LYFE Hotel" style="width:100%;max-height:480px;object-fit:contain;display:block">
-          </div>
-          <div style="background:#1a3028;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
-            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin-bottom:14px">2025 &middot; Indian Green Building Council</p>
-            <p style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.1rem;color:#f5f4ef;line-height:1.5;margin-bottom:12px">IGBC Green Crusader Award &mdash; recognising Lyfe Hotels&rsquo; commitment to sustainable operations and green building standards.</p>
-            <p style="font-size:.8rem;color:rgba(245,244,239,.45);line-height:1.6">Led the full-property sustainability transformation: EV fleet, organic kitchen garden, single-use plastic elimination.</p>
-          </div>
-        </div>
-
-        <!-- Slide 8: Odisha Best Employer Brand Award 2025 — certificate + trophy -->
-        <div class="gallery-slide" style="min-width:100%">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px">
-            <div style="background:#f0ede4;display:flex;align-items:center;justify-content:center;min-height:440px;padding:28px">
-              <img src="img/odisha-best-employer-cert-2025.jpg" alt="Odisha Best Employer Brand Awards 2025 — LYFE Hotels Bhubaneswar certificate" style="width:100%;max-height:400px;object-fit:contain;display:block">
-            </div>
-            <div style="overflow:hidden;max-height:440px">
-              <img src="img/odisha-best-employer-trophy-2025.jpg" alt="Odisha Best Employer Brand Awards 2025 — gold star trophy" style="width:100%;height:440px;object-fit:cover;display:block">
-            </div>
-          </div>
-          <div style="background:#1a3028;padding:32px 44px">
-            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin-bottom:10px">2025 &middot; Odisha Best Employer Brand Awards</p>
-            <p style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1rem;color:#f5f4ef;line-height:1.5">Lyfe Hotels Bhubaneswar recognised as one of Odisha&rsquo;s Best Employer Brands &mdash; a reflection of the people-first culture built from the ground up.</p>
-          </div>
-        </div>
-
-        <!-- Slide 9: Stage award (Odisha Leadership Awards) -->
-        <div class="gallery-slide" style="min-width:100%;display:grid;grid-template-columns:1fr 1fr;gap:3px;align-items:end">
-          <div style="overflow:hidden;max-height:520px">
-            <img src="img/vaishakh-odisha-award-stage-2025.jpg" alt="Vaishakh Surendran receiving award at Odisha Leadership Awards 2025" style="width:100%;height:520px;object-fit:cover;display:block">
-          </div>
-          <div style="background:#1a3028;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
+          <div class="gallery-cap" style="background:#1a3028;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
             <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin-bottom:14px">2025 &middot; Odisha Leadership Awards</p>
             <p style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.1rem;color:#f5f4ef;line-height:1.5;margin-bottom:0">Receiving recognition on stage at the Odisha Leadership Awards &mdash; for building one of the state&rsquo;s most admired hospitality workplaces.</p>
-          </div>
-        </div>
-
-        <!-- Slide 10: CMO Asia Most Influential GMs Certificate 2025 -->
-        <div class="gallery-slide" style="min-width:100%;display:grid;grid-template-columns:1fr 1fr;gap:3px;align-items:end">
-          <div style="background:#f0ede4;display:flex;align-items:center;justify-content:center;min-height:520px;padding:32px">
-            <img src="img/cmo-asia-influential-gm-cert-2025.jpg" alt="CMO Asia Odisha's Most Influential General Managers 2025 — Vaishakh Surendran" style="width:100%;max-height:480px;object-fit:contain;display:block">
-          </div>
-          <div style="background:#1a3028;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
-            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin-bottom:14px">2025 &middot; CMO Asia</p>
-            <p style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.1rem;color:#f5f4ef;line-height:1.5;margin-bottom:0">Named among Odisha&rsquo;s Most Influential General Managers by CMO Asia &mdash; recognising commercial leadership and brand impact.</p>
           </div>
         </div>
 
@@ -439,24 +378,85 @@ footer{background:var(--ink);padding:40px;display:flex;justify-content:space-bet
       <button onclick="galleryMove(1)" aria-label="Next" style="position:absolute;top:42%;right:16px;transform:translateY(-50%);background:rgba(26,48,40,.75);border:none;color:#fff;width:44px;height:44px;cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;border-radius:2px">&rarr;</button>
     </div>
 
-    <div style="display:flex;gap:8px;justify-content:center;margin-top:18px;flex-wrap:wrap">
+    <div style="display:flex;gap:8px;justify-content:center;margin-top:18px">
       <button class="gal-dot" onclick="galleryGo(0)" style="width:8px;height:8px;border-radius:50%;border:none;background:#a57426;cursor:pointer;padding:0"></button>
       <button class="gal-dot" onclick="galleryGo(1)" style="width:8px;height:8px;border-radius:50%;border:none;background:rgba(26,48,40,.2);cursor:pointer;padding:0"></button>
       <button class="gal-dot" onclick="galleryGo(2)" style="width:8px;height:8px;border-radius:50%;border:none;background:rgba(26,48,40,.2);cursor:pointer;padding:0"></button>
       <button class="gal-dot" onclick="galleryGo(3)" style="width:8px;height:8px;border-radius:50%;border:none;background:rgba(26,48,40,.2);cursor:pointer;padding:0"></button>
       <button class="gal-dot" onclick="galleryGo(4)" style="width:8px;height:8px;border-radius:50%;border:none;background:rgba(26,48,40,.2);cursor:pointer;padding:0"></button>
-      <button class="gal-dot" onclick="galleryGo(5)" style="width:8px;height:8px;border-radius:50%;border:none;background:rgba(26,48,40,.2);cursor:pointer;padding:0"></button>
-      <button class="gal-dot" onclick="galleryGo(6)" style="width:8px;height:8px;border-radius:50%;border:none;background:rgba(26,48,40,.2);cursor:pointer;padding:0"></button>
-      <button class="gal-dot" onclick="galleryGo(7)" style="width:8px;height:8px;border-radius:50%;border:none;background:rgba(26,48,40,.2);cursor:pointer;padding:0"></button>
-      <button class="gal-dot" onclick="galleryGo(8)" style="width:8px;height:8px;border-radius:50%;border:none;background:rgba(26,48,40,.2);cursor:pointer;padding:0"></button>
-      <button class="gal-dot" onclick="galleryGo(9)" style="width:8px;height:8px;border-radius:50%;border:none;background:rgba(26,48,40,.2);cursor:pointer;padding:0"></button>
     </div>
+
+    <!-- Recognition section -->
+    <div style="margin-top:64px">
+      <p style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,48,40,.4);margin-bottom:12px">Recognition</p>
+      <h3 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:clamp(1.2rem,1.8vw,1.6rem);color:#1a3028;line-height:1.15;margin-bottom:40px">Awards, certifications, and commendations.</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px">
+
+        <div style="background:#f5f4ef;border:1px solid rgba(26,48,40,.08);padding:24px;display:flex;flex-direction:column;align-items:center;gap:16px">
+          <div style="width:100%;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden">
+            <img src="img/tripadvisor-cert-keys-chennai-2015.jpg" alt="TripAdvisor Certificate of Excellence 2015 — Keys Katti-Ma Hotel Chennai" style="max-width:100%;max-height:160px;object-fit:contain">
+          </div>
+          <div style="text-align:center">
+            <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#a57426;margin-bottom:6px">2015</p>
+            <p style="font-size:.85rem;color:#1a3028;font-weight:500;margin-bottom:4px">TripAdvisor Certificate of Excellence</p>
+            <p style="font-size:.78rem;color:rgba(26,48,40,.5)">Keys Katti-Ma Hotel, Chennai</p>
+          </div>
+        </div>
+
+        <div style="background:#f5f4ef;border:1px solid rgba(26,48,40,.08);padding:24px;display:flex;flex-direction:column;align-items:center;gap:16px">
+          <div style="width:100%;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden">
+            <img src="img/igbc-green-crusader-cert-2025.jpg" alt="IGBC Green Crusader Certificate 2025" style="max-width:100%;max-height:160px;object-fit:contain">
+          </div>
+          <div style="text-align:center">
+            <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#a57426;margin-bottom:6px">2025</p>
+            <p style="font-size:.85rem;color:#1a3028;font-weight:500;margin-bottom:4px">IGBC Green Crusader Award</p>
+            <p style="font-size:.78rem;color:rgba(26,48,40,.5)">Indian Green Building Council</p>
+          </div>
+        </div>
+
+        <div style="background:#f5f4ef;border:1px solid rgba(26,48,40,.08);padding:24px;display:flex;flex-direction:column;align-items:center;gap:16px">
+          <div style="width:100%;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden">
+            <img src="img/odisha-best-employer-cert-2025.jpg" alt="Odisha Best Employer Brand Awards 2025 — LYFE Hotels Bhubaneswar" style="max-width:100%;max-height:160px;object-fit:contain">
+          </div>
+          <div style="text-align:center">
+            <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#a57426;margin-bottom:6px">2025</p>
+            <p style="font-size:.85rem;color:#1a3028;font-weight:500;margin-bottom:4px">Best Employer Brand Award</p>
+            <p style="font-size:.78rem;color:rgba(26,48,40,.5)">Odisha Employer Brand Awards</p>
+          </div>
+        </div>
+
+        <div style="background:#f5f4ef;border:1px solid rgba(26,48,40,.08);padding:24px;display:flex;flex-direction:column;align-items:center;gap:16px">
+          <div style="width:100%;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden">
+            <img src="img/cmo-asia-influential-gm-cert-2025.jpg" alt="CMO Asia Odisha's Most Influential General Managers 2025" style="max-width:100%;max-height:160px;object-fit:contain">
+          </div>
+          <div style="text-align:center">
+            <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#a57426;margin-bottom:6px">2025</p>
+            <p style="font-size:.85rem;color:#1a3028;font-weight:500;margin-bottom:4px">Most Influential GMs — Odisha</p>
+            <p style="font-size:.78rem;color:rgba(26,48,40,.5)">CMO Asia</p>
+          </div>
+        </div>
+
+        <div style="background:#f5f4ef;border:1px solid rgba(26,48,40,.08);padding:24px;display:flex;flex-direction:column;align-items:center;gap:16px">
+          <div style="width:100%;height:160px;display:flex;align-items:center;justify-content:center;gap:8px;overflow:hidden">
+            <img src="img/obama-radisson-signature.jpg" alt="Autograph on Radisson SAS Hotel Kuwait letterhead" style="max-width:46%;max-height:160px;object-fit:contain">
+            <img src="img/dhs-homeland-security-letter.jpg" alt="US Department of Homeland Security letter of appreciation" style="max-width:46%;max-height:160px;object-fit:contain">
+          </div>
+          <div style="text-align:center">
+            <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#a57426;margin-bottom:6px">2007&ndash;2010</p>
+            <p style="font-size:.85rem;color:#1a3028;font-weight:500;margin-bottom:4px">Government Commendations</p>
+            <p style="font-size:.78rem;color:rgba(26,48,40,.5)">US Secret Service &amp; Dept. of Homeland Security</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
 <script>
 (function(){
-  var idx=0,total=10;
+  var idx=0,total=5;
   function update(){
     document.getElementById("gallery-track").style.transform="translateX(-"+idx*100+"%)";
     document.querySelectorAll(".gal-dot").forEach(function(d,i){

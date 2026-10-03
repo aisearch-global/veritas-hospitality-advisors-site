@@ -265,7 +265,7 @@ Article cards use class `art-card` (not `article-card`).
 
 ## Session 3 — 4 October 2026 (AEO/SEO audit fixes)
 
-- **Domain:** all canonical, og, schema @id/url, sitemap, robots.txt and llms files now use `https://veritashospitalityadvisors.in` (production target). Email stays on .com. Do NOT add a CNAME file until .in DNS is pointed at GitHub Pages — adding it early sends the github.io site to the old GoDaddy page.
+- **Domain:** UNCHANGED — code stays on .com (canonical, schema, sitemap, llms) until Viv and Vaishakh decide .in vs .com in their meeting. Footer/founder .in links unchanged. Do not switch domain or add a CNAME before that decision.
 - **Nav bug fixed:** bare `nav{}` CSS rules were also fixing `<nav class="footer-links">` to the top of every page. All bare `nav` selectors now read `nav:not(.footer-links)`.
 - **Mobile menu:** `.nav-toggle` button + `id="site-menu"` on `.nav-links` + small inline script on every page with a nav. Breakpoint matches each page's existing `.nav-links{display:none}` rule.
 - **Homepage:** H1 is now the eyebrow line "Independent hotel owner advisory & consulting — India"; the tagline is `<p class="hero-title">` with the old H1 styling. Hero sub restores "Profit-focused hospitality consulting for independent hotels and resorts across India". Title/meta updated.

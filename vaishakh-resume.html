@@ -376,6 +376,13 @@ footer .footer-links a:hover,footer .footer-links a:focus-visible{color:#f5f4ef}
   .section-title,.sb-section-label,.exp-head{break-after:avoid;page-break-after:avoid}
   .sidebar > div:has(.sb-award-list):has(~ div .sb-award-list){break-before:page;page-break-before:always}
 }
+
+/* logo never stretches (4 Oct 2026) */
+.vlogo{width:max-content!important;max-width:100%;flex:0 0 auto;align-self:flex-start}
+nav:not(.footer-links) .vlogo{align-self:center}
+
+/* mobile: collapse inline two-column grids, tighten inline section padding (4 Oct 2026) */
+@media(max-width:760px){[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}section[style*="padding:80px 40px"],section[style*="padding:52px 40px"],div[style*="padding:60px 40px"]{padding-left:20px!important;padding-right:20px!important}}
 </style>
 </head>
 <body>

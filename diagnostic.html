@@ -246,6 +246,34 @@ footer .footer-links a{font-family:"Public Sans",system-ui,sans-serif;font-size:
 footer .footer-links a:hover,footer .footer-links a:focus-visible{color:#f5f4ef}
 @media(max-width:1024px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#1a3028;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
 @media(max-width:640px){nav:not(.footer-links) .nav-cta{display:none}.nav-toggle{margin-right:0}}
+
+/* logo never stretches (4 Oct 2026) */
+.vlogo{width:max-content!important;max-width:100%;flex:0 0 auto;align-self:flex-start}
+nav:not(.footer-links) .vlogo{align-self:center}
+
+/* mobile: collapse inline two-column grids, tighten inline section padding (4 Oct 2026) */
+@media(max-width:760px){[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}section[style*="padding:80px 40px"],section[style*="padding:52px 40px"],div[style*="padding:60px 40px"]{padding-left:20px!important;padding-right:20px!important}}
+
+/* unified site footer (4 Oct 2026) — same on every page */
+footer.vfooter{display:block!important;background:#1a3028!important;color:rgba(245,244,239,.7);padding:80px 40px 36px!important;margin:0!important;text-align:left!important;border-top:1px solid rgba(165,116,38,.28);font-family:"Public Sans",system-ui,sans-serif;gap:0!important}
+footer.vfooter .vfooter-inner{max-width:1120px;margin:0 auto}
+footer.vfooter .vfooter-top{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:56px;padding-bottom:48px;border-bottom:1px solid rgba(245,244,239,.1)}
+footer.vfooter .vlogo{margin:0 0 22px!important;align-self:auto}
+footer.vfooter .vfooter-tag{font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-weight:300;font-size:1.05rem;color:#f5f4ef;margin:0 0 10px;line-height:1.4}
+footer.vfooter .vfooter-desc{font-size:.85rem;line-height:1.7;color:rgba(245,244,239,.72);margin:0;max-width:340px}
+footer.vfooter .vfooter-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#a57426;font-weight:600;margin:6px 0 18px}
+footer.vfooter .vfooter-nav{display:flex!important;flex-direction:column;gap:12px!important;margin:0!important;position:static!important;background:none!important;height:auto!important;padding:0!important}
+footer.vfooter .vfooter-nav a,footer.vfooter .vfooter-contact a{font-family:"Public Sans",system-ui,sans-serif;font-size:.85rem!important;letter-spacing:0!important;text-transform:none!important;color:rgba(245,244,239,.78)!important;text-decoration:none;transition:color .2s}
+footer.vfooter .vfooter-nav a:hover,footer.vfooter .vfooter-contact a:hover,footer.vfooter a:focus-visible{color:#f5f4ef!important;text-decoration:underline;text-underline-offset:3px}
+footer.vfooter .vfooter-contact{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:12px;overflow-wrap:anywhere}
+footer.vfooter .vfooter-cta{display:inline-block;border:1px solid rgba(165,116,38,.7);color:#f5f4ef!important;font-size:.78rem;font-weight:500;letter-spacing:.04em;padding:11px 20px;text-decoration:none}
+footer.vfooter .vfooter-cta:hover{background:#a57426;border-color:#a57426}
+footer.vfooter .vfooter-bottom{display:flex;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;padding-top:24px}
+footer.vfooter .vfooter-bottom p{font-size:.74rem;line-height:1.6;color:rgba(245,244,239,.66);margin:0}
+footer.vfooter .vfooter-bottom a{color:rgba(165,116,38,.9);text-decoration:none}
+footer.vfooter .vfooter-bottom a:hover{text-decoration:underline}
+@media(max-width:900px){footer.vfooter .vfooter-top{grid-template-columns:1fr 1fr}footer.vfooter .vfooter-brand{grid-column:1/-1}}
+@media(max-width:600px){footer.vfooter .vfooter-nav{display:grid!important;grid-template-columns:1fr 1fr;column-gap:24px}footer.vfooter{padding:56px 20px 28px!important}footer.vfooter .vfooter-top{grid-template-columns:1fr;gap:40px}}
 </style>
 </head>
 <body>
@@ -260,7 +288,7 @@ footer .footer-links a:hover,footer .footer-links a:focus-visible{color:#f5f4ef}
     <li><a href="insights.html">Perspectives</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
-  <a href="mailto:vaishakh@veritashospitalityadvisors.com" class="nav-cta">Discuss confidentially</a>
+  <a href="https://aisearch-global.github.io/veritas-hospitality-advisors-site/#contact" class="nav-cta">Discuss Confidentially</a>
 </nav>
 
 <div class="diag-hero">
@@ -561,18 +589,41 @@ footer .footer-links a:hover,footer .footer-links a:focus-visible{color:#f5f4ef}
   </div>
 </div>
 </div>
-<footer>
-  <a href="https://aisearch-global.github.io/veritas-hospitality-advisors-site/" class="footer-logo vlogo" aria-label="Veritas Hospitality Advisors — home"><span class="vlogo-word">VERITAS</span><span class="vlogo-sub">HOSPITALITY ADVISORS</span></a>
-  <nav class="footer-links">
-    <a href="https://aisearch-global.github.io/veritas-hospitality-advisors-site/">Home</a>
-    <a href="founder.html">Founder</a>
-    <a href="clients.html">Clients</a>
-    <a href="insights.html">Perspectives</a>
-    <a href="legal.html">Privacy &amp; Terms</a>
-  </nav>
-  <p class="footer-copy">&copy; 2026 Veritas Hospitality Advisors. All rights reserved. Registered in India. &nbsp;|&nbsp; GSTIN: 32BLFPS3361D1ZD &nbsp;|&nbsp; MSME: UDYAM-KL-07-0058097</p>
-  <p class="footer-copy" style="margin-top:4px;opacity:.6"><a href="tel:+919072233008" style="color:inherit">+91 90722 33008</a> &nbsp;|&nbsp; <a href="mailto:vaishakh@veritashospitalityadvisors.com" style="color:inherit">vaishakh@veritashospitalityadvisors.com</a> &nbsp;|&nbsp; <a href="https://veritashospitalityadvisors.in" style="color:inherit">veritashospitalityadvisors.in</a></p>
-  <p class="footer-copy" style="margin-top:4px;opacity:.5">Site built by <a href="https://aisearch.global" target="_blank" rel="noopener" style="color:rgba(165,116,38,.7);text-decoration:underline;text-underline-offset:2px">AISearch Global</a> &nbsp;|&nbsp; Sydney &nbsp;|&nbsp; Australia &nbsp;|&nbsp; <a href="mailto:hello@aisearch.global" style="color:rgba(165,116,38,.7);text-decoration:none">hello@aisearch.global</a></p>
+<footer class="vfooter">
+  <div class="vfooter-inner">
+    <div class="vfooter-top">
+      <div class="vfooter-brand">
+        <a href="https://aisearch-global.github.io/veritas-hospitality-advisors-site/" class="footer-logo vlogo" aria-label="Veritas Hospitality Advisors — home"><span class="vlogo-word">VERITAS</span><span class="vlogo-sub">HOSPITALITY ADVISORS</span></a>
+        <p class="vfooter-tag">Protecting value, enhancing performance.</p>
+        <p class="vfooter-desc">Independent hotel owner advisory and profit-focused hospitality consulting for independent hotels and resorts across India.</p>
+      </div>
+      <div class="vfooter-col">
+        <p class="vfooter-label">Explore</p>
+        <nav class="footer-links vfooter-nav" aria-label="Footer">
+          <a href="https://aisearch-global.github.io/veritas-hospitality-advisors-site/">Home</a>
+          <a href="founder.html">Founder</a>
+          <a href="clients.html">Clients</a>
+          <a href="diagnostic.html">Diagnostic</a>
+          <a href="health-check.html">Profit Health Check</a>
+          <a href="insights.html">Perspectives</a>
+          <a href="legal.html">Privacy &amp; Terms</a>
+        </nav>
+      </div>
+      <div class="vfooter-col">
+        <p class="vfooter-label">Contact</p>
+        <ul class="vfooter-contact">
+          <li><a href="tel:+919072233008">+91 90722 33008</a></li>
+          <li><a href="mailto:vaishakh@veritashospitalityadvisors.com">vaishakh@veritashospitalityadvisors.com</a></li>
+          <li><a href="https://www.linkedin.com/in/vaishakhsurendran/" target="_blank" rel="noopener">LinkedIn — Vaishakh Surendran</a></li>
+        </ul>
+        <a href="https://aisearch-global.github.io/veritas-hospitality-advisors-site/#contact" class="vfooter-cta">Discuss Confidentially</a>
+      </div>
+    </div>
+    <div class="vfooter-bottom">
+      <p>&copy; 2026 Veritas Hospitality Advisors. Registered in India &middot; GSTIN 32BLFPS3361D1ZD &middot; MSME UDYAM-KL-07-0058097</p>
+      <p>Site by <a href="https://aisearch.global" target="_blank" rel="noopener">AISearch Global</a>, Sydney</p>
+    </div>
+  </div>
 </footer>
 
 <script>

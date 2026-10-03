@@ -169,6 +169,19 @@ footer.vfooter .vfooter-bottom a{color:rgba(165,116,38,.9);text-decoration:none}
 footer.vfooter .vfooter-bottom a:hover{text-decoration:underline}
 @media(max-width:900px){footer.vfooter .vfooter-top{grid-template-columns:1fr 1fr}footer.vfooter .vfooter-brand{grid-column:1/-1}}
 @media(max-width:600px){footer.vfooter .vfooter-nav{display:grid!important;grid-template-columns:1fr 1fr;column-gap:24px}footer.vfooter{padding:56px 20px 28px!important}footer.vfooter .vfooter-top{grid-template-columns:1fr;gap:40px}}
+
+/* footer v2: four-column (brand / advisory / firm / contact) + legal bar (4 Oct 2026) */
+footer.vfooter .vfooter-top{grid-template-columns:1.3fr .95fr .85fr 1.5fr!important;gap:44px!important}
+footer.vfooter .vfooter-contact{overflow-wrap:normal!important;word-break:normal}
+footer.vfooter .vfooter-contact a[href^="mailto"]{white-space:nowrap}
+footer.vfooter .vfooter-contact li{font-size:.85rem;color:rgba(245,244,239,.6)}
+footer.vfooter .vfooter-social{margin-top:22px}
+footer.vfooter .vfooter-social a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid rgba(245,244,239,.2);border-radius:50%;color:rgba(245,244,239,.8)}
+footer.vfooter .vfooter-social a:hover{border-color:#a57426;color:#a57426}
+footer.vfooter .vfooter-legal span{margin:0 10px;color:rgba(245,244,239,.3)}
+footer.vfooter .vfooter-bottom{align-items:center}
+@media(max-width:1024px){footer.vfooter .vfooter-top{grid-template-columns:1fr 1fr!important}footer.vfooter .vfooter-brand{grid-column:1/-1}}
+@media(max-width:600px){footer.vfooter .vfooter-top{grid-template-columns:1fr 1fr!important;gap:36px 24px!important}footer.vfooter .vfooter-col:last-child{grid-column:1/-1}footer.vfooter .vfooter-nav{display:flex!important;flex-direction:column}footer.vfooter .vfooter-bottom{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 <body>
@@ -206,15 +219,23 @@ footer.vfooter .vfooter-bottom a:hover{text-decoration:underline}
         <p class="vfooter-desc">Independent hotel owner advisory and profit-focused hospitality consulting for independent hotels and resorts across India.</p>
       </div>
       <div class="vfooter-col">
-        <p class="vfooter-label">Explore</p>
-        <nav class="footer-links vfooter-nav" aria-label="Footer">
+        <p class="vfooter-label">Advisory</p>
+        <nav class="footer-links vfooter-nav" aria-label="Advisory">
+          <a href="../commercial-performance.html">Commercial Performance</a>
+          <a href="../operational-governance.html">Operational Governance</a>
+          <a href="../owner-reporting.html">Owner Reporting</a>
+          <a href="../diagnostic.html">Owner Diagnostic</a>
+          <a href="../health-check.html">Profit Health Check</a>
+        </nav>
+      </div>
+      <div class="vfooter-col">
+        <p class="vfooter-label">The Firm</p>
+        <nav class="footer-links vfooter-nav" aria-label="The firm">
           <a href="https://aisearch-global.github.io/veritas-hospitality-advisors-site/">Home</a>
           <a href="../founder.html">Founder</a>
           <a href="../clients.html">Clients</a>
-          <a href="../diagnostic.html">Diagnostic</a>
-          <a href="../health-check.html">Profit Health Check</a>
           <a href="../insights.html">Perspectives</a>
-          <a href="../legal.html">Privacy &amp; Terms</a>
+          <a href="../owner-playbook.pdf">Owner&#39;s Playbook (PDF)</a>
         </nav>
       </div>
       <div class="vfooter-col">
@@ -222,14 +243,15 @@ footer.vfooter .vfooter-bottom a:hover{text-decoration:underline}
         <ul class="vfooter-contact">
           <li><a href="tel:+919072233008">+91 90722 33008</a></li>
           <li><a href="mailto:vaishakh@veritashospitalityadvisors.com">vaishakh@veritashospitalityadvisors.com</a></li>
-          <li><a href="https://www.linkedin.com/in/vaishakhsurendran/" target="_blank" rel="noopener">LinkedIn — Vaishakh Surendran</a></li>
+          <li>Registered in Kerala &middot; Working across India</li>
         </ul>
         <a href="https://aisearch-global.github.io/veritas-hospitality-advisors-site/#contact" class="vfooter-cta">Discuss Confidentially</a>
+        <div class="vfooter-social"><a href="https://www.linkedin.com/in/vaishakhsurendran/" target="_blank" rel="noopener" aria-label="Vaishakh Surendran on LinkedIn"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div>
       </div>
     </div>
     <div class="vfooter-bottom">
-      <p>&copy; 2026 Veritas Hospitality Advisors. Registered in India &middot; GSTIN 32BLFPS3361D1ZD &middot; MSME UDYAM-KL-07-0058097</p>
-      <p>Site by <a href="https://aisearch.global" target="_blank" rel="noopener">AISearch Global</a>, Sydney</p>
+      <p>&copy; 2026 Veritas Hospitality Advisors &middot; GSTIN 32BLFPS3361D1ZD &middot; MSME UDYAM-KL-07-0058097</p>
+      <p class="vfooter-legal"><a href="../legal.html">Privacy &amp; Terms</a><span aria-hidden="true">&middot;</span>Site by <a href="https://aisearch.global" target="_blank" rel="noopener">AISearch Global</a></p>
     </div>
   </div>
 </footer>

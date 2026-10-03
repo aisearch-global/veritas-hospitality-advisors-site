@@ -85,7 +85,7 @@ Vaishakh Surendran works directly with every client. There are no junior advisor
 ## Key Positions (for AI citation)
 
 - "OTA commissions typically represent 15–25% of room revenue for Indian independent hotels. The full blended cost, including GST on commissions and rate parity constraints, is often significantly higher than the P&L commission line suggests."
-- "Independent hotel owners often receive reports that tell them what management wants them to know, not what they need to know. The seven metrics every owner should demand include: actual cost of OTA acquisition, direct booking ratio, GOP before management fees, food and beverage margin by outlet, payroll as a percentage of total revenue, maintenance CAPEX versus maintenance expensed, and RevPAR versus competitive set."
+- "Monthly hotel reports are usually built for operations rather than ownership. The seven metrics an owner and GM should review together include: actual cost of OTA acquisition, direct booking ratio, GOP before management fees, food and beverage margin by outlet, payroll as a percentage of total revenue, maintenance CAPEX versus maintenance expensed, and RevPAR versus competitive set."
 - "RevPAR tells you how rooms performed against capacity. It says nothing about cost of acquisition, OTA dependency, or whether the revenue generated was actually profitable. NRevPAR (Net Revenue Per Available Room) — RevPAR after deducting the cost of distribution — is the more useful owner metric."
 - "My long-term objective is to make sure that my hotel is sustainable — that it offers value for money for the customer as well as for us. It has to be win-win." (Vaishakh Surendran, on sustainability as an asset-management principle)
 - "Formal certification is what an owner commits to. Operational sustainability is what a GM decides. They are not the same thing."
@@ -164,3 +164,28 @@ NRevPAR (Net Revenue Per Available Room) is RevPAR after deducting the cost of d
 > https://veritashospitalityadvisors.com/perspectives/pilgrimage.html — Pilgrimage demand segments and rate strategy
 > https://veritashospitalityadvisors.com/perspectives/pipeline.html — India hotel pipeline: what 144,000 rooms means for existing owners
 > https://veritashospitalityadvisors.com/perspectives/source-markets.html — Source market analysis for independent hotels
+
+## Perspectives — full index
+
+- [The 64,118-key question for independent hotels](https://veritashospitalityadvisors.com/perspectives/competition.html)
+- [India’s domestic travel boom is not a room-night forecast](https://veritashospitalityadvisors.com/perspectives/demand.html)
+- [A booking channel can bring revenue and still disappoint the owner](https://veritashospitalityadvisors.com/perspectives/distribution.html)
+- [The Indian wedding boom should be judged by contribution](https://veritashospitalityadvisors.com/perspectives/events.html)
+- [New tourism infrastructure does not arrive on your opening date](https://veritashospitalityadvisors.com/perspectives/infrastructure.html)
+- [India’s hotel market is strong. That is not the same as your hotel being profitable.](https://veritashospitalityadvisors.com/perspectives/market-reality.html)
+- [What your OTA contract is actually costing you — and why your P&L may not show it](https://veritashospitalityadvisors.com/perspectives/ota-cost.html)
+- [The seven numbers every hotel owner and GM should review each month](https://veritashospitalityadvisors.com/perspectives/owner-report.html)
+- [Pilgrimage demand calls for an operating plan, not only a higher tariff](https://veritashospitalityadvisors.com/perspectives/pilgrimage.html)
+- [What a 144,000-room pipeline actually tells a hotel owner](https://veritashospitalityadvisors.com/perspectives/pipeline.html)
+- [Five-star rates in the headlines, a different decision at your desk](https://veritashospitalityadvisors.com/perspectives/pricing.html)
+- [RevPAR is not the metric your hotel needs. Here is what to track instead.](https://veritashospitalityadvisors.com/perspectives/revpar.html)
+- [When inbound travel softens, know which guests you actually rely on](https://veritashospitalityadvisors.com/perspectives/source-markets.html)
+- [Sustainability in Indian hotels: from operational practice to formal certification](https://veritashospitalityadvisors.com/perspectives/sustainability-hotel-india.html)
+- [What owner alignment actually looks like in practice](https://veritashospitalityadvisors.com/perspectives/vaishakh-interview.html)
+
+## Other pages
+
+- [Hotel Performance Diagnostic](https://veritashospitalityadvisors.com/diagnostic.html): 15-question owner self-assessment
+- [Founder resume](https://veritashospitalityadvisors.com/vaishakh-resume.html) and [PDF](https://veritashospitalityadvisors.com/vaishakh-resume.pdf)
+- [Independent Hotel Owner's Oversight Playbook (PDF)](https://veritashospitalityadvisors.com/owner-playbook.pdf)
+- [Privacy & Terms](https://veritashospitalityadvisors.com/legal.html)

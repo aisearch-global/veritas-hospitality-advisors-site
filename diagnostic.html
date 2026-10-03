@@ -4,13 +4,48 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hotel Performance Diagnostic — Veritas Hospitality Advisors</title>
+<meta name="description" content="A structured diagnostic that reveals how your hotel is actually performing — commercial health, reporting gaps, and operational governance. Free to complete.">
+<link rel="canonical" href="https://veritashospitalityadvisors.com/diagnostic.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://veritashospitalityadvisors.com/diagnostic.html">
+<meta property="og:title" content="Hotel Performance Diagnostic — Veritas Hospitality Advisors">
+<meta property="og:description" content="A structured diagnostic that reveals how your hotel is actually performing — commercial health, reporting gaps, and operational governance.">
+<meta property="og:image" content="https://veritashospitalityadvisors.com/img/vaishakh-portrait.jpg">
+<meta property="og:site_name" content="Veritas Hospitality Advisors">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hotel Performance Diagnostic — Veritas Hospitality Advisors">
+<meta name="twitter:description" content="A structured diagnostic for independent hotel owners in India. Reveals commercial health, reporting gaps, and governance issues.">
+<meta name="twitter:image" content="https://veritashospitalityadvisors.com/img/vaishakh-portrait.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["WebPage", "WebApplication"],
+      "@id": "https://veritashospitalityadvisors.com/diagnostic.html#webpage",
+      "url": "https://veritashospitalityadvisors.com/diagnostic.html",
+      "name": "Hotel Performance Diagnostic — Veritas Hospitality Advisors",
+      "description": "A structured diagnostic for independent hotel owners in India to assess commercial health, reporting quality, and operational governance.",
+      "isPartOf": {"@id": "https://veritashospitalityadvisors.com/#website"},
+      "about": {"@id": "https://veritashospitalityadvisors.com/#organization"},
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Veritas", "item": "https://veritashospitalityadvisors.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Diagnostic", "item": "https://veritashospitalityadvisors.com/diagnostic.html"}
+        ]
+      }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#1a3028;--cream:#f5f4ef;--gold:#a57426;--slate:rgba(26,48,40,.55)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:"Public Sans",sans-serif;background:var(--cream);color:var(--ink)}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,48,40,.96);backdrop-filter:blur(10px);height:64px;display:flex;align-items:center;padding:0 40px;gap:40px}
-.logo{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.1rem;color:var(--cream) !important;letter-spacing:.04em;text-decoration:none;margin-right:auto}
+.logo{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.35rem;color:var(--cream) !important;letter-spacing:.04em;text-decoration:none;margin-right:auto}
 .logo span{color:var(--gold)}
 .nav-links{display:flex;gap:24px;list-style:none}
 .nav-links a{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,244,239,.58);text-decoration:none;transition:color .15s}
@@ -461,68 +496,12 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
 </div>
 
 <div class="tool-panel" id="panel-hcheck">
-<div class="hcheck-wrap" id="health-check">
-  <div class="hcheck-intro">
-    <span class="section-label">Hotel Profit Health Check</span>
-    <h2>What should your hotel be generating?</h2>
-    <p>Enter your current operating figures. The calculator gives you an independent read on revenue potential and approximate GOP range based on your inputs. This is a starting point for a conversation, not a financial projection.</p>
-  </div>
-
-  <div class="hcheck-form">
-    <div class="hcheck-grid">
-      <div class="hcheck-field">
-        <label for="hc-rooms">Total rooms</label>
-        <input type="number" id="hc-rooms" placeholder="e.g. 80" min="1" max="1000">
-      </div>
-      <div class="hcheck-field">
-        <label for="hc-occ">Current occupancy (%)</label>
-        <input type="number" id="hc-occ" placeholder="e.g. 62" min="1" max="100">
-      </div>
-      <div class="hcheck-field">
-        <label for="hc-adr">Average daily rate (&#8377;)</label>
-        <input type="number" id="hc-adr" placeholder="e.g. 4500" min="100">
-      </div>
-      <div class="hcheck-field">
-        <label for="hc-fb">F&amp;B revenue (% of room revenue)</label>
-        <input type="number" id="hc-fb" placeholder="e.g. 25" min="0" max="200">
-      </div>
-      <div class="hcheck-field">
-        <label for="hc-opex">Operating cost ratio (%)</label>
-        <input type="number" id="hc-opex" placeholder="e.g. 68" min="20" max="95">
-        <span class="field-hint">Total costs as % of total revenue. Industry range: 60&#8211;78% for mid-scale.</span>
-      </div>
-      <div class="hcheck-field">
-        <label for="hc-debt">Monthly debt service (&#8377;, optional)</label>
-        <input type="number" id="hc-debt" placeholder="e.g. 400000" min="0">
-      </div>
-    </div>
-    <button class="btn-hcheck" onclick="runHealthCheck()">Calculate &rarr;</button>
-  </div>
-
-  <div class="hcheck-results" id="hcheck-results" style="display:none">
-    <div class="hcheck-row">
-      <div class="hcheck-metric">
-        <span class="hm-label">Annual room revenue</span>
-        <span class="hm-val" id="hc-room-rev"></span>
-      </div>
-      <div class="hcheck-metric">
-        <span class="hm-label">Total annual revenue (incl. F&amp;B)</span>
-        <span class="hm-val" id="hc-total-rev"></span>
-      </div>
-      <div class="hcheck-metric">
-        <span class="hm-label">Estimated GOP</span>
-        <span class="hm-val" id="hc-gop"></span>
-      </div>
-      <div class="hcheck-metric" id="hc-nocash-wrap">
-        <span class="hm-label">GOP after debt service</span>
-        <span class="hm-val" id="hc-nocash"></span>
-      </div>
-    </div>
-    <div class="hcheck-interpretation" id="hcheck-interpretation"></div>
-    <div class="hcheck-cta">
-      <p>These figures are indicative only. If there is a significant gap between this estimate and your current reporting, that gap is worth understanding.</p>
-      <a href="mailto:vaishakh@veritashospitalityadvisors.com?subject=Health%20Check%20Discussion" class="btn-discuss">Discuss the gap with Vaishakh &rarr;</a>
-    </div>
+<div style="max-width:900px;margin:0 auto;padding:48px 40px 80px">
+  <div style="background:#fff;border:1px solid rgba(26,48,40,.1);border-top:3px solid var(--gold);padding:48px">
+    <span style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;display:block;margin-bottom:16px">Free calculator</span>
+    <h2 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:clamp(1.4rem,2.2vw,1.8rem);color:var(--ink);margin-bottom:16px">Hotel Profit Health Check</h2>
+    <p style="font-size:.9rem;line-height:1.75;color:var(--slate);max-width:640px;margin-bottom:32px">Enter your hotel's key operating figures and get an instant read on your true revenue yield, OTA cost drag, and three specific gaps worth investigating. No sign-up. No data stored. Takes about two minutes.</p>
+    <a href="health-check.html" style="display:inline-block;background:var(--ink);color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:14px 36px;transition:background .2s">Open the Health Check &rarr;</a>
   </div>
 </div>
 </div>
@@ -535,8 +514,9 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
     </nav>
   </div>
   <div class="footer-row">
-    <p class="footer-copy">&copy; 2026 Veritas Hospitality Advisors. All rights reserved.</p>
-    <p class="footer-built">Built by <a href="https://aisearch.global" target="_blank">AISearch Global</a> &nbsp;|&nbsp; Sydney &nbsp;|&nbsp; Australia</p>
+    <p class="footer-copy">&copy; 2026 Veritas Hospitality Advisors. All rights reserved. Registered in India. &nbsp;|&nbsp; GSTIN: 32BLFPS3361D1ZD &nbsp;|&nbsp; MSME: UDYAM-KL-07-0058097</p>
+    <p class="footer-copy" style="margin-top:4px;opacity:.7"><a href="tel:+919072233008" style="color:inherit">+91 90722 33008</a> &nbsp;|&nbsp; <a href="mailto:vaishakh@veritashospitalityadvisors.com" style="color:inherit">vaishakh@veritashospitalityadvisors.com</a> &nbsp;|&nbsp; <a href="https://veritashospitalityadvisors.in" style="color:inherit">veritashospitalityadvisors.in</a></p>
+    <p class="footer-built" style="margin-top:4px">Site built by <a href="https://aisearch.global" target="_blank" rel="noopener">AISearch Global</a> &nbsp;|&nbsp; Sydney &nbsp;|&nbsp; Australia &nbsp;|&nbsp; <a href="mailto:hello@aisearch.global" style="color:rgba(165,116,38,.6);text-decoration:none">hello@aisearch.global</a></p>
   </div>
 </footer>
 
@@ -690,7 +670,7 @@ function emailResults() {
   setTimeout(() => {
     const body2 = encodeURIComponent('New diagnostic submission from: ' + email + '\n\n' + summary);
     const link = document.createElement('a');
-    link.href = 'mailto:viveka@aisearch.global?subject=New%20Hotel%20Diagnostic%20Submission&body=' + body2;
+    link.href = 'mailto:vaishakh@veritashospitalityadvisors.com?subject=New%20Hotel%20Diagnostic%20Submission&body=' + body2;
     link.click();
   }, 500);
   

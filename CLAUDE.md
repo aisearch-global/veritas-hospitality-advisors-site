@@ -1,6 +1,6 @@
 # CLAUDE.md — Veritas Hospitality Advisors Site
 *Session handoff file. Update after every working session.*
-*Last updated: 2 October 2026 | Branch: main (merged from content-fixes-oct26)*
+*Last updated: 3 October 2026 | Branch: main*
 
 ---
 
@@ -20,14 +20,39 @@
 
 | Token | Value |
 |---|---|
-| `--ink` | `#1a3028` (dark green) |
-| `--cream` | `#f5f4ef` |
-| `--gold` | `#a57426` |
-| `--slate` | `rgba(26,48,40,.55)` |
+| `--ink` | `#1a3028` (dark green — nav bg, headings, body text on cream) |
+| `--cream` | `#f5f4ef` (page background, logo text, light text on dark) |
+| `--gold` | `#a57426` (accent — logo dot, CTA borders, highlights) |
+| `--slate` | `rgba(26,48,40,.55)` (muted body text) |
 | Body font | Public Sans (300/400/500/600) |
-| Heading/logo font | Source Serif 4 (italic, 300/400/600) |
+| Heading/logo font | Source Serif 4 (**weight 300, NOT italic** for logo — weight 300/400/600 for headings) |
 | Nav height | 64px fixed |
-| Logo font-size | **1.35rem** (bumped from 1.1rem on 2 Oct) |
+| Logo font-size | **1.35rem** |
+| Logo letter-spacing | `.04em` |
+| Logo color | `var(--cream)` / `#f5f4ef` |
+| Logo dot color | `var(--gold)` / `#a57426` |
+
+### Logo exact CSS (copy verbatim to every page)
+```css
+.logo{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.35rem;color:var(--cream);letter-spacing:.04em;text-decoration:none}
+.logo span{color:var(--gold)}
+```
+
+### Logo SVG file
+Saved at `img/veritas-logo.svg` — Source Serif 4 weight 300, cream text, gold dot, ink background.
+Use for email headers, PDF exports, and any non-HTML context.
+
+### Google Fonts URL (correct — loads all needed weights)
+```html
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+```
+
+### NEVER do this to the logo
+- Do NOT set `font-style:italic` on `.logo`
+- Do NOT set `font-weight:600` on `.logo`
+- Do NOT set `font-size` other than `1.35rem`
+- Do NOT change `letter-spacing` to negative values
+- Do NOT use any font other than Source Serif 4 for the logo
 
 ---
 
@@ -48,9 +73,10 @@
 </nav>
 ```
 - Add `class="active"` to current page's link
-- Logo href = `"/"` from root pages, `"../"` from `perspectives/` subfolder
-- Logo font-size in local `<style>`: `font-size:1.35rem`
-- Logo must link to homepage on every page — confirmed working
+- Logo href = `"/"` from root pages, `"../"` from `perspectives/` subfolder — **always links to homepage, every page including legal.html**
+- Logo CSS must match exactly: Source Serif 4, weight 300, 1.35rem, letter-spacing .04em, NO italic
+- Nav CTA: `mailto:vaishakh@veritashospitalityadvisors.com` — **never viveka@aisearch.global in public HTML**
+- Display email rule: `vaishakh@veritashospitalityadvisors.com` everywhere public. `viveka@aisearch.global` is backend-only (git attribution, form service config that users cannot see)
 
 ---
 
@@ -58,13 +84,15 @@
 
 ```
 /
-├── index.html              Homepage — nav updated, Sanskreti Current Engagement section
-├── founder.html            Founder page — nav updated, photo carousel (4 slides)
-├── clients.html            NEW — Clients page with Sanskreti The Heritage
-├── diagnostic.html         Diagnostic wizard — nav updated (Clients added Oct 2)
-├── insights.html           Perspectives hub — nav updated, sustainability card added
-├── legal.html              Privacy & Terms
-├── img/                    NEW — photos
+├── index.html              Homepage — all viveka@ removed, hero bg-position center 65%
+├── founder.html            Founder page — logo href /, nav links /, btn-email → Mail Vaishakh
+├── clients.html            Clients page — logo href /, nav links / (all index.html refs removed)
+├── diagnostic.html         Diagnostic wizard — logo href /, nav links /, JS mailto → vaishakh@
+├── insights.html           Perspectives hub — logo 1.35rem, href /, Clients link added
+├── legal.html              Privacy & Terms — logo 1.35rem, href /, 3 viveka@ removed
+├── health-check.html       Internal — logo CSS fixed (weight 300, no italic, .04em spacing)
+├── img/
+│   ├── veritas-logo.svg                    NEW — SVG logo (Source Serif 4 wt300, cream, gold dot)
 │   ├── vaishakh-suman-tarafdar.jpg         With Suman Tarafdar, Lyfe Bhubaneswar, Nov 2024
 │   ├── vaishakh-naval-officers.jpg         With VAdm Saxena AVSM NM + RAdm Jha at Lyfe
 │   ├── vaishakh-naval-officer-2.jpg        With senior naval officer at Lyfe
@@ -73,7 +101,7 @@
 │   └── dhs-homeland-security-letter.jpg   DHS appreciation letter to Vaishakh
 └── perspectives/
     ├── vaishakh-interview.html    Interview — nav + IGBC sustainability section updated
-    ├── sustainability-hotel-india.html  NEW — sustainability in Indian hotels article
+    ├── sustainability-hotel-india.html  Sustainability in Indian hotels article
     └── [10 existing industry analysis articles]
 ```
 
@@ -97,9 +125,9 @@
 
 **Copy rules:**
 - Never set the owner against his own team. Veritas works alongside GM and staff.
-- Display email: vaishakh@veritashospitalityadvisors.com (visitor-facing)
-- Backend/attribution: viveka@aisearch.global (AISearch Global built the site)
-- Revert viveka@ display references to vaishakh@ on go-live approval only
+- Display email: vaishakh@veritashospitalityadvisors.com (visitor-facing — all public HTML)
+- Backend/attribution: viveka@aisearch.global (git commits only — NEVER in rendered HTML)
+- All viveka@ references have been removed from public HTML as of 3 Oct 2026
 
 ---
 
@@ -137,7 +165,10 @@ Article cards use class `art-card` (not `article-card` — different class).
 - [ ] **Send signed service agreement** to Vaishakh (Viv action)
 - [ ] **Send cold-run AEO findings** to Vaishakh (Viv action)
 - [ ] **Delete stale remote branch**: `git push origin --delete agent-6abdb7d`
-- [ ] **Revert** display email viveka@ → vaishakh@ on go-live approval
+- [ ] **Resume PDF**: Build premium branded resume, add download button to founder.html
+- [ ] **Presentation deck**: Build premium HTML artifact (artifact only, NOT added to site)
+- [ ] **Update master reference artifact**: https://claude.ai/artifact/M8iJW4hjAsbWC8qhFVkXQt
+- [x] ~~Revert display email viveka@ → vaishakh@ on go-live approval~~ — Done 3 Oct 2026: all viveka@ removed from public HTML; vaishakh@ wired throughout
 
 ---
 
@@ -149,7 +180,7 @@ Article cards use class `art-card` (not `article-card` — different class).
 | 457b4bc | insights.html: Archive tab reel + full interview |
 | cea6530 | vaishakh-interview.html + essay card + nav fixes |
 | f2edbf4 | Clients page, carousel, sustainability article, Sanskreti homepage, IGBC, CLAUDE.md |
-| (pending) | Logo size 1.35rem, Clients in diagnostic nav, logo homepage link verified |
+| (pending) | Full audit: logo CSS/href on all pages, all viveka@ removed, hero crop, SVG logo, CLAUDE.md |
 
 ---
 

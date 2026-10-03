@@ -134,7 +134,14 @@ git push origin --delete agent-6abdb7d
 | Logo color | `var(--cream)` / `#f5f4ef` |
 | Logo dot color | `var(--gold)` / `#a57426` |
 
-### Logo exact CSS (copy verbatim to every page)
+### Logo — UPDATED 4 Oct 2026
+The text logo "Veritas." is retired. Every page now uses the lockup VERITAS / gold rules / HOSPITALITY ADVISORS:
+```html
+<a href="https://aisearch-global.github.io/veritas-hospitality-advisors-site/" class="logo vlogo" aria-label="Veritas Hospitality Advisors — home"><span class="vlogo-word">VERITAS</span><span class="vlogo-sub">HOSPITALITY ADVISORS</span></a>
+```
+CSS block "Veritas logo lockup" sits at the end of each page's last <style>. Footer uses `footer-logo vlogo`; resume uses `screen-logo vlogo` and `rf-veritas vlogo vlogo--dark`. Logo image file: `img/veritas-logo.jpg` (1200x280, used as schema Organization.logo). Clear space: 64px right margin before the first nav item; below 1024px the menu collapses to the toggle; below 640px the nav CTA hides.
+
+### Old logo CSS (superseded — kept for reference)
 ```css
 .logo{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.35rem;color:var(--cream);letter-spacing:.04em;text-decoration:none}
 .logo span{color:var(--gold)}

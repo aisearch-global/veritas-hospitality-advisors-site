@@ -331,13 +331,33 @@ body{
   .main-body{padding:32px 24px}
   .sidebar{padding:36px 24px}
 }
+
+/* Veritas logo lockup (4 Oct 2026) — matches canonical logo: VERITAS / gold rules / HOSPITALITY ADVISORS */
+.vlogo{position:relative;display:inline-flex;flex-direction:column;align-items:center;line-height:1;padding:0 32px;text-decoration:none;flex-shrink:0}
+.vlogo .vlogo-word{font-family:"Source Serif 4",Georgia,serif;font-weight:300;font-size:1.3rem;letter-spacing:.32em;margin-right:-.32em;color:#f5f4ef}
+.vlogo .vlogo-sub{font-family:"Public Sans",system-ui,sans-serif;font-weight:500;font-size:.46rem;letter-spacing:.3em;margin-right:-.3em;color:#a57426;margin-top:9px}
+.vlogo::before,.vlogo::after{content:"";position:absolute;top:58%;width:22px;height:1px;background:#a57426}
+.vlogo::before{left:0}.vlogo::after{right:0}
+nav:not(.footer-links) .vlogo{margin-right:64px}
+footer .vlogo{margin:0 0 12px}
+.vlogo:focus-visible{outline:2px solid #a57426;outline-offset:6px}
+.vlogo--dark .vlogo-word{color:#1a3028}
+@media(max-width:640px){.vlogo{padding:0 24px}.vlogo .vlogo-word{font-size:1.05rem}.vlogo .vlogo-sub{font-size:.4rem;margin-top:7px}.vlogo::before,.vlogo::after{width:16px}nav:not(.footer-links) .vlogo{margin-right:12px}}
+
+/* nav + footer polish (4 Oct 2026) */
+.nav-cta{white-space:nowrap}
+footer .footer-links{display:flex;flex-wrap:wrap;gap:12px 28px;margin:20px 0}
+footer .footer-links a{font-family:"Public Sans",system-ui,sans-serif;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,244,239,.55);text-decoration:none}
+footer .footer-links a:hover,footer .footer-links a:focus-visible{color:#f5f4ef}
+@media(max-width:1024px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#1a3028;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
+@media(max-width:640px){nav:not(.footer-links) .nav-cta{display:none}.nav-toggle{margin-right:0}}
 </style>
 </head>
 <body>
 
 <!-- Screen nav bar -->
 <header class="screen-header no-print">
-  <a href="https://aisearch-global.github.io/veritas-hospitality-advisors-site/" class="screen-logo">Veritas<span>.</span></a>
+  <a href="https://aisearch-global.github.io/veritas-hospitality-advisors-site/" class="screen-logo vlogo" aria-label="Veritas Hospitality Advisors — home"><span class="vlogo-word">VERITAS</span><span class="vlogo-sub">HOSPITALITY ADVISORS</span></a>
   <a href="vaishakh-resume.pdf" download class="btn-dl">
     <svg viewBox="0 0 16 16"><path d="M8 12l-4-4h2.5V2h3v6H12L8 12zm-5 2v1.5h10V14H3z"/></svg>
     Download PDF
@@ -621,7 +641,7 @@ body{
 
     <footer class="resume-footer">
       <p>References available on request · October 2026</p>
-      <span class="rf-veritas">Veritas<span>.</span></span>
+      <span class="rf-veritas vlogo vlogo--dark" aria-label="Veritas Hospitality Advisors"><span class="vlogo-word">VERITAS</span><span class="vlogo-sub">HOSPITALITY ADVISORS</span></span>
     </footer>
   </main>
 

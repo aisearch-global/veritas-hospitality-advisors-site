@@ -3,19 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <title>Operational Governance Advisory | Veritas Hospitality Advisors</title>
 <meta name="description" content="Standards deployment, cost discipline, manpower analysis, procurement review and service quality governance — reviewed independently for hotel owners in India.">
-<link rel="canonical" href="https://veritashospitalityadvisors.com/operational-governance.html">
+<link rel="canonical" href="https://veritashospitalityadvisors.in/operational-governance.html">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://veritashospitalityadvisors.com/operational-governance.html">
+<meta property="og:url" content="https://veritashospitalityadvisors.in/operational-governance.html">
 <meta property="og:title" content="Operational Governance Advisory | Veritas Hospitality Advisors">
 <meta property="og:description" content="Standards deployment, cost discipline, manpower analysis, procurement review and service quality governance — reviewed independently for hotel owners in India.">
-<meta property="og:image" content="https://veritashospitalityadvisors.com/img/vaishakh-portrait.jpg">
+<meta property="og:image" content="https://veritashospitalityadvisors.in/img/vaishakh-portrait.jpg">
 <meta property="og:site_name" content="Veritas Hospitality Advisors">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Operational Governance Advisory | Veritas Hospitality Advisors">
 <meta name="twitter:description" content="Standards deployment, cost discipline, manpower analysis, procurement review and service quality governance — reviewed independently for hotel owners in India.">
-<meta name="twitter:image" content="https://veritashospitalityadvisors.com/img/vaishakh-portrait.jpg">
+<meta name="twitter:image" content="https://veritashospitalityadvisors.in/img/vaishakh-portrait.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
@@ -25,11 +26,11 @@
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://veritashospitalityadvisors.com/operational-governance.html#service",
+      "@id": "https://veritashospitalityadvisors.in/operational-governance.html#service",
       "name": "Operational Governance Advisory",
       "provider": {
         "@type": "Organization",
-        "@id": "https://veritashospitalityadvisors.com/#organization",
+        "@id": "https://veritashospitalityadvisors.in/#organization",
         "name": "Veritas Hospitality Advisors"
       },
       "description": "Standards deployment, cost discipline, manpower analysis, procurement review, and service quality governance — conducted independently on behalf of hotel owners.",
@@ -39,7 +40,7 @@
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type":"ListItem","position":1,"name":"Home","item":"https://veritashospitalityadvisors.com/"},
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://veritashospitalityadvisors.in/"},
         {"@type":"ListItem","position":2,"name":"Operational Governance"}
       ]
     }
@@ -52,7 +53,7 @@
 html{scroll-behavior:smooth}
 body{font-family:"Public Sans",sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,48,40,.94);backdrop-filter:blur(10px);height:64px;display:flex;align-items:center;padding:0 40px;justify-content:space-between}
+nav:not(.footer-links){position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,48,40,.94);backdrop-filter:blur(10px);height:64px;display:flex;align-items:center;padding:0 40px;justify-content:space-between}
 .logo{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.35rem;color:var(--cream);letter-spacing:.04em;text-decoration:none}
 .logo span{color:var(--gold)}
 .nav-links{display:flex;gap:32px;list-style:none}
@@ -142,13 +143,19 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
   .page-hero{padding:120px 24px 64px}
   .section{padding:64px 24px}
 }
+
+/* mobile menu (added 4 Oct 2026) */
+.nav-toggle{display:none;background:none;border:1px solid rgba(245,244,239,.3);color:#f5f4ef;width:40px;height:36px;border-radius:2px;cursor:pointer;font-size:1.05rem;line-height:1}
+.nav-toggle:focus-visible,.nav-links a:focus-visible{outline:2px solid #a57426;outline-offset:2px}
+@media(max-width:740px){.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:12px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#1a3028;padding:8px 20px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
 </style>
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="logo">Veritas<span>.</span></a>
-  <ul class="nav-links">
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu"><span aria-hidden="true">&#9776;</span></button>
+  <ul class="nav-links" id="site-menu">
     <li><a href="index.html">Home</a></li>
     <li><a href="founder.html">Founder</a></li>
     <li><a href="clients.html">Clients</a></li>
@@ -164,7 +171,7 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
     <p class="breadcrumb"><a href="index.html">Home</a><span>/</span>Operational Governance</p>
     <p class="service-num">02 — Service</p>
     <h1>Operational Governance<br><em>reducing leakage, lifting GOP</em></h1>
-    <p class="lead">Standards deployment, cost discipline, manpower analysis, procurement review, and service quality governance — conducted on the owner's behalf, independent of the management team's reporting interests.</p>
+    <p class="lead">Standards deployment, cost discipline, manpower analysis, procurement review, and service quality governance — conducted on the owner's behalf, working alongside the management team's own reporting.</p>
   </div>
 </section>
 
@@ -206,7 +213,7 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
 
     <div class="lens-block">
       <p class="lb-label">Why operational governance requires an outside view</p>
-      <p>Property management teams are incentivised to maintain relationships — with suppliers, with heads of department, with staff. That is not a criticism; it is how hotels operate. But it means that chronic inefficiencies, underperforming vendors, and standards drift are rarely raised internally until they become crises. Veritas reviews operations from the outside, with no existing relationships to protect and a single mandate: the owner's return. That independence is what makes the review useful.</p>
+      <p>Hotel teams run on day-to-day relationships — with suppliers, heads of department and staff. That is how good hotels operate. It also means that chronic inefficiencies, underperforming vendors, and standards drift are rarely raised internally until they become crises. Veritas reviews operations from the outside, with no existing relationships to protect and a single mandate: the owner's return. That independence is what makes the review useful.</p>
     </div>
   </div>
 </section>
@@ -312,5 +319,6 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
   <p class="footer-copy" style="margin-top:4px;opacity:.5">Site built by <a href="https://aisearch.global" target="_blank" rel="noopener" style="color:rgba(165,116,38,.7);text-decoration:underline;text-underline-offset:2px">AISearch Global</a> &nbsp;|&nbsp; Sydney &nbsp;|&nbsp; Australia &nbsp;|&nbsp; <a href="mailto:hello@aisearch.global" style="color:rgba(165,116,38,.7);text-decoration:none">hello@aisearch.global</a></p>
 </footer>
 
+<script>document.addEventListener("DOMContentLoaded",function(){var b=document.querySelector(".nav-toggle");if(!b)return;var n=b.closest("nav");b.addEventListener("click",function(){var o=n.classList.toggle("nav-open");b.setAttribute("aria-expanded",o?"true":"false");b.setAttribute("aria-label",o?"Close menu":"Open menu")});n.querySelectorAll(".nav-links a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("nav-open");b.setAttribute("aria-expanded","false");b.setAttribute("aria-label","Open menu")})})});</script>
 </body>
 </html>

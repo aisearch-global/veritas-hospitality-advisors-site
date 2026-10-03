@@ -1,6 +1,6 @@
 # CLAUDE.md — Veritas Hospitality Advisors Site
 *Session handoff file. Update after every working session.*
-*Last updated: 3 October 2026 (session 2) | Branch: main*
+*Last updated: 4 October 2026 (session 3) | Branch: main*
 
 ---
 
@@ -210,7 +210,7 @@ Use for email headers, PDF exports, and any non-HTML context.
 
 - First confirmed public advisory client (barter — case study + testimonial)
 - Eco-island heritage resort, Kallanchery Island, North Kumbalanghi, Kochi, Kerala
-- Restaurant: Thodu; Spa: Ahana (Ayurveda)
+- Restaurant: The Lilly's (named after Lillykutty); Spa: Parampara (Ayurveda, coming soon, led by co-founder Dr Dhanya Mathew) — confirmed on sanskretitheheritage.com, 4 Oct 2026
 - Website: https://www.sanskretitheheritage.com/
 - **Pending**: LinkedIn copy from Vaishakh for client card body; property photo with consent
 
@@ -260,3 +260,23 @@ Article cards use class `art-card` (not `article-card`).
 ---
 
 *Maintained by AISearch Global (viveka@aisearch.global) on behalf of Veritas Hospitality Advisors.*
+
+---
+
+## Session 3 — 4 October 2026 (AEO/SEO audit fixes)
+
+- **Domain:** all canonical, og, schema @id/url, sitemap, robots.txt and llms files now use `https://veritashospitalityadvisors.in` (production target). Email stays on .com. Do NOT add a CNAME file until .in DNS is pointed at GitHub Pages — adding it early sends the github.io site to the old GoDaddy page.
+- **Nav bug fixed:** bare `nav{}` CSS rules were also fixing `<nav class="footer-links">` to the top of every page. All bare `nav` selectors now read `nav:not(.footer-links)`.
+- **Mobile menu:** `.nav-toggle` button + `id="site-menu"` on `.nav-links` + small inline script on every page with a nav. Breakpoint matches each page's existing `.nav-links{display:none}` rule.
+- **Homepage:** H1 is now the eyebrow line "Independent hotel owner advisory & consulting — India"; the tagline is `<p class="hero-title">` with the old H1 styling. Hero sub restores "Profit-focused hospitality consulting for independent hotels and resorts across India". Title/meta updated.
+- **Homepage images:** 4 base64 images moved to `images/home-*.jpg` (index.html 835 KB → ~100 KB).
+- **FAQ:** 3 added (consultant / which hotels / where based — sourced from VHA deck). FAQPage schema regenerated from visible FAQ text (9 Q&As, word for word).
+- **Schema:** Review items removed from homepage graph (testimonials live on founder page as quotes); Organization logo now `img/veritas-logo.svg`; address (Kerala, IN), telephone, slogan added; Person image added.
+- **Favicon:** `img/favicon.svg` linked on all pages.
+- **Images:** width/height + lazy loading added where missing.
+- **Articles:** titles shortened to "… | Veritas"; visible "Published / Updated" date line under each H1 (org byline only — author byline still awaits Vaishakh's approval).
+- **health-check:** meta description added; og/twitter image pointed to an existing file.
+- **Resume page:** canonical + meta description; added to sitemap.
+- **Tone rule:** owner-vs-team lines rewritten on commercial-performance, operational-governance, owner-reporting and homepage FAQ.
+- **llms.txt / llms-full.txt:** Sanskreti restaurant/spa names corrected; "India's specialist…" claim replaced with neutral description.
+- **Still needs Vaishakh / Viv:** expand the 13 short articles (bylined to Vaishakh — his approval needed); client testimonial/results from Sanskreti; company LinkedIn + Google Business Profile; Search Console verification; point .in DNS + CNAME; employer-naming and GSTIN consent (already on site).

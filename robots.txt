@@ -1,8 +1,5 @@
+# Veritas Hospitality Advisors
 User-agent: *
 Allow: /
 
-# Block GitHub Pages staging subdomain from being indexed
-# Production site is https://veritashospitalityadvisors.com
-Disallow: /veritas-hospitality-advisors-site/
-
-Sitemap: https://veritashospitalityadvisors.com/sitemap.xml
+Sitemap: https://veritashospitalityadvisors.in/sitemap.xml

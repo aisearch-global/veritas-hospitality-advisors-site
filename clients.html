@@ -185,6 +185,11 @@ footer.vfooter .vfooter-legal span{margin:0 10px;color:rgba(245,244,239,.3)}
 footer.vfooter .vfooter-bottom{align-items:center}
 @media(max-width:1024px){footer.vfooter .vfooter-top{grid-template-columns:1fr 1fr!important}footer.vfooter .vfooter-brand{grid-column:1/-1}}
 @media(max-width:600px){footer.vfooter .vfooter-top{grid-template-columns:1fr 1fr!important;gap:36px 24px!important}footer.vfooter .vfooter-col:last-child{grid-column:1/-1}footer.vfooter .vfooter-nav{display:flex!important;flex-direction:column}footer.vfooter .vfooter-bottom{flex-direction:column;align-items:flex-start}}
+
+/* nav fits 7 links (4 Oct 2026) */
+@media(max-width:1360px){nav:not(.footer-links) .nav-links{gap:24px!important}nav:not(.footer-links) .vlogo{margin-right:40px}}
+@media(max-width:1200px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0!important;position:absolute;top:64px;left:0;right:0;background:#1a3028;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
+@media(max-width:640px){.nav-toggle{margin-right:0}}
 </style>
 </head>
 <body>
@@ -197,6 +202,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
     <li><a href="clients.html" class="active">Clients</a></li>
     <li><a href="diagnostic.html">Diagnostic</a></li>
     <li><a href="insights.html">Perspectives</a></li>
+    <li><a href="faq.html">FAQ</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
   <a href="https://aisearch-global.github.io/veritas-hospitality-advisors-site/#contact" class="nav-cta">Discuss Confidentially</a>
@@ -269,6 +275,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
           <a href="founder.html">Founder</a>
           <a href="clients.html">Clients</a>
           <a href="insights.html">Perspectives</a>
+          <a href="faq.html">Owner FAQ</a>
           <a href="owner-playbook.pdf">Owner&#39;s Playbook (PDF)</a>
         </nav>
       </div>

@@ -287,3 +287,10 @@ Article cards use class `art-card` (not `article-card`).
 - **Tone rule:** owner-vs-team lines rewritten on commercial-performance, operational-governance, owner-reporting and homepage FAQ.
 - **llms.txt / llms-full.txt:** Sanskreti restaurant/spa names corrected; "India's specialist…" claim replaced with neutral description.
 - **Still needs Vaishakh / Viv:** expand the 13 short articles (bylined to Vaishakh — his approval needed); client testimonial/results from Sanskreti; company LinkedIn + Google Business Profile; Search Console verification; point .in DNS + CNAME; employer-naming and GSTIN consent (already on site).
+
+## FAQ page — 4 October 2026
+- `faq.html`: 55 owner Q&As in 11 topic sections, <details> accordions (answers in the DOM), FAQPage + BreadcrumbList schema matching visible text word for word.
+- Source draft: Perplexity (Viv). Edited before publishing: market figures re-verified and re-sourced (HVS Anarock 2025, Horwath HTL 2025, IHCL Vellore, ITC/Zuri), mis-attributed citations removed, no claims that Veritas does feasibility studies or AEO.
+- Linked from: main nav (FAQ) on every page, footer "The Firm" column, homepage FAQ section, sitemap, llms.txt; full Q&A text appended to llms-full.txt.
+- Nav now has 7 links: gap reduces below 1360px, menu collapses to the toggle below 1200px.
+- Review market figures quarterly.

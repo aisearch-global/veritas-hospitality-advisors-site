@@ -1,6 +1,6 @@
 # CLAUDE.md — Veritas Hospitality Advisors Site
 *Session handoff file. Update after every working session.*
-*Last updated: 3 October 2026 | Branch: main*
+*Last updated: 3 October 2026 (session 2) | Branch: main*
 
 ---
 
@@ -86,6 +86,35 @@ If a page uses `--font-display` or `--font-ui` variables, they MUST point to Sou
 | Active branch | `main` |
 | Commits signed | Viv (viveka@aisearch.global) — never "Claude", never Co-Authored-By |
 | Push command | `git push origin main` |
+
+
+---
+
+## How to push changes live (GitHub Pages)
+
+Claude commits locally but **cannot push** (Linux VM has no access to Windows credential manager or SSH). Viv must push manually after every session.
+
+**Steps — every time:**
+```
+# Option A: Windows terminal
+cd "C:\Users\dasku\OneDrive\Documents\GitHub\veritas-hospitality-advisors-site"
+git push origin main
+
+# Option B: GitHub Desktop → click "Push origin"
+```
+GitHub Pages auto-deploys in ~30–60 seconds after push.
+Live URL: https://aisearch-global.github.io/veritas-hospitality-advisors-site/
+
+**Why Claude can't push automatically:**
+- `git push` in device_bash → Windows credential manager (wincred) not accessible from Linux VM
+- SSH blocked by proxy (hostname resolution fails)
+- `gh` CLI not installed in Linux VM
+
+**Pending remote cleanup:**
+```
+git push origin --delete agent-6abdb7d
+```
+(Run once — removes stale remote branch from a previous session)
 
 ---
 
@@ -210,7 +239,7 @@ Article cards use class `art-card` (not `article-card`).
 - [ ] **Delete stale remote branch**: `git push origin --delete agent-6abdb7d`
 - [ ] **Resume PDF**: Build premium branded resume, add download button to founder.html
 - [ ] **TripAdvisor 2015 cert**: Add to founder.html carousel
-- [ ] **perspectives/*.html**: Audit nav/footer/font consistency
+- [x] ~~**perspectives/*.html nav consistency**~~ — Clients link added to all 15 pages, 3 Oct 2026 (commits a1bfebf, 376bcb9)
 - [ ] **health-check.html**: Add og/twitter meta + JSON-LD
 - [ ] **Presentation deck**: Build premium HTML artifact (artifact only, NOT added to site)
 - [x] ~~Nav/footer consistency across all root pages~~ — Done b0e84b7, 3 Oct 2026
@@ -223,9 +252,10 @@ Article cards use class `art-card` (not `article-card`).
 
 | Commit | What |
 |---|---|
-| b0e84b7 | Nav + footer consistency across all 7 root HTML pages |
+| 376bcb9 | Fix 7: add Clients nav link to all 13 perspectives pages |
+| a1bfebf | Fix nav/footer/logo consistency — all root + perspectives pages |
+| ae634e2 | Fix index.html double-doctype, logo hrefs, health-check fonts |
 | 970c402 | Remove leftover .ps1 scripts |
-| (this session) | health-check.html font fix + CLAUDE.md font/nav/footer rules |
 
 ---
 

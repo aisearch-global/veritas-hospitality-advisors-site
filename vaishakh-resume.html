@@ -351,6 +351,20 @@ footer .footer-links a{font-family:"Public Sans",system-ui,sans-serif;font-size:
 footer .footer-links a:hover,footer .footer-links a:focus-visible{color:#f5f4ef}
 @media(max-width:1024px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#1a3028;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
 @media(max-width:640px){nav:not(.footer-links) .nav-cta{display:none}.nav-toggle{margin-right:0}}
+
+
+/* print layout for PDF (4 Oct 2026): A4, continuous sidebar on every page, generous top/bottom space on every page, no items split */
+@media print{
+  @page{size:A4;margin:0}
+  html{width:210mm;height:auto;background:linear-gradient(90deg,#1a3028 0,#1a3028 260px,#fff 260px)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{width:210mm;height:auto;background:transparent!important}
+  .resume-wrap{margin:0!important;box-shadow:none!important;border-radius:0!important;background:transparent!important;grid-template-columns:260px 1fr!important}
+  .sidebar{background:transparent!important}
+  .sidebar,.main-body{-webkit-box-decoration-break:clone;box-decoration-break:clone;padding-top:20mm!important;padding-bottom:18mm!important}
+  .sb-award,.sb-edu,.sb-skill,.sb-contact-list li,.exp-entry,.exp-bullets li,.summary-block,.metric-chips,.resume-footer,.resume-header,.sb-monogram{break-inside:avoid;page-break-inside:avoid}
+  .section-title,.sb-section-label,.exp-head{break-after:avoid;page-break-after:avoid}
+  .sidebar > div:has(.sb-award-list):has(~ div .sb-award-list){break-before:page;page-break-before:always}
+}
 </style>
 </head>
 <body>

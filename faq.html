@@ -1044,6 +1044,8 @@ footer.vfooter .vfooter-bottom{align-items:center}
 @media(max-width:1360px){nav:not(.footer-links) .nav-links{gap:24px!important}nav:not(.footer-links) .vlogo{margin-right:40px}}
 @media(max-width:1200px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0!important;position:absolute;top:64px;left:0;right:0;background:#1a3028;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
 @media(max-width:640px){.nav-toggle{margin-right:0}}
+
+details.faq-q{scroll-margin-top:84px}
 </style>
 </head>
 <body>
@@ -1827,11 +1829,15 @@ footer.vfooter .vfooter-bottom{align-items:center}
     </div>
     <div class="vfooter-bottom">
       <p>&copy; 2026 Veritas Hospitality Advisors &middot; GSTIN 32BLFPS3361D1ZD &middot; MSME UDYAM-KL-07-0058097</p>
-      <p class="vfooter-legal"><a href="legal.html">Privacy &amp; Terms</a><span aria-hidden="true">&middot;</span>Site by <a href="https://aisearch.global" target="_blank" rel="noopener">AISearch Global</a></p>
+      <p class="vfooter-legal"><a href="legal.html">Privacy &amp; Terms</a><span aria-hidden="true">&middot;</span>Created by <a href="https://aisearch.global" target="_blank" rel="noopener">AISearch Global</a> | Sydney | Australia</p>
     </div>
   </div>
 </footer>
 
 <script>document.addEventListener("DOMContentLoaded",function(){var b=document.querySelector(".nav-toggle");if(!b)return;var n=b.closest("nav");b.addEventListener("click",function(){var o=n.classList.toggle("nav-open");b.setAttribute("aria-expanded",o?"true":"false");b.setAttribute("aria-label",o?"Close menu":"Open menu")});n.querySelectorAll(".nav-links a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("nav-open");b.setAttribute("aria-expanded","false");b.setAttribute("aria-label","Open menu")})})});</script>
+<script>
+/* Open the FAQ answer named in the URL hash (links from the homepage) */
+(function(){function o(){var h=decodeURIComponent(location.hash.slice(1));if(!h)return;var d=document.getElementById(h);if(d&&d.tagName==="DETAILS"){d.open=true;d.scrollIntoView({block:"start"});}}window.addEventListener("hashchange",o);if(document.readyState!=="loading")o();else document.addEventListener("DOMContentLoaded",o);})();
+</script>
 </body>
 </html>

@@ -198,9 +198,9 @@ Use for email headers, PDF exports, and any non-HTML context.
 ## Security constraints (permanent — read before every session)
 
 **Never publish:**
-- Vaishakh's date of birth, home/family addresses, UDID/disability number
+- Vaishakh's personal identifiers and private details (listed in the private engagement README only, because this repo is public)
 - Old CV objective (targets GM/Cluster Head employment)
-- Personal Gmail (vaishakh.surendran@gmail.com)
+- His personal email address (kept in the private engagement folder only)
 - Executive Profile PDF contents
 
 **Never publish without Vaishakh's explicit confirmation:**
@@ -209,7 +209,7 @@ Use for email headers, PDF exports, and any non-HTML context.
   → Current wording is NEUTRAL: "managing US government delegations" — DO NOT name Obama until confirmed.
 - **Employer naming**: Accor, Wyndham, ITC, Taj — get explicit consent before publishing brand names
 - **GSTIN** (32BLFPS3361D1ZD) and **Udyam** (UDYAM-KL-07-0058097) — ask first
-- **Mobility/disability** — only with explicit consent and Vaishakh's own framing
+- **Personal health details** — never in public or prospecting material
 
 ---
 
@@ -307,3 +307,12 @@ Article cards use class `art-card` (not `article-card`).
 
 ## Email wiring until handoff (4 Oct 2026)
 - All mailto links and FormSubmit endpoints on main go to viveka@aisearch.global until handoff. Visible email text still shows vaishakh@ address. At handoff switch to vaishakh@veritashospitalityadvisors.in (branch switch-to-in already has that).
+
+## Session 4 — 4 October 2026
+- Credit line on all 26 footers: "Created by AISearch Global | Sydney | Australia" (was "Site by AISearch Global"). Resume footer carries the same credit.
+- SECURITY: GitHub Pages was serving CLAUDE.md, build_playbook.py, reports/ and research_notes/ (repo is public). Added _config.yml exclude list; redacted personal details from this file. Old text is still in git history: decision pending (private repo or history rewrite).
+- Homepage FAQ: each of the 9 questions links to the nearest faq.html question; faq.html opens the answer named in the URL hash.
+- Resume: Veritas role now 2024 – Present (founding year 2024, per Viv). PDF regenerated with Chrome headless on Windows so the web fonts embed (cloud Playwright cannot reach Google Fonts).
+- Canonical contact (Viv, 4 Oct): +91 90722 33008 · vaishakh@veritashospitalityadvisors.in · veritashospitalityadvisors.in. Site keeps current rules until switch-to-in is merged. On merge, resolve the vaishakh-resume.pdf conflict by regenerating it.
+- Positioning rule: Veritas advises and monitors; never imply it operates, sets prices or manages staff.
+- Full live-state spec for incoming agencies: engagement folder > Claude outputs > Veritas-Technical-Structure.html/.pdf (not in this public repo). Where this file disagrees, that document reflects the live site.

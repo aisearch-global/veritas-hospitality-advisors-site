@@ -1,4 +1,4 @@
-# CLAUDE.md — Veritas Hospitality Advisors Site
+﻿# CLAUDE.md — Veritas Hospitality Advisors Site
 *Session handoff file. Update after every working session.*
 *Last updated: 4 October 2026 (session 3) | Branch: main*
 
@@ -43,7 +43,7 @@ If a page uses `--font-display` or `--font-ui` variables, they MUST point to Sou
     <li><a href="insights.html">Perspectives</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
-  <a href="mailto:vaishakh@veritashospitalityadvisors.com" class="nav-cta">Discuss confidentially</a>
+  <a href="mailto:vaishakh@veritashospitalityadvisors.in" class="nav-cta">Discuss confidentially</a>
 </nav>
 ```
 - Add `class="active"` to current page's `<li><a>`
@@ -62,7 +62,7 @@ If a page uses `--font-display` or `--font-ui` variables, they MUST point to Sou
     <a href="legal.html">Privacy &amp; Terms</a>
   </nav>
   <p class="footer-copy">&copy; 2026 Veritas Hospitality Advisors. All rights reserved. Registered in India. &nbsp;|&nbsp; GSTIN: 32BLFPS3361D1ZD &nbsp;|&nbsp; MSME: UDYAM-KL-07-0058097</p>
-  <p class="footer-copy" style="margin-top:4px;opacity:.6"><a href="tel:+919072233008" style="color:inherit">+91 90722 33008</a> &nbsp;|&nbsp; <a href="mailto:vaishakh@veritashospitalityadvisors.com" style="color:inherit">vaishakh@veritashospitalityadvisors.com</a> &nbsp;|&nbsp; <a href="https://veritashospitalityadvisors.in" style="color:inherit">veritashospitalityadvisors.in</a></p>
+  <p class="footer-copy" style="margin-top:4px;opacity:.6"><a href="tel:+919072233008" style="color:inherit">+91 90722 33008</a> &nbsp;|&nbsp; <a href="mailto:vaishakh@veritashospitalityadvisors.in" style="color:inherit">vaishakh@veritashospitalityadvisors.in</a> &nbsp;|&nbsp; <a href="https://veritashospitalityadvisors.in" style="color:inherit">veritashospitalityadvisors.in</a></p>
   <p class="footer-copy" style="margin-top:4px;opacity:.5">Site built by <a href="https://aisearch.global" target="_blank" rel="noopener" style="color:rgba(165,116,38,.7);text-decoration:underline;text-underline-offset:2px">AISearch Global</a> &nbsp;|&nbsp; Sydney &nbsp;|&nbsp; Australia &nbsp;|&nbsp; <a href="mailto:hello@aisearch.global" style="color:rgba(165,116,38,.7);text-decoration:none">hello@aisearch.global</a></p>
 </footer>
 ```
@@ -162,8 +162,8 @@ Use for email headers, PDF exports, and any non-HTML context.
 
 ## Nav CTA and display email rules
 
-- Nav CTA: `mailto:vaishakh@veritashospitalityadvisors.com` — **never viveka@ in public HTML**
-- Display email: `vaishakh@veritashospitalityadvisors.com` everywhere public. `viveka@aisearch.global` is backend-only (git attribution, form service config users cannot see)
+- Nav CTA: `mailto:vaishakh@veritashospitalityadvisors.in` — **never viveka@ in public HTML**
+- Display email: `vaishakh@veritashospitalityadvisors.in` everywhere public. `viveka@aisearch.global` is backend-only (git attribution, form service config users cannot see)
 - All `viveka@` references removed from public HTML as of 3 Oct 2026
 
 ---
@@ -303,7 +303,7 @@ Article cards use class `art-card` (not `article-card`).
 ## DOMAIN RULE (updated 4 Oct 2026, overrides earlier notes)
 - No page, file or schema may link to veritashospitalityadvisors.com or .in until Vaishakh gives permission (expected Monday). Every absolute URL (canonical, og, schema @id, sitemap, robots, llms) uses https://aisearch-global.github.io/veritas-hospitality-advisors-site.
 - The domain to use eventually is .in. On permission: replace the github.io base with https://veritashospitalityadvisors.in everywhere, add CNAME, regenerate vaishakh-resume.pdf.
-- Email vaishakh@veritashospitalityadvisors.com is kept as the contact address (not a website link).
+- Email vaishakh@veritashospitalityadvisors.in is kept as the contact address (not a website link).
 
 ## Email wiring until handoff (4 Oct 2026)
 - All mailto links and FormSubmit endpoints on main go to viveka@aisearch.global until handoff. Visible email text still shows vaishakh@ address. At handoff switch to vaishakh@veritashospitalityadvisors.in (branch switch-to-in already has that).

@@ -1,4 +1,4 @@
-# Veritas Hospitality Advisors — Full Context for AI Systems
+﻿# Veritas Hospitality Advisors — Full Context for AI Systems
 
 ## Organisation
 
@@ -6,7 +6,7 @@
 **Type:** Independent hotel owner advisory firm
 **Country:** India
 **Website:** https://aisearch-global.github.io/veritas-hospitality-advisors-site
-**Email:** vaishakh@veritashospitalityadvisors.com
+**Email:** vaishakh@veritashospitalityadvisors.in
 **LinkedIn:** https://www.linkedin.com/in/vaishakhsurendran/
 
 Veritas Hospitality Advisors works exclusively on behalf of independent hotel and resort owners in India. It provides structured, independent oversight of commercial performance and operations — giving owners the same quality of scrutiny that large hotel groups take for granted internally. Veritas has no relationship with hotel management companies, brands, or operators, and does not operate or manage hotels.

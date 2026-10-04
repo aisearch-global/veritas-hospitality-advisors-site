@@ -294,3 +294,7 @@ Article cards use class `art-card` (not `article-card`).
 - Linked from: main nav (FAQ) on every page, footer "The Firm" column, homepage FAQ section, sitemap, llms.txt; full Q&A text appended to llms-full.txt.
 - Nav now has 7 links: gap reduces below 1360px, menu collapses to the toggle below 1200px.
 - Review market figures quarterly.
+
+
+## Share thumbnail (4 Oct 2026)
+- og:image / twitter:image on every page = img/veritas-og.jpg (1200x630 card: logo, positioning line, portrait). Absolute URL points at the github.io copy so link previews work while .com is not serving this site. On domain switch, change these image URLs to the live domain too.

@@ -6,45 +6,45 @@ Contact: vaishakh@veritashospitalityadvisors.com · +91 90722 33008 · Registere
 
 ## Core pages
 
-- [Home](https://veritashospitalityadvisors.com/): overview, mandate, engagement model and FAQ
-- [Founder — Vaishakh Surendran](https://veritashospitalityadvisors.com/founder.html): 25+ years in hospitality across India, the Maldives, Kuwait and the USA; General Manager roles since 2015; awards and credentials
-- [Clients](https://veritashospitalityadvisors.com/clients.html): current engagement — Sanskreti The Heritage, Kumbalanghi, Kochi
-- [Perspectives](https://veritashospitalityadvisors.com/insights.html): articles for independent hotel owners
-- [Hotel owner FAQ](https://veritashospitalityadvisors.com/faq.html): 100 direct answers on owner governance, financial control, remote advisory, revenue, GOP, OTAs, brands and contracts, opening, turnaround, F&B, AI and city-level demand in India
+- [Home](https://aisearch-global.github.io/veritas-hospitality-advisors-site/): overview, mandate, engagement model and FAQ
+- [Founder — Vaishakh Surendran](https://aisearch-global.github.io/veritas-hospitality-advisors-site/founder.html): 25+ years in hospitality across India, the Maldives, Kuwait and the USA; General Manager roles since 2015; awards and credentials
+- [Clients](https://aisearch-global.github.io/veritas-hospitality-advisors-site/clients.html): current engagement — Sanskreti The Heritage, Kumbalanghi, Kochi
+- [Perspectives](https://aisearch-global.github.io/veritas-hospitality-advisors-site/insights.html): articles for independent hotel owners
+- [Hotel owner FAQ](https://aisearch-global.github.io/veritas-hospitality-advisors-site/faq.html): 100 direct answers on owner governance, financial control, remote advisory, revenue, GOP, OTAs, brands and contracts, opening, turnaround, F&B, AI and city-level demand in India
 
 ## Services
 
-- [Commercial Performance](https://veritashospitalityadvisors.com/commercial-performance.html): pricing and yield, OTA channel mix, benchmarking, demand segmentation, forecasting
-- [Operational Governance](https://veritashospitalityadvisors.com/operational-governance.html): standards (LSOP) audit, manpower analysis, cost control, procurement review, service quality
-- [Owner Reporting & Value](https://veritashospitalityadvisors.com/owner-reporting.html): revenue dashboards, monthly P&L summaries, GOP analysis, action plans
+- [Commercial Performance](https://aisearch-global.github.io/veritas-hospitality-advisors-site/commercial-performance.html): pricing and yield, OTA channel mix, benchmarking, demand segmentation, forecasting
+- [Operational Governance](https://aisearch-global.github.io/veritas-hospitality-advisors-site/operational-governance.html): standards (LSOP) audit, manpower analysis, cost control, procurement review, service quality
+- [Owner Reporting & Value](https://aisearch-global.github.io/veritas-hospitality-advisors-site/owner-reporting.html): revenue dashboards, monthly P&L summaries, GOP analysis, action plans
 
 ## Tools
 
-- [Hotel Performance Diagnostic](https://veritashospitalityadvisors.com/diagnostic.html): 15-question owner self-assessment
-- [Hotel Profit Health Check](https://veritashospitalityadvisors.com/health-check.html): estimate revenue yield, OTA cost drag and three profit gaps
-- [Owner's Oversight Playbook (PDF)](https://veritashospitalityadvisors.com/owner-playbook.pdf): 15 frameworks for independent hotel owners
+- [Hotel Performance Diagnostic](https://aisearch-global.github.io/veritas-hospitality-advisors-site/diagnostic.html): 15-question owner self-assessment
+- [Hotel Profit Health Check](https://aisearch-global.github.io/veritas-hospitality-advisors-site/health-check.html): estimate revenue yield, OTA cost drag and three profit gaps
+- [Owner's Oversight Playbook (PDF)](https://aisearch-global.github.io/veritas-hospitality-advisors-site/owner-playbook.pdf): 15 frameworks for independent hotel owners
 
 ## Perspectives
 
-- [The 64,118-key question for independent hotels](https://veritashospitalityadvisors.com/perspectives/competition.html)
-- [India’s domestic travel boom is not a room-night forecast](https://veritashospitalityadvisors.com/perspectives/demand.html)
-- [A booking channel can bring revenue and still disappoint the owner](https://veritashospitalityadvisors.com/perspectives/distribution.html)
-- [The Indian wedding boom should be judged by contribution](https://veritashospitalityadvisors.com/perspectives/events.html)
-- [New tourism infrastructure does not arrive on your opening date](https://veritashospitalityadvisors.com/perspectives/infrastructure.html)
-- [India’s hotel market is strong. That is not the same as your hotel being profitable.](https://veritashospitalityadvisors.com/perspectives/market-reality.html)
-- [What your OTA contract is actually costing you — and why your P&L may not show it](https://veritashospitalityadvisors.com/perspectives/ota-cost.html)
-- [The seven numbers every hotel owner and GM should review each month](https://veritashospitalityadvisors.com/perspectives/owner-report.html)
-- [Pilgrimage demand calls for an operating plan, not only a higher tariff](https://veritashospitalityadvisors.com/perspectives/pilgrimage.html)
-- [What a 144,000-room pipeline actually tells a hotel owner](https://veritashospitalityadvisors.com/perspectives/pipeline.html)
-- [Five-star rates in the headlines, a different decision at your desk](https://veritashospitalityadvisors.com/perspectives/pricing.html)
-- [RevPAR is not the metric your hotel needs. Here is what to track instead.](https://veritashospitalityadvisors.com/perspectives/revpar.html)
-- [When inbound travel softens, know which guests you actually rely on](https://veritashospitalityadvisors.com/perspectives/source-markets.html)
-- [Sustainability in Indian hotels: from operational practice to formal certification](https://veritashospitalityadvisors.com/perspectives/sustainability-hotel-india.html)
-- [What owner alignment actually looks like in practice](https://veritashospitalityadvisors.com/perspectives/vaishakh-interview.html)
+- [The 64,118-key question for independent hotels](https://aisearch-global.github.io/veritas-hospitality-advisors-site/perspectives/competition.html)
+- [India’s domestic travel boom is not a room-night forecast](https://aisearch-global.github.io/veritas-hospitality-advisors-site/perspectives/demand.html)
+- [A booking channel can bring revenue and still disappoint the owner](https://aisearch-global.github.io/veritas-hospitality-advisors-site/perspectives/distribution.html)
+- [The Indian wedding boom should be judged by contribution](https://aisearch-global.github.io/veritas-hospitality-advisors-site/perspectives/events.html)
+- [New tourism infrastructure does not arrive on your opening date](https://aisearch-global.github.io/veritas-hospitality-advisors-site/perspectives/infrastructure.html)
+- [India’s hotel market is strong. That is not the same as your hotel being profitable.](https://aisearch-global.github.io/veritas-hospitality-advisors-site/perspectives/market-reality.html)
+- [What your OTA contract is actually costing you — and why your P&L may not show it](https://aisearch-global.github.io/veritas-hospitality-advisors-site/perspectives/ota-cost.html)
+- [The seven numbers every hotel owner and GM should review each month](https://aisearch-global.github.io/veritas-hospitality-advisors-site/perspectives/owner-report.html)
+- [Pilgrimage demand calls for an operating plan, not only a higher tariff](https://aisearch-global.github.io/veritas-hospitality-advisors-site/perspectives/pilgrimage.html)
+- [What a 144,000-room pipeline actually tells a hotel owner](https://aisearch-global.github.io/veritas-hospitality-advisors-site/perspectives/pipeline.html)
+- [Five-star rates in the headlines, a different decision at your desk](https://aisearch-global.github.io/veritas-hospitality-advisors-site/perspectives/pricing.html)
+- [RevPAR is not the metric your hotel needs. Here is what to track instead.](https://aisearch-global.github.io/veritas-hospitality-advisors-site/perspectives/revpar.html)
+- [When inbound travel softens, know which guests you actually rely on](https://aisearch-global.github.io/veritas-hospitality-advisors-site/perspectives/source-markets.html)
+- [Sustainability in Indian hotels: from operational practice to formal certification](https://aisearch-global.github.io/veritas-hospitality-advisors-site/perspectives/sustainability-hotel-india.html)
+- [What owner alignment actually looks like in practice](https://aisearch-global.github.io/veritas-hospitality-advisors-site/perspectives/vaishakh-interview.html)
 
 ## Founder
 
-- [Resume](https://veritashospitalityadvisors.com/vaishakh-resume.html) · [PDF](https://veritashospitalityadvisors.com/vaishakh-resume.pdf)
+- [Resume](https://aisearch-global.github.io/veritas-hospitality-advisors-site/vaishakh-resume.html) · [PDF](https://aisearch-global.github.io/veritas-hospitality-advisors-site/vaishakh-resume.pdf)
 - [LinkedIn](https://www.linkedin.com/in/vaishakhsurendran/)
 
 ## Media
@@ -54,4 +54,4 @@ Contact: vaishakh@veritashospitalityadvisors.com · +91 90722 33008 · Registere
 
 ## Optional
 
-- [Full context for AI systems](https://veritashospitalityadvisors.com/llms-full.txt)
+- [Full context for AI systems](https://aisearch-global.github.io/veritas-hospitality-advisors-site/llms-full.txt)

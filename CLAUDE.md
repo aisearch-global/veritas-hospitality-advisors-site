@@ -298,3 +298,9 @@ Article cards use class `art-card` (not `article-card`).
 
 ## Share thumbnail (4 Oct 2026)
 - og:image / twitter:image on every page = img/veritas-og.jpg (1200x630 card: logo, positioning line, portrait). Absolute URL points at the github.io copy so link previews work while .com is not serving this site. On domain switch, change these image URLs to the live domain too.
+
+
+## DOMAIN RULE (updated 4 Oct 2026, overrides earlier notes)
+- No page, file or schema may link to veritashospitalityadvisors.com or .in until Vaishakh gives permission (expected Monday). Every absolute URL (canonical, og, schema @id, sitemap, robots, llms) uses https://aisearch-global.github.io/veritas-hospitality-advisors-site.
+- The domain to use eventually is .in. On permission: replace the github.io base with https://veritashospitalityadvisors.in everywhere, add CNAME, regenerate vaishakh-resume.pdf.
+- Email vaishakh@veritashospitalityadvisors.com is kept as the contact address (not a website link).

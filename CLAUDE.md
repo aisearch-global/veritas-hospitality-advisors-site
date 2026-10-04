@@ -304,3 +304,6 @@ Article cards use class `art-card` (not `article-card`).
 - No page, file or schema may link to veritashospitalityadvisors.com or .in until Vaishakh gives permission (expected Monday). Every absolute URL (canonical, og, schema @id, sitemap, robots, llms) uses https://aisearch-global.github.io/veritas-hospitality-advisors-site.
 - The domain to use eventually is .in. On permission: replace the github.io base with https://veritashospitalityadvisors.in everywhere, add CNAME, regenerate vaishakh-resume.pdf.
 - Email vaishakh@veritashospitalityadvisors.com is kept as the contact address (not a website link).
+
+## Email wiring until handoff (4 Oct 2026)
+- All mailto links and FormSubmit endpoints on main go to viveka@aisearch.global until handoff. Visible email text still shows vaishakh@ address. At handoff switch to vaishakh@veritashospitalityadvisors.in (branch switch-to-in already has that).

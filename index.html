@@ -1077,7 +1077,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
     </div>
     <div class="contact-details">
       <div id="contactFormWrap">
-        <form class="contact-form" id="contactForm" action="https://formsubmit.co/viveka@aisearch.global" method="POST">
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/vaishakh@veritashospitalityadvisors.com" method="POST">
           <input type="hidden" name="_subject" value="New enquiry — Veritas website">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
@@ -1157,7 +1157,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
         <p class="vfooter-label">Contact</p>
         <ul class="vfooter-contact">
           <li><a href="tel:+919072233008">+91 90722 33008</a></li>
-          <li><a href="mailto:viveka@aisearch.global">vaishakh@veritashospitalityadvisors.in</a></li>
+          <li><a href="mailto:vaishakh@veritashospitalityadvisors.com">vaishakh@veritashospitalityadvisors.in</a></li>
           <li>Registered in Kerala &middot; Working across India</li>
         </ul>
         <a href="#contact" class="vfooter-cta">Discuss Confidentially</a>
@@ -1244,7 +1244,7 @@ function showResults(score){
     <div class="res-cta">
       <h3>Discuss your results confidentially</h3>
       <p>Vaishakh Surendran will review your situation and tell you honestly whether Veritas can help — and if so, what that looks like. There is no obligation and no pitch.</p>
-      <a href="mailto:viveka@aisearch.global?subject=Owner%20Diagnostic%20Results%20%E2%80%94%20${pct}%25%20score" class="btn-cta">Request a confidential discussion</a>
+      <a href="mailto:vaishakh@veritashospitalityadvisors.com?subject=Owner%20Diagnostic%20Results%20%E2%80%94%20${pct}%25%20score" class="btn-cta">Request a confidential discussion</a>
       <span class="res-contact">vaishakh@veritashospitalityadvisors.in · +91 90722 33008</span>
     </div>
     <button class="restart-link" onclick="restartDiag()">Restart diagnostic</button>
@@ -1294,7 +1294,7 @@ window.addEventListener('scroll',()=>{
       <div class="drawer-sources" id="drawerSources" style="display:none"></div>
       <div class="drawer-cta">
         <p>Veritas works exclusively for independent hotel owners — reviewing commercial performance, operational governance, and owner reporting.</p>
-        <a href="mailto:viveka@aisearch.global?subject=Insight%20enquiry">Discuss Confidentially with Vaishakh →</a>
+        <a href="mailto:vaishakh@veritashospitalityadvisors.com?subject=Insight%20enquiry">Discuss Confidentially with Vaishakh →</a>
       </div>
     </div>`;
   document.body.appendChild(drawer);
@@ -1358,7 +1358,7 @@ function submitGate(e){
   // Optional: send to a mailto as fallback notification
   const hotel=document.getElementById('gate-hotel').value.trim();
   const body=encodeURIComponent(`Playbook download request\nName: ${name}\nEmail: ${email}\nHotel: ${hotel||'(not provided)'}`);
-  fetch(`https://formsubmit.co/ajax/viveka@aisearch.global`,{
+  fetch(`https://formsubmit.co/ajax/vaishakh@veritashospitalityadvisors.com`,{
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
     body:JSON.stringify({name,email,hotel:hotel||'',_subject:'Playbook download — '+name,_captcha:'false'})
@@ -1374,7 +1374,7 @@ function submitContact(e){
   var btn=e.target.querySelector('.cf-submit');
   btn.textContent='Sending...';
   btn.disabled=true;
-  fetch('https://formsubmit.co/ajax/viveka@aisearch.global',{
+  fetch('https://formsubmit.co/ajax/vaishakh@veritashospitalityadvisors.com',{
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
     body:JSON.stringify({name:name,email:email,hotel:hotel||'',message:message||'',_subject:'Website enquiry — '+name,_captcha:'false'})

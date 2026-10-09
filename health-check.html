@@ -811,7 +811,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
               <input type="checkbox" name="channel" value="agoda"> Agoda
             </label>
             <label class="channel-chip">
-              <input type="checkbox" name="channel" value="oyo"> OYO
+              <input type="checkbox" name="channel" value="expedia"> Expedia
             </label>
             <label class="channel-chip">
               <input type="checkbox" name="channel" value="direct" checked> Direct / Walk-in
@@ -823,7 +823,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
               <input type="checkbox" name="channel" value="ta"> Travel agent / GDS
             </label>
             <label class="channel-chip">
-              <input type="checkbox" name="channel" value="airbnb"> Airbnb
+              <input type="checkbox" name="channel" value="google"> Google Hotel Ads
             </label>
           </div>
         </div>
@@ -941,8 +941,8 @@ const OTA_RATES = {
   mmt:       { name: 'MakeMyTrip / Goibibo', base: 0.23, gstOnComm: 0.18, label: '23% base + 18% GST on comm' },
   booking:   { name: 'Booking.com',          base: 0.18, gstOnComm: 0.18, label: '18% base + 18% GST on comm' },
   agoda:     { name: 'Agoda',                base: 0.18, gstOnComm: 0.18, label: '18% base + 18% GST on comm' },
-  oyo:       { name: 'OYO',                  base: 0.28, gstOnComm: 0.18, label: '28% base + 18% GST on comm' },
-  airbnb:    { name: 'Airbnb',               base: 0.15, gstOnComm: 0.18, label: '15% base + 18% GST on comm' },
+  expedia:   { name: 'Expedia',               base: 0.20, gstOnComm: 0.18, label: '20% base + 18% GST on comm' },
+  google:    { name: 'Google Hotel Ads',      base: 0.12, gstOnComm: 0.18, label: '12% CPS + 18% GST on comm' },
   ta:        { name: 'Travel agent / GDS',   base: 0.12, gstOnComm: 0.00, label: '10–15% commission (typical)' },
   direct:    { name: 'Direct / Walk-in',     base: 0.00, gstOnComm: 0.00, label: 'No OTA commission' },
   corporate: { name: 'Corporate accounts',   base: 0.00, gstOnComm: 0.00, label: 'Direct — small processing cost' },
@@ -1010,13 +1010,13 @@ function buildGaps(inputs, metrics) {
     });
   }
 
-  // OYO or high-cost channel active
+  // Expedia commission review
   const channels = inputs.channels;
-  if (channels.includes('oyo')) {
+  if (channels.includes('expedia')) {
     allGaps.push({
-      heading: 'OYO contract terms deserve a line-by-line review',
-      text: 'OYO white-label contracts have varied substantially. Base commission, revenue-share structure, pricing control, and guest relationship ownership differ across contract vintage and negotiated terms.',
-      action: 'Pull your last OYO settlement statement. Calculate net receipts as a percentage of gross room revenue for that period.',
+      heading: 'Expedia commission structure — review net yield vs direct cost',
+      text: 'Expedia commissions typically run 18–25% of gross room revenue, depending on your tier and promotions opted in. Member Discounts and Expedia Rewards mark-ups can erode net rate further.',
+      action: 'Pull your last Expedia settlement statement. Calculate net receipts as a percentage of gross room revenue and compare to your direct-booking cost per acquisition.',
       priority: 2,
     });
   }
@@ -1076,8 +1076,8 @@ function calcScore(inputs, metrics) {
   else if (rateDiff < -0.1) score -= 8;
   else if (rateDiff > 0.15) score += 8;
 
-  // OYO penalty
-  if (inputs.channels.includes('oyo')) score -= 10;
+  // High-commission OTA concentration penalty
+  if (inputs.channels.includes('expedia') && !inputs.channels.includes('direct')) score -= 5;
 
   // Direct channel bonus
   if (inputs.channels.includes('direct') || inputs.channels.includes('corporate')) score += 5;
@@ -1285,7 +1285,7 @@ function resetForm() {
       </div>
     </div>
     <div class="vfooter-bottom">
-      <p>&copy; 2026 Veritas Hospitality Advisors &middot; GSTIN 32BLFPS3361D1ZD &middot; MSME UDYAM-KL-07-0058097</p>
+      <p>&copy; 2026 Veritas Hospitality Advisors &middot; MSME UDYAM-KL-07-0058097</p>
       <p class="vfooter-legal"><a href="legal.html">Privacy &amp; Terms</a><span aria-hidden="true">&middot;</span>Created by <a href="https://aisearch.global" target="_blank" rel="noopener">AISearch Global</a> | Sydney | Australia</p>
     </div>
   </div>

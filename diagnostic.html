@@ -165,15 +165,49 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
 .res-heading{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.6rem;color:var(--ink);margin-bottom:8px}
 .res-subhead{font-size:.82rem;color:var(--slate);margin-bottom:36px;line-height:1.6}
 .score-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:36px}
-.score-card{padding:20px 20px 16px;border:1px solid rgba(13,27,42,.09);background:var(--cream)}
-.score-card .score-label{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:6px;display:block}
-.score-card .score-val{font-family:"Source Serif 4",serif;font-size:2rem;font-weight:300;color:var(--ink)}
-.score-card .score-desc{font-size:.74rem;color:var(--slate);margin-top:4px}
-.res-interpretation{margin-bottom:32px}
+/* ── Premium results ── */
+    #results{background:transparent}
+    .res-hero{background:var(--ink);padding:56px 48px 48px;text-align:center;margin-bottom:0}
+    .res-hero .res-overall-label{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,244,239,.5);margin-bottom:12px;display:block}
+    .res-hero .res-overall-pct{font-family:"Source Serif 4",serif;font-size:5rem;font-weight:300;color:#f5f4ef;line-height:1;margin-bottom:10px}
+    .res-hero .res-overall-tag{display:inline-block;padding:6px 18px;border-radius:2px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:18px}
+    .res-hero .res-overall-tag.strong{background:rgba(45,122,79,.25);color:#5cb888;border:1px solid rgba(45,122,79,.4)}
+    .res-hero .res-overall-tag.moderate{background:rgba(165,116,38,.25);color:#d4a55a;border:1px solid rgba(165,116,38,.4)}
+    .res-hero .res-overall-tag.weak{background:rgba(192,57,43,.25);color:#e87a6a;border:1px solid rgba(192,57,43,.4)}
+    .res-hero .res-heading{font-family:"Source Serif 4",serif;font-size:1.35rem;font-weight:300;color:#f5f4ef;margin-bottom:6px}
+    .res-hero .res-subhead{font-size:.8rem;color:rgba(245,244,239,.5);max-width:480px;margin:0 auto}
+    .res-dimensions{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(13,27,42,.1)}
+    .score-card{background:#fff;padding:32px 28px 26px;position:relative;overflow:hidden}
+    .score-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px}
+    .score-card.strong::before{background:#2d7a4f}
+    .score-card.moderate::before{background:#a57426}
+    .score-card.weak::before{background:#c0392b}
+.score-card .score-label{font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--slate);margin-bottom:14px;display:block}
+.score-card .score-val{font-family:"Source Serif 4",serif;font-size:3rem;font-weight:300;line-height:1;display:block;margin-bottom:8px}
+    .score-card.strong .score-val{color:#2d7a4f}
+    .score-card.moderate .score-val{color:#a57426}
+    .score-card.weak .score-val{color:#c0392b}
+    .score-bar-wrap{height:3px;background:rgba(13,27,42,.07);margin-bottom:10px;border-radius:2px}
+    .score-bar{height:100%;border-radius:2px;transition:width .7s ease}
+    .score-card.strong .score-bar{background:#2d7a4f}
+    .score-card.moderate .score-bar{background:#a57426}
+    .score-card.weak .score-bar{background:#c0392b}
+.score-card .score-desc{font-size:.75rem;color:var(--slate);font-style:italic}
+.res-interpretation{background:var(--cream);padding:40px 48px;border-bottom:1px solid rgba(13,27,42,.08)}
+    .res-interpretation h3{font-family:"Source Serif 4",serif;font-size:1.05rem;font-weight:400;color:var(--ink);margin-bottom:10px}
+    .res-interpretation p{font-size:.88rem;color:var(--slate);line-height:1.75;max-width:580px}
 .res-interpretation h3{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .res-interpretation p{font-size:.85rem;color:rgba(13,27,42,.75);line-height:1.75}
 /* email results */
-.email-results-form{margin-top:32px;padding:28px;background:var(--cream);border:1px solid rgba(13,27,42,.1)}
+.email-results-form{padding:40px 48px;background:#fff;border-top:1px solid rgba(13,27,42,.07)}
+    .email-results-form h3{font-family:"Source Serif 4",serif;font-size:1rem;font-weight:400;color:var(--ink);margin-bottom:6px}
+    .email-results-form p{font-size:.82rem;color:var(--slate);margin-bottom:20px}
+    .email-row{display:flex;gap:10px;flex-wrap:wrap}
+    .email-row input[type="email"]{flex:1;min-width:220px;padding:12px 16px;border:1px solid rgba(13,27,42,.18);background:var(--cream);font-family:"Public Sans",sans-serif;font-size:.85rem;color:var(--ink);outline:none}
+    .email-row input[type="email"]:focus{border-color:var(--gold)}
+    .btn-email{padding:12px 24px;background:var(--ink);color:#f5f4ef;font-family:"Public Sans",sans-serif;font-size:.82rem;letter-spacing:.04em;border:none;cursor:pointer;white-space:nowrap;transition:background .2s}
+    .btn-email:hover{background:#1a2d40}
+    @media(max-width:640px){.res-hero{padding:40px 20px 36px}.res-hero .res-overall-pct{font-size:3.5rem}.res-dimensions{grid-template-columns:1fr}.res-interpretation,.email-results-form{padding:32px 20px}}
 .email-results-form h3{font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:6px}
 .email-results-form p{font-size:.78rem;color:var(--slate);margin-bottom:16px;line-height:1.6}
 .email-row{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
@@ -184,7 +218,7 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
 .email-sent{font-size:.78rem;color:var(--gold);display:none;margin-top:8px}
 /* CTA */
 .diag-cta-section{max-width:900px;margin:0 auto;padding:0 40px 80px}
-.diag-cta-box{background:var(--ink);padding:48px;margin-top:20px;text-align:center}
+.diag-cta-box{background:var(--ink);padding:48px;margin-top:0;text-align:center;border-top:1px solid rgba(245,244,239,.08)}
 .diag-cta-box h3{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.4rem;color:var(--cream);margin-bottom:12px}
 .diag-cta-box p{font-size:.85rem;color:rgba(245,244,239,.55);margin-bottom:24px;line-height:1.7}
 .btn-discuss{display:inline-block;background:var(--gold);color:#fff;text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:14px 32px;transition:all .2s}
@@ -244,7 +278,7 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
 }
 
 
-.req-star{color:var(--gold);font-weight:700;margin-left:3px}
+.req-star{color:#c0392b;font-weight:700;margin-left:3px}
 .q-block[data-required="true"] .q-label{font-weight:500}
 .section-complete-badge{display:inline-block;margin-left:10px;font-size:.65rem;letter-spacing:.08em;padding:2px 8px;background:rgba(45,122,79,.15);color:#2d7a4f;border:1px solid rgba(45,122,79,.3);vertical-align:middle}
 .section-incomplete-badge{display:inline-block;margin-left:10px;font-size:.65rem;letter-spacing:.08em;padding:2px 8px;background:rgba(192,57,43,.1);color:#c0392b;border:1px solid rgba(192,57,43,.3);vertical-align:middle}
@@ -464,7 +498,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
     </div>
   </div>
   <div class="q-block">
-    <span class="q-label">When you receive financial reports, can you trace a revenue figure back to its source?</span>
+    <span class="q-label">When you receive financial reports, can you trace a revenue figure back to its source?<span class="req-star" title="Required">*</span></span>
     <span class="q-hint">If your report says "Room Revenue: ₹18 lakhs," can you see which bookings, channels, and dates make up that number?</span>
     <div class="opts">
       <label class="opt"><input type="radio" name="q3" value="0"><span class="opt-text">Yes — I can request source-level data and it's provided</span></label>
@@ -508,7 +542,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
     </div>
   </div>
   <div class="q-block">
-    <span class="q-label">Has your hotel's Average Daily Rate (ADR) increased in line with your costs over the past two years?</span>
+    <span class="q-label">Has your hotel's Average Daily Rate (ADR) increased in line with your costs over the past two years?<span class="req-star" title="Required">*</span></span>
     <div class="opts">
       <label class="opt"><input type="radio" name="q6" value="0"><span class="opt-text">Yes — rates have grown and I've seen the comparison data</span></label>
       <label class="opt"><input type="radio" name="q6" value="1"><span class="opt-text">I believe rates have increased but haven't seen it tracked against costs</span></label>
@@ -517,7 +551,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
     </div>
   </div>
   <div class="q-block">
-    <span class="q-label">When your hotel offers a discounted rate, do you approve it — or does management decide independently?</span>
+    <span class="q-label">When your hotel offers a discounted rate, do you approve it — or does management decide independently?<span class="req-star" title="Required">*</span></span>
     <div class="opts">
       <label class="opt"><input type="radio" name="q7" value="0"><span class="opt-text">There's a written rate authority matrix — discounts above a threshold need my approval</span></label>
       <label class="opt"><input type="radio" name="q7" value="1"><span class="opt-text">I'm usually informed, but management makes the call</span></label>
@@ -559,7 +593,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
     </div>
   </div>
   <div class="q-block">
-    <span class="q-label">Are capital expenditure decisions (above a set threshold) formally approved by you before they're committed?</span>
+    <span class="q-label">Are capital expenditure decisions (above a set threshold) formally approved by you before they're committed?<span class="req-star" title="Required">*</span></span>
     <div class="opts">
       <label class="opt"><input type="radio" name="q10" value="0"><span class="opt-text">Yes — there's a written approval process with defined thresholds</span></label>
       <label class="opt"><input type="radio" name="q10" value="1"><span class="opt-text">I'm usually consulted, but the process is informal</span></label>
@@ -602,7 +636,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
     </div>
   </div>
   <div class="q-block">
-    <span class="q-label">How would you describe the depth and consistency of your hotel's financial reporting?</span>
+    <span class="q-label">How would you describe the depth and consistency of your hotel's financial reporting?<span class="req-star" title="Required">*</span></span>
     <div class="opts">
       <label class="opt"><input type="radio" name="q13" value="0"><span class="opt-text">High — the reporting is detailed and consistent, and I can see the detail behind the figures</span></label>
       <label class="opt"><input type="radio" name="q13" value="1"><span class="opt-text">Moderate — the reporting looks reasonable but I haven't independently verified it</span></label>
@@ -611,7 +645,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
     </div>
   </div>
   <div class="q-block">
-    <span class="q-label">In the last 12 months, have you received a report that raised a concern you couldn't follow up on because the underlying data wasn't available?</span>
+    <span class="q-label">In the last 12 months, have you received a report that raised a concern you couldn't follow up on because the underlying data wasn't available?<span class="req-star" title="Required">*</span></span>
     <div class="opts">
       <label class="opt"><input type="radio" name="q14" value="0"><span class="opt-text">No — underlying data is always available on request</span></label>
       <label class="opt"><input type="radio" name="q14" value="1"><span class="opt-text">Once or twice — I've had to follow up to get clarity</span></label>
@@ -620,7 +654,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
     </div>
   </div>
   <div class="q-block">
-    <span class="q-label">Overall — how well does your current oversight of your hotel match the level of oversight you'd expect for an asset of this value?</span>
+    <span class="q-label">Overall — how well does your current oversight of your hotel match the level of oversight you'd expect for an asset of this value?<span class="req-star" title="Required">*</span></span>
     <div class="opts">
       <label class="opt"><input type="radio" name="q15" value="0"><span class="opt-text">Very well — I have the information, structure, and access I need</span></label>
       <label class="opt"><input type="radio" name="q15" value="1"><span class="opt-text">Reasonably well — there are gaps but nothing that concerns me significantly</span></label>
@@ -638,20 +672,24 @@ footer.vfooter .vfooter-bottom{align-items:center}
 
 <div class="results-wrap">
 <div id="results">
-  <p class="res-heading">Your diagnostic results</p>
-  <p class="res-subhead">Based on your answers across the four dimensions below. Results are indicative only — not a financial audit or legal opinion.</p>
-  <div class="score-grid" id="scoreGrid"></div>
+  <div class="res-hero" id="resHero">
+    <span class="res-overall-label">Overall Governance Score</span>
+    <div class="res-overall-pct" id="resOverallPct">&mdash;</div>
+    <div class="res-overall-tag" id="resOverallTag"></div>
+    <h2 class="res-heading">Your Hotel Performance Diagnostic</h2>
+    <p class="res-subhead">Based on your answers across four ownership dimensions. Results are indicative only &mdash; not a financial audit or legal opinion.</p>
+  </div>
+  <div class="res-dimensions" id="scoreGrid"></div>
   <div class="res-interpretation" id="resInterpretation"></div>
   <div class="email-results-form">
-    <h3>Email me my results</h3>
-    <p>We'll send a copy to your inbox and Vaishakh will receive a copy to follow up personally if you'd like.</p>
+    <h3>Receive your full results by email</h3>
+    <p>We&rsquo;ll send a copy to your inbox. Vaishakh will receive a copy and can follow up personally if you&rsquo;d like to discuss.</p>
     <div class="email-row">
       <input type="email" id="emailInput" placeholder="your@email.com">
       <button class="btn-email" onclick="emailResults()">Send results &rarr;</button>
     </div>
-    <p class="email-sent" id="emailSent">&#10003; Sent. Vaishakh will be in touch if you'd like to discuss.</p>
+    <p class="email-sent" id="emailSent">&#10003; Sent. Vaishakh will be in touch if you&rsquo;d like to discuss.</p>
   </div>
-</div>
 </div>
 
 
@@ -823,33 +861,43 @@ function calcResults() {
     sectionScores[sid] = {score: total, max: SECTION_MAX[sid], answered, total: qs.length};
   });
 
-  // Build score cards
+  // Build premium score cards
   const grid = document.getElementById('scoreGrid');
   grid.innerHTML = '';
   let overallScore=0, overallMax=0;
   Object.entries(sectionScores).forEach(([sid, data]) => {
     const pct = data.max>0 ? Math.round((1 - data.score/data.max)*100) : 0;
     overallScore += data.score; overallMax += data.max;
-    const rating = pct>=75?'Strong':pct>=50?'Moderate':'Needs attention';
-    const col = pct>=75?'#2d7a4f':pct>=50?'#a57426':'#c0392b';
-    grid.innerHTML += `<div class="score-card">
+    const cls = pct>=75?'strong':pct>=50?'moderate':'weak';
+    const rating = pct>=75?'Strong governance':pct>=50?'Moderate — gaps present':'Needs attention';
+    grid.innerHTML += `<div class="score-card ${cls}">
       <span class="score-label">${SECTION_NAMES[sid]}</span>
-      <span class="score-val" style="color:${col}">${pct}%</span>
-      <div class="score-desc">${rating} &mdash; ${data.answered} of ${data.total} answered</div>
+      <span class="score-val">${pct}%</span>
+      <div class="score-bar-wrap"><div class="score-bar" style="width:${pct}%"></div></div>
+      <div class="score-desc">${rating} &mdash; ${data.answered} of ${data.total} questions answered</div>
     </div>`;
   });
 
   const overallPct = overallMax>0 ? Math.round((1 - overallScore/overallMax)*100) : 0;
+  const overallCls = overallPct>=75?'strong':overallPct>=50?'moderate':'weak';
+  const overallLabel = overallPct>=75?'Strong Governance':overallPct>=50?'Moderate — Gaps Present':'Oversight Gaps Identified';
+
+  // Populate hero
+  document.getElementById('resOverallPct').textContent = overallPct + '%';
+  const tagEl = document.getElementById('resOverallTag');
+  tagEl.textContent = overallLabel;
+  tagEl.className = 'res-overall-tag ' + overallCls;
+
   let interpretation = '';
   if(overallPct >= 75) {
-    interpretation = '<p>Your hotel has strong oversight fundamentals in place. The areas marked moderate are worth reviewing — even a 10% improvement in one dimension can materially affect your bottom line.</p>';
+    interpretation = '<p>Your hotel has strong oversight fundamentals in place. The areas marked moderate are worth a closer look — even a 10 % improvement in one dimension can materially affect your bottom line. Use the questions below as a starting point in your next management review.</p>';
   } else if(overallPct >= 50) {
-    interpretation = '<p>Your oversight has a workable foundation but has identifiable gaps. The areas flagged for attention are where margin leakage is most likely occurring — and where a structured review is likely to surface the clearest opportunities.</p>';
+    interpretation = '<p>Your oversight has a workable foundation but carries identifiable gaps. The dimensions flagged for attention are where margin leakage is most likely occurring. A structured review of those areas is likely to surface concrete opportunities — and specific questions to ask your management team.</p>';
   } else {
-    interpretation = '<p>The diagnostic points to meaningful gaps in your current oversight. This does not mean the hotel is failing — it means the information and governance structures that protect your ownership position are under-developed. That is the problem Veritas exists to address.</p>';
+    interpretation = '<p>The diagnostic points to meaningful gaps in your current ownership oversight. This does not mean the hotel is failing — it means the information and governance structures that protect your investment are under-developed. These are the exact gaps Veritas Hospitality Advisors was built to address.</p>';
   }
 
-  document.getElementById('resInterpretation').innerHTML = '<h3>What this means</h3>' + interpretation;
+  document.getElementById('resInterpretation').innerHTML = '<h3>What this means for you</h3>' + interpretation;
   SECTIONS.forEach(s => document.getElementById(s).classList.remove('visible'));
   document.getElementById('results').classList.add('visible');
   document.getElementById('diagCTA').style.display='block';

@@ -126,6 +126,33 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
 .progress-bar{flex:1;height:3px;background:rgba(13,27,42,.08);border-radius:2px;overflow:hidden}
 .progress-fill{height:100%;background:var(--gold);transition:width .3s;width:0}
 .progress-label{font-size:.7rem;color:var(--slate);white-space:nowrap}
+
+/* overall quiz progress tracker (9 Oct 2026) */
+.quiz-progress-wrap{max-width:900px;margin:0 auto;padding:28px 40px 0}
+.quiz-progress-bar{height:5px;background:rgba(13,27,42,.08);border-radius:3px;overflow:hidden}
+.quiz-progress-fill{height:100%;background:var(--gold);transition:width .4s ease;width:0}
+.quiz-progress-text{font-size:.68rem;letter-spacing:.04em;color:var(--slate);margin-top:10px;text-align:center}
+.quiz-steps{display:flex;align-items:flex-start;margin-top:18px}
+.quiz-step{display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;flex:1;position:relative;background:none;border:none;font-family:inherit;padding:0}
+.quiz-step .step-circle{width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid rgba(13,27,42,.15);display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:600;color:var(--slate);transition:all .2s}
+.quiz-step .step-label{font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);text-align:center;line-height:1.3}
+.quiz-step.current .step-circle{border-color:var(--gold);background:var(--gold);color:#fff}
+.quiz-step.current .step-label{color:var(--ink);font-weight:600}
+.quiz-step.complete .step-circle{border-color:var(--gold);color:var(--gold)}
+.quiz-step.complete .step-circle::after{content:'\2713'}
+.quiz-step.complete .step-circle span{display:none}
+.quiz-step.attention .step-circle{border-color:#c0392b;color:#c0392b}
+.quiz-step.attention .step-label{color:#c0392b}
+.quiz-step-line{position:absolute;top:14px;left:50%;width:100%;height:2px;background:rgba(13,27,42,.1);z-index:-1}
+.quiz-step:last-child .quiz-step-line{display:none}
+.quiz-step.complete .quiz-step-line{background:var(--gold)}
+@media(max-width:640px){.quiz-step .step-label{display:none}.quiz-progress-wrap{padding-left:20px;padding-right:20px}}
+
+/* section slide transition (9 Oct 2026) */
+.diag-section{opacity:0;transform:translateX(16px);transition:opacity .3s ease,transform .3s ease}
+.diag-section.visible{opacity:1;transform:translateX(0)}
+#results{opacity:0;transform:translateY(10px);transition:opacity .35s ease,transform .35s ease}
+#results.visible{opacity:1;transform:translateY(0)}
 /* next / section nav */
 .section-footer{display:flex;justify-content:space-between;align-items:center;margin-top:32px;padding-top:20px;border-top:1px solid rgba(13,27,42,.08)}
 .btn-next{background:var(--gold);color:#fff;border:none;font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:12px 28px;cursor:pointer;transition:all .2s}
@@ -315,66 +342,30 @@ footer.vfooter .vfooter-bottom{align-items:center}
 </nav>
 
 <div class="diag-hero">
-  <p class="section-label">Hotel Health Check</p>
+  <p class="section-label">Hotel Diagnostic Assessment</p>
   <h1>Is your hotel performing for you?</h1>
-  <p>15 questions across four dimensions. Results calculated immediately in your browser — nothing is stored or sent anywhere until you choose.</p>
+  <p>15 questions across four ownership dimensions. Results calculated immediately in your browser — nothing is stored or sent anywhere until you choose. Takes about 5 minutes.</p>
 </div>
 
-
-<div class="tool-switcher">
-  <div class="tool-card-wrap">
-    <div class="tool-card active" id="tc-diag" onclick="switchTool('diag')">
-      <span class="tool-num">01</span>
-      <div class="tool-card-inner">
-        <div class="tool-card-title">Hotel Diagnostic Assessment</div>
-        <p class="tool-card-desc">15 questions across four ownership dimensions. Understand where your oversight is strong and where it may be creating risk or margin loss.</p>
-      </div>
-      <span class="tool-card-arrow">&#8250;</span>
-    </div>
-    <div class="tool-card" id="tc-hcheck" onclick="switchTool('hcheck')">
-      <span class="tool-num">02</span>
-      <div class="tool-card-inner">
-        <div class="tool-card-title">Hotel Profit Health Check</div>
-        <p class="tool-card-desc">Enter your key operating figures and see an independent estimate of what your hotel should be generating — and where the gap may be.</p>
-      </div>
-      <span class="tool-card-arrow">&#8250;</span>
-    </div>
+<div class="quiz-progress-wrap">
+  <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
+  <p class="quiz-progress-text" id="quizProgressText">0 of 15 answered</p>
+  <div class="quiz-steps" id="quizSteps">
+    <button class="quiz-step current" id="step-s1" onclick="showSection('s1')" type="button"><span class="step-circle"><span>1</span></span><span class="step-label">Owner Reporting</span><span class="quiz-step-line"></span></button>
+    <button class="quiz-step" id="step-s2" onclick="showSection('s2')" type="button"><span class="step-circle"><span>2</span></span><span class="step-label">Commercial Performance</span><span class="quiz-step-line"></span></button>
+    <button class="quiz-step" id="step-s3" onclick="showSection('s3')" type="button"><span class="step-circle"><span>3</span></span><span class="step-label">Operational Governance</span><span class="quiz-step-line"></span></button>
+    <button class="quiz-step" id="step-s4" onclick="showSection('s4')" type="button"><span class="step-circle"><span>4</span></span><span class="step-label">Owner Position</span><span class="quiz-step-line"></span></button>
+    <button class="quiz-step" id="step-results" onclick="jumpToResultsIfReady()" type="button"><span class="step-circle"><span>5</span></span><span class="step-label">Your Result</span></button>
   </div>
 </div>
 
-<div class="tool-panel visible" id="panel-diag">
-<div class="diag-cards">
-  <div class="diag-grid" id="cardGrid">
-    <div class="diag-card" id="card-s1" onclick="showSection('s1')">
-      <span class="card-num">01</span>
-      <div class="card-title">Owner Reporting</div>
-      <p class="card-desc">What your monthly reporting covers — and whether it gives you the full picture.</p>
-      <span class="card-arrow">&#8250;</span>
-    </div>
-    <div class="diag-card" id="card-s2" onclick="showSection('s2')">
-      <span class="card-num">02</span>
-      <div class="card-title">Commercial Performance</div>
-      <p class="card-desc">How your hotel generates revenue — and whether you're seeing all of it.</p>
-      <span class="card-arrow">&#8250;</span>
-    </div>
-    <div class="diag-card" id="card-s3" onclick="showSection('s3')">
-      <span class="card-num">03</span>
-      <div class="card-title">Operational Governance</div>
-      <p class="card-desc">How decisions are made in your hotel — and whether you have oversight of them.</p>
-      <span class="card-arrow">&#8250;</span>
-    </div>
-    <div class="diag-card" id="card-s4" onclick="showSection('s4')">
-      <span class="card-num">04</span>
-      <div class="card-title">Owner Position</div>
-      <p class="card-desc">Whether you have the information and oversight to protect your ownership position.</p>
-      <span class="card-arrow">&#8250;</span>
-    </div>
-  </div>
+<div style="max-width:900px;margin:0 auto;padding:0 40px">
+  <div class="diag-error" id="diagError">Please answer the required questions (*) in all four sections before viewing your results.</div>
 </div>
 
 <div class="diag-section-wrap">
 <!-- SECTION 1 -->
-<div class="diag-section" id="s1">
+<div class="diag-section visible" id="s1">
   <div class="section-head">
     <h2>Owner Reporting</h2>
     <p>What your monthly reporting covers — and whether it gives you the full picture.</p>
@@ -573,7 +564,6 @@ footer.vfooter .vfooter-bottom{align-items:center}
 </div>
 </div><!-- /diag-section-wrap -->
 
-<div class="diag-error" id="diagError">Please answer the required questions (*) in all four sections before viewing your results.</div>
 <div class="results-wrap">
 <div id="results">
   <p class="res-heading">Your diagnostic results</p>
@@ -600,17 +590,15 @@ footer.vfooter .vfooter-bottom{align-items:center}
   <a href="mailto:viveka@aisearch.global?subject=Hotel%20Diagnostic%20Discussion" class="btn-discuss">Discuss with Vaishakh &rarr;</a>
 </div>
 </div>
-</div>
 
-<div class="tool-panel" id="panel-hcheck">
-<div style="max-width:900px;margin:0 auto;padding:48px 40px 80px">
-  <div style="background:#fff;border:1px solid rgba(13,27,42,.1);border-top:3px solid var(--gold);padding:48px">
-    <span style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;display:block;margin-bottom:16px">Free calculator</span>
-    <h2 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:clamp(1.4rem,2.2vw,1.8rem);color:var(--ink);margin-bottom:16px">Hotel Profit Health Check</h2>
-    <p style="font-size:.9rem;line-height:1.75;color:var(--slate);max-width:640px;margin-bottom:32px">Enter your hotel's key operating figures and get an instant read on your true revenue yield, OTA cost drag, and three specific gaps worth investigating. No sign-up. No data stored. Takes about two minutes.</p>
-    <a href="health-check.html" style="display:inline-block;background:var(--ink);color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:14px 36px;transition:background .2s">Open the Health Check &rarr;</a>
+<div class="diag-cta-section" style="padding-top:0">
+  <div style="background:#fff;border:1px solid rgba(13,27,42,.1);padding:32px 36px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+    <div>
+      <p style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:8px">Also free</p>
+      <p style="font-family:'Source Serif 4',serif;font-weight:400;font-size:1.05rem;color:var(--ink)">Want to see what your hotel should be earning?</p>
+    </div>
+    <a href="health-check.html" style="display:inline-block;background:var(--ink);color:var(--cream);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:13px 30px;white-space:nowrap;transition:background .2s">Run the Profit Health Check &rarr;</a>
   </div>
-</div>
 </div>
 <footer class="vfooter">
   <div class="vfooter-inner">
@@ -666,45 +654,58 @@ const SECTION_NAMES = {s1:'Owner Reporting', s2:'Commercial Performance', s3:'Op
 const SECTION_MAX = {s1:6, s2:8, s3:6, s4:10};
 
 function showSection(id) {
-  // hide all sections
-  SECTIONS.forEach(s => {
-    document.getElementById(s).classList.remove('visible');
-    document.getElementById('card-'+s).classList.remove('active');
-  });
+  // hide all sections, results included
+  SECTIONS.forEach(s => document.getElementById(s).classList.remove('visible'));
+  document.getElementById('results').classList.remove('visible');
+  document.getElementById('diagCTA').style.display = 'none';
   // show target
   document.getElementById(id).classList.add('visible');
-  document.getElementById('card-'+id).classList.add('active');
-  // scroll to section
-  document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
+  // scroll to top of the quiz tracker so the stepper + new section are both in view
+  document.querySelector('.quiz-progress-wrap').scrollIntoView({behavior:'smooth', block:'start'});
   updateProgress(id);
 }
 
-function updateProgress(sid) {
-  // Update badge on card
-  const cardEl = document.getElementById('card-'+sid);
-  if(cardEl) {
-    const existing = cardEl.querySelector('.section-complete-badge,.section-incomplete-badge');
-    if(existing) existing.remove();
-  }
+const SECTION_REQUIRED = {s1:['q1','q2'], s2:['q4','q5'], s3:['q8','q9'], s4:['q11','q12']};
+const ALL_QS = ['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','q11','q12','q13','q14','q15'];
 
+function updateProgress(sid) {
   const qs = SECTION_QS[sid];
   const answered = qs.filter(q => document.querySelector('input[name="'+q+'"]:checked')).length;
   const pct = Math.round(answered/qs.length*100);
   document.getElementById('prog-'+sid).style.width = pct+'%';
   document.getElementById('progtxt-'+sid).textContent = answered+' of '+qs.length+' answered';
-  // Update section card badge
-  const SECTION_REQUIRED_LOCAL = {s1:['q1','q2'], s2:['q4','q5'], s3:['q8','q9'], s4:['q11','q12']};
-  const reqQs = SECTION_REQUIRED_LOCAL[sid] || [];
-  const reqDone = reqQs.every(q => document.querySelector('input[name="'+q+'"]:checked'));
-  const card = document.getElementById('card-'+sid);
-  if(card) {
-    const old = card.querySelector('.section-complete-badge,.section-incomplete-badge');
-    if(old) old.remove();
-    const badge = document.createElement('span');
-    if(reqDone) { badge.className='section-complete-badge'; badge.textContent='Complete'; }
-    else { badge.className='section-incomplete-badge'; badge.textContent='Required missing'; }
-    const title = card.querySelector('.card-title');
-    if(title) title.appendChild(badge);
+  updateStepper();
+}
+
+function updateStepper() {
+  // overall bar across all 15 questions
+  const totalAnswered = ALL_QS.filter(q => document.querySelector('input[name="'+q+'"]:checked')).length;
+  const overallPct = Math.round(totalAnswered/ALL_QS.length*100);
+  document.getElementById('quizProgressFill').style.width = overallPct+'%';
+  document.getElementById('quizProgressText').textContent = totalAnswered+' of 15 answered';
+
+  // per-step dot state
+  SECTIONS.forEach(sid => {
+    const stepEl = document.getElementById('step-'+sid);
+    if(!stepEl) return;
+    const reqQs = SECTION_REQUIRED[sid] || [];
+    const reqDone = reqQs.every(q => document.querySelector('input[name="'+q+'"]:checked'));
+    const sectionVisible = document.getElementById(sid).classList.contains('visible');
+    stepEl.classList.toggle('current', sectionVisible);
+    stepEl.classList.toggle('complete', reqDone && !sectionVisible);
+    stepEl.classList.toggle('attention', stepEl.dataset.flagged === 'true' && !reqDone);
+  });
+  const resultsStep = document.getElementById('step-results');
+  const resultsDone = document.getElementById('results').classList.contains('visible');
+  resultsStep.classList.toggle('current', resultsDone);
+  resultsStep.classList.toggle('complete', false);
+}
+
+function jumpToResultsIfReady() {
+  if(document.getElementById('results').classList.contains('visible')) {
+    document.getElementById('results').scrollIntoView({behavior:'smooth', block:'start'});
+  } else {
+    showSection('s4');
   }
 }
 
@@ -717,30 +718,29 @@ document.querySelectorAll('.opts input[type=radio]').forEach(r => {
 
 function calcResults() {
   // Validate: all required questions in every section must be answered
-  const REQUIRED = ['q1','q2','q4','q5','q8','q9','q11','q12'];
-  const SECTION_REQUIRED = {s1:['q1','q2'], s2:['q4','q5'], s3:['q8','q9'], s4:['q11','q12']};
   let missing = [];
   let firstMissingSec = null;
   Object.entries(SECTION_REQUIRED).forEach(([sid, qs]) => {
     const incomplete = qs.filter(q => !document.querySelector('input[name="'+q+'"]:checked'));
+    const stepEl = document.getElementById('step-'+sid);
     if(incomplete.length > 0) {
       missing.push(SECTION_NAMES[sid]);
       if(!firstMissingSec) firstMissingSec = sid;
-      document.getElementById('card-'+sid).classList.add('needs-attention');
+      stepEl.dataset.flagged = 'true';
     } else {
-      document.getElementById('card-'+sid).classList.remove('needs-attention');
+      stepEl.dataset.flagged = 'false';
     }
   });
   const errEl = document.getElementById('diagError');
   if(missing.length > 0) {
-    errEl.textContent = 'Please answer the required questions (*) in: ' + missing.join(', ') + '. Click a section card above to return to it.';
+    errEl.textContent = 'Please answer the required questions (*) in: ' + missing.join(', ') + '. Taking you back now — look for the question marked in red below.';
     errEl.classList.add('visible');
     if(firstMissingSec) showSection(firstMissingSec);
+    errEl.scrollIntoView({behavior:'smooth', block:'center'});
     return;
   }
   errEl.classList.remove('visible');
 
-  const allQs = ['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','q11','q12','q13','q14','q15'];
   const sectionScores = {};
   Object.entries(SECTION_QS).forEach(([sid, qs]) => {
     let total=0, answered=0;
@@ -778,10 +778,12 @@ function calcResults() {
   }
 
   document.getElementById('resInterpretation').innerHTML = '<h3>What this means</h3>' + interpretation;
+  SECTIONS.forEach(s => document.getElementById(s).classList.remove('visible'));
   document.getElementById('results').classList.add('visible');
   document.getElementById('diagCTA').style.display='block';
-  document.getElementById('results').scrollIntoView({behavior:'smooth'});
-  
+  updateStepper();
+  document.querySelector('.quiz-progress-wrap').scrollIntoView({behavior:'smooth', block:'start'});
+
   // store for email
   window._diagResults = sectionScores;
   window._diagPct = overallPct;
@@ -816,65 +818,8 @@ function emailResults() {
   document.getElementById('emailSent').style.display='block';
 }
 
-function switchTool(id) {
-  ['diag','hcheck'].forEach(function(t) {
-    document.getElementById('tc-'+t).classList.remove('active');
-    document.getElementById('panel-'+t).classList.remove('visible');
-  });
-  document.getElementById('tc-'+id).classList.add('active');
-  document.getElementById('panel-'+id).classList.add('visible');
-  document.getElementById('panel-'+id).scrollIntoView({behavior:'smooth', block:'start'});
-}
-
-function fmt(n) {
-  return '₹' + Math.round(n).toLocaleString('en-IN');
-}
-
-function runHealthCheck() {
-  var rooms = parseFloat(document.getElementById('hc-rooms').value) || 0;
-  var occ = parseFloat(document.getElementById('hc-occ').value) || 0;
-  var adr = parseFloat(document.getElementById('hc-adr').value) || 0;
-  var fb = parseFloat(document.getElementById('hc-fb').value) || 0;
-  var opex = parseFloat(document.getElementById('hc-opex').value) || 0;
-  var debt = parseFloat(document.getElementById('hc-debt').value) || 0;
-
-  if (!rooms || !occ || !adr || !opex) {
-    alert('Please fill in rooms, occupancy, ADR, and operating cost ratio.');
-    return;
-  }
-
-  var roomRev = rooms * (occ/100) * adr * 365;
-  var fbRev = roomRev * (fb/100);
-  var totalRev = roomRev + fbRev;
-  var gop = totalRev * (1 - opex/100);
-  var nocash = gop - (debt * 12);
-
-  document.getElementById('hc-room-rev').textContent = fmt(roomRev) + ' /yr';
-  document.getElementById('hc-total-rev').textContent = fmt(totalRev) + ' /yr';
-  document.getElementById('hc-gop').textContent = fmt(gop) + ' /yr';
-
-  var nocashWrap = document.getElementById('hc-nocash-wrap');
-  if (debt > 0) {
-    document.getElementById('hc-nocash').textContent = fmt(nocash) + ' /yr';
-    nocashWrap.style.display = 'block';
-  } else {
-    nocashWrap.style.display = 'none';
-  }
-
-  var gopPct = totalRev > 0 ? Math.round((gop/totalRev)*100) : 0;
-  var interp = '';
-  if (gopPct >= 30) {
-    interp = 'A GOP of ' + gopPct + '% on these inputs sits above the typical mid-scale range. The question is whether your current reporting confirms this or whether costs you have not attributed here are reducing the actual figure.';
-  } else if (gopPct >= 18) {
-    interp = 'A GOP of ' + gopPct + '% is within the operating range for mid-scale independent hotels in India, but leaves limited margin for capital expenditure, debt service, or owner distributions. The key question is whether you can identify where the remaining ' + (100-gopPct) + '% is going.';
-  } else {
-    interp = 'A GOP of ' + gopPct + '% is below the level most independent hotels need to remain sustainable. At this margin, even modest increases in costs or reductions in occupancy create owner cash exposure. This is worth a direct conversation.';
-  }
-  document.getElementById('hcheck-interpretation').textContent = interp;
-  document.getElementById('hcheck-results').style.display = 'block';
-  document.getElementById('hcheck-results').scrollIntoView({behavior:'smooth', block:'start'});
-}
-
+// initialise stepper state on load
+updateStepper();
 </script>
 <script>document.addEventListener("DOMContentLoaded",function(){var b=document.querySelector(".nav-toggle");if(!b)return;var n=b.closest("nav");b.addEventListener("click",function(){var o=n.classList.toggle("nav-open");b.setAttribute("aria-expanded",o?"true":"false");b.setAttribute("aria-label",o?"Close menu":"Open menu")});n.querySelectorAll(".nav-links a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("nav-open");b.setAttribute("aria-expanded","false");b.setAttribute("aria-label","Open menu")})})});</script>
 </body>

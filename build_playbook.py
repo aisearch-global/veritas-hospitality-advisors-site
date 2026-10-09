@@ -46,10 +46,10 @@ if _have_brand_fonts:
         normal='SourceSerif4', bold='SourceSerif4-Bold', italic='SourceSerif4-Italic', boldItalic='SourceSerif4-Bold')
 
 # ── Brand palette ──────────────────────────────────────────────────────────────
-INK   = colors.HexColor('#1A3028')   # Forest green
+INK   = colors.HexColor('#0D1B2A')   # Midnight navy
 CREAM = colors.HexColor('#F5F4EF')   # Off-white
 GOLD  = colors.HexColor('#A57426')   # Warm gold
-SLATE = colors.HexColor('#3D6B56')   # Mid-green
+SLATE = colors.HexColor('#4A6080')   # Slate (navy-adjacent)
 WHITE = colors.white
 LIGHT = colors.HexColor('#E8E7E0')   # Subtle rule colour
 
@@ -399,7 +399,7 @@ def build_cover(story, styles, cw):
     story.append(Spacer(1, 32))
 
     # Slim SLATE rule as a visual separator
-    story.append(ThinRule(cw, color=colors.HexColor('#3D6B56'), thickness=0.5))
+    story.append(ThinRule(cw, color=colors.HexColor('#4A6080'), thickness=0.5))
     story.append(Spacer(1, 20))
 
     # Short descriptor paragraph

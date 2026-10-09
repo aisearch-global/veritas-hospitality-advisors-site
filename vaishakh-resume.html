@@ -30,12 +30,12 @@
 /* ── Reset & Tokens ───────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#1a3028;
+  --ink:#0D1B2A;
   --cream:#f5f4ef;
   --gold:#a57426;
   --gold-lt:rgba(165,116,38,.15);
-  --slate:rgba(26,48,40,.55);
-  --rule:rgba(26,48,40,.1);
+  --slate:rgba(13,27,42,.55);
+  --rule:rgba(13,27,42,.1);
 }
 html{font-size:16px}
 body{
@@ -102,7 +102,7 @@ body{
   max-width:860px;
   margin:40px auto 60px;
   background:#fff;
-  box-shadow:0 4px 40px rgba(26,48,40,.12);
+  box-shadow:0 4px 40px rgba(13,27,42,.12);
   display:grid;
   grid-template-columns:260px 1fr;
   min-height:1120px;
@@ -295,7 +295,7 @@ body{
 }
 .exp-bullets li{
   font-size:.8rem;
-  color:rgba(26,48,40,.72);
+  color:rgba(13,27,42,.72);
   padding-left:14px;
   position:relative;
   line-height:1.55;
@@ -357,7 +357,7 @@ body{
 nav:not(.footer-links) .vlogo{margin-right:64px}
 footer .vlogo{margin:0 0 12px}
 .vlogo:focus-visible{outline:2px solid #a57426;outline-offset:6px}
-.vlogo--dark .vlogo-word{color:#1a3028}
+.vlogo--dark .vlogo-word{color:#0D1B2A}
 @media(max-width:640px){.vlogo{padding:0 24px}.vlogo .vlogo-word{font-size:1.05rem}.vlogo .vlogo-sub{font-size:.4rem;margin-top:7px}.vlogo::before,.vlogo::after{width:16px}nav:not(.footer-links) .vlogo{margin-right:12px}}
 
 /* nav + footer polish (4 Oct 2026) */
@@ -365,14 +365,14 @@ footer .vlogo{margin:0 0 12px}
 footer .footer-links{display:flex;flex-wrap:wrap;gap:12px 28px;margin:20px 0}
 footer .footer-links a{font-family:"Public Sans",system-ui,sans-serif;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,244,239,.55);text-decoration:none}
 footer .footer-links a:hover,footer .footer-links a:focus-visible{color:#f5f4ef}
-@media(max-width:1024px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#1a3028;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
+@media(max-width:1024px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#0D1B2A;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
 @media(max-width:640px){nav:not(.footer-links) .nav-cta{display:none}.nav-toggle{margin-right:0}}
 
 
 /* print layout for PDF (4 Oct 2026): A4, continuous sidebar on every page, generous top/bottom space on every page, no items split */
 @media print{
   @page{size:A4;margin:0}
-  html{width:210mm;height:auto;background:linear-gradient(90deg,#1a3028 0,#1a3028 260px,#fff 260px)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html{width:210mm;height:auto;background:linear-gradient(90deg,#0D1B2A 0,#0D1B2A 260px,#fff 260px)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   body{width:210mm;height:auto;background:transparent!important}
   .resume-wrap{margin:0!important;box-shadow:none!important;border-radius:0!important;background:transparent!important;grid-template-columns:260px 1fr!important}
   .sidebar{background:transparent!important}

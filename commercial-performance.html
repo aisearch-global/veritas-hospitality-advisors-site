@@ -69,11 +69,11 @@
 </script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ink:#1A3028;--cream:#F5F4EF;--slate:#3D6B56;--gold:#A57426}
+:root{--ink:#0D1B2A;--cream:#F5F4EF;--slate:#4A6080;--gold:#A57426}
 html{scroll-behavior:smooth}
 body{font-family:"Public Sans",sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
 
-nav:not(.footer-links){position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,48,40,.94);backdrop-filter:blur(10px);height:64px;display:flex;align-items:center;padding:0 40px;justify-content:space-between}
+nav:not(.footer-links){position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,27,42,.94);backdrop-filter:blur(10px);height:64px;display:flex;align-items:center;padding:0 40px;justify-content:space-between}
 .logo{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.35rem;color:var(--cream);letter-spacing:.04em;text-decoration:none}
 .logo span{color:var(--gold)}
 .nav-links{display:flex;gap:32px;list-style:none}
@@ -109,7 +109,7 @@ nav:not(.footer-links){position:fixed;top:0;left:0;right:0;z-index:200;backgroun
 .ri-body{font-size:.83rem;line-height:1.8;color:rgba(245,244,239,.52)}
 
 /* OWNER LENS */
-.lens-block{background:rgba(26,48,40,.04);border-left:3px solid var(--gold);padding:36px 44px;margin-bottom:64px}
+.lens-block{background:rgba(13,27,42,.04);border-left:3px solid var(--gold);padding:36px 44px;margin-bottom:64px}
 .lens-block .lb-label{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px}
 .lens-block p{font-size:.9rem;line-height:1.85;color:var(--ink)}
 
@@ -174,7 +174,7 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
 /* mobile menu (added 4 Oct 2026) */
 .nav-toggle{display:none;background:none;border:1px solid rgba(245,244,239,.3);color:#f5f4ef;width:40px;height:36px;border-radius:2px;cursor:pointer;font-size:1.05rem;line-height:1}
 .nav-toggle:focus-visible,.nav-links a:focus-visible{outline:2px solid #a57426;outline-offset:2px}
-@media(max-width:740px){.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:12px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#1a3028;padding:8px 20px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
+@media(max-width:740px){.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:12px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#0D1B2A;padding:8px 20px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
 
 /* Veritas logo lockup (4 Oct 2026) — matches canonical logo: VERITAS / gold rules / HOSPITALITY ADVISORS */
 .vlogo{position:relative;display:inline-flex;flex-direction:column;align-items:center;line-height:1;padding:0 32px;text-decoration:none;flex-shrink:0}
@@ -185,7 +185,7 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
 nav:not(.footer-links) .vlogo{margin-right:64px}
 footer .vlogo{margin:0 0 12px}
 .vlogo:focus-visible{outline:2px solid #a57426;outline-offset:6px}
-.vlogo--dark .vlogo-word{color:#1a3028}
+.vlogo--dark .vlogo-word{color:#0D1B2A}
 @media(max-width:640px){.vlogo{padding:0 24px}.vlogo .vlogo-word{font-size:1.05rem}.vlogo .vlogo-sub{font-size:.4rem;margin-top:7px}.vlogo::before,.vlogo::after{width:16px}nav:not(.footer-links) .vlogo{margin-right:12px}}
 
 /* nav + footer polish (4 Oct 2026) */
@@ -193,7 +193,7 @@ footer .vlogo{margin:0 0 12px}
 footer .footer-links{display:flex;flex-wrap:wrap;gap:12px 28px;margin:20px 0}
 footer .footer-links a{font-family:"Public Sans",system-ui,sans-serif;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,244,239,.55);text-decoration:none}
 footer .footer-links a:hover,footer .footer-links a:focus-visible{color:#f5f4ef}
-@media(max-width:1024px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#1a3028;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
+@media(max-width:1024px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#0D1B2A;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
 @media(max-width:640px){nav:not(.footer-links) .nav-cta{display:none}.nav-toggle{margin-right:0}}
 
 /* logo never stretches (4 Oct 2026) */
@@ -204,7 +204,7 @@ nav:not(.footer-links) .vlogo{align-self:center}
 @media(max-width:760px){[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}section[style*="padding:80px 40px"],section[style*="padding:52px 40px"],div[style*="padding:60px 40px"]{padding-left:20px!important;padding-right:20px!important}}
 
 /* unified site footer (4 Oct 2026) — same on every page */
-footer.vfooter{display:block!important;background:#1a3028!important;color:rgba(245,244,239,.7);padding:80px 40px 36px!important;margin:0!important;text-align:left!important;border-top:1px solid rgba(165,116,38,.28);font-family:"Public Sans",system-ui,sans-serif;gap:0!important}
+footer.vfooter{display:block!important;background:#0D1B2A!important;color:rgba(245,244,239,.7);padding:80px 40px 36px!important;margin:0!important;text-align:left!important;border-top:1px solid rgba(165,116,38,.28);font-family:"Public Sans",system-ui,sans-serif;gap:0!important}
 footer.vfooter .vfooter-inner{max-width:1120px;margin:0 auto}
 footer.vfooter .vfooter-top{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:56px;padding-bottom:48px;border-bottom:1px solid rgba(245,244,239,.1)}
 footer.vfooter .vlogo{margin:0 0 22px!important;align-self:auto}
@@ -239,7 +239,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
 
 /* nav fits 7 links (4 Oct 2026) */
 @media(max-width:1360px){nav:not(.footer-links) .nav-links{gap:24px!important}nav:not(.footer-links) .vlogo{margin-right:40px}}
-@media(max-width:1200px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0!important;position:absolute;top:64px;left:0;right:0;background:#1a3028;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
+@media(max-width:1200px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0!important;position:absolute;top:64px;left:0;right:0;background:#0D1B2A;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
 @media(max-width:640px){.nav-toggle{margin-right:0}}
 </style>
 </head>
@@ -301,7 +301,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
         <h3 class="ri-title">Revenue Forecasting &amp; Controls</h3>
         <p class="ri-body">Forecasting accuracy determines whether staffing, procurement, and capital allocation decisions are sound. Veritas reviews your forecasting process, the assumptions behind it, and the governance around who sees and challenges the numbers before decisions are made.</p>
       </div>
-      <div class="review-item" style="background:rgba(26,48,40,.06);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:44px 40px">
+      <div class="review-item" style="background:rgba(13,27,42,.06);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:44px 40px">
         <p style="font-family:'Source Serif 4',serif;font-style:italic;font-weight:300;font-size:1.05rem;line-height:1.75;color:var(--ink);margin-bottom:18px">"Know what each booking channel earns after distribution costs. Improve RevPAR and topline quality."</p>
         <p style="font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--slate)">The Veritas mandate</p>
       </div>

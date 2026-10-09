@@ -15,6 +15,8 @@
 
 **ALL brand assets are FINAL. They are NOT open for creative input, iteration, or improvement.**
 
+**Colour palette updated 9 Oct 2026** — client approved a move from the forest-green palette to Midnight Navy. The navy values below are now the locked palette; the old forest-green rule is retired. Logo, typography and layout lock remain unchanged.
+
 If the user asks to "redo brand assets", "create a brand style guide", "design a logo", or anything similar — REFUSE and say: "Brand assets are locked. I cannot generate logos, colours, or typography. What specific page or content task should I do instead?"
 
 ---
@@ -39,14 +41,16 @@ If a logo file appears missing: check git history or ask Viv. Do NOT create a ne
 
 ---
 
-### Locked colour palette — never change
+### Locked colour palette — never change (updated 9 Oct 2026: Midnight Navy)
 
 | Token | Hex | Use |
 |---|---|---|
-| `--ink` | `#1a3028` | Dark green — nav bg, headings |
+| `--ink` | `#0D1B2A` | Midnight Navy — nav bg, headings |
 | `--cream` | `#f5f4ef` | Page background, light text on dark |
 | `--gold` | `#a57426` | Accent — logo dot, CTA borders, highlights |
-| `--slate` | `rgba(26,48,40,.55)` | Muted body text |
+| `--slate` | `#4A6080` | Muted body text / secondary copy |
+
+Forest green (`#1a3028`) is retired — do not reintroduce it.
 
 ---
 
@@ -186,10 +190,10 @@ git push origin --delete agent-6abdb7d
 
 | Token | Value |
 |---|---|
-| `--ink` | `#1a3028` (dark green — nav bg, headings, body text on cream) |
+| `--ink` | `#0D1B2A` (Midnight Navy — nav bg, headings, body text on cream) |
 | `--cream` | `#f5f4ef` (page background, logo text, light text on dark) |
 | `--gold` | `#a57426` (accent — logo dot, CTA borders, highlights) |
-| `--slate` | `rgba(26,48,40,.55)` (muted body text) |
+| `--slate` | `#4A6080` (muted body text / secondary copy) |
 | Body font | Public Sans (300/400/500/600) |
 | Heading/logo font | Source Serif 4 (**weight 300, NOT italic** for logo — weight 300/400/600 for headings) |
 | Nav height | 64px fixed |

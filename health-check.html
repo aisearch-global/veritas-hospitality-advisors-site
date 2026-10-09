@@ -89,7 +89,7 @@
 
 <style>
 /* ── Nav ── */
-nav:not(.footer-links){position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,48,40,.94);backdrop-filter:blur(10px);height:64px;display:flex;align-items:center;padding:0 40px;justify-content:space-between}
+nav:not(.footer-links){position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,27,42,.94);backdrop-filter:blur(10px);height:64px;display:flex;align-items:center;padding:0 40px;justify-content:space-between}
 .logo{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.35rem;color:var(--cream);letter-spacing:.04em;text-decoration:none}
 .logo span{color:var(--gold)}
 .nav-links{display:flex;gap:32px;list-style:none}
@@ -99,7 +99,7 @@ nav:not(.footer-links){position:fixed;top:0;left:0;right:0;z-index:200;backgroun
 .nav-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
 @media(max-width:740px){nav:not(.footer-links){padding:0 20px}.nav-links{display:none}}
 /* ── Footer ── */
-footer.site-footer{background:#1a3028;padding:32px;text-align:center;margin-top:64px;border-top:1px solid rgba(245,244,239,.06)}
+footer.site-footer{background:#0D1B2A;padding:32px;text-align:center;margin-top:64px;border-top:1px solid rgba(245,244,239,.06)}
 footer.site-footer p{font-family:'Public Sans',system-ui,sans-serif;font-size:.68rem;color:rgba(245,244,239,.2);margin:4px 0}
 footer.site-footer a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 /* ── push content below fixed nav ── */
@@ -108,7 +108,7 @@ footer.site-footer a{color:inherit;text-decoration:underline;text-underline-offs
 /* mobile menu (added 4 Oct 2026) */
 .nav-toggle{display:none;background:none;border:1px solid rgba(245,244,239,.3);color:#f5f4ef;width:40px;height:36px;border-radius:2px;cursor:pointer;font-size:1.05rem;line-height:1}
 .nav-toggle:focus-visible,.nav-links a:focus-visible{outline:2px solid #a57426;outline-offset:2px}
-@media(max-width:740px){.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:12px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#1a3028;padding:8px 20px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
+@media(max-width:740px){.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:12px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#0D1B2A;padding:8px 20px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
 
 /* footer base (added 4 Oct 2026) */
 .footer-copy{font-size:.68rem;line-height:1.7;color:rgba(245,244,239,.45)}
@@ -137,8 +137,8 @@ footer.site-footer a{color:inherit;text-decoration:underline;text-underline-offs
    Brand palette: Veritas Hospitality Advisors
    ──────────────────────────────────────────────────────────────────────── */
 :root {
-  --ink:    #1A3028;
-  --slate:  #3D6B56;
+  --ink:    #0D1B2A;
+  --slate:#4A6080;
   --gold:   #A57426;
   --gold-lt:#C49040;
   --cream:  #F5F4EF;
@@ -159,7 +159,7 @@ footer.site-footer a{color:inherit;text-decoration:underline;text-underline-offs
   --font-ui: 'Public Sans', system-ui, sans-serif;
 
   --radius: 6px;
-  --shadow: 0 1px 4px rgba(26,48,40,.08), 0 4px 16px rgba(26,48,40,.06);
+  --shadow: 0 1px 4px rgba(13,27,42,.08), 0 4px 16px rgba(13,27,42,.06);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -700,7 +700,7 @@ body {
 nav:not(.footer-links) .vlogo{margin-right:64px}
 footer .vlogo{margin:0 0 12px}
 .vlogo:focus-visible{outline:2px solid #a57426;outline-offset:6px}
-.vlogo--dark .vlogo-word{color:#1a3028}
+.vlogo--dark .vlogo-word{color:#0D1B2A}
 @media(max-width:640px){.vlogo{padding:0 24px}.vlogo .vlogo-word{font-size:1.05rem}.vlogo .vlogo-sub{font-size:.4rem;margin-top:7px}.vlogo::before,.vlogo::after{width:16px}nav:not(.footer-links) .vlogo{margin-right:12px}}
 
 /* nav + footer polish (4 Oct 2026) */
@@ -708,7 +708,7 @@ footer .vlogo{margin:0 0 12px}
 footer .footer-links{display:flex;flex-wrap:wrap;gap:12px 28px;margin:20px 0}
 footer .footer-links a{font-family:"Public Sans",system-ui,sans-serif;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,244,239,.55);text-decoration:none}
 footer .footer-links a:hover,footer .footer-links a:focus-visible{color:#f5f4ef}
-@media(max-width:1024px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#1a3028;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
+@media(max-width:1024px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#0D1B2A;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
 @media(max-width:640px){nav:not(.footer-links) .nav-cta{display:none}.nav-toggle{margin-right:0}}
 
 /* logo never stretches (4 Oct 2026) */
@@ -719,11 +719,11 @@ nav:not(.footer-links) .vlogo{align-self:center}
 @media(max-width:760px){[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}section[style*="padding:80px 40px"],section[style*="padding:52px 40px"],div[style*="padding:60px 40px"]{padding-left:20px!important;padding-right:20px!important}}
 
 /* health-check footer to match site (4 Oct 2026) */
-footer{background:#1a3028;padding:48px 40px 40px;margin-top:64px;display:flex;flex-direction:column;gap:6px;text-align:left}
+footer{background:#0D1B2A;padding:48px 40px 40px;margin-top:64px;display:flex;flex-direction:column;gap:6px;text-align:left}
 @media(max-width:640px){footer{padding:32px 20px}}
 
 /* unified site footer (4 Oct 2026) — same on every page */
-footer.vfooter{display:block!important;background:#1a3028!important;color:rgba(245,244,239,.7);padding:80px 40px 36px!important;margin:0!important;text-align:left!important;border-top:1px solid rgba(165,116,38,.28);font-family:"Public Sans",system-ui,sans-serif;gap:0!important}
+footer.vfooter{display:block!important;background:#0D1B2A!important;color:rgba(245,244,239,.7);padding:80px 40px 36px!important;margin:0!important;text-align:left!important;border-top:1px solid rgba(165,116,38,.28);font-family:"Public Sans",system-ui,sans-serif;gap:0!important}
 footer.vfooter .vfooter-inner{max-width:1120px;margin:0 auto}
 footer.vfooter .vfooter-top{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:56px;padding-bottom:48px;border-bottom:1px solid rgba(245,244,239,.1)}
 footer.vfooter .vlogo{margin:0 0 22px!important;align-self:auto}
@@ -758,7 +758,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
 
 /* nav fits 7 links (4 Oct 2026) */
 @media(max-width:1360px){nav:not(.footer-links) .nav-links{gap:24px!important}nav:not(.footer-links) .vlogo{margin-right:40px}}
-@media(max-width:1200px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0!important;position:absolute;top:64px;left:0;right:0;background:#1a3028;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
+@media(max-width:1200px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0!important;position:absolute;top:64px;left:0;right:0;background:#0D1B2A;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
 @media(max-width:640px){.nav-toggle{margin-right:0}}
 </style>
 

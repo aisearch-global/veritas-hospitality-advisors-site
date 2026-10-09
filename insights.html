@@ -156,10 +156,10 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#1a3028;--cream:#f5f4ef;--gold:#a57426;--slate:rgba(26,48,40,.55)}
+:root{--ink:#0D1B2A;--cream:#f5f4ef;--gold:#a57426;--slate:rgba(13,27,42,.55)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:"Public Sans",sans-serif;background:var(--cream);color:var(--ink)}
-nav:not(.footer-links){position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,48,40,.94);backdrop-filter:blur(10px);height:64px;display:flex;align-items:center;padding:0 40px;justify-content:space-between}
+nav:not(.footer-links){position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,27,42,.94);backdrop-filter:blur(10px);height:64px;display:flex;align-items:center;padding:0 40px;justify-content:space-between}
 .logo{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.35rem;color:var(--cream);letter-spacing:.04em;text-decoration:none}
 .logo span{color:var(--gold)}
 .nav-links{display:flex;gap:32px;list-style:none}
@@ -196,14 +196,14 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
 .panel-intro p{font-size:.84rem;color:var(--slate);line-height:1.7;max-width:580px}
 /* card grid */
 .art-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
-.art-card{background:#fff;border:1px solid rgba(26,48,40,.1);padding:28px 28px 24px;text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:all .2s}
-.art-card:hover{border-color:rgba(165,116,38,.4);box-shadow:0 4px 24px rgba(26,48,40,.08);transform:translateY(-2px)}
+.art-card{background:#fff;border:1px solid rgba(13,27,42,.1);padding:28px 28px 24px;text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:all .2s}
+.art-card:hover{border-color:rgba(165,116,38,.4);box-shadow:0 4px 24px rgba(13,27,42,.08);transform:translateY(-2px)}
 .art-card-cat{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500}
 .art-card-title{font-family:"Source Serif 4",serif;font-weight:400;font-size:1rem;color:var(--ink);line-height:1.35;flex:1}
 .art-card-desc{font-size:.78rem;color:var(--slate);line-height:1.6}
 .art-card-link{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-top:8px}
 /* archive */
-.archive-placeholder{padding:64px;text-align:center;border:1px dashed rgba(26,48,40,.15)}
+.archive-placeholder{padding:64px;text-align:center;border:1px dashed rgba(13,27,42,.15)}
 .archive-placeholder h3{font-family:"Source Serif 4",serif;font-weight:300;font-size:1.2rem;color:var(--ink);margin-bottom:10px}
 .archive-placeholder p{font-size:.84rem;color:var(--slate);line-height:1.6;max-width:420px;margin:0 auto}
 @media(max-width:740px){.tab-bar{padding:0 16px;overflow-x:auto}.tab-panel{padding:40px 20px}.art-grid{grid-template-columns:1fr}}
@@ -211,7 +211,7 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
 /* mobile menu (added 4 Oct 2026) */
 .nav-toggle{display:none;background:none;border:1px solid rgba(245,244,239,.3);color:#f5f4ef;width:40px;height:36px;border-radius:2px;cursor:pointer;font-size:1.05rem;line-height:1}
 .nav-toggle:focus-visible,.nav-links a:focus-visible{outline:2px solid #a57426;outline-offset:2px}
-@media(max-width:740px){.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:12px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#1a3028;padding:8px 20px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
+@media(max-width:740px){.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:12px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#0D1B2A;padding:8px 20px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
 
 /* Veritas logo lockup (4 Oct 2026) — matches canonical logo: VERITAS / gold rules / HOSPITALITY ADVISORS */
 .vlogo{position:relative;display:inline-flex;flex-direction:column;align-items:center;line-height:1;padding:0 32px;text-decoration:none;flex-shrink:0}
@@ -222,7 +222,7 @@ footer{background:var(--ink);padding:36px 40px;display:flex;flex-direction:colum
 nav:not(.footer-links) .vlogo{margin-right:64px}
 footer .vlogo{margin:0 0 12px}
 .vlogo:focus-visible{outline:2px solid #a57426;outline-offset:6px}
-.vlogo--dark .vlogo-word{color:#1a3028}
+.vlogo--dark .vlogo-word{color:#0D1B2A}
 @media(max-width:640px){.vlogo{padding:0 24px}.vlogo .vlogo-word{font-size:1.05rem}.vlogo .vlogo-sub{font-size:.4rem;margin-top:7px}.vlogo::before,.vlogo::after{width:16px}nav:not(.footer-links) .vlogo{margin-right:12px}}
 
 /* nav + footer polish (4 Oct 2026) */
@@ -230,7 +230,7 @@ footer .vlogo{margin:0 0 12px}
 footer .footer-links{display:flex;flex-wrap:wrap;gap:12px 28px;margin:20px 0}
 footer .footer-links a{font-family:"Public Sans",system-ui,sans-serif;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,244,239,.55);text-decoration:none}
 footer .footer-links a:hover,footer .footer-links a:focus-visible{color:#f5f4ef}
-@media(max-width:1024px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#1a3028;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
+@media(max-width:1024px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:#0D1B2A;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
 @media(max-width:640px){nav:not(.footer-links) .nav-cta{display:none}.nav-toggle{margin-right:0}}
 
 /* logo never stretches (4 Oct 2026) */
@@ -241,7 +241,7 @@ nav:not(.footer-links) .vlogo{align-self:center}
 @media(max-width:760px){[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}section[style*="padding:80px 40px"],section[style*="padding:52px 40px"],div[style*="padding:60px 40px"]{padding-left:20px!important;padding-right:20px!important}}
 
 /* unified site footer (4 Oct 2026) — same on every page */
-footer.vfooter{display:block!important;background:#1a3028!important;color:rgba(245,244,239,.7);padding:80px 40px 36px!important;margin:0!important;text-align:left!important;border-top:1px solid rgba(165,116,38,.28);font-family:"Public Sans",system-ui,sans-serif;gap:0!important}
+footer.vfooter{display:block!important;background:#0D1B2A!important;color:rgba(245,244,239,.7);padding:80px 40px 36px!important;margin:0!important;text-align:left!important;border-top:1px solid rgba(165,116,38,.28);font-family:"Public Sans",system-ui,sans-serif;gap:0!important}
 footer.vfooter .vfooter-inner{max-width:1120px;margin:0 auto}
 footer.vfooter .vfooter-top{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:56px;padding-bottom:48px;border-bottom:1px solid rgba(245,244,239,.1)}
 footer.vfooter .vlogo{margin:0 0 22px!important;align-self:auto}
@@ -260,7 +260,7 @@ footer.vfooter .vfooter-bottom a{color:rgba(165,116,38,.9);text-decoration:none}
 footer.vfooter .vfooter-bottom a:hover{text-decoration:underline}
 @media(max-width:900px){footer.vfooter .vfooter-top{grid-template-columns:1fr 1fr}footer.vfooter .vfooter-brand{grid-column:1/-1}}
 @media(max-width:600px){footer.vfooter .vfooter-nav{display:grid!important;grid-template-columns:1fr 1fr;column-gap:24px}footer.vfooter{padding:56px 20px 28px!important}footer.vfooter .vfooter-top{grid-template-columns:1fr;gap:40px}}
-.jump-band{background:#1a3028;border-top:1px solid rgba(245,244,239,.08);padding:28px 40px 32px}.jump-band .jump-inner{max-width:none}.jump-band select option,.jump-band select optgroup{background:#1a3028;color:#f5f4ef}@media(max-width:600px){.jump-band{padding:24px 20px}}
+.jump-band{background:#0D1B2A;border-top:1px solid rgba(245,244,239,.08);padding:28px 40px 32px}.jump-band .jump-inner{max-width:none}.jump-band select option,.jump-band select optgroup{background:#0D1B2A;color:#f5f4ef}@media(max-width:600px){.jump-band{padding:24px 20px}}
 
 /* footer v2: four-column (brand / advisory / firm / contact) + legal bar (4 Oct 2026) */
 footer.vfooter .vfooter-top{grid-template-columns:1.3fr .95fr .85fr 1.5fr!important;gap:44px!important}
@@ -277,7 +277,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
 
 /* nav fits 7 links (4 Oct 2026) */
 @media(max-width:1360px){nav:not(.footer-links) .nav-links{gap:24px!important}nav:not(.footer-links) .vlogo{margin-right:40px}}
-@media(max-width:1200px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0!important;position:absolute;top:64px;left:0;right:0;background:#1a3028;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
+@media(max-width:1200px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0!important;position:absolute;top:64px;left:0;right:0;background:#0D1B2A;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
 @media(max-width:640px){.nav-toggle{margin-right:0}}
 
 @media(max-width:768px){.perspectives-hero{padding-left:20px!important;padding-right:20px!important}}
@@ -467,7 +467,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
     </div>
 
     <!-- Video interview -->
-    <div style="border-top:1px solid rgba(26,48,40,.1);padding-top:40px">
+    <div style="border-top:1px solid rgba(13,27,42,.1);padding-top:40px">
       <span style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500">Video Interview</span>
       <h2 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.5rem;color:var(--ink);margin:12px 0 8px;line-height:1.3">Vaishakh Surendran in conversation with Hospitality News India</h2>
       <p style="font-size:.82rem;color:var(--slate);margin-bottom:28px;line-height:1.6">Discussing people-first leadership, operational philosophy, and the sustainable practices behind Lyfe Hotels Bhubaneswar. Published by <em>India Hospitality News</em> (@indiahospitalitynews).</p>
@@ -476,8 +476,8 @@ footer.vfooter .vfooter-bottom{align-items:center}
         <script async src="//www.instagram.com/embed.js"></script>
       </div>
       <div style="text-align:center;margin-top:20px">
-        <a href="https://www.youtube.com/watch?v=0ZlNMd4L0vk" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:1px solid rgba(26,48,40,.25);padding:10px 20px;transition:all .2s;border-radius:1px">
-          <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M17.6 2.18A2.25 2.25 0 0015.99.56C14.6.18 9 .18 9 .18S3.4.18 2.01.56A2.25 2.25 0 00.4 2.18 23.6 23.6 0 000 7a23.6 23.6 0 00.4 4.82A2.25 2.25 0 002.01 13.4C3.4 13.8 9 13.8 9 13.8s5.6 0 6.99-.4a2.25 2.25 0 001.61-1.58A23.6 23.6 0 0018 7a23.6 23.6 0 00-.4-4.82zM7.2 9.98V4.02L11.88 7 7.2 9.98z" fill="#1a3028"/></svg>
+        <a href="https://www.youtube.com/watch?v=0ZlNMd4L0vk" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:1px solid rgba(13,27,42,.25);padding:10px 20px;transition:all .2s;border-radius:1px">
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M17.6 2.18A2.25 2.25 0 0015.99.56C14.6.18 9 .18 9 .18S3.4.18 2.01.56A2.25 2.25 0 00.4 2.18 23.6 23.6 0 000 7a23.6 23.6 0 00.4 4.82A2.25 2.25 0 002.01 13.4C3.4 13.8 9 13.8 9 13.8s5.6 0 6.99-.4a2.25 2.25 0 001.61-1.58A23.6 23.6 0 0018 7a23.6 23.6 0 00-.4-4.82zM7.2 9.98V4.02L11.88 7 7.2 9.98z" fill="#0D1B2A"/></svg>
           Watch full interview on YouTube (24 min)
         </a>
       </div>

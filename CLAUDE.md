@@ -1,6 +1,6 @@
 ﻿# CLAUDE.md — Veritas Hospitality Advisors Site
 *Session handoff file. Update after every working session.*
-*Last updated: 4 October 2026 (session 5) | Branch: main*
+*Last updated: 9 October 2026 (session 6) | Branch: main*
 
 ---
 
@@ -118,25 +118,48 @@ If a page uses `--font-display` or `--font-ui` variables, they MUST point to Sou
 - Logo href = `"/"` from root pages, `"../"` from `perspectives/` subfolder
 - **Homepage (index.html) nav uses `#services` and `#contact` anchors** — different from inner pages — do not change them
 
-### Footer — MUST be identical on ALL root pages
+### Footer — MUST be identical on ALL 26 pages (updated 9 Oct 2026 — supersedes the flat footer below)
+**The flat `<footer>` markup previously documented here is STALE — it was superseded by `<footer class="vfooter">` (3-column layout) sometime before this session and no longer exists anywhere in the repo.** Current structure, simplified 9 Oct 2026 to remove duplication with the main nav:
 ```html
-<footer>
-  <a href="index.html" class="footer-logo">Veritas<span>.</span></a>
-  <nav class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="founder.html">Founder</a>
-    <a href="clients.html">Clients</a>
-    <a href="insights.html">Perspectives</a>
-    <a href="legal.html">Privacy &amp; Terms</a>
-  </nav>
-  <p class="footer-copy">&copy; 2026 Veritas Hospitality Advisors. All rights reserved. Registered in India. &nbsp;|&nbsp; GSTIN: 32BLFPS3361D1ZD &nbsp;|&nbsp; MSME: UDYAM-KL-07-0058097</p>
-  <p class="footer-copy" style="margin-top:4px;opacity:.6"><a href="tel:+919072233008" style="color:inherit">+91 90722 33008</a> &nbsp;|&nbsp; <a href="mailto:vaishakh@veritashospitalityadvisors.in" style="color:inherit">vaishakh@veritashospitalityadvisors.in</a> &nbsp;|&nbsp; <a href="https://veritashospitalityadvisors.in" style="color:inherit">veritashospitalityadvisors.in</a></p>
-  <p class="footer-copy" style="margin-top:4px;opacity:.5">Site built by <a href="https://aisearch.global" target="_blank" rel="noopener" style="color:rgba(165,116,38,.7);text-decoration:underline;text-underline-offset:2px">AISearch Global</a> &nbsp;|&nbsp; Sydney &nbsp;|&nbsp; Australia &nbsp;|&nbsp; <a href="mailto:hello@aisearch.global" style="color:rgba(165,116,38,.7);text-decoration:none">hello@aisearch.global</a></p>
+<footer class="vfooter">
+  <div class="vfooter-inner">
+    <div class="vfooter-top">
+      <div class="vfooter-brand">
+        <a href="https://aisearch-global.github.io/veritas-hospitality-advisors-site/" class="footer-logo vlogo" aria-label="Veritas Hospitality Advisors — home"><span class="vlogo-word">VERITAS</span><span class="vlogo-sub">HOSPITALITY ADVISORS</span></a>
+        <p class="vfooter-tag">Protecting value, enhancing performance.</p>
+        <p class="vfooter-desc">Independent hotel owner advisory and profit-focused hospitality consulting for independent hotels and resorts across India.</p>
+      </div>
+      <div class="vfooter-col">
+        <p class="vfooter-label">Free Owner Tools</p>
+        <nav class="footer-links vfooter-nav" aria-label="Free owner tools">
+          <a href="diagnostic.html">Owner Diagnostic</a>
+          <a href="health-check.html">Profit Health Check</a>
+        </nav>
+      </div>
+      <div class="vfooter-col">
+        <p class="vfooter-label">Contact</p>
+        <ul class="vfooter-contact">
+          <li><a href="tel:+919072233008">+91 90722 33008</a></li>
+          <li><a href="mailto:vaishakh@veritashospitalityadvisors.com">vaishakh@veritashospitalityadvisors.in</a></li>
+          <li>Registered in Kerala &middot; Working across India</li>
+        </ul>
+        <div class="vfooter-social"><a href="https://www.linkedin.com/in/vaishakhsurendran/" target="_blank" rel="noopener" aria-label="Vaishakh Surendran on LinkedIn">...</a></div>
+      </div>
+    </div>
+    <div class="vfooter-bottom">
+      <p>&copy; 2026 Veritas Hospitality Advisors &middot; MSME UDYAM-KL-07-0058097</p>
+      <p class="vfooter-legal"><a href="legal.html">Privacy &amp; Terms</a><span aria-hidden="true">&middot;</span>Created by <a href="https://aisearch.global" target="_blank" rel="noopener">AISearch Global</a> | Sydney | Australia</p>
+    </div>
+  </div>
 </footer>
 ```
-- For `perspectives/*.html` — use `"../"` prefix on all root-page hrefs
-- Footer structure is FLAT — no wrapper divs inside `<footer>`
-- Tag is `<footer>` NOT `<footer class="site-footer">` (that class is dead CSS)
+- For `perspectives/*.html` — use `"../"` prefix on all root-page hrefs (the footer logo link, legal, and the two tool links)
+- **Removed 9 Oct 2026** (was previously present, duplicated the main nav): the "Advisory" column (Commercial Performance / Operational Governance / Owner Reporting sub-links), the entire "The Firm" column (Home / Founder / Clients / Perspectives / Owner FAQ / Owner's Playbook PDF), and the "Discuss Confidentially" footer button — all already in the header nav.
+- **Kept on purpose:** brand lockup + tagline, the two diagnostic-tool links (renamed to column "Free Owner Tools"), essential contact (phone/email/location), social icon, bottom copyright/legal bar.
+- Do not re-add the removed links/button without checking with Viv first — this was a deliberate declutter, not an oversight.
+- `perspectives/*.html` footers also show a GSTIN line in `.vfooter-bottom` that root pages don't (root pages had GSTIN removed earlier, 9 Oct — see tracker row 13, pending Vaishakh confirmation on invoices/letterhead). This inconsistency is known, not yet resolved.
+- Footer wraps everything in `.vfooter-inner` > `.vfooter-top` (brand + 2 columns) + `.vfooter-bottom` — NOT flat.
+- Tag is `<footer class="vfooter">`.
 
 ### Git attribution — NO exceptions
 - **Commits attributed to Viv: `viveka@aisearch.global`**
@@ -384,3 +407,9 @@ Article cards use class `art-card` (not `article-card`).
 - Canonical contact (Viv, 4 Oct): +91 90722 33008 · vaishakh@veritashospitalityadvisors.in · veritashospitalityadvisors.in. Site keeps current rules until switch-to-in is merged. On merge, resolve the vaishakh-resume.pdf conflict by regenerating it.
 - Positioning rule: Veritas advises and monitors; never imply it operates, sets prices or manages staff.
 - Full live-state spec for incoming agencies: engagement folder > Claude outputs > Veritas-Technical-Structure.html/.pdf (not in this public repo). Where this file disagrees, that document reflects the live site.
+
+## Session 6 — 9 October 2026 (diagnostic.html + sitewide footer declutter)
+- `diagnostic.html`: removed the repeated "Run the Profit Health Check" box shown after quiz results — it duplicated the Profit Health Check card already on the landing grid above. Commit 1660cc8.
+- Footer simplified across **all 26 pages** (10 root + 15 perspectives + diagnostic): removed links/buttons duplicating the main nav. See the updated "Footer" section above for the current markup — it supersedes the old flat-footer block that had drifted stale in this file (the real footer has been `<footer class="vfooter">`, a 3-column layout, for some time; this file hadn't been updated to say so). Commit 92d1ab7.
+- Both commits local only, signed Viv per the git-attribution rule above. Not yet pushed — Viv to push per the "How to push changes live" section.
+- Tracked in `Veritas-Content-Changes-Tracker.xlsx` (private engagement folder), Content Changes row 17.

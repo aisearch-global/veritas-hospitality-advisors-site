@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
 
-# Block GitHub Pages staging subdomain from being indexed
-# Production site is https://aisearch-global.github.io/veritas-hospitality-advisors-site
-Disallow: /veritas-hospitality-advisors-site/
-
 Sitemap: https://aisearch-global.github.io/veritas-hospitality-advisors-site/sitemap.xml

@@ -52,6 +52,10 @@ GOLD  = colors.HexColor('#A57426')   # Warm gold
 SLATE = colors.HexColor('#4A6080')   # Slate (navy-adjacent)
 WHITE = colors.white
 LIGHT = colors.HexColor('#E8E7E0')   # Subtle rule colour
+# Muted cream, for secondary text sitting on the INK (navy) cover only —
+# replaces leftover Forest-Green-era greens/khakis never migrated to Navy.
+CREAM_MUTED_HI = colors.Color(245/255, 244/255, 239/255, alpha=0.80)
+CREAM_MUTED_LO = colors.Color(245/255, 244/255, 239/255, alpha=0.50)
 
 W, H = A4   # 595.27 x 841.89 pt
 MARGIN_OUTER = 22 * mm
@@ -123,7 +127,7 @@ def make_styles():
             fontName=serif_ital,
             fontSize=14,
             leading=20,
-            textColor=colors.HexColor('#C8C0A8'),
+            textColor=CREAM_MUTED_HI,
             alignment=TA_LEFT,
             spaceAfter=6,
         ),
@@ -132,7 +136,7 @@ def make_styles():
             fontName=sans,
             fontSize=9,
             leading=14,
-            textColor=colors.HexColor('#8FA898'),
+            textColor=CREAM_MUTED_LO,
             alignment=TA_LEFT,
         ),
         'toc_heading': ParagraphStyle(
@@ -226,7 +230,7 @@ def make_styles():
             fontName=sans_ital,
             fontSize=7.5,
             leading=11,
-            textColor=colors.HexColor('#6B7C74'),
+            textColor=SLATE,
             spaceAfter=4,
         ),
         'sources_label': ParagraphStyle(
@@ -269,7 +273,7 @@ def make_styles():
             fontName=base_font,
             fontSize=7,
             leading=10,
-            textColor=colors.HexColor('#8FA898'),
+            textColor=SLATE,
         ),
         'page_num': ParagraphStyle(
             'page_num',
@@ -286,6 +290,11 @@ def make_styles():
 def make_header_footer(canvas, doc, styles):
     canvas.saveState()
     page = doc.page
+    if _have_brand_fonts:
+        _sans_bold, _sans_reg = 'PublicSans-Bold', 'PublicSans'
+    else:
+        _sans_bold, _sans_reg = 'Helvetica-Bold', 'Helvetica'
+
 
     if page == 1:
         # ── Full-bleed INK background ──────────────────────────────────
@@ -308,37 +317,37 @@ def make_header_footer(canvas, doc, styles):
         canvas.line(lx, bot_y + 36, rx, bot_y + 36)
 
         # Info labels (muted green)
-        canvas.setFont('Helvetica-Bold', 7)
-        canvas.setFillColor(colors.HexColor('#6B9E84'))
+        canvas.setFont(_sans_bold, 7)
+        canvas.setFillColor(GOLD)
         canvas.drawString(lx,   bot_y + 24, 'PREPARED BY')
         canvas.drawString(mid,  bot_y + 24, 'DATE')
 
         # Info values (white)
-        canvas.setFont('Helvetica-Bold', 10)
+        canvas.setFont(_sans_bold, 10)
         canvas.setFillColor(WHITE)
         canvas.drawString(lx,   bot_y + 10, 'Vaishakh Surendran')
         canvas.drawString(mid,  bot_y + 10, 'October 2026')
 
         # Second row labels
-        canvas.setFont('Helvetica-Bold', 7)
-        canvas.setFillColor(colors.HexColor('#6B9E84'))
+        canvas.setFont(_sans_bold, 7)
+        canvas.setFillColor(GOLD)
         canvas.drawString(lx,   bot_y - 4, 'ORGANISATION')
         canvas.drawString(mid,  bot_y - 4, 'STATUS')
 
         # Second row values
-        canvas.setFont('Helvetica-Bold', 9)
+        canvas.setFont(_sans_bold, 9)
         canvas.setFillColor(WHITE)
         canvas.drawString(lx,   bot_y - 16, 'Veritas Hospitality Advisors')
         canvas.drawString(mid,  bot_y - 16, 'Editorial draft')
 
         # Thin rule below bottom block
-        canvas.setStrokeColor(colors.HexColor('#2A4A38'))
+        canvas.setStrokeColor(GOLD)
         canvas.setLineWidth(0.4)
         canvas.line(lx, bot_y - 28, rx, bot_y - 28)
 
         # Disclaimer
-        canvas.setFont('Helvetica', 6.5)
-        canvas.setFillColor(colors.HexColor('#7AAA90'))
+        canvas.setFont(_sans_reg, 6.5)
+        canvas.setFillColor(CREAM_MUTED_LO)
         disclaimer = (
             'Illustrative figures are fictional and not benchmarks. '
             'This guide does not constitute financial, legal or accounting advice.'
@@ -355,11 +364,11 @@ def make_header_footer(canvas, doc, styles):
     canvas.line(MARGIN_OUTER, y_rule, W - MARGIN_OUTER, y_rule)
 
     # Footer text
-    canvas.setFont('Helvetica', 7)
-    canvas.setFillColor(colors.HexColor('#8FA898'))
+    canvas.setFont(_sans_reg, 7)
+    canvas.setFillColor(SLATE)
     canvas.drawString(MARGIN_OUTER, y_rule - 4 * mm, 'Veritas Hospitality Advisors — Confidential')
 
-    canvas.setFont('Helvetica-Bold', 7)
+    canvas.setFont(_sans_bold, 7)
     canvas.setFillColor(GOLD)
     canvas.drawRightString(W - MARGIN_OUTER, y_rule - 4 * mm, str(page))
 
@@ -405,10 +414,10 @@ def build_cover(story, styles, cw):
     # Short descriptor paragraph
     desc_style = ParagraphStyle(
         'cover_desc',
-        fontName='Helvetica',
+        fontName='PublicSans' if _have_brand_fonts else 'Helvetica',
         fontSize=9.5,
         leading=15,
-        textColor=colors.HexColor('#C8C0A8'),
+        textColor=CREAM_MUTED_HI,
         alignment=TA_LEFT,
     )
     story.append(Paragraph(

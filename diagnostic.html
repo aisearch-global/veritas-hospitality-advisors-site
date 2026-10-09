@@ -431,7 +431,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
         <li>Where your oversight has gaps and what they cost you</li>
         <li>Specific questions to raise with your management team</li>
       </ul>
-      <a class="dtool-cta" href="#diagnostic">Start Diagnostic &rarr;</a>
+      <a class="dtool-cta" href="#diagnostic" onclick="openDiagTool(event)">Start Diagnostic &rarr;</a>
     </div>
 
     <div class="dtool-card dtool-light">
@@ -453,7 +453,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
   </div>
 </div>
 
-<div class="quiz-progress-wrap" id="diagnostic">
+<div class="quiz-progress-wrap" id="diagnostic" style="display:none">
   <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
   <p class="quiz-progress-text" id="quizProgressText">0 of 15 answered</p>
   <div class="quiz-steps" id="quizSteps">
@@ -936,6 +936,16 @@ function emailResults() {
   }, 500);
   
   document.getElementById('emailSent').style.display='block';
+}
+
+function openDiagTool(e) {
+  if(e) e.preventDefault();
+  const wrap = document.getElementById('diagnostic');
+  wrap.style.display = '';
+  // hide the landing cards
+  const landing = document.querySelector('.diag-tool-landing');
+  if(landing) landing.style.display = 'none';
+  setTimeout(() => { wrap.scrollIntoView({behavior:'smooth', block:'start'}); }, 50);
 }
 
 // initialise stepper state on load

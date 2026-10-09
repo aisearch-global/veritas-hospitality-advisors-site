@@ -1402,10 +1402,10 @@ def build_back(story, styles, cw):
 
     contact_data = [
         [Paragraph('FOUNDER', styles['sources_label']), Paragraph('EMAIL', styles['sources_label'])],
-        [Paragraph('Vaishakh Surendran', styles['toc_heading']), Paragraph('vaishakh@veritashospitalityadvisors.com', styles['toc_heading'])],
+        [Paragraph('Vaishakh Surendran', styles['toc_heading']), Paragraph('vaishakh@veritashospitalityadvisors.in', styles['toc_heading'])],
         ['', ''],
         [Paragraph('WEBSITE', styles['sources_label']), Paragraph('PUBLISHED', styles['sources_label'])],
-        [Paragraph('veritashospitalityadvisors.com', styles['toc_heading']), Paragraph('October 2026', styles['toc_heading'])],
+        [Paragraph('veritashospitalityadvisors.in', styles['toc_heading']), Paragraph('October 2026', styles['toc_heading'])],
     ]
     contact_table = Table(contact_data, colWidths=[cw / 2, cw / 2])
     contact_table.setStyle(TableStyle([

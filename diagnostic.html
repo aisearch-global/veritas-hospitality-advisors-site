@@ -471,7 +471,7 @@ footer.vfooter .vfooter-bottom{align-items:center}
 
 <div class="diag-section-wrap">
 <!-- SECTION 1 -->
-<div class="diag-section visible" id="s1">
+<div class="diag-section" id="s1">
   <div class="section-head">
     <h2>Owner Reporting</h2>
     <p>What your monthly reporting covers — and whether it gives you the full picture.</p>
@@ -942,6 +942,8 @@ function openDiagTool(e) {
   if(e) e.preventDefault();
   const wrap = document.getElementById('diagnostic');
   wrap.style.display = '';
+  // show the first section
+  document.getElementById('s1').classList.add('visible');
   // hide the landing cards
   const landing = document.querySelector('.diag-tool-landing');
   if(landing) landing.style.display = 'none';

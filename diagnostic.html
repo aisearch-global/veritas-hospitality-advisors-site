@@ -323,6 +323,39 @@ footer.vfooter .vfooter-bottom{align-items:center}
 @media(max-width:1360px){nav:not(.footer-links) .nav-links{gap:24px!important}nav:not(.footer-links) .vlogo{margin-right:40px}}
 @media(max-width:1200px){nav:not(.footer-links) .nav-links{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;margin-right:16px}nav.nav-open .nav-links{display:flex;flex-direction:column;gap:0!important;position:absolute;top:64px;left:0;right:0;background:#0D1B2A;padding:8px 24px 18px;border-top:1px solid rgba(165,116,38,.25)}nav.nav-open .nav-links a{display:block;padding:12px 0}}
 @media(max-width:640px){.nav-toggle{margin-right:0}}
+
+/* ── Diagnostic landing ── */
+.diag-landing-hero{background:var(--ink);padding:120px 40px 56px;text-align:center}
+.diag-landing-hero .section-label{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:18px}
+.diag-landing-hero h1{font-family:"Source Serif 4",serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.8rem);color:var(--cream);margin-bottom:20px;line-height:1.2}
+.diag-landing-intro{font-size:.92rem;color:rgba(245,244,239,.58);max-width:620px;margin:0 auto 20px;line-height:1.85}
+.diag-landing-choose{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(165,116,38,.7);font-weight:500}
+.diag-tool-landing{background:#f0ede6;padding:56px 40px 80px}
+.diag-tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;max-width:1060px;margin:0 auto}
+.dtool-card{padding:44px 40px 40px;display:flex;flex-direction:column;gap:0}
+.dtool-dark{background:var(--ink)}
+.dtool-light{background:#fff;border:1px solid rgba(13,27,42,.1)}
+.dtool-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+.dtool-num{font-size:.62rem;letter-spacing:.16em;font-weight:700;color:var(--gold);border:1px solid rgba(165,116,38,.35);padding:5px 10px}
+.dtool-light .dtool-num{color:var(--slate);border-color:rgba(13,27,42,.18)}
+.dtool-time{font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,244,239,.35)}
+.dtool-light .dtool-time{color:var(--slate)}
+.dtool-title{font-family:"Source Serif 4",serif;font-weight:400;font-size:1.25rem;color:var(--cream);margin-bottom:10px;line-height:1.3}
+.dtool-light .dtool-title{color:var(--ink)}
+.dtool-hook{font-size:.88rem;font-style:italic;color:rgba(245,244,239,.65);margin-bottom:16px;line-height:1.55}
+.dtool-light .dtool-hook{color:var(--slate)}
+.dtool-desc{font-size:.84rem;line-height:1.75;color:rgba(245,244,239,.5);margin-bottom:24px}
+.dtool-light .dtool-desc{color:rgba(13,27,42,.55)}
+.dtool-list{list-style:none;margin-bottom:36px;display:flex;flex-direction:column;gap:10px;flex:1}
+.dtool-list li{font-size:.82rem;line-height:1.6;color:rgba(245,244,239,.55);padding-left:18px;position:relative}
+.dtool-list li::before{content:"–";position:absolute;left:0;color:var(--gold)}
+.dtool-light .dtool-list li{color:rgba(13,27,42,.55)}
+.dtool-light .dtool-list li::before{color:var(--slate)}
+.dtool-cta{display:inline-block;background:var(--gold);color:var(--ink);text-decoration:none;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:14px 28px;transition:background .18s;align-self:flex-start;margin-top:auto}
+.dtool-cta:hover{background:#c49040}
+.dtool-cta-light{background:var(--ink);color:var(--cream)}
+.dtool-cta-light:hover{background:#1e3248}
+@media(max-width:700px){.diag-tool-grid{grid-template-columns:1fr}.diag-landing-hero,.diag-tool-landing{padding-left:20px;padding-right:20px}.dtool-card{padding:32px 24px}}
 </style>
 </head>
 <body>
@@ -341,30 +374,48 @@ footer.vfooter .vfooter-bottom{align-items:center}
   <a href="https://aisearch-global.github.io/veritas-hospitality-advisors-site/#contact" class="nav-cta">Discuss Confidentially</a>
 </nav>
 
-<div class="diag-hero">
-  <p class="section-label">Hotel Diagnostic Assessment</p>
-  <h1>Is your hotel performing for you?</h1>
-  <p>15 questions across four ownership dimensions. Results calculated immediately in your browser — nothing is stored or sent anywhere until you choose. Takes about 5 minutes.</p>
+<div class="diag-landing-hero">
+  <p class="section-label">Free Owner Tools</p>
+  <h1>Understand what your hotel is actually doing</h1>
+  <p class="diag-landing-intro">Most hotel owners in India manage at arm's length -- relying on what management chooses to report. These two free tools give you an independent read of your hotel's commercial health, reporting quality, and profit position. Nothing is stored in our systems until you choose to share your results.</p>
+  <p class="diag-landing-choose">Two tools. Choose where to start.</p>
 </div>
 
-<div class="tool-switcher">
-  <div class="tool-card-wrap">
-    <a class="tool-card active" href="#diagnostic" style="text-decoration:none">
-      <span class="tool-num">01</span>
-      <div class="tool-card-inner">
-        <p class="tool-card-title">Hotel Performance Diagnostic</p>
-        <p class="tool-card-desc">15 questions across four ownership dimensions — reporting, commercial performance, governance and owner position. Results calculated immediately in your browser. Takes about 5&nbsp;minutes.</p>
+<div class="diag-tool-landing">
+  <div class="diag-tool-grid">
+
+    <div class="dtool-card dtool-dark">
+      <div class="dtool-header">
+        <span class="dtool-num">01</span>
+        <span class="dtool-time">~5 minutes</span>
       </div>
-      <span class="tool-card-arrow">↓</span>
-    </a>
-    <a class="tool-card" href="health-check.html" style="text-decoration:none">
-      <span class="tool-num">02</span>
-      <div class="tool-card-inner">
-        <p class="tool-card-title">Profit Health Check</p>
-        <p class="tool-card-desc">Enter your room count, occupancy and average rate. Receive an instant estimate of revenue yield, OTA cost drag and three specific profit gaps. Takes about 90&nbsp;seconds.</p>
+      <h2 class="dtool-title">Hotel Performance Diagnostic</h2>
+      <p class="dtool-hook">How well is your hotel actually governed?</p>
+      <p class="dtool-desc">15 questions across four ownership dimensions. Instant results calculated in your browser -- nothing sent anywhere until you choose.</p>
+      <ul class="dtool-list">
+        <li>Your score across reporting, commercial performance, governance, and owner position</li>
+        <li>Where your oversight has gaps and what they cost you</li>
+        <li>Specific questions to raise with your management team</li>
+      </ul>
+      <a class="dtool-cta" href="#diagnostic">Start Diagnostic &rarr;</a>
+    </div>
+
+    <div class="dtool-card dtool-light">
+      <div class="dtool-header">
+        <span class="dtool-num">02</span>
+        <span class="dtool-time">~90 seconds</span>
       </div>
-      <span class="tool-card-arrow">→</span>
-    </a>
+      <h2 class="dtool-title">Profit Health Check</h2>
+      <p class="dtool-hook">What is your hotel leaving on the table?</p>
+      <p class="dtool-desc">Enter three numbers -- rooms, occupancy, and average daily rate. Receive an instant estimate based on your own figures.</p>
+      <ul class="dtool-list">
+        <li>Revenue yield against your theoretical maximum</li>
+        <li>Your OTA commission cost in rupees</li>
+        <li>Three specific profit gaps worth investigating</li>
+      </ul>
+      <a class="dtool-cta dtool-cta-light" href="health-check.html">Run Health Check &rarr;</a>
+    </div>
+
   </div>
 </div>
 

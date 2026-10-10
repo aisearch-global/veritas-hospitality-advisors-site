@@ -201,7 +201,7 @@ def make_styles():
             fontSize=10,
             leading=16,
             textColor=INK,
-            alignment=TA_JUSTIFY,
+            alignment=TA_LEFT,  # was TA_JUSTIFY — no hyphenation support produced uneven word-spacing "rivers" (fixed 10 Oct 2026)
             spaceAfter=8,
         ),
         'body_first': ParagraphStyle(
@@ -210,7 +210,7 @@ def make_styles():
             fontSize=11,
             leading=17,
             textColor=INK,
-            alignment=TA_JUSTIFY,
+            alignment=TA_LEFT,  # was TA_JUSTIFY — same rivers issue, worse in italic (fixed 10 Oct 2026)
             spaceAfter=10,
         ),
         'pull_quote': ParagraphStyle(

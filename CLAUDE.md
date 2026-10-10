@@ -396,8 +396,18 @@ Article cards use class `art-card` (not `article-card`).
 - The domain to use eventually is .in. On permission: replace the github.io base with https://veritashospitalityadvisors.in everywhere, add CNAME, regenerate vaishakh-resume.pdf.
 - Email vaishakh@veritashospitalityadvisors.in is kept as the contact address (not a website link).
 
-## Email wiring until handoff (4 Oct 2026)
-- All mailto links and FormSubmit endpoints on main go to viveka@aisearch.global until handoff. Visible email text still shows vaishakh@ address. At handoff switch to vaishakh@veritashospitalityadvisors.in (branch switch-to-in already has that).
+## Email wiring (updated 10 Oct 2026 — supersedes the note below)
+- **vaishakh@veritashospitalityadvisors.com is the live, correct mailbox — Vaishakh is retaining it.** All mailto hrefs and FormSubmit endpoints (contact form action, ajax fetch calls) go to this address. Do NOT change these to viveka@aisearch.global or to the .in address — that was a one-session misreading of the stale note below and was reverted 10 Oct 2026 before it reached main.
+- Visible/display email text stays vaishakh@veritashospitalityadvisors.in everywhere public, unchanged — this is a separate, deliberate display-vs-mailbox split, not an error.
+- **In-page CTA buttons route to the contact form, not bare mailto.** The five always-visible "Discuss Confidentially" / "Request a confidential discussion" buttons on commercial-performance.html, operational-governance.html, owner-reporting.html, and two on index.html (diagnostic results + insights drawer) link to `index.html#contact` (the FormSubmit form), matching the nav CTA pattern already used everywhere. Reason: a bare `mailto:` link produces zero visible feedback — no app, no error — on any visitor machine without a default desktop mail client, which is most people today (confirmed via live browser click-test, 10 Oct 2026, commit 15697ae). Footer/contact-list mailto links (the ones showing the actual address as text) are unaffected and still use mailto — only primary CTA buttons were changed.
+
+<details>
+<summary>Stale note (4 Oct 2026) — kept for history, do not follow</summary>
+
+All mailto links and FormSubmit endpoints on main go to viveka@aisearch.global until handoff. Visible email text still shows vaishakh@ address. At handoff switch to vaishakh@veritashospitalityadvisors.in (branch switch-to-in already has that).
+
+This was wrong/outdated by 10 Oct 2026 — Vaishakh confirmed he's keeping the .com mailbox, there is no handoff-triggered email switch pending.
+</details>
 
 ## Session 4 — 4 October 2026
 - Credit line on all 26 footers: "Created by AISearch Global | Sydney | Australia" (was "Site by AISearch Global"). Resume footer carries the same credit.
